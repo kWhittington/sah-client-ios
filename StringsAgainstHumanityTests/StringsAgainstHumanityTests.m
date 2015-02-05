@@ -6,35 +6,33 @@
 //  Copyright (c) 2015 Kyle Whittington. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
-#import <XCTest/XCTest.h>
+#import "test_header.pch"
 
-@interface StringsAgainstHumanityTests : XCTestCase
+SpecBegin(Example)
 
-@end
+describe(@"YES", ^{
+	BOOL (^subject)(void) = ^{
+	    return YES;
+	};
 
-@implementation StringsAgainstHumanityTests
+	it(@"equals true", ^{
+		expect(subject).to.beTruthy();
+	});
 
-- (void)setUp {
-    [super setUp];
-    // Put setup code here. This method is called before the invocation of each test method in the class.
-}
+	it(@"doesn't equal false", ^{
+		expect(subject).notTo.beFalsy();
+	});
+});
 
-- (void)tearDown {
-    // Put teardown code here. This method is called after the invocation of each test method in the class.
-    [super tearDown];
-}
+describe(@"OCMock", ^{
+	it(@"mocks without error", ^{
+		NSString *mock_string = mock([NSString class]);
+		[given([mock_string isEqualToString:@"not"]) willReturn:@"test"];
 
-- (void)testExample {
-    // This is an example of a functional test case.
-    XCTAssert(YES, @"Pass");
-}
+		[mock_string isEqualToString:@"not"];
 
-- (void)testPerformanceExample {
-    // This is an example of a performance test case.
-    [self measureBlock:^{
-        // Put the code you want to measure the time of here.
-    }];
-}
+		[verify(mock_string) isEqualToString:startsWith(@"not")];
+	});
+});
 
-@end
+SpecEnd
