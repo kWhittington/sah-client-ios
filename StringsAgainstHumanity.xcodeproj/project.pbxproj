@@ -16,9 +16,6 @@
 		AD62730F1A8341D100565A28 /* StringsAgainstHumanityTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AD62730E1A8341D100565A28 /* StringsAgainstHumanityTests.m */; };
 		ADE4A6A91A84410A008CB5D2 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = ADE4A6A51A84410A008CB5D2 /* LaunchScreen.xib */; };
 		ADE4A6AA1A84410A008CB5D2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ADE4A6A71A84410A008CB5D2 /* Main.storyboard */; };
-		ADE4A6B11A844116008CB5D2 /* DataViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADE4A6AC1A844116008CB5D2 /* DataViewController.m */; };
-		ADE4A6B21A844116008CB5D2 /* ModelController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADE4A6AE1A844116008CB5D2 /* ModelController.m */; };
-		ADE4A6B31A844116008CB5D2 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADE4A6B01A844116008CB5D2 /* RootViewController.m */; };
 		ADE4A6B61A844121008CB5D2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = ADE4A6B51A844121008CB5D2 /* AppDelegate.m */; };
 /* End PBXBuildFile section */
 
@@ -47,12 +44,6 @@
 		AD62730E1A8341D100565A28 /* StringsAgainstHumanityTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StringsAgainstHumanityTests.m; sourceTree = "<group>"; };
 		ADE4A6A61A84410A008CB5D2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = App/Views/Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		ADE4A6A81A84410A008CB5D2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = App/Views/Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		ADE4A6AB1A844116008CB5D2 /* DataViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DataViewController.h; path = App/Controllers/DataViewController.h; sourceTree = "<group>"; };
-		ADE4A6AC1A844116008CB5D2 /* DataViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DataViewController.m; path = App/Controllers/DataViewController.m; sourceTree = "<group>"; };
-		ADE4A6AD1A844116008CB5D2 /* ModelController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ModelController.h; path = App/Controllers/ModelController.h; sourceTree = "<group>"; };
-		ADE4A6AE1A844116008CB5D2 /* ModelController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ModelController.m; path = App/Controllers/ModelController.m; sourceTree = "<group>"; };
-		ADE4A6AF1A844116008CB5D2 /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RootViewController.h; path = App/Controllers/RootViewController.h; sourceTree = "<group>"; };
-		ADE4A6B01A844116008CB5D2 /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RootViewController.m; path = App/Controllers/RootViewController.m; sourceTree = "<group>"; };
 		ADE4A6B41A844121008CB5D2 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = "App/App Delegate/AppDelegate.h"; sourceTree = "<group>"; };
 		ADE4A6B51A844121008CB5D2 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = "App/App Delegate/AppDelegate.m"; sourceTree = "<group>"; };
 		ADF0A6441A8417EE0014C1A3 /* test_header.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = test_header.pch; path = "Supporting Files/test_header.pch"; sourceTree = "<group>"; };
@@ -114,12 +105,6 @@
 		AD518EE61A83FEF500FA6CFF /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				ADE4A6AB1A844116008CB5D2 /* DataViewController.h */,
-				ADE4A6AC1A844116008CB5D2 /* DataViewController.m */,
-				ADE4A6AD1A844116008CB5D2 /* ModelController.h */,
-				ADE4A6AE1A844116008CB5D2 /* ModelController.m */,
-				ADE4A6AF1A844116008CB5D2 /* RootViewController.h */,
-				ADE4A6B01A844116008CB5D2 /* RootViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -394,9 +379,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ADE4A6B21A844116008CB5D2 /* ModelController.m in Sources */,
-				ADE4A6B11A844116008CB5D2 /* DataViewController.m in Sources */,
-				ADE4A6B31A844116008CB5D2 /* RootViewController.m in Sources */,
 				AD6272EF1A8341D000565A28 /* main.m in Sources */,
 				ADE4A6B61A844121008CB5D2 /* AppDelegate.m in Sources */,
 			);
