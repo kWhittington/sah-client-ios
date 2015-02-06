@@ -4,6 +4,11 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>Pods-CocoaLumberjack.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-ObjectiveSugar.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -42,37 +47,42 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>0B0C88AB57A98968AC65F0B5</key>
+		<key>11E2C0339A65B816CC6B91AE</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>4C26CC806AE4B1104E777116</key>
+		<key>242D52266781B3ADBF677503</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>5AB46DB980043C5ECCDE67F8</key>
+		<key>2DE178E55215F4978F34B55F</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>793709DBD09B3CBA7FB03E35</key>
+		<key>5A15D36C89FD932309DDF257</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>7939E651B2C46EA7162C8FBB</key>
+		<key>5ED8ADD3C1664E577AFDAFFE</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>B0A7DC3ED74DF340EE927EAC</key>
+		<key>82C6400D7D5AD549DB51DC6A</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>F0BA673A1D58564E01423540</key>
+		<key>B2E126C169990EA4DC556BD0</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>B7F26FA9593B38E4592FEF87</key>
 		<dict>
 			<key>primary</key>
 			<true/>

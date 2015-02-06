@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		1FB7B8582F123D763BF70EBB /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F6AB522281E428AFA232B517 /* libPods.a */; };
 		9E90AAB947D23AB961ED1298 /* libPods-StringsAgainstHumanityTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A27D956F47919DE0B0728BFE /* libPods-StringsAgainstHumanityTests.a */; };
+		AD1C3E061A8450F10001C833 /* _clang-format in Resources */ = {isa = PBXBuildFile; fileRef = AD1C3E051A8450F10001C833 /* _clang-format */; };
 		AD518EEE1A8400BF00FA6CFF /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = AD518EEC1A8400BF00FA6CFF /* Podfile */; };
 		AD518EEF1A8400BF00FA6CFF /* uncrustify.cfg in Resources */ = {isa = PBXBuildFile; fileRef = AD518EED1A8400BF00FA6CFF /* uncrustify.cfg */; };
 		AD6272EF1A8341D000565A28 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AD6272EE1A8341D000565A28 /* main.m */; };
@@ -35,8 +36,9 @@
 		488A2ED7BBC2DFE7121B1695 /* Pods-StringsAgainstHumanityTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StringsAgainstHumanityTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-StringsAgainstHumanityTests/Pods-StringsAgainstHumanityTests.release.xcconfig"; sourceTree = "<group>"; };
 		6236D6D5255475ACBCF7474D /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		A27D956F47919DE0B0728BFE /* libPods-StringsAgainstHumanityTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-StringsAgainstHumanityTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AD1C3E051A8450F10001C833 /* _clang-format */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "_clang-format"; sourceTree = SOURCE_ROOT; };
 		AD518EEC1A8400BF00FA6CFF /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		AD518EED1A8400BF00FA6CFF /* uncrustify.cfg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = uncrustify.cfg; sourceTree = SOURCE_ROOT; };
+		AD518EED1A8400BF00FA6CFF /* uncrustify.cfg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = uncrustify.cfg; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		AD6272E91A8341D000565A28 /* StringsAgainstHumanity.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StringsAgainstHumanity.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD6272ED1A8341D000565A28 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AD6272EE1A8341D000565A28 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -185,6 +187,7 @@
 		AD6272EC1A8341D000565A28 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				AD1C3E051A8450F10001C833 /* _clang-format */,
 				AD6272ED1A8341D000565A28 /* Info.plist */,
 				AD6272EE1A8341D000565A28 /* main.m */,
 				AD518EEC1A8400BF00FA6CFF /* Podfile */,
@@ -308,6 +311,7 @@
 			files = (
 				AD518EEF1A8400BF00FA6CFF /* uncrustify.cfg in Resources */,
 				ADE4A6A91A84410A008CB5D2 /* LaunchScreen.xib in Resources */,
+				AD1C3E061A8450F10001C833 /* _clang-format in Resources */,
 				AD518EEE1A8400BF00FA6CFF /* Podfile in Resources */,
 				ADE4A6AA1A84410A008CB5D2 /* Main.storyboard in Resources */,
 			);
