@@ -4,6 +4,11 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>Pods-Canvas.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-CocoaLumberjack.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -39,6 +44,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Pods-pop.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -47,42 +57,52 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>11E2C0339A65B816CC6B91AE</key>
+		<key>0DB85BA5EB4FD1B23AB7FEF1</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>242D52266781B3ADBF677503</key>
+		<key>3345E6984D43B93D8C47C8DE</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>2DE178E55215F4978F34B55F</key>
+		<key>3B346B87231AD688CDEDBF83</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>5A15D36C89FD932309DDF257</key>
+		<key>4429B092368E6CC00BA0B587</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>5ED8ADD3C1664E577AFDAFFE</key>
+		<key>553BF9394777BF4B77E20FE5</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>82C6400D7D5AD549DB51DC6A</key>
+		<key>65A1996490A8B4761C59A504</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>B2E126C169990EA4DC556BD0</key>
+		<key>7BD279747768DB0752FB45B4</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>B7F26FA9593B38E4592FEF87</key>
+		<key>A1975F4FB59D29B1120AF920</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>D310A9754DA6164969CA979A</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>F2CB07257138068317183146</key>
 		<dict>
 			<key>primary</key>
 			<true/>

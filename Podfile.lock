@@ -1,4 +1,5 @@
 PODS:
+  - Canvas (0.1.2)
   - CocoaLumberjack (1.9.2):
     - CocoaLumberjack/Extensions (= 1.9.2)
   - CocoaLumberjack/Core (1.9.2)
@@ -9,21 +10,26 @@ PODS:
   - OCHamcrest (4.1.1)
   - OCMockito (1.4.0):
     - OCHamcrest (~> 4.0)
+  - pop (1.0.7)
   - Specta (0.2.1)
 
 DEPENDENCIES:
+  - Canvas
   - CocoaLumberjack
   - Expecta
   - ObjectiveSugar
   - OCMockito
+  - pop
   - Specta
 
 SPEC CHECKSUMS:
+  Canvas: ae2faca05a15c4d6659fb3ae5e2a14817df4449a
   CocoaLumberjack: 205769c032b5fef85b92472046bcc8b7e7c8a817
   Expecta: 03aabd0a89d8dea843baecb19a7fd7466a69a31d
   ObjectiveSugar: f48793f5902c77cfc02a4ce46d2e8ecddcad4dc2
   OCHamcrest: af1c7c5ea345de69ea6c9c2958f65f3044e5c420
   OCMockito: 991936bb775cc4c27f063d38f5e17b9161fbd21c
+  pop: 2f14a1ea61339767af9e66741b418c831b3844df
   Specta: 9141310f46b1f68b676650ff2854e1ed0b74163a
 
 COCOAPODS: 0.35.0
