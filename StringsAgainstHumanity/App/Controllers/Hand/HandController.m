@@ -8,6 +8,7 @@
 
 #import "HandController.h"
 #import "Hand.h"
+#import "Card.h"
 
 @interface HandController ()
 
@@ -18,6 +19,7 @@
 @implementation HandController
 
 static NSString *const reuseIdentifier = @"Cell";
+static NSString *const cardIdentifier = @"Card";
 
 - (void)viewDidLoad {
   [super viewDidLoad];
@@ -55,15 +57,17 @@ navigation
 
 #pragma mark <UICollectionViewDataSource>
 
-- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
-#warning Incomplete method implementation -- Return the number of sections
-  return 0;
-}
+// Apple Doc:
+// https://developer.apple.com/library/ios/documentation/WindowsViews/Conceptual/CollectionViewPGforIOS/CollectionViewPGforIOS.pdf
+// If there will only be one section, numberOfSectionsInCollectionView is
+// optional.
+//- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
+//  return 0;
+//}
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView
      numberOfItemsInSection:(NSInteger)section {
-#warning Incomplete method implementation -- Return the number of items in the section
-  return 0;
+  return self.hand.cards.count;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView
@@ -73,6 +77,7 @@ navigation
                                                 forIndexPath:indexPath];
 
   // Configure the cell
+  Card *card = [self.hand.cards objectAtIndex:indexPath.row];
 
   return cell;
 }
