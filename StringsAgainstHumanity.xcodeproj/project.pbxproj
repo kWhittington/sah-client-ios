@@ -19,6 +19,8 @@
 		AD6272EF1A8341D000565A28 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AD6272EE1A8341D000565A28 /* main.m */; };
 		AD62730F1A8341D100565A28 /* StringsAgainstHumanityTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AD62730E1A8341D100565A28 /* StringsAgainstHumanityTests.m */; };
 		ADA305DC1A88095900263239 /* MainMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADA305DB1A88095900263239 /* MainMenuViewController.m */; };
+		ADBF7F901A910CE300C5BB00 /* HandController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADBF7F8F1A910CE300C5BB00 /* HandController.m */; };
+		ADBF7F931A910E2800C5BB00 /* Hand.m in Sources */ = {isa = PBXBuildFile; fileRef = ADBF7F921A910E2800C5BB00 /* Hand.m */; };
 		ADE4A6A91A84410A008CB5D2 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = ADE4A6A51A84410A008CB5D2 /* LaunchScreen.xib */; };
 		ADE4A6AA1A84410A008CB5D2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ADE4A6A71A84410A008CB5D2 /* Main.storyboard */; };
 		ADE4A6B61A844121008CB5D2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = ADE4A6B51A844121008CB5D2 /* AppDelegate.m */; };
@@ -57,6 +59,11 @@
 		AD62730E1A8341D100565A28 /* StringsAgainstHumanityTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StringsAgainstHumanityTests.m; sourceTree = "<group>"; };
 		ADA305DA1A88095900263239 /* MainMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MainMenuViewController.h; path = App/Controllers/MainMenuViewController.h; sourceTree = "<group>"; };
 		ADA305DB1A88095900263239 /* MainMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MainMenuViewController.m; path = App/Controllers/MainMenuViewController.m; sourceTree = "<group>"; };
+		ADBF7F8E1A910CE300C5BB00 /* HandController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HandController.h; path = App/Controllers/Hand/HandController.h; sourceTree = "<group>"; };
+		ADBF7F8F1A910CE300C5BB00 /* HandController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HandController.m; path = App/Controllers/Hand/HandController.m; sourceTree = "<group>"; };
+		ADBF7F911A910E2800C5BB00 /* Hand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Hand.h; path = App/Models/Hand/Hand.h; sourceTree = "<group>"; };
+		ADBF7F921A910E2800C5BB00 /* Hand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Hand.m; path = App/Models/Hand/Hand.m; sourceTree = "<group>"; };
+		ADBF7F951A91120100C5BB00 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		ADE4A6A61A84410A008CB5D2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = App/Views/Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		ADE4A6A81A84410A008CB5D2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = App/Views/Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		ADE4A6B41A844121008CB5D2 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = "App/App Delegate/AppDelegate.h"; sourceTree = "<group>"; };
@@ -120,6 +127,7 @@
 		AD518EE61A83FEF500FA6CFF /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				ADBF7F8D1A9105A100C5BB00 /* Hand */,
 				ADA305DA1A88095900263239 /* MainMenuViewController.h */,
 				ADA305DB1A88095900263239 /* MainMenuViewController.m */,
 				AD4217B91A883771007724CD /* PlayOptionViewController.h */,
@@ -135,6 +143,7 @@
 			children = (
 				AD4217BF1A8943B5007724CD /* CardCollectionViewLayout.h */,
 				AD4217C01A8943B5007724CD /* CardCollectionViewLayout.m */,
+				ADBF7F941A910E2C00C5BB00 /* Hand */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -202,6 +211,7 @@
 				AD6272EE1A8341D000565A28 /* main.m */,
 				AD518EEC1A8400BF00FA6CFF /* Podfile */,
 				AD518EED1A8400BF00FA6CFF /* uncrustify.cfg */,
+				ADBF7F951A91120100C5BB00 /* PrefixHeader.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -222,6 +232,24 @@
 				ADF0A6441A8417EE0014C1A3 /* test_header.pch */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		ADBF7F8D1A9105A100C5BB00 /* Hand */ = {
+			isa = PBXGroup;
+			children = (
+				ADBF7F8E1A910CE300C5BB00 /* HandController.h */,
+				ADBF7F8F1A910CE300C5BB00 /* HandController.m */,
+			);
+			name = Hand;
+			sourceTree = "<group>";
+		};
+		ADBF7F941A910E2C00C5BB00 /* Hand */ = {
+			isa = PBXGroup;
+			children = (
+				ADBF7F911A910E2800C5BB00 /* Hand.h */,
+				ADBF7F921A910E2800C5BB00 /* Hand.m */,
+			);
+			name = Hand;
 			sourceTree = "<group>";
 		};
 		C4EB91360EE2B4394439E2DB /* Pods */ = {
@@ -406,9 +434,11 @@
 			files = (
 				AD4217BE1A8940FB007724CD /* MainMenuCardCollectionViewController.m in Sources */,
 				AD4217BB1A883771007724CD /* PlayOptionViewController.m in Sources */,
+				ADBF7F901A910CE300C5BB00 /* HandController.m in Sources */,
 				AD4217C11A8943B5007724CD /* CardCollectionViewLayout.m in Sources */,
 				ADA305DC1A88095900263239 /* MainMenuViewController.m in Sources */,
 				AD6272EF1A8341D000565A28 /* main.m in Sources */,
+				ADBF7F931A910E2800C5BB00 /* Hand.m in Sources */,
 				AD4217C41A895B86007724CD /* MainMenuPlayCardViewCell.m in Sources */,
 				ADE4A6B61A844121008CB5D2 /* AppDelegate.m in Sources */,
 			);
@@ -535,6 +565,7 @@
 			baseConfigurationReference = B7ADE5E423D28076F6E18920 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/StringsAgainstHumanity/PrefixHeader.pch";
 				INFOPLIST_FILE = StringsAgainstHumanity/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -546,6 +577,7 @@
 			baseConfigurationReference = 6236D6D5255475ACBCF7474D /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/StringsAgainstHumanity/PrefixHeader.pch";
 				INFOPLIST_FILE = StringsAgainstHumanity/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
