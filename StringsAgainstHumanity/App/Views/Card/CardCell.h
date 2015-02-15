@@ -17,6 +17,7 @@
 
 + (NSNumber *)width;
 + (NSNumber *)height;
++ (CGSize)size;
 
 - (void)configureForCard:(Card *)card;
 

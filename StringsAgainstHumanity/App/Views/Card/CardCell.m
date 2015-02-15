@@ -25,6 +25,10 @@
   return @475;
 }
 
++ (CGSize)size {
+  return CGSizeMake([CardCell width].floatValue, [CardCell height].floatValue);
+}
+
 - (void)configureForCard:(Card *)card {
   self.card = card;
 
