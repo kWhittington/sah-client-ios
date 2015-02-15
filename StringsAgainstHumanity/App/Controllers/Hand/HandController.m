@@ -9,6 +9,7 @@
 #import "HandController.h"
 #import "Hand.h"
 #import "Card.h"
+#import "CardCell.h"
 
 @interface HandController ()
 
@@ -19,7 +20,7 @@
 @implementation HandController
 
 static NSString *const reuseIdentifier = @"Cell";
-static NSString *const cardIdentifier = @"Card";
+static NSString *const cardIdentifier = @"CardCell";
 
 - (void)viewDidLoad {
   [super viewDidLoad];
@@ -67,19 +68,22 @@ navigation
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView
      numberOfItemsInSection:(NSInteger)section {
+  NSNumber *number = [NSNumber numberWithUnsignedInteger:self.hand.cards.count];
+  NSLog(@"%@", number);
   return self.hand.cards.count;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView
                   cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-  UICollectionViewCell *cell =
-      [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier
-                                                forIndexPath:indexPath];
+  CardCell *cardCell =
+      [collectionView dequeueReusableCellWithReuseIdentifier:cardIdentifier forIndexPath:indexPath];
 
   // Configure the cell
   Card *card = [self.hand.cards objectAtIndex:indexPath.row];
 
-  return cell;
+  [cardCell configureForCard:card];
+
+  return cardCell;
 }
 
 #pragma mark <UICollectionViewDelegate>
