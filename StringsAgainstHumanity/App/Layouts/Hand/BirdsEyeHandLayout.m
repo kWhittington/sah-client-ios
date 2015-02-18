@@ -11,8 +11,22 @@
 
 @implementation BirdsEyeHandLayout
 
+- (instancetype)init {
+  self = [super init];
+
+  [self refresh];
+
+  return self;
+}
+
 - (void)awakeFromNib {
   [super awakeFromNib];
+  [self refresh];
+}
+
+- (void)refresh {
+  self.collectionView.decelerationRate = UIScrollViewDecelerationRateNormal;
+  self.scrollDirection = UICollectionViewScrollDirectionHorizontal;
 
   [self refreshItemSize];
   [self refreshRowPosition];

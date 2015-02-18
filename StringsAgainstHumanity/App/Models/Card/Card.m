@@ -17,15 +17,23 @@
 - (instancetype)init {
   self = [super init];
 
-  _string = [NSString string];
+  [self initVariables];
 
   return self;
+}
+
+- (void)initVariables {
+  [self initString];
+}
+
+- (void)initString {
+  _string = [NSString string];
 }
 
 - (instancetype)initWithString:(NSString *)string {
   self = [self init];
 
-  _string = string;
+  _string = [string copy];
 
   return self;
 }

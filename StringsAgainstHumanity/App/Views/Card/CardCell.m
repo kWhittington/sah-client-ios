@@ -32,7 +32,29 @@
 - (void)configureForCard:(Card *)card {
   self.card = card;
 
-  self.label.text = card.string;
+  [self refreshVariables];
+}
+
+- (void)refreshVariables {
+  [self refreshString];
+  [self refreshBackgroundView];
+  [self refreshSelectedBackgroundView];
+}
+
+- (void)refreshString {
+  self.label.text = self.card.string;
+}
+
+- (void)refreshBackgroundView {
+  UIView *backgroundView = [[UIView alloc] initWithFrame:self.bounds];
+  backgroundView.backgroundColor = [UIColor whiteColor];
+  self.backgroundView = backgroundView;
+}
+
+- (void)refreshSelectedBackgroundView {
+  UIView *selectedBackgroundView = [[UIView alloc] initWithFrame:self.bounds];
+  selectedBackgroundView.backgroundColor = [UIColor greenColor];
+  self.selectedBackgroundView = selectedBackgroundView;
 }
 
 @end
