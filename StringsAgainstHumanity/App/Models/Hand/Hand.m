@@ -21,13 +21,13 @@
   Hand *testHand = [[Hand alloc] init];
 
   [@3 timesWithIndex:^(NSUInteger index) {
-      NSNumber *number = [NSNumber numberWithUnsignedInteger:index];
+    NSNumber *number = [NSNumber numberWithUnsignedInteger:index];
 
-      NSString *string = NSStringWithFormat(@"Card #%@ text.", number);
+    NSString *string = NSStringWithFormat(@"Card #%@ text.", number);
 
-      Card *card = [[Card alloc] initWithString:string];
+    Card *card = [[Card alloc] initWithString:string];
 
-      [testHand addCard:card];
+    [testHand addCard:card];
   }];
 
   return testHand;
@@ -51,12 +51,14 @@
 
 - (void)removeCards:(NSArray *)cards {
   NSMutableArray *newCards = [NSMutableArray arrayWithArray:self.cards];
-  
-  NSArray *newNewCards = [newCards keepIf:^BOOL(id object){
-    return ![cards includes:object];
-  }];
-  
+
+  NSArray *newNewCards = [newCards keepIf:^BOOL(id object) { return ![cards includes:object]; }];
+
   self.cards = newNewCards;
+}
+
+- (NSUInteger)size {
+  return self.cards.count;
 }
 
 @end

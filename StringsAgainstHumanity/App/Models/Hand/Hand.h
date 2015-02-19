@@ -8,12 +8,16 @@
 
 #import <Foundation/Foundation.h>
 
+@class Card;
+
 @interface Hand : NSObject
 
 @property(readonly) NSArray *cards;
 
 + (Hand *)testHand;
 
+- (void)addCard:(Card *)card;
 - (void)removeCards:(NSArray *)cards;
+- (NSUInteger)size;
 
 @end

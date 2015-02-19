@@ -17,49 +17,34 @@
 
 @property(strong) Hand *hand;
 @property(strong) BirdsEyeHandLayout *birdsEyeLayout;
-@property(strong) ZoomInHandLayout *zoomInLayout;
 @property(strong, nonatomic) IBOutlet UITapGestureRecognizer *tapRecognizer;
 @property(strong) CardCell *selectedCell;
 
 @end
 
 @implementation HandController
-- (IBAction)handleTap:(UITapGestureRecognizer *)sender {
-}
-
 - (IBAction)swipeUp:(UISwipeGestureRecognizer *)sender {
   NSLog(@"Swipe Up");
 
-  if ([self hasSelectedCell]) {
-    NSLog(@"Play %@", self.selectedCell.card.string);
-    [self.collectionView performBatchUpdates:^{
-        NSArray *itemPaths = [self.collectionView indexPathsForSelectedItems];
-
-        [self deleteItemsFromDataSourceAtIndexPaths:itemPaths];
-
-        [self.collectionView deleteItemsAtIndexPaths:itemPaths];
-
-    } completion:nil];
-    //    [UIView animateWithDuration:0.35
-    //        delay:0
-    //        options:UIViewAnimationOptionCurveEaseIn
-    //        animations:^{
-    //          CGPoint oldOrigin = self.selectedCell.frame.origin;
-    //
-    //          CGPoint newOrigin = CGPointMake(oldOrigin.x, oldOrigin.y + oldOrigin.y);
-    //
-    //          [self.selectedCell.frame ]
-    //        }
-    //        completion:^(BOOL finished){}];
-
-    //    [UIView beginAnimations:@"animate" context:nil];
-    //    [UIView setAnimationDuration:3];
-    //    self.selectedCell.frame = CGRectMake(20, 100, 40, 80);
-    //    [UIView commitAnimations];
-  }
+  [self playSelectedCards];
 }
 
-- (void)deleteItemsFromDataSourceAtIndexPaths:(NSArray *)indexPaths {
+- (void)playSelectedCards {
+  NSLog(@"Play %@", self.selectedCell.card.string);
+  [self removeSelectedCards];
+}
+
+- (void)removeSelectedCards {
+  //  TODO
+  //  Figure out if performBatchUpdates:completion: is needed.
+  //  [self.collectionView performBatchUpdates:^{
+  NSArray *itemPaths = [self.collectionView indexPathsForSelectedItems];
+  [self deleteCardsFromDataSourceAtIndexPaths:itemPaths];
+  [self.collectionView deleteItemsAtIndexPaths:itemPaths];
+  //  } completion:nil];
+}
+
+- (void)deleteCardsFromDataSourceAtIndexPaths:(NSArray *)indexPaths {
   NSArray *cards = [self cardsAtIndexPaths:indexPaths];
 
   [self.hand removeCards:cards];
@@ -68,10 +53,10 @@
 - (NSArray *)cardsAtIndexPaths:(NSArray *)indexPaths {
   NSMutableArray *cards = [[NSMutableArray alloc] init];
 
-  for (NSIndexPath *indexPath in indexPaths) {
+  [indexPaths each:^(id indexPath) {
     Card *card = [self collectionView:self.collectionView cardAtIndexPath:indexPath];
     [cards addObject:card];
-  }
+  }];
 
   return [cards copy];
 }
@@ -107,9 +92,8 @@ static NSString *const cardIdentifier = @"CardCell";
 
 - (void)initLayouts {
   self.birdsEyeLayout = [[BirdsEyeHandLayout alloc] init];
-  self.zoomInLayout = [[ZoomInHandLayout alloc] init];
 
-  //  self.collectionView.collectionViewLayout = self.zoomInLayout;
+  self.collectionView.collectionViewLayout = self.birdsEyeLayout;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -140,7 +124,7 @@ navigation
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView
      numberOfItemsInSection:(NSInteger)section {
-  return self.hand.cards.count;
+  return [self.hand size];
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView
@@ -149,9 +133,9 @@ navigation
 }
 
 - (CardCell *)collectionView:(UICollectionView *)collectionView
-    cardCellForItemAtIndexPath:(NSIndexPath *)indexPath {
+  cardCellForItemAtIndexPath:(NSIndexPath *)indexPath {
   CardCell *cardCell =
-      [collectionView dequeueReusableCellWithReuseIdentifier:cardIdentifier forIndexPath:indexPath];
+    [collectionView dequeueReusableCellWithReuseIdentifier:cardIdentifier forIndexPath:indexPath];
 
   // Configure the cell
   Card *card = [self.hand.cards objectAtIndex:indexPath.row];
@@ -163,57 +147,11 @@ navigation
 
 #pragma mark <UICollectionViewDelegate>
 - (void)collectionView:(UICollectionView *)collectionView
-    didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+  didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
   CardCell *cell = [self collectionView:collectionView cardCellForItemAtIndexPath:indexPath];
   self.selectedCell = cell;
 
   NSLog(@"Selected Cell: %@", cell.card.string);
-
-  //  [self swapLayouts];
-}
-
-- (void)swapLayouts {
-  if ([self usingZoomInLayout]) {
-    [self quickTransitionToLayout:self.birdsEyeLayout];
-  } else if ([self usingBirdsEyeLayout]) {
-    NSLog(@"Start interactive transition");
-    //    [self.collectionView
-    //        startInteractiveTransitionToCollectionViewLayout:self.zoomInLayout
-    //                                              completion:^(BOOL completed, BOOL
-    //                                              isFinished){}];
-    [self quickTransitionToLayout:self.zoomInLayout];
-  }
-}
-
-- (void)quickTransitionToLayout:(UICollectionViewFlowLayout *)layout {
-  [UIView animateWithDuration:0.35
-      delay:0
-      options:UIViewAnimationOptionCurveEaseOut
-      animations:^{
-          // Change flow layout
-          [self.collectionView setCollectionViewLayout:layout animated:YES];
-      }
-      completion:^(BOOL finished){}];
-}
-
-- (BOOL)usingZoomInLayout {
-  BOOL result = false;
-
-  if ([self.collectionView.collectionViewLayout isMemberOfClass:[ZoomInHandLayout class]]) {
-    result = true;
-  }
-
-  return result;
-}
-
-- (BOOL)usingBirdsEyeLayout {
-  BOOL result = false;
-
-  if ([self.collectionView.collectionViewLayout isMemberOfClass:[BirdsEyeHandLayout class]]) {
-    result = true;
-  }
-
-  return result;
 }
 
 // Uncomment this method to specify if the specified item should be highlighted during tracking
@@ -253,7 +191,7 @@ navigation
 //}
 
 - (void)collectionView:(UICollectionView *)collectionView
-    didDeselectItemAtIndexPath:(NSIndexPath *)indexPath {
+  didDeselectItemAtIndexPath:(NSIndexPath *)indexPath {
   Card *card = [self collectionView:collectionView cardAtIndexPath:indexPath];
   NSLog(@"Did Deselect, '%@'.", card.string);
 
@@ -271,7 +209,7 @@ navigation
 // Uncomment these methods to specify if an action menu should be displayed for the specified item,
 // and react to actions performed on the item
 - (BOOL)collectionView:(UICollectionView *)collectionView
-    shouldShowMenuForItemAtIndexPath:(NSIndexPath *)indexPath {
+  shouldShowMenuForItemAtIndexPath:(NSIndexPath *)indexPath {
   return NO;
 }
 

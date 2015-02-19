@@ -14,6 +14,7 @@
 		AD518EEF1A8400BF00FA6CFF /* uncrustify.cfg in Resources */ = {isa = PBXBuildFile; fileRef = AD518EED1A8400BF00FA6CFF /* uncrustify.cfg */; };
 		AD6272EF1A8341D000565A28 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AD6272EE1A8341D000565A28 /* main.m */; };
 		AD62730F1A8341D100565A28 /* StringsAgainstHumanityTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AD62730E1A8341D100565A28 /* StringsAgainstHumanityTests.m */; };
+		AD7C84DF1A95B34D00A2DE02 /* CardSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = AD7C84DE1A95B34D00A2DE02 /* CardSpec.m */; };
 		ADBF7F901A910CE300C5BB00 /* HandController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADBF7F8F1A910CE300C5BB00 /* HandController.m */; };
 		ADBF7F931A910E2800C5BB00 /* Hand.m in Sources */ = {isa = PBXBuildFile; fileRef = ADBF7F921A910E2800C5BB00 /* Hand.m */; };
 		ADBF7F981A91171A00C5BB00 /* Card.m in Sources */ = {isa = PBXBuildFile; fileRef = ADBF7F971A91171A00C5BB00 /* Card.m */; };
@@ -48,6 +49,7 @@
 		AD6273081A8341D100565A28 /* StringsAgainstHumanityTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StringsAgainstHumanityTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD62730D1A8341D100565A28 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AD62730E1A8341D100565A28 /* StringsAgainstHumanityTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StringsAgainstHumanityTests.m; sourceTree = "<group>"; };
+		AD7C84DE1A95B34D00A2DE02 /* CardSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CardSpec.m; path = Models/Card/CardSpec.m; sourceTree = "<group>"; };
 		ADBF7F8E1A910CE300C5BB00 /* HandController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HandController.h; path = App/Controllers/Hand/HandController.h; sourceTree = "<group>"; };
 		ADBF7F8F1A910CE300C5BB00 /* HandController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HandController.m; path = App/Controllers/Hand/HandController.m; sourceTree = "<group>"; };
 		ADBF7F911A910E2800C5BB00 /* Hand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Hand.h; path = App/Models/Hand/Hand.h; sourceTree = "<group>"; };
@@ -210,6 +212,7 @@
 		AD62730B1A8341D100565A28 /* StringsAgainstHumanityTests */ = {
 			isa = PBXGroup;
 			children = (
+				AD7C84DC1A95B32100A2DE02 /* Models */,
 				AD62730E1A8341D100565A28 /* StringsAgainstHumanityTests.m */,
 				AD62730C1A8341D100565A28 /* Supporting Files */,
 			);
@@ -223,6 +226,22 @@
 				ADF0A6441A8417EE0014C1A3 /* test_header.pch */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		AD7C84DC1A95B32100A2DE02 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				AD7C84DD1A95B32B00A2DE02 /* Card */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		AD7C84DD1A95B32B00A2DE02 /* Card */ = {
+			isa = PBXGroup;
+			children = (
+				AD7C84DE1A95B34D00A2DE02 /* CardSpec.m */,
+			);
+			name = Card;
 			sourceTree = "<group>";
 		};
 		ADBF7F8D1A9105A100C5BB00 /* Hand */ = {
@@ -483,6 +502,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AD7C84DF1A95B34D00A2DE02 /* CardSpec.m in Sources */,
 				AD62730F1A8341D100565A28 /* StringsAgainstHumanityTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
