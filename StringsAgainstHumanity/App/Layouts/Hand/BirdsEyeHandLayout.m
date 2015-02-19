@@ -59,4 +59,16 @@
   self.sectionInset = UIEdgeInsetsMake(topInset, leftInset, bottomInset, rightInset);
 }
 
+- (UICollectionViewLayoutAttributes *)finalLayoutAttributesForDisappearingItemAtIndexPath:
+                                          (NSIndexPath *)itemIndexPath {
+  UICollectionViewLayoutAttributes *attributes =
+      [super finalLayoutAttributesForDisappearingItemAtIndexPath:itemIndexPath];
+  
+  CGAffineTransform transform =
+      CGAffineTransformMakeTranslation(0, -self.collectionView.bounds.size.height);
+  attributes.transform = transform;
+
+  return attributes;
+}
+
 @end

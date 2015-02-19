@@ -14,4 +14,5 @@
 
 @property(strong, readonly) Hand *hand;
 
+
 @end

@@ -19,6 +19,7 @@
 @property(strong) BirdsEyeHandLayout *birdsEyeLayout;
 @property(strong) ZoomInHandLayout *zoomInLayout;
 @property(strong, nonatomic) IBOutlet UITapGestureRecognizer *tapRecognizer;
+@property(strong) CardCell *selectedCell;
 
 @end
 
@@ -28,11 +29,58 @@
 
 - (IBAction)swipeUp:(UISwipeGestureRecognizer *)sender {
   NSLog(@"Swipe Up");
-  NSIndexPath *indexPath = [NSIndexPath indexPathWithIndex:0];
-  [self.collectionView selectItemAtIndexPath:indexPath
-                                    animated:YES
-                              scrollPosition:UICollectionViewScrollPositionTop];
-  //  [self quickTransitionToLayout:self.zoomInLayout];
+
+  if ([self hasSelectedCell]) {
+    NSLog(@"Play %@", self.selectedCell.card.string);
+    [self.collectionView performBatchUpdates:^{
+        NSArray *itemPaths = [self.collectionView indexPathsForSelectedItems];
+
+        [self deleteItemsFromDataSourceAtIndexPaths:itemPaths];
+
+        [self.collectionView deleteItemsAtIndexPaths:itemPaths];
+
+    } completion:nil];
+    //    [UIView animateWithDuration:0.35
+    //        delay:0
+    //        options:UIViewAnimationOptionCurveEaseIn
+    //        animations:^{
+    //          CGPoint oldOrigin = self.selectedCell.frame.origin;
+    //
+    //          CGPoint newOrigin = CGPointMake(oldOrigin.x, oldOrigin.y + oldOrigin.y);
+    //
+    //          [self.selectedCell.frame ]
+    //        }
+    //        completion:^(BOOL finished){}];
+
+    //    [UIView beginAnimations:@"animate" context:nil];
+    //    [UIView setAnimationDuration:3];
+    //    self.selectedCell.frame = CGRectMake(20, 100, 40, 80);
+    //    [UIView commitAnimations];
+  }
+}
+
+- (void)deleteItemsFromDataSourceAtIndexPaths:(NSArray *)indexPaths {
+  NSArray *cards = [self cardsAtIndexPaths:indexPaths];
+
+  [self.hand removeCards:cards];
+}
+
+- (NSArray *)cardsAtIndexPaths:(NSArray *)indexPaths {
+  NSMutableArray *cards = [[NSMutableArray alloc] init];
+
+  for (NSIndexPath *indexPath in indexPaths) {
+    Card *card = [self collectionView:self.collectionView cardAtIndexPath:indexPath];
+    [cards addObject:card];
+  }
+
+  return [cards copy];
+}
+
+- (BOOL)hasSelectedCell {
+  if (self.selectedCell) {
+    return true;
+  }
+  return false;
 }
 
 static NSString *const reuseIdentifier = @"Cell";
@@ -117,6 +165,7 @@ navigation
 - (void)collectionView:(UICollectionView *)collectionView
     didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
   CardCell *cell = [self collectionView:collectionView cardCellForItemAtIndexPath:indexPath];
+  self.selectedCell = cell;
 
   NSLog(@"Selected Cell: %@", cell.card.string);
 
@@ -168,48 +217,47 @@ navigation
 }
 
 // Uncomment this method to specify if the specified item should be highlighted during tracking
-static int count = 0;
-- (BOOL)collectionView:(UICollectionView *)collectionView
-    shouldHighlightItemAtIndexPath:(NSIndexPath *)indexPath {
+// static int count = 0;
+//- (BOOL)collectionView:(UICollectionView *)collectionView
+//    shouldHighlightItemAtIndexPath:(NSIndexPath *)indexPath {
+//
+//  Card *card = [self collectionView:collectionView cardAtIndexPath:indexPath];
+//
+//  if ((count % 2) == 0) {
+//    NSLog(@"Should be highlighted, '%@'.", card.string);
+//    return YES;
+//  } else {
+//    NSLog(@"Shouldn't be highlighted, '%@'.", card.string);
+//    return NO;
+//  }
+//}
 
-  Card *card = [self collectionView:collectionView cardAtIndexPath:indexPath];
-
-  if ((count % 2) == 0) {
-    NSLog(@"Should be highlighted, '%@'.", card.string);
-    return YES;
-  } else {
-    NSLog(@"Shouldn't be highlighted, '%@'.", card.string);
-    return NO;
-  }
-}
-
-- (void)collectionView:(UICollectionView *)collectionView
-    didUnhighlightItemAtIndexPath:(NSIndexPath *)indexPath {
-  //  UICollectionViewCell *cell = [collectionView cellForItemAtIndexPath:indexPath];
-  //  cell.contentView.backgroundColor = [UIColor greenColor];
-  NSLog(@"Did Unhighlight");
-}
+//- (void)collectionView:(UICollectionView *)collectionView
+//    didUnhighlightItemAtIndexPath:(NSIndexPath *)indexPath {
+//  //  UICollectionViewCell *cell = [collectionView cellForItemAtIndexPath:indexPath];
+//  //  cell.contentView.backgroundColor = [UIColor greenColor];
+//  NSLog(@"Did Unhighlight");
+//}
 
 // Uncomment this method to specify if the specified item should be selected
-- (BOOL)collectionView:(UICollectionView *)collectionView
-    shouldSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-  NSLog(@"Should Select");
-  return YES;
-}
+//- (BOOL)collectionView:(UICollectionView *)collectionView
+//    shouldSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+//  NSLog(@"Should Select");
+//  return YES;
+//}
 
-- (void)collectionView:(UICollectionView *)collectionView
-    didHighlightItemAtIndexPath:(NSIndexPath *)indexPath {
-  NSLog(@"Did Highlight");
-  //  [super collectionView:collectionView didHighlightItemAtIndexPath:indexPath];
-  CardCell *cardCell = [self collectionView:collectionView cardCellForItemAtIndexPath:indexPath];
-  cardCell.backgroundColor = [UIColor whiteColor];
-}
+//- (void)collectionView:(UICollectionView *)collectionView
+//    didHighlightItemAtIndexPath:(NSIndexPath *)indexPath {
+//  NSLog(@"Did Highlight");
+//  //  [super collectionView:collectionView didHighlightItemAtIndexPath:indexPath];
+//}
 
 - (void)collectionView:(UICollectionView *)collectionView
     didDeselectItemAtIndexPath:(NSIndexPath *)indexPath {
   Card *card = [self collectionView:collectionView cardAtIndexPath:indexPath];
-
   NSLog(@"Did Deselect, '%@'.", card.string);
+
+  self.selectedCell = nil;
 }
 
 - (Card *)collectionView:(UICollectionView *)collectionView
@@ -220,23 +268,24 @@ static int count = 0;
   return card;
 }
 
-/*
 // Uncomment these methods to specify if an action menu should be displayed for the specified item,
-and react to actions performed on the item
+// and react to actions performed on the item
 - (BOOL)collectionView:(UICollectionView *)collectionView
-shouldShowMenuForItemAtIndexPath:(NSIndexPath *)indexPath {
+    shouldShowMenuForItemAtIndexPath:(NSIndexPath *)indexPath {
   return NO;
 }
 
-- (BOOL)collectionView:(UICollectionView *)collectionView canPerformAction:(SEL)action
-forItemAtIndexPath:(NSIndexPath *)indexPath withSender:(id)sender {
+- (BOOL)collectionView:(UICollectionView *)collectionView
+      canPerformAction:(SEL)action
+    forItemAtIndexPath:(NSIndexPath *)indexPath
+            withSender:(id)sender {
   return NO;
 }
 
-- (void)collectionView:(UICollectionView *)collectionView performAction:(SEL)action
-forItemAtIndexPath:(NSIndexPath *)indexPath withSender:(id)sender {
-
+- (void)collectionView:(UICollectionView *)collectionView
+         performAction:(SEL)action
+    forItemAtIndexPath:(NSIndexPath *)indexPath
+            withSender:(id)sender {
 }
-*/
 
 @end

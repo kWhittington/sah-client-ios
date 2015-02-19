@@ -49,4 +49,14 @@
   self.cards = [self.cards arrayByAddingObject:card];
 }
 
+- (void)removeCards:(NSArray *)cards {
+  NSMutableArray *newCards = [NSMutableArray arrayWithArray:self.cards];
+  
+  NSArray *newNewCards = [newCards keepIf:^BOOL(id object){
+    return ![cards includes:object];
+  }];
+  
+  self.cards = newNewCards;
+}
+
 @end

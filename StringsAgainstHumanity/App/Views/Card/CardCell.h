@@ -20,5 +20,7 @@
 + (CGSize)size;
 
 - (void)configureForCard:(Card *)card;
+- (void)showSelectedState;
+- (void)showDeselectedState;
 
 @end

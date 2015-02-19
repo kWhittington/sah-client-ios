@@ -12,6 +12,7 @@
 @interface CardCell ()
 
 @property(strong) Card *card;
+@property(weak, nonatomic) IBOutlet UIButton *button;
 
 @end
 
@@ -32,6 +33,7 @@
 - (void)configureForCard:(Card *)card {
   self.card = card;
 
+//  [self hideButton];
   [self refreshVariables];
 }
 
@@ -55,6 +57,28 @@
   UIView *selectedBackgroundView = [[UIView alloc] initWithFrame:self.bounds];
   selectedBackgroundView.backgroundColor = [UIColor greenColor];
   self.selectedBackgroundView = selectedBackgroundView;
+}
+
+- (void)hideButton {
+  NSLog(@"Button Hidden");
+  self.button.hidden = NO;
+}
+
+- (void)showButton {
+  self.button.hidden = NO;
+}
+
+- (void)showSelectedState {
+  NSLog(@"Selecte State Shown");
+//  [self showButton];
+  [self hideButton];
+}
+
+- (void)showDeselectedState {
+  [self hideButton];
+}
+
+- (IBAction)buttonPressed:(UIButton *)sender {
 }
 
 @end

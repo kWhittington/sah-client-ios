@@ -14,4 +14,6 @@
 
 + (Hand *)testHand;
 
+- (void)removeCards:(NSArray *)cards;
+
 @end
