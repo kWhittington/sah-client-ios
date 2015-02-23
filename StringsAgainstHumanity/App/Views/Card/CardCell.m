@@ -18,6 +18,10 @@
 
 @implementation CardCell
 
++ (NSString *)reusableID {
+  return @"CardCell";
+}
+
 + (NSNumber *)width {
   return @340;
 }
@@ -33,7 +37,7 @@
 - (void)configureForCard:(Card *)card {
   self.card = card;
 
-//  [self hideButton];
+  //  [self hideButton];
   [self refreshVariables];
 }
 
@@ -70,7 +74,7 @@
 
 - (void)showSelectedState {
   NSLog(@"Selecte State Shown");
-//  [self showButton];
+  //  [self showButton];
   [self hideButton];
 }
 

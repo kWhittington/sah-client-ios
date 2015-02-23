@@ -11,7 +11,7 @@
 
 @interface Hand ()
 
-@property NSArray *cards;
+@property NSMutableArray *mutableCards;
 
 @end
 
@@ -20,7 +20,7 @@
 + (Hand *)testHand {
   Hand *testHand = [[Hand alloc] init];
 
-  [@3 timesWithIndex:^(NSUInteger index) {
+  [@5 timesWithIndex:^(NSUInteger index) {
     NSNumber *number = [NSNumber numberWithUnsignedInteger:index];
 
     NSString *string = NSStringWithFormat(@"Card #%@ text.", number);
@@ -42,19 +42,31 @@
 }
 
 - (void)initCards {
-  self.cards = [[NSArray alloc] init];
+  self.mutableCards = [[NSMutableArray alloc] init];
+}
+
+- (NSArray *)cards {
+  return [self.mutableCards copy];
+}
+
+- (Card *)cardAtIndex:(NSUInteger)index {
+  return self.mutableCards[index];
 }
 
 - (void)addCard:(Card *)card {
-  self.cards = [self.cards arrayByAddingObject:card];
+  [self.mutableCards push:card];
+}
+
+- (void)removeCardAtIndex:(NSUInteger)index {
+  [self.mutableCards removeObjectAtIndex:index];
+}
+
+- (void)removeCard:(Card *)card {
+  [self.mutableCards removeObject:card];
 }
 
 - (void)removeCards:(NSArray *)cards {
-  NSMutableArray *newCards = [NSMutableArray arrayWithArray:self.cards];
-
-  NSArray *newNewCards = [newCards keepIf:^BOOL(id object) { return ![cards includes:object]; }];
-
-  self.cards = newNewCards;
+  [self.mutableCards removeObjectsInArray:cards];
 }
 
 - (NSUInteger)size {

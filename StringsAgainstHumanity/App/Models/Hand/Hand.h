@@ -16,7 +16,10 @@
 
 + (Hand *)testHand;
 
+- (Card *)cardAtIndex:(NSUInteger)index;
 - (void)addCard:(Card *)card;
+- (void)removeCardAtIndex:(NSUInteger)index;
+- (void)removeCard:(Card *)card;
 - (void)removeCards:(NSArray *)cards;
 - (NSUInteger)size;
 

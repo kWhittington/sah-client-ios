@@ -12,63 +12,17 @@
 #import "CardCell.h"
 #import "ZoomInHandLayout.h"
 #import "BirdsEyeHandLayout.h"
+#import "HandViewDataSource.h"
 
 @interface HandController ()
 
-@property(strong) Hand *hand;
 @property(strong) BirdsEyeHandLayout *birdsEyeLayout;
-@property(strong, nonatomic) IBOutlet UITapGestureRecognizer *tapRecognizer;
-@property(strong) CardCell *selectedCell;
+@property(weak, readonly) NSArray *selectedCells;
+@property(strong) HandViewDataSource *handViewDataSource;
 
 @end
 
 @implementation HandController
-- (IBAction)swipeUp:(UISwipeGestureRecognizer *)sender {
-  NSLog(@"Swipe Up");
-
-  [self playSelectedCards];
-}
-
-- (void)playSelectedCards {
-  NSLog(@"Play %@", self.selectedCell.card.string);
-  [self removeSelectedCards];
-}
-
-- (void)removeSelectedCards {
-  //  TODO
-  //  Figure out if performBatchUpdates:completion: is needed.
-  //  [self.collectionView performBatchUpdates:^{
-  NSArray *itemPaths = [self.collectionView indexPathsForSelectedItems];
-  [self deleteCardsFromDataSourceAtIndexPaths:itemPaths];
-  [self.collectionView deleteItemsAtIndexPaths:itemPaths];
-  //  } completion:nil];
-}
-
-- (void)deleteCardsFromDataSourceAtIndexPaths:(NSArray *)indexPaths {
-  NSArray *cards = [self cardsAtIndexPaths:indexPaths];
-
-  [self.hand removeCards:cards];
-}
-
-- (NSArray *)cardsAtIndexPaths:(NSArray *)indexPaths {
-  NSMutableArray *cards = [[NSMutableArray alloc] init];
-
-  [indexPaths each:^(id indexPath) {
-    Card *card = [self collectionView:self.collectionView cardAtIndexPath:indexPath];
-    [cards addObject:card];
-  }];
-
-  return [cards copy];
-}
-
-- (BOOL)hasSelectedCell {
-  if (self.selectedCell) {
-    return true;
-  }
-  return false;
-}
-
-static NSString *const reuseIdentifier = @"Cell";
 static NSString *const cardIdentifier = @"CardCell";
 
 - (void)viewDidLoad {
@@ -78,16 +32,11 @@ static NSString *const cardIdentifier = @"CardCell";
   //  self.clearsSelectionOnViewWillAppear = NO;
 
   // Register cell classes
-  [self.collectionView registerClass:[UICollectionViewCell class]
-          forCellWithReuseIdentifier:reuseIdentifier];
-  [self initHand];
   [self initLayouts];
+  self.handViewDataSource = [[HandViewDataSource alloc] init];
+  self.collectionView.dataSource = self.handViewDataSource;
 
   // Do any additional setup after loading the view.
-}
-
-- (void)initHand {
-  self.hand = [Hand testHand];
 }
 
 - (void)initLayouts {
@@ -112,44 +61,40 @@ navigation
 }
 */
 
-#pragma mark <UICollectionViewDataSource>
+- (IBAction)swipeUp:(UISwipeGestureRecognizer *)sender {
+  NSLog(@"Swipe Up");
 
-// Apple Doc:
-// https://developer.apple.com/library/ios/documentation/WindowsViews/Conceptual/CollectionViewPGforIOS/CollectionViewPGforIOS.pdf
-// If there will only be one section, numberOfSectionsInCollectionView is
-// optional.
-//- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
-//  return 0;
-//}
-
-- (NSInteger)collectionView:(UICollectionView *)collectionView
-     numberOfItemsInSection:(NSInteger)section {
-  return [self.hand size];
+  [self playSelectedCards];
 }
 
-- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView
-                  cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-  return [self collectionView:collectionView cardCellForItemAtIndexPath:indexPath];
+- (void)playSelectedCards {
+  [self.selectedCards each:^(Card *selectedCard) {
+    NSLog(@"Play %@", selectedCard.string);
+  }];
+
+  [self removeSelectedCards];
 }
 
-- (CardCell *)collectionView:(UICollectionView *)collectionView
-  cardCellForItemAtIndexPath:(NSIndexPath *)indexPath {
-  CardCell *cardCell =
-    [collectionView dequeueReusableCellWithReuseIdentifier:cardIdentifier forIndexPath:indexPath];
+- (void)removeSelectedCards {
+  //  TODO
+  //  Figure out if performBatchUpdates:completion: is needed.
+  //  [self.collectionView performBatchUpdates:^{
+  NSArray *itemPaths = [self.collectionView indexPathsForSelectedItems];
+  [self.handViewDataSource deleteCardsAtIndexPaths:itemPaths];
+  [self.collectionView deleteItemsAtIndexPaths:itemPaths];
+  //  } completion:nil];
+}
 
-  // Configure the cell
-  Card *card = [self.hand.cards objectAtIndex:indexPath.row];
-
-  [cardCell configureForCard:card];
-
-  return cardCell;
+- (NSArray *)selectedCards {
+  return
+    [self.handViewDataSource cardsAtIndexPaths:[self.collectionView indexPathsForSelectedItems]];
 }
 
 #pragma mark <UICollectionViewDelegate>
 - (void)collectionView:(UICollectionView *)collectionView
   didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-  CardCell *cell = [self collectionView:collectionView cardCellForItemAtIndexPath:indexPath];
-  self.selectedCell = cell;
+  CardCell *cell =
+    [self.handViewDataSource collectionView:collectionView cardCellForItemAtIndexPath:indexPath];
 
   NSLog(@"Selected Cell: %@", cell.card.string);
 }
@@ -181,7 +126,6 @@ navigation
 //- (BOOL)collectionView:(UICollectionView *)collectionView
 //    shouldSelectItemAtIndexPath:(NSIndexPath *)indexPath {
 //  NSLog(@"Should Select");
-//  return YES;
 //}
 
 //- (void)collectionView:(UICollectionView *)collectionView
@@ -192,18 +136,8 @@ navigation
 
 - (void)collectionView:(UICollectionView *)collectionView
   didDeselectItemAtIndexPath:(NSIndexPath *)indexPath {
-  Card *card = [self collectionView:collectionView cardAtIndexPath:indexPath];
+  Card *card = [self.handViewDataSource cardAtIndexPath:indexPath];
   NSLog(@"Did Deselect, '%@'.", card.string);
-
-  self.selectedCell = nil;
-}
-
-- (Card *)collectionView:(UICollectionView *)collectionView
-         cardAtIndexPath:(NSIndexPath *)indexPath {
-  CardCell *cardCell = [self collectionView:collectionView cardCellForItemAtIndexPath:indexPath];
-  Card *card = cardCell.card;
-
-  return card;
 }
 
 // Uncomment these methods to specify if an action menu should be displayed for the specified item,

@@ -1,6 +1,8 @@
 #import <XCTest/XCTest.h>
-
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wdeprecated-declarations"
 @interface SPTReporter : XCTestLog
+#pragma clang diagnostic pop
 
 /*
  * Returns a singleton reporter used to generate Specta's test output.

@@ -9,6 +9,13 @@
 #import "BirdsEyeHandLayout.h"
 #import "CardCell.h"
 
+@interface BirdsEyeHandLayout ()
+
+@property NSArray *updateActionDeleteItems;
+@property(weak, readonly) NSArray *updateActionDeleteItemIndexPaths;
+
+@end
+
 @implementation BirdsEyeHandLayout
 
 - (instancetype)init {
@@ -22,6 +29,11 @@
 - (void)awakeFromNib {
   [super awakeFromNib];
   [self refresh];
+}
+
+- (NSArray *)updateActionDeleteItemIndexPaths {
+  return [self.updateActionDeleteItems
+    map:^(UICollectionViewUpdateItem *updateItem) { return updateItem.indexPathBeforeUpdate; }];
 }
 
 - (void)refresh {
@@ -59,16 +71,46 @@
   self.sectionInset = UIEdgeInsetsMake(topInset, leftInset, bottomInset, rightInset);
 }
 
+- (void)prepareForCollectionViewUpdates:(NSArray *)updateItems {
+  [super prepareForCollectionViewUpdates:updateItems];
+
+  [self cacheUpdateActionItems:updateItems];
+}
+
+- (void)cacheUpdateActionItems:(NSArray *)updateItems {
+  [self cacheUpdateActionDeleteItems:updateItems];
+}
+
+- (void)cacheUpdateActionDeleteItems:(NSArray *)updateItems {
+  self.updateActionDeleteItems = [updateItems select:^BOOL(UICollectionViewUpdateItem *updateItem) {
+    return updateItem.updateAction == UICollectionUpdateActionDelete;
+  }];
+}
+
 - (UICollectionViewLayoutAttributes *)finalLayoutAttributesForDisappearingItemAtIndexPath:
-                                          (NSIndexPath *)itemIndexPath {
+                                        (NSIndexPath *)itemIndexPath {
   UICollectionViewLayoutAttributes *attributes =
-      [super finalLayoutAttributesForDisappearingItemAtIndexPath:itemIndexPath];
-  
-  CGAffineTransform transform =
-      CGAffineTransformMakeTranslation(0, -self.collectionView.bounds.size.height);
-  attributes.transform = transform;
+    [super finalLayoutAttributesForDisappearingItemAtIndexPath:itemIndexPath];
+
+  if ([self indexPathBeingDeleted:itemIndexPath]) {
+    attributes = [self configureForDeletion:attributes];
+  }
 
   return attributes;
+}
+
+- (BOOL)indexPathBeingDeleted:(NSIndexPath *)indexPath {
+  return [self.updateActionDeleteItemIndexPaths includes:indexPath];
+}
+
+- (UICollectionViewLayoutAttributes *)configureForDeletion:
+                                        (UICollectionViewLayoutAttributes *)attributes {
+  UICollectionViewLayoutAttributes *deletionAttributes = [attributes copy];
+
+  deletionAttributes.transform =
+    CGAffineTransformMakeTranslation(0, -self.collectionView.bounds.size.height);
+
+  return deletionAttributes;
 }
 
 @end

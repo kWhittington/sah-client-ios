@@ -15,6 +15,7 @@
 @property(readonly, strong) Card *card;
 @property(weak, nonatomic) IBOutlet UILabel *label;
 
++ (NSString *)reusableID;
 + (NSNumber *)width;
 + (NSNumber *)height;
 + (CGSize)size;

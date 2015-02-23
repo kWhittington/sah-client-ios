@@ -9,7 +9,10 @@ static void spt_swizzleInstanceMethod(Class class, SEL originalSelector, SEL swi
   method_exchangeImplementations(originalMethod, swizzledMethod);
 }
 
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wdeprecated-declarations"
 @implementation XCTestLog (Specta)
+#pragma clang diagnostic pop
 
 + (void)load {
   spt_swizzleInstanceMethod(self, @selector(startObserving), @selector(XCTestLog_startObserving));

@@ -8,121 +8,101 @@
 		<dict>
 			<key>isShown</key>
 			<false/>
-			<key>orderHint</key>
-			<integer>2</integer>
 		</dict>
 		<key>Pods-CocoaLumberjack.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
-			<key>orderHint</key>
-			<integer>3</integer>
 		</dict>
 		<key>Pods-ObjectiveSugar.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
-			<key>orderHint</key>
-			<integer>4</integer>
 		</dict>
 		<key>Pods-StringsAgainstHumanityTests-Expecta.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
-			<key>orderHint</key>
-			<integer>7</integer>
 		</dict>
 		<key>Pods-StringsAgainstHumanityTests-OCHamcrest.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
-			<key>orderHint</key>
-			<integer>8</integer>
 		</dict>
 		<key>Pods-StringsAgainstHumanityTests-OCMockito.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
-			<key>orderHint</key>
-			<integer>9</integer>
 		</dict>
 		<key>Pods-StringsAgainstHumanityTests-Specta.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
-			<key>orderHint</key>
-			<integer>10</integer>
 		</dict>
 		<key>Pods-StringsAgainstHumanityTests.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
-			<key>orderHint</key>
-			<integer>6</integer>
 		</dict>
 		<key>Pods-pop.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
-			<key>orderHint</key>
-			<integer>5</integer>
 		</dict>
 		<key>Pods.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
-			<key>orderHint</key>
-			<integer>1</integer>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>0DB85BA5EB4FD1B23AB7FEF1</key>
+		<key>0E2BEF276C0D0CA6B51793AD</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>3345E6984D43B93D8C47C8DE</key>
+		<key>179006D3B7A30B54075CDD69</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>3B346B87231AD688CDEDBF83</key>
+		<key>2CE129EF084D9A34EBA9457B</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>4429B092368E6CC00BA0B587</key>
+		<key>615F5BD5349AFE4C96581E2D</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>553BF9394777BF4B77E20FE5</key>
+		<key>64A124FBC8356077E683064E</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>65A1996490A8B4761C59A504</key>
+		<key>864D96A42004BD6E005E4BED</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>7BD279747768DB0752FB45B4</key>
+		<key>CA10FE732BFA7138B55793ED</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>A1975F4FB59D29B1120AF920</key>
+		<key>CC6360582FA5F9C9449DE1CD</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>D310A9754DA6164969CA979A</key>
+		<key>CD6401F5C07C2930EDAC2FC7</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>F2CB07257138068317183146</key>
+		<key>E6F5279AC098233766761F71</key>
 		<dict>
 			<key>primary</key>
 			<true/>

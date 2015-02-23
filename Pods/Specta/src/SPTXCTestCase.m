@@ -80,7 +80,8 @@
   [[NSThread currentThread] threadDictionary][SPTCurrentSpecKey] = spec;
 }
 
-- (void)spt_defineSpec {}
+- (void)spt_defineSpec {
+}
 
 - (void)spt_unsetCurrentSpec {
   [[[NSThread currentThread] threadDictionary] removeObjectForKey:SPTCurrentSpecKey];
@@ -114,8 +115,10 @@
 
 + (NSArray *)testInvocations {
   NSMutableArray *invocations = [NSMutableArray array];
-  for(NSUInteger i = 0; i < [[self spt_spec].compiledExamples count]; i ++) {
-    NSInvocation *invocation = [NSInvocation invocationWithMethodSignature:[self instanceMethodSignatureForSelector:@selector(spt_runExampleAtIndex:)]];
+  for (NSUInteger i = 0; i < [[self spt_spec].compiledExamples count]; i++) {
+    NSInvocation *invocation =
+      [NSInvocation invocationWithMethodSignature:
+                      [self instanceMethodSignatureForSelector:@selector(spt_runExampleAtIndex:)]];
     NSUInteger j = i;
     [invocation setSelector:@selector(spt_runExampleAtIndex:)];
     [invocation setArgument:&j atIndex:2];
@@ -132,14 +135,28 @@
 - (NSString *)name {
   NSString *specName = NSStringFromClass([self class]);
   SPTExample *compiledExample = [self spt_getCurrentExample];
-  NSCharacterSet *charSet = [NSCharacterSet characterSetWithCharactersInString:@"abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789_"];
-  NSString *exampleName = [[compiledExample.name componentsSeparatedByCharactersInSet:[charSet invertedSet]] componentsJoinedByString:@"_"];
+  NSCharacterSet *charSet =
+    [NSCharacterSet characterSetWithCharactersInString:
+                      @"abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789_"];
+  NSString *exampleName =
+    [[compiledExample.name componentsSeparatedByCharactersInSet:[charSet invertedSet]]
+      componentsJoinedByString:@"_"];
   return [NSString stringWithFormat:@"-[%@ %@]", specName, exampleName];
 }
 
-- (void)recordFailureWithDescription:(NSString *)description inFile:(NSString *)filename atLine:(NSUInteger)lineNumber expected:(BOOL)expected {
+- (void)recordFailureWithDescription:(NSString *)description
+                              inFile:(NSString *)filename
+                              atLine:(NSUInteger)lineNumber
+                            expected:(BOOL)expected {
   SPTXCTestCase *currentTestCase = SPTCurrentTestCase;
-  [currentTestCase.spt_run recordFailureInTest:currentTestCase withDescription:description inFile:filename atLine:lineNumber expected:expected];
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wdeprecated-declarations"
+  [currentTestCase.spt_run recordFailureInTest:currentTestCase
+                               withDescription:description
+                                        inFile:filename
+                                        atLine:lineNumber
+                                      expected:expected];
+#pragma clang diagnostic pop
 }
 
 - (void)performTest:(XCTestRun *)run {
