@@ -4,32 +4,42 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>Pods-Canvas.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-CocoaLumberjack.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-ObjectiveSugar.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Pods-StringsAgainstHumanityTests-Expecta.xcscheme</key>
+		<key>Pods-StringsAgainstHumanityTests-FactoryGentleman.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Pods-StringsAgainstHumanityTests-OCHamcrest.xcscheme</key>
+		<key>Pods-StringsAgainstHumanityTests-Gizou.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Pods-StringsAgainstHumanityTests-OCMockito.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>Pods-StringsAgainstHumanityTests-Specta.xcscheme</key>
+		<key>Pods-StringsAgainstHumanityTests-Kiwi.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
 		<key>Pods-StringsAgainstHumanityTests.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-pop.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -42,37 +52,47 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>0B0C88AB57A98968AC65F0B5</key>
+		<key>2FA05D81B5689805AD4518FF</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>4C26CC806AE4B1104E777116</key>
+		<key>5C6BBE7DCF9FD17F516FC5E9</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>5AB46DB980043C5ECCDE67F8</key>
+		<key>7233CEFEBCF025949BC9006C</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>793709DBD09B3CBA7FB03E35</key>
+		<key>99CF0085E30D84A812083138</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>7939E651B2C46EA7162C8FBB</key>
+		<key>BBF658869AAF84A7AD7D4F60</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>B0A7DC3ED74DF340EE927EAC</key>
+		<key>E202C52AC24047C7F6D880B3</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>F0BA673A1D58564E01423540</key>
+		<key>E443357A66C7D13F91A2DD66</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>F2675F50694C99747BC2ED32</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>F53B373EC27238DD62E182CD</key>
 		<dict>
 			<key>primary</key>
 			<true/>

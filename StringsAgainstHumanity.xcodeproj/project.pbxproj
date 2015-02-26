@@ -9,17 +9,28 @@
 /* Begin PBXBuildFile section */
 		1FB7B8582F123D763BF70EBB /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F6AB522281E428AFA232B517 /* libPods.a */; };
 		9E90AAB947D23AB961ED1298 /* libPods-StringsAgainstHumanityTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A27D956F47919DE0B0728BFE /* libPods-StringsAgainstHumanityTests.a */; };
+		AD07A4761A9FAB280047B1B2 /* HandViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = AD07A4751A9FAB280047B1B2 /* HandViewDataSource.m */; };
+		AD08B1FD1A97A56500A54439 /* HandView.m in Sources */ = {isa = PBXBuildFile; fileRef = AD08B1FC1A97A56500A54439 /* HandView.m */; };
+		AD1C3E061A8450F10001C833 /* _clang-format in Resources */ = {isa = PBXBuildFile; fileRef = AD1C3E051A8450F10001C833 /* _clang-format */; };
 		AD518EEE1A8400BF00FA6CFF /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = AD518EEC1A8400BF00FA6CFF /* Podfile */; };
 		AD518EEF1A8400BF00FA6CFF /* uncrustify.cfg in Resources */ = {isa = PBXBuildFile; fileRef = AD518EED1A8400BF00FA6CFF /* uncrustify.cfg */; };
 		AD6272EF1A8341D000565A28 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AD6272EE1A8341D000565A28 /* main.m */; };
-		AD6272F21A8341D000565A28 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AD6272F11A8341D000565A28 /* AppDelegate.m */; };
-		AD6272F51A8341D000565A28 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD6272F41A8341D000565A28 /* RootViewController.m */; };
-		AD6272F81A8341D000565A28 /* DataViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD6272F71A8341D000565A28 /* DataViewController.m */; };
-		AD6272FB1A8341D000565A28 /* ModelController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD6272FA1A8341D000565A28 /* ModelController.m */; };
-		AD6272FE1A8341D000565A28 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD6272FC1A8341D000565A28 /* Main.storyboard */; };
-		AD6273001A8341D000565A28 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AD6272FF1A8341D000565A28 /* Images.xcassets */; };
-		AD6273031A8341D100565A28 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD6273011A8341D100565A28 /* LaunchScreen.xib */; };
-		AD62730F1A8341D100565A28 /* StringsAgainstHumanityTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AD62730E1A8341D100565A28 /* StringsAgainstHumanityTests.m */; };
+		AD6D77851A9E5D9D000FB386 /* CardSpecHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = AD6D77841A9E5D9D000FB386 /* CardSpecHelper.m */; };
+		AD71F5921A9C049F0077BE8B /* CardFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = AD71F5911A9C049F0077BE8B /* CardFactory.m */; };
+		AD71F5951A9C11A70077BE8B /* HandFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = AD71F5941A9C11A70077BE8B /* HandFactory.m */; };
+		AD7C84DF1A95B34D00A2DE02 /* CardSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = AD7C84DE1A95B34D00A2DE02 /* CardSpec.m */; };
+		ADABB3F51A9A490B0092B717 /* HandViewDataSourceSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = ADABB3F41A9A490B0092B717 /* HandViewDataSourceSpec.m */; };
+		ADBB71B61A9D12890030D7AF /* HandSpecHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = ADBB71B51A9D12890030D7AF /* HandSpecHelper.m */; };
+		ADBF7F901A910CE300C5BB00 /* HandController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADBF7F8F1A910CE300C5BB00 /* HandController.m */; };
+		ADBF7F931A910E2800C5BB00 /* Hand.m in Sources */ = {isa = PBXBuildFile; fileRef = ADBF7F921A910E2800C5BB00 /* Hand.m */; };
+		ADBF7F981A91171A00C5BB00 /* Card.m in Sources */ = {isa = PBXBuildFile; fileRef = ADBF7F971A91171A00C5BB00 /* Card.m */; };
+		ADBF7F9F1A913FE200C5BB00 /* CardCell.m in Sources */ = {isa = PBXBuildFile; fileRef = ADBF7F9E1A913FE200C5BB00 /* CardCell.m */; };
+		ADBF7FA71A914D4D00C5BB00 /* BirdsEyeHandLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = ADBF7FA61A914D4D00C5BB00 /* BirdsEyeHandLayout.m */; };
+		ADBF7FAA1A91661500C5BB00 /* ZoomInHandLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = ADBF7FA91A91661500C5BB00 /* ZoomInHandLayout.m */; };
+		ADDE7F891A9C33C700E232EC /* HandSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = ADDE7F881A9C33C700E232EC /* HandSpec.m */; };
+		ADE4A6A91A84410A008CB5D2 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = ADE4A6A51A84410A008CB5D2 /* LaunchScreen.xib */; };
+		ADE4A6AA1A84410A008CB5D2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ADE4A6A71A84410A008CB5D2 /* Main.storyboard */; };
+		ADE4A6B61A844121008CB5D2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = ADE4A6B51A844121008CB5D2 /* AppDelegate.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,25 +47,44 @@
 		488A2ED7BBC2DFE7121B1695 /* Pods-StringsAgainstHumanityTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StringsAgainstHumanityTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-StringsAgainstHumanityTests/Pods-StringsAgainstHumanityTests.release.xcconfig"; sourceTree = "<group>"; };
 		6236D6D5255475ACBCF7474D /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		A27D956F47919DE0B0728BFE /* libPods-StringsAgainstHumanityTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-StringsAgainstHumanityTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AD07A4741A9FAB280047B1B2 /* HandViewDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HandViewDataSource.h; path = App/DataSources/Hand/HandViewDataSource.h; sourceTree = "<group>"; };
+		AD07A4751A9FAB280047B1B2 /* HandViewDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HandViewDataSource.m; path = App/DataSources/Hand/HandViewDataSource.m; sourceTree = "<group>"; };
+		AD08B1FB1A97A56500A54439 /* HandView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HandView.h; path = App/Views/Hand/HandView.h; sourceTree = "<group>"; };
+		AD08B1FC1A97A56500A54439 /* HandView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HandView.m; path = App/Views/Hand/HandView.m; sourceTree = "<group>"; };
+		AD1C3E051A8450F10001C833 /* _clang-format */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "_clang-format"; sourceTree = SOURCE_ROOT; };
 		AD518EEC1A8400BF00FA6CFF /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		AD518EED1A8400BF00FA6CFF /* uncrustify.cfg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = uncrustify.cfg; sourceTree = SOURCE_ROOT; };
+		AD518EED1A8400BF00FA6CFF /* uncrustify.cfg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = uncrustify.cfg; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		AD6272E91A8341D000565A28 /* StringsAgainstHumanity.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StringsAgainstHumanity.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD6272ED1A8341D000565A28 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AD6272EE1A8341D000565A28 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		AD6272F01A8341D000565A28 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		AD6272F11A8341D000565A28 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		AD6272F31A8341D000565A28 /* RootViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
-		AD6272F41A8341D000565A28 /* RootViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
-		AD6272F61A8341D000565A28 /* DataViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DataViewController.h; sourceTree = "<group>"; };
-		AD6272F71A8341D000565A28 /* DataViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DataViewController.m; sourceTree = "<group>"; };
-		AD6272F91A8341D000565A28 /* ModelController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ModelController.h; sourceTree = "<group>"; };
-		AD6272FA1A8341D000565A28 /* ModelController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ModelController.m; sourceTree = "<group>"; };
-		AD6272FD1A8341D000565A28 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		AD6272FF1A8341D000565A28 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		AD6273021A8341D100565A28 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		AD6273081A8341D100565A28 /* StringsAgainstHumanityTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StringsAgainstHumanityTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD62730D1A8341D100565A28 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		AD62730E1A8341D100565A28 /* StringsAgainstHumanityTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StringsAgainstHumanityTests.m; sourceTree = "<group>"; };
+		AD6D77841A9E5D9D000FB386 /* CardSpecHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CardSpecHelper.m; path = Helpers/Models/Card/CardSpecHelper.m; sourceTree = "<group>"; };
+		AD71F58D1A9BFF340077BE8B /* FactoryLibraries.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FactoryLibraries.pch; path = "Supporting Files/FactoryLibraries.pch"; sourceTree = "<group>"; };
+		AD71F5911A9C049F0077BE8B /* CardFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CardFactory.m; path = Factories/Models/Card/CardFactory.m; sourceTree = "<group>"; };
+		AD71F5931A9C09820077BE8B /* TestLibraries.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TestLibraries.pch; path = "Supporting Files/TestLibraries.pch"; sourceTree = "<group>"; };
+		AD71F5941A9C11A70077BE8B /* HandFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HandFactory.m; path = Factories/Models/Hand/HandFactory.m; sourceTree = "<group>"; };
+		AD7C84DE1A95B34D00A2DE02 /* CardSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CardSpec.m; path = Models/Card/CardSpec.m; sourceTree = "<group>"; };
+		ADABB3F41A9A490B0092B717 /* HandViewDataSourceSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HandViewDataSourceSpec.m; path = Models/Hand/HandViewDataSourceSpec.m; sourceTree = "<group>"; };
+		ADBB71B51A9D12890030D7AF /* HandSpecHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HandSpecHelper.m; path = Helpers/Models/HandSpecHelper.m; sourceTree = "<group>"; };
+		ADBF7F8E1A910CE300C5BB00 /* HandController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HandController.h; path = App/Controllers/Hand/HandController.h; sourceTree = "<group>"; };
+		ADBF7F8F1A910CE300C5BB00 /* HandController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HandController.m; path = App/Controllers/Hand/HandController.m; sourceTree = "<group>"; };
+		ADBF7F911A910E2800C5BB00 /* Hand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Hand.h; path = App/Models/Hand/Hand.h; sourceTree = "<group>"; };
+		ADBF7F921A910E2800C5BB00 /* Hand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Hand.m; path = App/Models/Hand/Hand.m; sourceTree = "<group>"; };
+		ADBF7F951A91120100C5BB00 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		ADBF7F961A91171A00C5BB00 /* Card.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Card.h; path = App/Models/Card/Card.h; sourceTree = "<group>"; };
+		ADBF7F971A91171A00C5BB00 /* Card.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Card.m; path = App/Models/Card/Card.m; sourceTree = "<group>"; };
+		ADBF7F9D1A913FE200C5BB00 /* CardCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CardCell.h; path = App/Views/Card/CardCell.h; sourceTree = "<group>"; };
+		ADBF7F9E1A913FE200C5BB00 /* CardCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CardCell.m; path = App/Views/Card/CardCell.m; sourceTree = "<group>"; };
+		ADBF7FA51A914D4D00C5BB00 /* BirdsEyeHandLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BirdsEyeHandLayout.h; path = App/Layouts/Hand/BirdsEyeHandLayout.h; sourceTree = "<group>"; };
+		ADBF7FA61A914D4D00C5BB00 /* BirdsEyeHandLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BirdsEyeHandLayout.m; path = App/Layouts/Hand/BirdsEyeHandLayout.m; sourceTree = "<group>"; };
+		ADBF7FA81A91661500C5BB00 /* ZoomInHandLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZoomInHandLayout.h; path = App/Layouts/Hand/ZoomInHandLayout.h; sourceTree = "<group>"; };
+		ADBF7FA91A91661500C5BB00 /* ZoomInHandLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ZoomInHandLayout.m; path = App/Layouts/Hand/ZoomInHandLayout.m; sourceTree = "<group>"; };
+		ADDE7F881A9C33C700E232EC /* HandSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HandSpec.m; path = Models/Hand/HandSpec.m; sourceTree = "<group>"; };
+		ADE4A6A61A84410A008CB5D2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = App/Views/Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		ADE4A6A81A84410A008CB5D2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = App/Views/Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		ADE4A6B41A844121008CB5D2 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = "App/App Delegate/AppDelegate.h"; sourceTree = "<group>"; };
+		ADE4A6B51A844121008CB5D2 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = "App/App Delegate/AppDelegate.m"; sourceTree = "<group>"; };
 		ADF0A6441A8417EE0014C1A3 /* test_header.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = test_header.pch; path = "Supporting Files/test_header.pch"; sourceTree = "<group>"; };
 		B02303BEBE5C23E0A1410243 /* Pods-StringsAgainstHumanityTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StringsAgainstHumanityTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-StringsAgainstHumanityTests/Pods-StringsAgainstHumanityTests.debug.xcconfig"; sourceTree = "<group>"; };
 		B7ADE5E423D28076F6E18920 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
@@ -90,12 +120,39 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		AD07A4721A9FAA2D0047B1B2 /* DataSources */ = {
+			isa = PBXGroup;
+			children = (
+				AD07A4731A9FAAF40047B1B2 /* Hand */,
+			);
+			name = DataSources;
+			sourceTree = "<group>";
+		};
+		AD07A4731A9FAAF40047B1B2 /* Hand */ = {
+			isa = PBXGroup;
+			children = (
+				AD07A4741A9FAB280047B1B2 /* HandViewDataSource.h */,
+				AD07A4751A9FAB280047B1B2 /* HandViewDataSource.m */,
+			);
+			name = Hand;
+			sourceTree = "<group>";
+		};
+		AD08B1FA1A97A4D400A54439 /* Hand */ = {
+			isa = PBXGroup;
+			children = (
+				AD08B1FB1A97A56500A54439 /* HandView.h */,
+				AD08B1FC1A97A56500A54439 /* HandView.m */,
+			);
+			name = Hand;
+			sourceTree = "<group>";
+		};
 		AD518EE41A83FEE500FA6CFF /* App */ = {
 			isa = PBXGroup;
 			children = (
 				AD518EE51A83FEEE00FA6CFF /* AppDelegate */,
 				AD518EE61A83FEF500FA6CFF /* Controllers */,
-				AD6272FF1A8341D000565A28 /* Images.xcassets */,
+				AD07A4721A9FAA2D0047B1B2 /* DataSources */,
+				ADBF7FA01A914C8300C5BB00 /* Layouts */,
 				AD518EE71A83FF0300FA6CFF /* Models */,
 				AD518EE91A83FF0F00FA6CFF /* Protocols */,
 				AD518EE81A83FF0700FA6CFF /* Views */,
@@ -106,8 +163,8 @@
 		AD518EE51A83FEEE00FA6CFF /* AppDelegate */ = {
 			isa = PBXGroup;
 			children = (
-				AD6272F01A8341D000565A28 /* AppDelegate.h */,
-				AD6272F11A8341D000565A28 /* AppDelegate.m */,
+				ADE4A6B41A844121008CB5D2 /* AppDelegate.h */,
+				ADE4A6B51A844121008CB5D2 /* AppDelegate.m */,
 			);
 			name = AppDelegate;
 			sourceTree = "<group>";
@@ -115,12 +172,8 @@
 		AD518EE61A83FEF500FA6CFF /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				AD6272F61A8341D000565A28 /* DataViewController.h */,
-				AD6272F71A8341D000565A28 /* DataViewController.m */,
-				AD6272F91A8341D000565A28 /* ModelController.h */,
-				AD6272FA1A8341D000565A28 /* ModelController.m */,
-				AD6272F31A8341D000565A28 /* RootViewController.h */,
-				AD6272F41A8341D000565A28 /* RootViewController.m */,
+				ADBF7F9B1A913DFA00C5BB00 /* Card */,
+				ADBF7F8D1A9105A100C5BB00 /* Hand */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -128,6 +181,8 @@
 		AD518EE71A83FF0300FA6CFF /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				ADBF7F941A910E2C00C5BB00 /* Hand */,
+				ADBF7F9A1A91172400C5BB00 /* Card */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -135,8 +190,10 @@
 		AD518EE81A83FF0700FA6CFF /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				AD6273011A8341D100565A28 /* LaunchScreen.xib */,
-				AD6272FC1A8341D000565A28 /* Main.storyboard */,
+				ADBF7F9C1A913F4700C5BB00 /* Card */,
+				AD08B1FA1A97A4D400A54439 /* Hand */,
+				ADE4A6A51A84410A008CB5D2 /* LaunchScreen.xib */,
+				ADE4A6A71A84410A008CB5D2 /* Main.storyboard */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -188,10 +245,12 @@
 		AD6272EC1A8341D000565A28 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				AD1C3E051A8450F10001C833 /* _clang-format */,
 				AD6272ED1A8341D000565A28 /* Info.plist */,
 				AD6272EE1A8341D000565A28 /* main.m */,
 				AD518EEC1A8400BF00FA6CFF /* Podfile */,
 				AD518EED1A8400BF00FA6CFF /* uncrustify.cfg */,
+				ADBF7F951A91120100C5BB00 /* PrefixHeader.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -199,7 +258,9 @@
 		AD62730B1A8341D100565A28 /* StringsAgainstHumanityTests */ = {
 			isa = PBXGroup;
 			children = (
-				AD62730E1A8341D100565A28 /* StringsAgainstHumanityTests.m */,
+				ADBB71B31A9D11DA0030D7AF /* Helpers */,
+				ADC2AC621A9BCD29008EF494 /* Factories */,
+				AD7C84DC1A95B32100A2DE02 /* Models */,
 				AD62730C1A8341D100565A28 /* Supporting Files */,
 			);
 			path = StringsAgainstHumanityTests;
@@ -210,8 +271,156 @@
 			children = (
 				AD62730D1A8341D100565A28 /* Info.plist */,
 				ADF0A6441A8417EE0014C1A3 /* test_header.pch */,
+				AD71F58D1A9BFF340077BE8B /* FactoryLibraries.pch */,
+				AD71F5931A9C09820077BE8B /* TestLibraries.pch */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		AD6D77831A9E5D7D000FB386 /* Card */ = {
+			isa = PBXGroup;
+			children = (
+				AD6D77841A9E5D9D000FB386 /* CardSpecHelper.m */,
+			);
+			name = Card;
+			sourceTree = "<group>";
+		};
+		AD71F58E1A9C01060077BE8B /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				AD71F5901A9C011E0077BE8B /* Card */,
+				AD71F58F1A9C01150077BE8B /* Hand */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		AD71F58F1A9C01150077BE8B /* Hand */ = {
+			isa = PBXGroup;
+			children = (
+				AD71F5941A9C11A70077BE8B /* HandFactory.m */,
+			);
+			name = Hand;
+			sourceTree = "<group>";
+		};
+		AD71F5901A9C011E0077BE8B /* Card */ = {
+			isa = PBXGroup;
+			children = (
+				AD71F5911A9C049F0077BE8B /* CardFactory.m */,
+			);
+			name = Card;
+			sourceTree = "<group>";
+		};
+		AD7C84DC1A95B32100A2DE02 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				AD7C84DD1A95B32B00A2DE02 /* Card */,
+				ADABB3F31A9A48D90092B717 /* Hand */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		AD7C84DD1A95B32B00A2DE02 /* Card */ = {
+			isa = PBXGroup;
+			children = (
+				AD7C84DE1A95B34D00A2DE02 /* CardSpec.m */,
+			);
+			name = Card;
+			sourceTree = "<group>";
+		};
+		ADABB3F31A9A48D90092B717 /* Hand */ = {
+			isa = PBXGroup;
+			children = (
+				ADABB3F41A9A490B0092B717 /* HandViewDataSourceSpec.m */,
+				ADDE7F881A9C33C700E232EC /* HandSpec.m */,
+			);
+			name = Hand;
+			sourceTree = "<group>";
+		};
+		ADBB71B31A9D11DA0030D7AF /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				ADBB71B41A9D12480030D7AF /* Models */,
+			);
+			name = Helpers;
+			sourceTree = "<group>";
+		};
+		ADBB71B41A9D12480030D7AF /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				AD6D77831A9E5D7D000FB386 /* Card */,
+				ADBB71B51A9D12890030D7AF /* HandSpecHelper.m */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		ADBF7F8D1A9105A100C5BB00 /* Hand */ = {
+			isa = PBXGroup;
+			children = (
+				ADBF7F8E1A910CE300C5BB00 /* HandController.h */,
+				ADBF7F8F1A910CE300C5BB00 /* HandController.m */,
+			);
+			name = Hand;
+			sourceTree = "<group>";
+		};
+		ADBF7F941A910E2C00C5BB00 /* Hand */ = {
+			isa = PBXGroup;
+			children = (
+				ADBF7F911A910E2800C5BB00 /* Hand.h */,
+				ADBF7F921A910E2800C5BB00 /* Hand.m */,
+			);
+			name = Hand;
+			sourceTree = "<group>";
+		};
+		ADBF7F9A1A91172400C5BB00 /* Card */ = {
+			isa = PBXGroup;
+			children = (
+				ADBF7F961A91171A00C5BB00 /* Card.h */,
+				ADBF7F971A91171A00C5BB00 /* Card.m */,
+			);
+			name = Card;
+			sourceTree = "<group>";
+		};
+		ADBF7F9B1A913DFA00C5BB00 /* Card */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Card;
+			sourceTree = "<group>";
+		};
+		ADBF7F9C1A913F4700C5BB00 /* Card */ = {
+			isa = PBXGroup;
+			children = (
+				ADBF7F9D1A913FE200C5BB00 /* CardCell.h */,
+				ADBF7F9E1A913FE200C5BB00 /* CardCell.m */,
+			);
+			name = Card;
+			sourceTree = "<group>";
+		};
+		ADBF7FA01A914C8300C5BB00 /* Layouts */ = {
+			isa = PBXGroup;
+			children = (
+				ADBF7FA41A914D1600C5BB00 /* Hand */,
+			);
+			name = Layouts;
+			sourceTree = "<group>";
+		};
+		ADBF7FA41A914D1600C5BB00 /* Hand */ = {
+			isa = PBXGroup;
+			children = (
+				ADBF7FA51A914D4D00C5BB00 /* BirdsEyeHandLayout.h */,
+				ADBF7FA61A914D4D00C5BB00 /* BirdsEyeHandLayout.m */,
+				ADBF7FA81A91661500C5BB00 /* ZoomInHandLayout.h */,
+				ADBF7FA91A91661500C5BB00 /* ZoomInHandLayout.m */,
+			);
+			name = Hand;
+			sourceTree = "<group>";
+		};
+		ADC2AC621A9BCD29008EF494 /* Factories */ = {
+			isa = PBXGroup;
+			children = (
+				AD71F58E1A9C01060077BE8B /* Models */,
+			);
+			name = Factories;
 			sourceTree = "<group>";
 		};
 		C4EB91360EE2B4394439E2DB /* Pods */ = {
@@ -278,6 +487,7 @@
 				TargetAttributes = {
 					AD6272E81A8341D000565A28 = {
 						CreatedOnToolsVersion = 6.1.1;
+						DevelopmentTeam = 3L2GAL35P5;
 					};
 					AD6273071A8341D100565A28 = {
 						CreatedOnToolsVersion = 6.1.1;
@@ -309,11 +519,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AD6272FE1A8341D000565A28 /* Main.storyboard in Resources */,
 				AD518EEF1A8400BF00FA6CFF /* uncrustify.cfg in Resources */,
-				AD6273031A8341D100565A28 /* LaunchScreen.xib in Resources */,
+				ADE4A6A91A84410A008CB5D2 /* LaunchScreen.xib in Resources */,
+				AD1C3E061A8450F10001C833 /* _clang-format in Resources */,
 				AD518EEE1A8400BF00FA6CFF /* Podfile in Resources */,
-				AD6273001A8341D000565A28 /* Images.xcassets in Resources */,
+				ADE4A6AA1A84410A008CB5D2 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -394,11 +604,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AD6272F81A8341D000565A28 /* DataViewController.m in Sources */,
-				AD6272F21A8341D000565A28 /* AppDelegate.m in Sources */,
-				AD6272FB1A8341D000565A28 /* ModelController.m in Sources */,
+				ADBF7FAA1A91661500C5BB00 /* ZoomInHandLayout.m in Sources */,
+				AD08B1FD1A97A56500A54439 /* HandView.m in Sources */,
+				ADBF7F901A910CE300C5BB00 /* HandController.m in Sources */,
+				ADBF7F981A91171A00C5BB00 /* Card.m in Sources */,
 				AD6272EF1A8341D000565A28 /* main.m in Sources */,
-				AD6272F51A8341D000565A28 /* RootViewController.m in Sources */,
+				ADBF7F931A910E2800C5BB00 /* Hand.m in Sources */,
+				ADBF7F9F1A913FE200C5BB00 /* CardCell.m in Sources */,
+				ADE4A6B61A844121008CB5D2 /* AppDelegate.m in Sources */,
+				AD07A4761A9FAB280047B1B2 /* HandViewDataSource.m in Sources */,
+				ADBF7FA71A914D4D00C5BB00 /* BirdsEyeHandLayout.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -406,7 +621,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AD62730F1A8341D100565A28 /* StringsAgainstHumanityTests.m in Sources */,
+				ADABB3F51A9A490B0092B717 /* HandViewDataSourceSpec.m in Sources */,
+				ADDE7F891A9C33C700E232EC /* HandSpec.m in Sources */,
+				AD7C84DF1A95B34D00A2DE02 /* CardSpec.m in Sources */,
+				AD71F5921A9C049F0077BE8B /* CardFactory.m in Sources */,
+				AD71F5951A9C11A70077BE8B /* HandFactory.m in Sources */,
+				AD6D77851A9E5D9D000FB386 /* CardSpecHelper.m in Sources */,
+				ADBB71B61A9D12890030D7AF /* HandSpecHelper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -421,20 +642,20 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		AD6272FC1A8341D000565A28 /* Main.storyboard */ = {
+		ADE4A6A51A84410A008CB5D2 /* LaunchScreen.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				AD6272FD1A8341D000565A28 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		AD6273011A8341D100565A28 /* LaunchScreen.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				AD6273021A8341D100565A28 /* Base */,
+				ADE4A6A61A84410A008CB5D2 /* Base */,
 			);
 			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+		ADE4A6A71A84410A008CB5D2 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				ADE4A6A81A84410A008CB5D2 /* Base */,
+			);
+			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -523,9 +744,13 @@
 			baseConfigurationReference = B7ADE5E423D28076F6E18920 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_PREFIX_HEADER = "$(SRCROOT)/StringsAgainstHumanity/PrefixHeader.pch";
 				INFOPLIST_FILE = StringsAgainstHumanity/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -534,9 +759,13 @@
 			baseConfigurationReference = 6236D6D5255475ACBCF7474D /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_PREFIX_HEADER = "$(SRCROOT)/StringsAgainstHumanity/PrefixHeader.pch";
 				INFOPLIST_FILE = StringsAgainstHumanity/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};

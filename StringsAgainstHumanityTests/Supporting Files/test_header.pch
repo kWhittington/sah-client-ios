@@ -11,14 +11,16 @@
 
 // Include any system framework and library headers here that should be included in all compilation units.
 // You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+#import "FactoryLibraries.pch"
 #import <UIKit/UIKit.h>
-#import <Specta.h>
-#define EXP_SHORTHAND
-#import <Expecta.h>
-#define HC_SHORTHAND
-#import <OCHamcrest/OCHamcrest.h>
-#define MOCKITO_SHORTHAND
-#import <OCMockito.h>
+#import "Kiwi.h"
+//#import <Specta.h>
+//#define EXP_SHORTHAND
+//#import <Expecta.h>
+//#define HC_SHORTHAND
+//#import <OCHamcrest/OCHamcrest.h>
+//#define MOCKITO_SHORTHAND
+//#import <OCMockito.h>
 #import <ObjectiveSugar.h>
 
 #endif

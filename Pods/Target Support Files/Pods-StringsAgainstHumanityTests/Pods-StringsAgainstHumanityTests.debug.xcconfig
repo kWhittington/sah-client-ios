@@ -1,7 +1,9 @@
-FRAMEWORK_SEARCH_PATHS = $(inherited) "$(SDKROOT)/Developer/Library/Frameworks" "$(DEVELOPER_LIBRARY_DIR)/Frameworks" "$(PLATFORM_DIR)/Developer/Library/Frameworks"
+FRAMEWORK_SEARCH_PATHS = $(SDKROOT)/Developer/Library/Frameworks $(inherited) $(DEVELOPER_FRAMEWORKS_DIR) "$(SDKROOT)/Developer/Library/Frameworks" "$(PLATFORM_DIR)/Developer/Library/Frameworks"
+FRAMEWORK_SEARCH_PATHS[sdk=iphoneos8.0] = $(inherited) $(DEVELOPER_DIR)/Platforms/iPhoneOS.platform/Developer/Library/Frameworks
+FRAMEWORK_SEARCH_PATHS[sdk=iphonesimulator8.0] = $(inherited) $(DEVELOPER_DIR)/Platforms/iPhoneSimulator.platform/Developer/Library/Frameworks
 GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
-HEADER_SEARCH_PATHS = "${PODS_ROOT}/Headers/Public" "${PODS_ROOT}/Headers/Public/Expecta" "${PODS_ROOT}/Headers/Public/OCHamcrest" "${PODS_ROOT}/Headers/Public/OCMockito" "${PODS_ROOT}/Headers/Public/ObjectiveSugar" "${PODS_ROOT}/Headers/Public/Specta"
-OTHER_CFLAGS = $(inherited) -isystem "${PODS_ROOT}/Headers/Public" -isystem "${PODS_ROOT}/Headers/Public/Expecta" -isystem "${PODS_ROOT}/Headers/Public/OCHamcrest" -isystem "${PODS_ROOT}/Headers/Public/OCMockito" -isystem "${PODS_ROOT}/Headers/Public/ObjectiveSugar" -isystem "${PODS_ROOT}/Headers/Public/Specta"
-OTHER_LDFLAGS = -ObjC -l"Pods-StringsAgainstHumanityTests-Expecta" -l"Pods-StringsAgainstHumanityTests-OCHamcrest" -l"Pods-StringsAgainstHumanityTests-OCMockito" -l"Pods-StringsAgainstHumanityTests-Specta" -framework "Foundation" -framework "XCTest"
+HEADER_SEARCH_PATHS = "${PODS_ROOT}/Headers/Public" "${PODS_ROOT}/Headers/Public/Canvas" "${PODS_ROOT}/Headers/Public/CocoaLumberjack" "${PODS_ROOT}/Headers/Public/FactoryGentleman" "${PODS_ROOT}/Headers/Public/Gizou" "${PODS_ROOT}/Headers/Public/Kiwi" "${PODS_ROOT}/Headers/Public/ObjectiveSugar" "${PODS_ROOT}/Headers/Public/pop"
+OTHER_CFLAGS = $(inherited) -isystem "${PODS_ROOT}/Headers/Public" -isystem "${PODS_ROOT}/Headers/Public/Canvas" -isystem "${PODS_ROOT}/Headers/Public/CocoaLumberjack" -isystem "${PODS_ROOT}/Headers/Public/FactoryGentleman" -isystem "${PODS_ROOT}/Headers/Public/Gizou" -isystem "${PODS_ROOT}/Headers/Public/Kiwi" -isystem "${PODS_ROOT}/Headers/Public/ObjectiveSugar" -isystem "${PODS_ROOT}/Headers/Public/pop"
+OTHER_LDFLAGS = -ObjC -l"Pods-StringsAgainstHumanityTests-FactoryGentleman" -l"Pods-StringsAgainstHumanityTests-Gizou" -l"Pods-StringsAgainstHumanityTests-Kiwi" -framework "Foundation" -framework "XCTest"
 OTHER_LIBTOOLFLAGS = $(OTHER_LDFLAGS)
 PODS_ROOT = ${SRCROOT}/Pods
