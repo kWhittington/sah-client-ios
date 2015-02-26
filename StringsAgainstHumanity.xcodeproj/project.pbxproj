@@ -15,12 +15,10 @@
 		AD518EEE1A8400BF00FA6CFF /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = AD518EEC1A8400BF00FA6CFF /* Podfile */; };
 		AD518EEF1A8400BF00FA6CFF /* uncrustify.cfg in Resources */ = {isa = PBXBuildFile; fileRef = AD518EED1A8400BF00FA6CFF /* uncrustify.cfg */; };
 		AD6272EF1A8341D000565A28 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AD6272EE1A8341D000565A28 /* main.m */; };
-		AD6D77851A9E5D9D000FB386 /* CardSpecHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = AD6D77841A9E5D9D000FB386 /* CardSpecHelper.m */; };
 		AD71F5921A9C049F0077BE8B /* CardFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = AD71F5911A9C049F0077BE8B /* CardFactory.m */; };
 		AD71F5951A9C11A70077BE8B /* HandFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = AD71F5941A9C11A70077BE8B /* HandFactory.m */; };
 		AD7C84DF1A95B34D00A2DE02 /* CardSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = AD7C84DE1A95B34D00A2DE02 /* CardSpec.m */; };
 		ADABB3F51A9A490B0092B717 /* HandViewDataSourceSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = ADABB3F41A9A490B0092B717 /* HandViewDataSourceSpec.m */; };
-		ADBB71B61A9D12890030D7AF /* HandSpecHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = ADBB71B51A9D12890030D7AF /* HandSpecHelper.m */; };
 		ADBF7F901A910CE300C5BB00 /* HandController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADBF7F8F1A910CE300C5BB00 /* HandController.m */; };
 		ADBF7F931A910E2800C5BB00 /* Hand.m in Sources */ = {isa = PBXBuildFile; fileRef = ADBF7F921A910E2800C5BB00 /* Hand.m */; };
 		ADBF7F981A91171A00C5BB00 /* Card.m in Sources */ = {isa = PBXBuildFile; fileRef = ADBF7F971A91171A00C5BB00 /* Card.m */; };
@@ -59,14 +57,12 @@
 		AD6272EE1A8341D000565A28 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		AD6273081A8341D100565A28 /* StringsAgainstHumanityTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StringsAgainstHumanityTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD62730D1A8341D100565A28 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		AD6D77841A9E5D9D000FB386 /* CardSpecHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CardSpecHelper.m; path = Helpers/Models/Card/CardSpecHelper.m; sourceTree = "<group>"; };
 		AD71F58D1A9BFF340077BE8B /* FactoryLibraries.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FactoryLibraries.pch; path = "Supporting Files/FactoryLibraries.pch"; sourceTree = "<group>"; };
 		AD71F5911A9C049F0077BE8B /* CardFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CardFactory.m; path = Factories/Models/Card/CardFactory.m; sourceTree = "<group>"; };
 		AD71F5931A9C09820077BE8B /* TestLibraries.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TestLibraries.pch; path = "Supporting Files/TestLibraries.pch"; sourceTree = "<group>"; };
 		AD71F5941A9C11A70077BE8B /* HandFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HandFactory.m; path = Factories/Models/Hand/HandFactory.m; sourceTree = "<group>"; };
 		AD7C84DE1A95B34D00A2DE02 /* CardSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CardSpec.m; path = Models/Card/CardSpec.m; sourceTree = "<group>"; };
 		ADABB3F41A9A490B0092B717 /* HandViewDataSourceSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HandViewDataSourceSpec.m; path = Models/Hand/HandViewDataSourceSpec.m; sourceTree = "<group>"; };
-		ADBB71B51A9D12890030D7AF /* HandSpecHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HandSpecHelper.m; path = Helpers/Models/HandSpecHelper.m; sourceTree = "<group>"; };
 		ADBF7F8E1A910CE300C5BB00 /* HandController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HandController.h; path = App/Controllers/Hand/HandController.h; sourceTree = "<group>"; };
 		ADBF7F8F1A910CE300C5BB00 /* HandController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HandController.m; path = App/Controllers/Hand/HandController.m; sourceTree = "<group>"; };
 		ADBF7F911A910E2800C5BB00 /* Hand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Hand.h; path = App/Models/Hand/Hand.h; sourceTree = "<group>"; };
@@ -85,7 +81,6 @@
 		ADE4A6A81A84410A008CB5D2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = App/Views/Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		ADE4A6B41A844121008CB5D2 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = "App/App Delegate/AppDelegate.h"; sourceTree = "<group>"; };
 		ADE4A6B51A844121008CB5D2 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = "App/App Delegate/AppDelegate.m"; sourceTree = "<group>"; };
-		ADF0A6441A8417EE0014C1A3 /* test_header.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = test_header.pch; path = "Supporting Files/test_header.pch"; sourceTree = "<group>"; };
 		B02303BEBE5C23E0A1410243 /* Pods-StringsAgainstHumanityTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StringsAgainstHumanityTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-StringsAgainstHumanityTests/Pods-StringsAgainstHumanityTests.debug.xcconfig"; sourceTree = "<group>"; };
 		B7ADE5E423D28076F6E18920 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		F6AB522281E428AFA232B517 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -258,7 +253,6 @@
 		AD62730B1A8341D100565A28 /* StringsAgainstHumanityTests */ = {
 			isa = PBXGroup;
 			children = (
-				ADBB71B31A9D11DA0030D7AF /* Helpers */,
 				ADC2AC621A9BCD29008EF494 /* Factories */,
 				AD7C84DC1A95B32100A2DE02 /* Models */,
 				AD62730C1A8341D100565A28 /* Supporting Files */,
@@ -270,19 +264,10 @@
 			isa = PBXGroup;
 			children = (
 				AD62730D1A8341D100565A28 /* Info.plist */,
-				ADF0A6441A8417EE0014C1A3 /* test_header.pch */,
 				AD71F58D1A9BFF340077BE8B /* FactoryLibraries.pch */,
 				AD71F5931A9C09820077BE8B /* TestLibraries.pch */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		AD6D77831A9E5D7D000FB386 /* Card */ = {
-			isa = PBXGroup;
-			children = (
-				AD6D77841A9E5D9D000FB386 /* CardSpecHelper.m */,
-			);
-			name = Card;
 			sourceTree = "<group>";
 		};
 		AD71F58E1A9C01060077BE8B /* Models */ = {
@@ -334,23 +319,6 @@
 				ADDE7F881A9C33C700E232EC /* HandSpec.m */,
 			);
 			name = Hand;
-			sourceTree = "<group>";
-		};
-		ADBB71B31A9D11DA0030D7AF /* Helpers */ = {
-			isa = PBXGroup;
-			children = (
-				ADBB71B41A9D12480030D7AF /* Models */,
-			);
-			name = Helpers;
-			sourceTree = "<group>";
-		};
-		ADBB71B41A9D12480030D7AF /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				AD6D77831A9E5D7D000FB386 /* Card */,
-				ADBB71B51A9D12890030D7AF /* HandSpecHelper.m */,
-			);
-			name = Models;
 			sourceTree = "<group>";
 		};
 		ADBF7F8D1A9105A100C5BB00 /* Hand */ = {
@@ -626,8 +594,6 @@
 				AD7C84DF1A95B34D00A2DE02 /* CardSpec.m in Sources */,
 				AD71F5921A9C049F0077BE8B /* CardFactory.m in Sources */,
 				AD71F5951A9C11A70077BE8B /* HandFactory.m in Sources */,
-				AD6D77851A9E5D9D000FB386 /* CardSpecHelper.m in Sources */,
-				ADBB71B61A9D12890030D7AF /* HandSpecHelper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
