@@ -1,0 +1,29 @@
+//
+//  FactoryLibraries.pch
+//  StringsAgainstHumanity
+//
+//  Created by Kyle Whittington on 2/23/15.
+//  Copyright (c) 2015 Kyle Whittington. All rights reserved.
+//
+
+#ifndef StringsAgainstHumanity_FactoryLibraries_pch
+#define StringsAgainstHumanity_FactoryLibraries_pch
+
+#import "PrefixHeader.pch"
+
+// All libraries specific to factories.
+#import <Gizou.h>
+#import <FactoryGentleman/FactoryGentleman.h>
+#define FG_ALLOW_READONLY
+
+// NOTE:
+// FGDefintionBuilder
+//   - initFrom:
+//   - initWith:fieldNames:
+//
+// The methods above will cause an "Expression result unused." warning from clang. All factories
+// will inherit this suppression.
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wunused-value"
+
+#endif

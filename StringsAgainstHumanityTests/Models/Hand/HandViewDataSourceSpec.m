@@ -6,38 +6,26 @@
 //  Copyright 2015 Kyle Whittington. All rights reserved.
 //
 
-#import "test_header.pch"
+#import "TestLibraries.pch"
 #import <UIKit/UIKit.h>
 #import "HandViewDataSource.h"
 
- SpecBegin(HandViewDataSource)
+SPEC_BEGIN(HandViewDataSourceSpec)
 
-  describe(@"HandViewDataSource", ^{
-    __block HandViewDataSource *subject;
-
-    beforeAll(^{
-      subject = [[HandViewDataSource alloc] init];
-    });
-
-    beforeEach(^{
-
-    });
-
-    afterEach(^{
-
-    });
-
-    afterAll(^{
-
-    });
-
-    it(@"conforms to UICollectionViewDataSource protocol", ^{
-      expect(10).to.beLessThan(5);
-    });
-
-    it(@"fails", ^{
-      expect(10).to.beNil;
-    });
+describe(@"HandViewDataSource", ^{
+  let(subject, ^{
+    return [[HandViewDataSource alloc] init];
   });
 
- SpecEnd
+  specify(^{
+    [[subject should] conformToProtocol:@protocol(UICollectionViewDataSource)];
+  });
+
+  describe(@"cardAtIndexPath:", ^{
+    context(@"when there are cards", ^{
+            });
+  });
+
+});
+
+SPEC_END

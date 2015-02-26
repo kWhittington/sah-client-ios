@@ -43,7 +43,7 @@
 }
 
 - (void)deleteCards:(NSArray *)cards {
-  [self.hand removeCards:cards];
+  [self.hand removeCardsInArray:cards];
 }
 
 - (void)deleteCardAtIndexPath:(NSIndexPath *)indexPath {

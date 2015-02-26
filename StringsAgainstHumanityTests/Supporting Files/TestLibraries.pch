@@ -1,0 +1,24 @@
+//
+//  TestLibraries.pch
+//  StringsAgainstHumanity
+//
+//  Created by Kyle Whittington on 2/23/15.
+//  Copyright (c) 2015 Kyle Whittington. All rights reserved.
+//
+
+#ifndef StringsAgainstHumanity_TestLibraries_pch
+#define StringsAgainstHumanity_TestLibraries_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+#import "FactoryLibraries.pch"
+
+#import "PrefixHeader.pch"
+
+// All libraries specific to tests.
+#import "Kiwi.h"
+#import <Gizou.h>
+#import <FactoryGentleman/FactoryGentleman.h>
+#define FG_ALLOW_READONLY
+
+#endif

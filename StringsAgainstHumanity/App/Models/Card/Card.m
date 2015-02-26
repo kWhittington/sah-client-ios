@@ -10,30 +10,36 @@
 
 @interface Card ()
 
+@property(strong) NSString *string;
+
 @end
 
 @implementation Card
 
++ (instancetype)blank {
+  return [[Card alloc] init];
+}
+
++ (instancetype)withString:(NSString *)string {
+  return [[Card alloc] initWithString:string];
+}
+
 - (instancetype)init {
   self = [super init];
 
-  [self initVariables];
+  [self initString];
 
   return self;
 }
 
-- (void)initVariables {
-  [self initString];
-}
-
 - (void)initString {
-  _string = [NSString string];
+  self.string = [NSString string];
 }
 
 - (instancetype)initWithString:(NSString *)string {
   self = [self init];
 
-  _string = [string copy];
+  self.string = [string copy];
 
   return self;
 }

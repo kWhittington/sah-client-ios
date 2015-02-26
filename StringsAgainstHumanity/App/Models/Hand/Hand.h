@@ -6,21 +6,26 @@
 //  Copyright (c) 2015 Kyle Whittington. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import "PrefixHeader.pch"
 
 @class Card;
 
 @interface Hand : NSObject
 
-@property(readonly) NSArray *cards;
-
++ (NSNumber *)SizeLimit;
 + (Hand *)testHand;
++ (Hand *)empty;
++ (Hand *)withArray:(NSArray *)cards;
 
-- (Card *)cardAtIndex:(NSUInteger)index;
+- (NSArray *)cards;
 - (void)addCard:(Card *)card;
-- (void)removeCardAtIndex:(NSUInteger)index;
+- (Card *)cardAtIndex:(NSUInteger)index;
+- (BOOL)isEmpty;
+- (BOOL)isFull;
 - (void)removeCard:(Card *)card;
-- (void)removeCards:(NSArray *)cards;
+- (void)removeCardAtIndex:(NSUInteger)index;
+- (void)removeCardsAtIndexes:(NSIndexSet *)indexes;
+- (void)removeCardsInArray:(NSArray *)cards;
 - (NSUInteger)size;
 
 @end

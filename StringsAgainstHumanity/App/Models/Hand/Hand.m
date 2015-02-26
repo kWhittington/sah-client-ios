@@ -17,6 +17,10 @@
 
 @implementation Hand
 
++ (NSNumber *)SizeLimit {
+  return [NSNumber numberWithInteger:10];
+}
+
 + (Hand *)testHand {
   Hand *testHand = [[Hand alloc] init];
 
@@ -31,6 +35,20 @@
   }];
 
   return testHand;
+}
+
++ (Hand *)empty {
+  return [[Hand alloc] init];
+}
+
++ (Hand *)withArray:(NSArray *)cards {
+  Hand *hand = [[Hand alloc] init];
+
+  [cards each:^(Card *card) {
+    [hand addCard:card];
+  }];
+
+  return hand;
 }
 
 - (instancetype)init {
@@ -49,23 +67,35 @@
   return [self.mutableCards copy];
 }
 
-- (Card *)cardAtIndex:(NSUInteger)index {
-  return self.mutableCards[index];
-}
-
 - (void)addCard:(Card *)card {
   [self.mutableCards push:card];
 }
 
-- (void)removeCardAtIndex:(NSUInteger)index {
-  [self.mutableCards removeObjectAtIndex:index];
+- (Card *)cardAtIndex:(NSUInteger)index {
+  return self.mutableCards[index];
+}
+
+- (BOOL)isEmpty {
+  return self.size == 0;
+}
+
+- (BOOL)isFull {
+  return self.size == Hand.SizeLimit.unsignedIntegerValue;
 }
 
 - (void)removeCard:(Card *)card {
   [self.mutableCards removeObject:card];
 }
 
-- (void)removeCards:(NSArray *)cards {
+- (void)removeCardAtIndex:(NSUInteger)index {
+  [self.mutableCards removeObjectAtIndex:index];
+}
+
+- (void)removeCardsAtIndexes:(NSIndexSet *)indexes {
+  [self.mutableCards removeObjectsAtIndexes:indexes];
+}
+
+- (void)removeCardsInArray:(NSArray *)cards {
   [self.mutableCards removeObjectsInArray:cards];
 }
 

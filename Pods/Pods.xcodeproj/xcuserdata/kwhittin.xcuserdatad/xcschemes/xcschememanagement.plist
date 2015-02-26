@@ -19,22 +19,17 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Pods-StringsAgainstHumanityTests-Expecta.xcscheme</key>
+		<key>Pods-StringsAgainstHumanityTests-FactoryGentleman.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Pods-StringsAgainstHumanityTests-OCHamcrest.xcscheme</key>
+		<key>Pods-StringsAgainstHumanityTests-Gizou.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Pods-StringsAgainstHumanityTests-OCMockito.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>Pods-StringsAgainstHumanityTests-Specta.xcscheme</key>
+		<key>Pods-StringsAgainstHumanityTests-Kiwi.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -57,52 +52,47 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>0E2BEF276C0D0CA6B51793AD</key>
+		<key>2FA05D81B5689805AD4518FF</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>179006D3B7A30B54075CDD69</key>
+		<key>5C6BBE7DCF9FD17F516FC5E9</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>2CE129EF084D9A34EBA9457B</key>
+		<key>7233CEFEBCF025949BC9006C</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>615F5BD5349AFE4C96581E2D</key>
+		<key>99CF0085E30D84A812083138</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>64A124FBC8356077E683064E</key>
+		<key>BBF658869AAF84A7AD7D4F60</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>864D96A42004BD6E005E4BED</key>
+		<key>E202C52AC24047C7F6D880B3</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>CA10FE732BFA7138B55793ED</key>
+		<key>E443357A66C7D13F91A2DD66</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>CC6360582FA5F9C9449DE1CD</key>
+		<key>F2675F50694C99747BC2ED32</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>CD6401F5C07C2930EDAC2FC7</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>E6F5279AC098233766761F71</key>
+		<key>F53B373EC27238DD62E182CD</key>
 		<dict>
 			<key>primary</key>
 			<true/>

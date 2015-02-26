@@ -12,6 +12,9 @@
 
 @property(readonly, strong) NSString *string;
 
++ (instancetype)blank;
++ (instancetype)withString:(NSString *)string;
+
 - (instancetype)initWithString:(NSString *)string;
 
 @end
