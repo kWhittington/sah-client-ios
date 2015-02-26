@@ -9,8 +9,8 @@
 /* Begin PBXBuildFile section */
 		1FB7B8582F123D763BF70EBB /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F6AB522281E428AFA232B517 /* libPods.a */; };
 		9E90AAB947D23AB961ED1298 /* libPods-StringsAgainstHumanityTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A27D956F47919DE0B0728BFE /* libPods-StringsAgainstHumanityTests.a */; };
+		AD07A4761A9FAB280047B1B2 /* HandViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = AD07A4751A9FAB280047B1B2 /* HandViewDataSource.m */; };
 		AD08B1FD1A97A56500A54439 /* HandView.m in Sources */ = {isa = PBXBuildFile; fileRef = AD08B1FC1A97A56500A54439 /* HandView.m */; };
-		AD08B2031A97B0B600A54439 /* HandViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = AD08B2021A97B0B600A54439 /* HandViewDataSource.m */; };
 		AD1C3E061A8450F10001C833 /* _clang-format in Resources */ = {isa = PBXBuildFile; fileRef = AD1C3E051A8450F10001C833 /* _clang-format */; };
 		AD518EEE1A8400BF00FA6CFF /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = AD518EEC1A8400BF00FA6CFF /* Podfile */; };
 		AD518EEF1A8400BF00FA6CFF /* uncrustify.cfg in Resources */ = {isa = PBXBuildFile; fileRef = AD518EED1A8400BF00FA6CFF /* uncrustify.cfg */; };
@@ -47,10 +47,10 @@
 		488A2ED7BBC2DFE7121B1695 /* Pods-StringsAgainstHumanityTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StringsAgainstHumanityTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-StringsAgainstHumanityTests/Pods-StringsAgainstHumanityTests.release.xcconfig"; sourceTree = "<group>"; };
 		6236D6D5255475ACBCF7474D /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		A27D956F47919DE0B0728BFE /* libPods-StringsAgainstHumanityTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-StringsAgainstHumanityTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AD07A4741A9FAB280047B1B2 /* HandViewDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HandViewDataSource.h; path = App/DataSources/Hand/HandViewDataSource.h; sourceTree = "<group>"; };
+		AD07A4751A9FAB280047B1B2 /* HandViewDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HandViewDataSource.m; path = App/DataSources/Hand/HandViewDataSource.m; sourceTree = "<group>"; };
 		AD08B1FB1A97A56500A54439 /* HandView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HandView.h; path = App/Views/Hand/HandView.h; sourceTree = "<group>"; };
 		AD08B1FC1A97A56500A54439 /* HandView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HandView.m; path = App/Views/Hand/HandView.m; sourceTree = "<group>"; };
-		AD08B2011A97B0B600A54439 /* HandViewDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HandViewDataSource.h; path = App/Views/Hand/HandViewDataSource.h; sourceTree = "<group>"; };
-		AD08B2021A97B0B600A54439 /* HandViewDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HandViewDataSource.m; path = App/Views/Hand/HandViewDataSource.m; sourceTree = "<group>"; };
 		AD1C3E051A8450F10001C833 /* _clang-format */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "_clang-format"; sourceTree = SOURCE_ROOT; };
 		AD518EEC1A8400BF00FA6CFF /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		AD518EED1A8400BF00FA6CFF /* uncrustify.cfg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = uncrustify.cfg; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
@@ -120,13 +120,28 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		AD07A4721A9FAA2D0047B1B2 /* DataSources */ = {
+			isa = PBXGroup;
+			children = (
+				AD07A4731A9FAAF40047B1B2 /* Hand */,
+			);
+			name = DataSources;
+			sourceTree = "<group>";
+		};
+		AD07A4731A9FAAF40047B1B2 /* Hand */ = {
+			isa = PBXGroup;
+			children = (
+				AD07A4741A9FAB280047B1B2 /* HandViewDataSource.h */,
+				AD07A4751A9FAB280047B1B2 /* HandViewDataSource.m */,
+			);
+			name = Hand;
+			sourceTree = "<group>";
+		};
 		AD08B1FA1A97A4D400A54439 /* Hand */ = {
 			isa = PBXGroup;
 			children = (
 				AD08B1FB1A97A56500A54439 /* HandView.h */,
 				AD08B1FC1A97A56500A54439 /* HandView.m */,
-				AD08B2011A97B0B600A54439 /* HandViewDataSource.h */,
-				AD08B2021A97B0B600A54439 /* HandViewDataSource.m */,
 			);
 			name = Hand;
 			sourceTree = "<group>";
@@ -136,6 +151,7 @@
 			children = (
 				AD518EE51A83FEEE00FA6CFF /* AppDelegate */,
 				AD518EE61A83FEF500FA6CFF /* Controllers */,
+				AD07A4721A9FAA2D0047B1B2 /* DataSources */,
 				ADBF7FA01A914C8300C5BB00 /* Layouts */,
 				AD518EE71A83FF0300FA6CFF /* Models */,
 				AD518EE91A83FF0F00FA6CFF /* Protocols */,
@@ -596,7 +612,7 @@
 				ADBF7F931A910E2800C5BB00 /* Hand.m in Sources */,
 				ADBF7F9F1A913FE200C5BB00 /* CardCell.m in Sources */,
 				ADE4A6B61A844121008CB5D2 /* AppDelegate.m in Sources */,
-				AD08B2031A97B0B600A54439 /* HandViewDataSource.m in Sources */,
+				AD07A4761A9FAB280047B1B2 /* HandViewDataSource.m in Sources */,
 				ADBF7FA71A914D4D00C5BB00 /* BirdsEyeHandLayout.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
