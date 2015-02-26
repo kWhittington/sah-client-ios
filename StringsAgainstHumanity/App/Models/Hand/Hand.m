@@ -51,6 +51,7 @@
   return hand;
 }
 
+// Designated Initializer
 - (instancetype)init {
   self = [super init];
 
