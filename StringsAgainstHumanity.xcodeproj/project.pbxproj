@@ -11,6 +11,7 @@
 		9E90AAB947D23AB961ED1298 /* libPods-StringsAgainstHumanityTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A27D956F47919DE0B0728BFE /* libPods-StringsAgainstHumanityTests.a */; };
 		AD07A4761A9FAB280047B1B2 /* HandViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = AD07A4751A9FAB280047B1B2 /* HandViewDataSource.m */; };
 		AD08B1FD1A97A56500A54439 /* HandView.m in Sources */ = {isa = PBXBuildFile; fileRef = AD08B1FC1A97A56500A54439 /* HandView.m */; };
+		AD1337871AA01D6E002F1721 /* HandControllerSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = AD1337861AA01D6E002F1721 /* HandControllerSpec.m */; };
 		AD1C3E061A8450F10001C833 /* _clang-format in Resources */ = {isa = PBXBuildFile; fileRef = AD1C3E051A8450F10001C833 /* _clang-format */; };
 		AD518EEE1A8400BF00FA6CFF /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = AD518EEC1A8400BF00FA6CFF /* Podfile */; };
 		AD518EEF1A8400BF00FA6CFF /* uncrustify.cfg in Resources */ = {isa = PBXBuildFile; fileRef = AD518EED1A8400BF00FA6CFF /* uncrustify.cfg */; };
@@ -18,6 +19,7 @@
 		AD71F5921A9C049F0077BE8B /* CardFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = AD71F5911A9C049F0077BE8B /* CardFactory.m */; };
 		AD71F5951A9C11A70077BE8B /* HandFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = AD71F5941A9C11A70077BE8B /* HandFactory.m */; };
 		AD7C84DF1A95B34D00A2DE02 /* CardSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = AD7C84DE1A95B34D00A2DE02 /* CardSpec.m */; };
+		AD90F64E1AA0E11D008FF768 /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = AD90F64D1AA0E11D008FF768 /* Constants.m */; };
 		ADABB3F51A9A490B0092B717 /* HandViewDataSourceSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = ADABB3F41A9A490B0092B717 /* HandViewDataSourceSpec.m */; };
 		ADBF7F901A910CE300C5BB00 /* HandController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADBF7F8F1A910CE300C5BB00 /* HandController.m */; };
 		ADBF7F931A910E2800C5BB00 /* Hand.m in Sources */ = {isa = PBXBuildFile; fileRef = ADBF7F921A910E2800C5BB00 /* Hand.m */; };
@@ -49,6 +51,7 @@
 		AD07A4751A9FAB280047B1B2 /* HandViewDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HandViewDataSource.m; path = App/DataSources/Hand/HandViewDataSource.m; sourceTree = "<group>"; };
 		AD08B1FB1A97A56500A54439 /* HandView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HandView.h; path = App/Views/Hand/HandView.h; sourceTree = "<group>"; };
 		AD08B1FC1A97A56500A54439 /* HandView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HandView.m; path = App/Views/Hand/HandView.m; sourceTree = "<group>"; };
+		AD1337861AA01D6E002F1721 /* HandControllerSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HandControllerSpec.m; path = Controllers/Hand/HandControllerSpec.m; sourceTree = "<group>"; };
 		AD1C3E051A8450F10001C833 /* _clang-format */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "_clang-format"; sourceTree = SOURCE_ROOT; };
 		AD518EEC1A8400BF00FA6CFF /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		AD518EED1A8400BF00FA6CFF /* uncrustify.cfg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = uncrustify.cfg; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
@@ -62,6 +65,8 @@
 		AD71F5931A9C09820077BE8B /* TestLibraries.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TestLibraries.pch; path = "Supporting Files/TestLibraries.pch"; sourceTree = "<group>"; };
 		AD71F5941A9C11A70077BE8B /* HandFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HandFactory.m; path = Factories/Models/Hand/HandFactory.m; sourceTree = "<group>"; };
 		AD7C84DE1A95B34D00A2DE02 /* CardSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CardSpec.m; path = Models/Card/CardSpec.m; sourceTree = "<group>"; };
+		AD90F64D1AA0E11D008FF768 /* Constants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Constants.m; path = App/Constants/Constants.m; sourceTree = "<group>"; };
+		AD90F64F1AA0E177008FF768 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Constants.h; path = App/Constants/Constants.h; sourceTree = "<group>"; };
 		ADABB3F41A9A490B0092B717 /* HandViewDataSourceSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HandViewDataSourceSpec.m; path = Models/Hand/HandViewDataSourceSpec.m; sourceTree = "<group>"; };
 		ADBF7F8E1A910CE300C5BB00 /* HandController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HandController.h; path = App/Controllers/Hand/HandController.h; sourceTree = "<group>"; };
 		ADBF7F8F1A910CE300C5BB00 /* HandController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HandController.m; path = App/Controllers/Hand/HandController.m; sourceTree = "<group>"; };
@@ -137,6 +142,22 @@
 			children = (
 				AD08B1FB1A97A56500A54439 /* HandView.h */,
 				AD08B1FC1A97A56500A54439 /* HandView.m */,
+			);
+			name = Hand;
+			sourceTree = "<group>";
+		};
+		AD1337841AA01CE4002F1721 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				AD1337851AA01CEF002F1721 /* Hand */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		AD1337851AA01CEF002F1721 /* Hand */ = {
+			isa = PBXGroup;
+			children = (
+				AD1337861AA01D6E002F1721 /* HandControllerSpec.m */,
 			);
 			name = Hand;
 			sourceTree = "<group>";
@@ -240,6 +261,7 @@
 		AD6272EC1A8341D000565A28 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				AD90F64C1AA0E0AA008FF768 /* Constants */,
 				AD1C3E051A8450F10001C833 /* _clang-format */,
 				AD6272ED1A8341D000565A28 /* Info.plist */,
 				AD6272EE1A8341D000565A28 /* main.m */,
@@ -253,6 +275,7 @@
 		AD62730B1A8341D100565A28 /* StringsAgainstHumanityTests */ = {
 			isa = PBXGroup;
 			children = (
+				AD1337841AA01CE4002F1721 /* Controllers */,
 				ADC2AC621A9BCD29008EF494 /* Factories */,
 				AD7C84DC1A95B32100A2DE02 /* Models */,
 				AD62730C1A8341D100565A28 /* Supporting Files */,
@@ -310,6 +333,15 @@
 				AD7C84DE1A95B34D00A2DE02 /* CardSpec.m */,
 			);
 			name = Card;
+			sourceTree = "<group>";
+		};
+		AD90F64C1AA0E0AA008FF768 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				AD90F64D1AA0E11D008FF768 /* Constants.m */,
+				AD90F64F1AA0E177008FF768 /* Constants.h */,
+			);
+			name = Constants;
 			sourceTree = "<group>";
 		};
 		ADABB3F31A9A48D90092B717 /* Hand */ = {
@@ -572,6 +604,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AD90F64E1AA0E11D008FF768 /* Constants.m in Sources */,
 				ADBF7FAA1A91661500C5BB00 /* ZoomInHandLayout.m in Sources */,
 				AD08B1FD1A97A56500A54439 /* HandView.m in Sources */,
 				ADBF7F901A910CE300C5BB00 /* HandController.m in Sources */,
@@ -592,6 +625,7 @@
 				ADABB3F51A9A490B0092B717 /* HandViewDataSourceSpec.m in Sources */,
 				ADDE7F891A9C33C700E232EC /* HandSpec.m in Sources */,
 				AD7C84DF1A95B34D00A2DE02 /* CardSpec.m in Sources */,
+				AD1337871AA01D6E002F1721 /* HandControllerSpec.m in Sources */,
 				AD71F5921A9C049F0077BE8B /* CardFactory.m in Sources */,
 				AD71F5951A9C11A70077BE8B /* HandFactory.m in Sources */,
 			);

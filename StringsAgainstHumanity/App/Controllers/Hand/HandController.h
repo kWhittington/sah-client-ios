@@ -6,13 +6,13 @@
 //  Copyright (c) 2015 Kyle Whittington. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "PrefixHeader.pch"
 
-@class Hand;
+@class Card;
 
 @interface HandController : UICollectionViewController
++ (NSString *)storyboardID;
 
-@property(strong, readonly) Hand *hand;
-
+- (void)addCard:(Card *)card;
 
 @end

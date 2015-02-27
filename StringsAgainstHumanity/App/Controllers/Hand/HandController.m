@@ -24,9 +24,18 @@
 
 @implementation HandController
 static NSString *const cardIdentifier = @"CardCell";
+static NSString *const storyboardID = @"HandController";
+
++ (NSString *)storyboardID {
+  return storyboardID;
+}
 
 - (void)viewDidLoad {
+  //  NSLog(@"View Layout %@",self.collectionViewLayout);
+  //  NSLog(@"Collection View %@",self.collectionView);
   [super viewDidLoad];
+
+  NSLog(@"THE VIEW LOADED");
 
   // Uncomment the following line to preserve selection between presentations
   //  self.clearsSelectionOnViewWillAppear = NO;
@@ -37,6 +46,8 @@ static NSString *const cardIdentifier = @"CardCell";
   self.collectionView.dataSource = self.handViewDataSource;
 
   // Do any additional setup after loading the view.
+  //  NSLog(@"View Layout %@",self.collectionViewLayout);
+  //  NSLog(@"Collection View %@",self.collectionView);
 }
 
 - (void)initLayouts {
@@ -45,10 +56,22 @@ static NSString *const cardIdentifier = @"CardCell";
   self.collectionView.collectionViewLayout = self.birdsEyeLayout;
 }
 
+- (void)addCard:(Card *)card {
+  [self.handViewDataSource addCard:card];
+  // There is only one section.
+  NSInteger newCardIndex = [self.handViewDataSource collectionView:self.collectionView numberOfItemsInSection:0];
+  NSIndexPath *indexPath = [NSIndexPath indexPathWithIndex:newCardIndex];
+  [self.collectionView insertItemsAtIndexPaths:@[ indexPath ]];
+}
+
 - (void)didReceiveMemoryWarning {
   [super didReceiveMemoryWarning];
   // Dispose of any resources that can be recreated.
 }
+
+//- (Hand *)hand {
+//  return self.handViewDataSource.hand;
+//}
 
 /*
 #pragma mark - Navigation

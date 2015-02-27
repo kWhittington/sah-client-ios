@@ -7,7 +7,7 @@
         <!--Hand Controller-->
         <scene sceneID="s7c-9P-8r5">
             <objects>
-                <collectionViewController id="8Ud-wc-iRA" customClass="HandController" sceneMemberID="viewController">
+                <collectionViewController storyboardIdentifier="HandController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="8Ud-wc-iRA" customClass="HandController" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsVerticalScrollIndicator="NO" dataMode="prototypes" id="TK9-Bq-epP">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
