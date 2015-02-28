@@ -76,6 +76,11 @@
   return self.mutableCards[index];
 }
 
+- (NSUInteger)indexOfCard:(Card *)card {
+  NSUInteger result = [self.mutableCards indexOfObject:card];
+  return result;
+}
+
 - (BOOL)isEmpty {
   return self.size == 0;
 }

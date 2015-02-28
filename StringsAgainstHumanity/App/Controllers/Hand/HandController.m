@@ -6,19 +6,19 @@
 //  Copyright (c) 2015 Kyle Whittington. All rights reserved.
 //
 
+#import "PrefixHeader.pch"
 #import "HandController.h"
-#import "Hand.h"
 #import "Card.h"
 #import "CardCell.h"
 #import "ZoomInHandLayout.h"
 #import "BirdsEyeHandLayout.h"
-#import "HandViewDataSource.h"
+#import "Hand+DataSource.h"
 
 @interface HandController ()
 
 @property(strong) BirdsEyeHandLayout *birdsEyeLayout;
 @property(weak, readonly) NSArray *selectedCells;
-@property(strong) HandViewDataSource *handViewDataSource;
+@property(strong) Hand *hand;
 
 @end
 
@@ -31,8 +31,6 @@ static NSString *const storyboardID = @"HandController";
 }
 
 - (void)viewDidLoad {
-  //  NSLog(@"View Layout %@",self.collectionViewLayout);
-  //  NSLog(@"Collection View %@",self.collectionView);
   [super viewDidLoad];
 
   NSLog(@"THE VIEW LOADED");
@@ -42,12 +40,11 @@ static NSString *const storyboardID = @"HandController";
 
   // Register cell classes
   [self initLayouts];
-  self.handViewDataSource = [[HandViewDataSource alloc] init];
-  self.collectionView.dataSource = self.handViewDataSource;
+  self.hand = [Hand empty];
+  self.collectionView.dataSource = self.hand;
+  [self.collectionView reloadData];
 
   // Do any additional setup after loading the view.
-  //  NSLog(@"View Layout %@",self.collectionViewLayout);
-  //  NSLog(@"Collection View %@",self.collectionView);
 }
 
 - (void)initLayouts {
@@ -57,21 +54,18 @@ static NSString *const storyboardID = @"HandController";
 }
 
 - (void)addCard:(Card *)card {
-  [self.handViewDataSource addCard:card];
-  // There is only one section.
-  NSInteger newCardIndex = [self.handViewDataSource collectionView:self.collectionView numberOfItemsInSection:0];
-  NSIndexPath *indexPath = [NSIndexPath indexPathWithIndex:newCardIndex];
-  [self.collectionView insertItemsAtIndexPaths:@[ indexPath ]];
+  [self.collectionView performBatchUpdates:^{
+    [self.hand addCard:card];
+    NSInteger index = [self.hand indexOfCard:card];
+    NSIndexPath *indexPath = [NSIndexPath indexPathForItem:index inSection:0];
+    [self.collectionView insertItemsAtIndexPaths:@[ indexPath ]];
+  } completion:nil];
 }
 
 - (void)didReceiveMemoryWarning {
   [super didReceiveMemoryWarning];
   // Dispose of any resources that can be recreated.
 }
-
-//- (Hand *)hand {
-//  return self.handViewDataSource.hand;
-//}
 
 /*
 #pragma mark - Navigation
@@ -103,23 +97,21 @@ navigation
   //  Figure out if performBatchUpdates:completion: is needed.
   //  [self.collectionView performBatchUpdates:^{
   NSArray *itemPaths = [self.collectionView indexPathsForSelectedItems];
-  [self.handViewDataSource deleteCardsAtIndexPaths:itemPaths];
+  [self.hand removeCardsAtIndexPaths:itemPaths];
   [self.collectionView deleteItemsAtIndexPaths:itemPaths];
   //  } completion:nil];
 }
 
 - (NSArray *)selectedCards {
-  return
-    [self.handViewDataSource cardsAtIndexPaths:[self.collectionView indexPathsForSelectedItems]];
+  return [self.hand cardsAtIndexPaths:[self.collectionView indexPathsForSelectedItems]];
 }
 
 #pragma mark <UICollectionViewDelegate>
 - (void)collectionView:(UICollectionView *)collectionView
   didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-  CardCell *cell =
-    [self.handViewDataSource collectionView:collectionView cardCellForItemAtIndexPath:indexPath];
+  Card *card = [self.hand cardAtIndexPath:indexPath];
 
-  NSLog(@"Selected Cell: %@", cell.card.string);
+  NSLog(@"Selected Card: %@", card.string);
 }
 
 // Uncomment this method to specify if the specified item should be highlighted during tracking
@@ -159,7 +151,7 @@ navigation
 
 - (void)collectionView:(UICollectionView *)collectionView
   didDeselectItemAtIndexPath:(NSIndexPath *)indexPath {
-  Card *card = [self.handViewDataSource cardAtIndexPath:indexPath];
+  Card *card = [self.hand cardAtIndexPath:indexPath];
   NSLog(@"Did Deselect, '%@'.", card.string);
 }
 

@@ -8,13 +8,16 @@
 
 #import "TestLibraries.pch"
 #import "HandController.h"
+#import "Hand+DataSource.h"
 #import "Card.h"
 
 SPEC_BEGIN(HandControllerSpec)
 describe(@"HandController", ^{
   let(handController, ^HandController *{
-    return [[UIStoryboard storyboardWithName:StoryboardName bundle:nil]
+    HandController *result = [[UIStoryboard storyboardWithName:StoryboardName bundle:nil]
       instantiateViewControllerWithIdentifier:HandController.storyboardID];
+    [result viewDidLoad];
+    return result;
   });
 
   describe(@"+ storyboardID", ^{
@@ -24,6 +27,39 @@ describe(@"HandController", ^{
 
     it(@"returns NSString of HandController's Storyboard ID", ^{
       [[result should] equal:@"HandController"];
+    });
+  });
+
+  describe(@"- addCard:", ^{
+    let(card, ^Card *{
+      return FGBuildTrait(Card.class, @"withString");
+    });
+
+    it(@"sends addCard: to the DataSource", ^{
+      // NOTE
+      // Kiwi's message matchers block the message from actually being run.
+      // This will cause the message to throw and error, which is expected below.
+      [[(NSObject *)handController.collectionView.dataSource should] receive:@selector(addCard:)
+                                                               withArguments:card];
+      [[theBlock(^{
+        [handController addCard:card];
+      }) should] raiseWithName:@"NSInternalInconsistencyException"];
+    });
+
+    it(@"sends insertItemsAtIndexPaths: to the CollectionView", ^{
+      [[(NSObject *)handController.collectionView should]
+        receive:@selector(insertItemsAtIndexPaths:)];
+      [[theBlock(^{
+        [handController addCard:card];
+      }) should] raiseWithName:@"NSInternalInconsistencyException"];
+    });
+
+    context(@"when not testing for message passing", ^{
+      it(@"raises no error", ^{
+        [[theBlock(^{
+          [handController addCard:card];
+        }) shouldNot] raise];
+      });
     });
   });
 
@@ -42,21 +78,6 @@ describe(@"HandController", ^{
       }) should] change:^NSInteger {
         return handController.collectionView.dataSource.hash;
       }];
-    });
-  });
-
-  describe(@"- addCard:", ^{
-    let(card, ^Card *{
-      return FGBuildTrait(Card.class, @"withString");
-    });
-
-    it(@"sends addCard: to the DataSource", ^{
-      [[(NSObject *)handController.collectionView.dataSource should] receive:@selector(addCard:) withArguments:card];
-      [handController addCard:card];
-    });
-    
-    it(@"sends insertItemsAtIndexPaths: to the CollectionView", ^{
-      [[(NSObject *)handController.collectionView should] receive:@selector(insertItemsAtIndexPaths:)];
     });
   });
 

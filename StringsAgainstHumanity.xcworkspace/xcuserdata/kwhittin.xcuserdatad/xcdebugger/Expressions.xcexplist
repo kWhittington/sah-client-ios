@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VariablesViewState
+   version = "1.0">
+   <ContextStates>
+      <ContextState
+         contextName = "__26-[HandController addCard:]_block_invoke:HandController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "[self.collectionView numberOfItemsInSection:0];">
+            </PersistentString>
+            <PersistentString
+               value = "self.hand.size">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[HandController addCard:]:HandController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "[self.collectionView numberOfItemsInSection:0];">
+            </PersistentString>
+            <PersistentString
+               value = "self.collectionView.numberOfSections;">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[Hand(DataSource) collectionView:numberOfItemsInSection:]:Hand+DataSource.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.size">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+   </ContextStates>
+</VariablesViewState>

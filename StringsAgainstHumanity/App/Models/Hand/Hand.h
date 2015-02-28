@@ -20,6 +20,7 @@
 - (NSArray *)cards;
 - (void)addCard:(Card *)card;
 - (Card *)cardAtIndex:(NSUInteger)index;
+- (NSUInteger)indexOfCard:(Card *)card;
 - (BOOL)isEmpty;
 - (BOOL)isFull;
 - (void)removeCard:(Card *)card;
