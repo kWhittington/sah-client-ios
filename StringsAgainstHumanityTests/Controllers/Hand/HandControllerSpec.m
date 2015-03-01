@@ -81,5 +81,7 @@ describe(@"HandController", ^{
     });
   });
 
+  // TODO
+  // Specifications for touch input.
 });
 SPEC_END
