@@ -1,0 +1,7 @@
+[
+  "-workspace", "StringsAgainstHumanity.xcworkspace",
+  "-scheme", "StringsAgainstHumanity",
+  "-configuration", "Debug",
+  "-sdk", "iphonesimulator",
+  "-destination", "platform=iOS simulator,name=iPhone 6"
+]
