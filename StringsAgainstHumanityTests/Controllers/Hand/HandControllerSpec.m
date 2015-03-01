@@ -35,7 +35,7 @@ describe(@"HandController", ^{
       return FGBuildTrait(Card.class, @"withString");
     });
 
-    it(@"sends addCard: to the DataSource", ^{
+    it(@"sends addCard: to its DataSource", ^{
       // NOTE
       // Kiwi's message matchers block the message from actually being run.
       // This will cause the message to throw and error, which is expected below.
@@ -46,7 +46,7 @@ describe(@"HandController", ^{
       }) should] raiseWithName:@"NSInternalInconsistencyException"];
     });
 
-    it(@"sends insertItemsAtIndexPaths: to the CollectionView", ^{
+    it(@"sends insertItemsAtIndexPaths: to its CollectionView", ^{
       [[(NSObject *)handController.collectionView should]
         receive:@selector(insertItemsAtIndexPaths:)];
       [[theBlock(^{
