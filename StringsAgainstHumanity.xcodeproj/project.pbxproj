@@ -18,6 +18,7 @@
 		AD71F5921A9C049F0077BE8B /* CardFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = AD71F5911A9C049F0077BE8B /* CardFactory.m */; };
 		AD71F5951A9C11A70077BE8B /* HandFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = AD71F5941A9C11A70077BE8B /* HandFactory.m */; };
 		AD7C84DF1A95B34D00A2DE02 /* CardSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = AD7C84DE1A95B34D00A2DE02 /* CardSpec.m */; };
+		AD8B92E81AA2BB6E0044ECC0 /* Hand+DataSourceSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = AD8B92E71AA2BB6E0044ECC0 /* Hand+DataSourceSpec.m */; };
 		AD90F64E1AA0E11D008FF768 /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = AD90F64D1AA0E11D008FF768 /* Constants.m */; };
 		ADBF7F901A910CE300C5BB00 /* HandController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADBF7F8F1A910CE300C5BB00 /* HandController.m */; };
 		ADBF7F931A910E2800C5BB00 /* Hand.m in Sources */ = {isa = PBXBuildFile; fileRef = ADBF7F921A910E2800C5BB00 /* Hand.m */; };
@@ -62,6 +63,7 @@
 		AD71F5931A9C09820077BE8B /* TestLibraries.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TestLibraries.pch; path = "Supporting Files/TestLibraries.pch"; sourceTree = "<group>"; };
 		AD71F5941A9C11A70077BE8B /* HandFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HandFactory.m; path = Factories/Models/Hand/HandFactory.m; sourceTree = "<group>"; };
 		AD7C84DE1A95B34D00A2DE02 /* CardSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CardSpec.m; path = Models/Card/CardSpec.m; sourceTree = "<group>"; };
+		AD8B92E71AA2BB6E0044ECC0 /* Hand+DataSourceSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "Hand+DataSourceSpec.m"; path = "DataSources/Hand/Hand+DataSourceSpec.m"; sourceTree = "<group>"; };
 		AD90F64D1AA0E11D008FF768 /* Constants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Constants.m; path = App/Constants/Constants.m; sourceTree = "<group>"; };
 		AD90F64F1AA0E177008FF768 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Constants.h; path = App/Constants/Constants.h; sourceTree = "<group>"; };
 		ADBF7F8E1A910CE300C5BB00 /* HandController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HandController.h; path = App/Controllers/Hand/HandController.h; sourceTree = "<group>"; };
@@ -424,6 +426,7 @@
 		ADC195D41AA1548500177660 /* Hand */ = {
 			isa = PBXGroup;
 			children = (
+				AD8B92E71AA2BB6E0044ECC0 /* Hand+DataSourceSpec.m */,
 			);
 			name = Hand;
 			sourceTree = "<group>";
@@ -637,6 +640,7 @@
 			files = (
 				ADDE7F891A9C33C700E232EC /* HandSpec.m in Sources */,
 				AD7C84DF1A95B34D00A2DE02 /* CardSpec.m in Sources */,
+				AD8B92E81AA2BB6E0044ECC0 /* Hand+DataSourceSpec.m in Sources */,
 				AD1337871AA01D6E002F1721 /* HandControllerSpec.m in Sources */,
 				AD71F5921A9C049F0077BE8B /* CardFactory.m in Sources */,
 				AD71F5951A9C11A70077BE8B /* HandFactory.m in Sources */,
