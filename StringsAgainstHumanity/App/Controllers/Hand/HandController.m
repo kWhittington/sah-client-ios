@@ -23,7 +23,6 @@
 @end
 
 @implementation HandController
-static NSString *const cardIdentifier = @"CardCell";
 static NSString *const storyboardID = @"HandController";
 
 + (NSString *)storyboardID {
@@ -56,8 +55,7 @@ static NSString *const storyboardID = @"HandController";
 - (void)addCard:(Card *)card {
   [self.collectionView performBatchUpdates:^{
     [self.hand addCard:card];
-    NSInteger index = [self.hand indexOfCard:card];
-    NSIndexPath *indexPath = [NSIndexPath indexPathForItem:index inSection:0];
+    NSIndexPath *indexPath = [self.hand indexPathOfCard:card];
     [self.collectionView insertItemsAtIndexPaths:@[ indexPath ]];
   } completion:nil];
 }
