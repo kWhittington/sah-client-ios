@@ -7,7 +7,6 @@
 //
 
 #import "HandView.h"
-#import "HandViewDataSource.h"
 #import "CardCell.h"
 #import "Card.h"
 
