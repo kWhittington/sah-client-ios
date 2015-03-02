@@ -19,6 +19,7 @@
 @property(strong) BirdsEyeHandLayout *birdsEyeLayout;
 @property(weak, readonly) NSArray *selectedCells;
 @property(strong) Hand *hand;
+@property(strong) Card *blackCard;
 
 @end
 
