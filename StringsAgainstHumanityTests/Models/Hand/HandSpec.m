@@ -35,7 +35,18 @@ describe(@"Hand", ^{
     });
 
     it(@"inits a Hand with no Cards", ^{
+
       [[theValue(result.size) should] beZero];
+    });
+  });
+
+  describe(@"+ SizeLimit", ^{
+    let(result, ^NSNumber *{
+      return Hand.SizeLimit;
+    });
+
+    it(@"is 10", ^{
+      [[result should] equal:@10];
     });
   });
 
@@ -46,22 +57,6 @@ describe(@"Hand", ^{
 
     it(@"inits a Hand with all given cards", ^{
       [[result.cards should] containObjectsInArray:cards];
-    });
-  });
-
-  describe(@"+ SizeLimit", ^{
-    let(result, ^NSNumber *{
-      return Hand.SizeLimit;
-    });
-  });
-
-  describe(@"- cards", ^{
-    let(result, ^NSArray *{
-      return hand.cards;
-    });
-
-    it(@"returns a NSArry containin Hand's Cards", ^{
-      [[result should] equal:cards];
     });
   });
 
@@ -80,44 +75,62 @@ describe(@"Hand", ^{
   });
 
   describe(@"- cardAtIndex:", ^{
-    context(@"when Hand is not empty", ^{
-      context(@"when index is within bounds of Hand's size", ^{
-        let(index, ^NSNumber *{
-          return [NSNumber numberWithInteger:[hand size] - 1];
-        });
-
-        specify(^{
-          [[theBlock(^{
-            [hand cardAtIndex:index.integerValue];
-          }) shouldNot] raiseWithName:@"NSRangeException"];
-        });
+    context(@"when index is within Hand's bounds", ^{
+      let(index, ^NSNumber *{
+        return @(hand.size - 1);
       });
 
-      context(@"when index is out of Hand's size bounds", ^{
-        let(index, ^NSNumber *{
-          return [NSNumber numberWithInteger:[hand size]];
-        });
+      let(result, ^Card *{
+        return [hand cardAtIndex:index.integerValue];
+      });
 
-        specify(^{
-          [[theBlock(^{
-            [hand cardAtIndex:index.integerValue];
-          }) should] raiseWithName:@"NSRangeException"];
-        });
+      it(@"returns the Card at that Index", ^{
+        [[theValue([hand indexOfCard:result]) should] equal:theValue(index.integerValue)];
       });
     });
 
-    context(@"when Hand is empty", ^{
-      let(hand, ^Hand *{
-        return FGBuildTrait(Hand.class, @"empty");
-      });
-
+    context(@"when index is outside Hand's bounds", ^{
       let(index, ^NSNumber *{
-        return [NSNumber numberWithUnsignedInteger:0];
+        return [NSNumber numberWithInteger:[hand size]];
       });
 
-      specify(^{
+      it(@"raises a NSRangeException", ^{
         [[theBlock(^{
           [hand cardAtIndex:index.integerValue];
+        }) should] raiseWithName:@"NSRangeException"];
+      });
+    });
+  });
+
+  describe(@"- cards", ^{
+    let(result, ^NSArray *{
+      return hand.cards;
+    });
+
+    it(@"returns a NSArry containin Hand's Cards", ^{
+      [[result should] equal:cards];
+    });
+  });
+
+  describe(@"- cardsAtIndexes:", ^{
+    context(@"when all indexes are within the Hand's bounds", ^{
+      let(indexes, ^NSIndexSet *{
+        return [NSIndexSet indexSetWithIndexesInRange:NSMakeRange(0, hand.size)];
+      });
+
+      it(@"returns the Cards at those indexes", ^{
+        [[[hand cardsAtIndexes:indexes] should] containObjectsInArray:cards];
+      });
+    });
+
+    context(@"when any indexes are outside the Hand's bounds", ^{
+      let(indexes, ^NSIndexSet *{
+        return [NSIndexSet indexSetWithIndexesInRange:NSMakeRange(hand.size, hand.size)];
+      });
+
+      it(@"raises a NSRangeException", ^{
+        [[theBlock(^{
+          [hand cardsAtIndexes:indexes];
         }) should] raiseWithName:@"NSRangeException"];
       });
     });

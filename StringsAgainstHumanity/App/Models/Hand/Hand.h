@@ -17,9 +17,10 @@
 + (Hand *)empty;
 + (Hand *)withArray:(NSArray *)cards;
 
-- (NSArray *)cards;
 - (void)addCard:(Card *)card;
 - (Card *)cardAtIndex:(NSUInteger)index;
+- (NSArray *)cards;
+- (NSArray *)cardsAtIndexes:(NSIndexSet *)indexes;
 - (NSUInteger)indexOfCard:(Card *)card;
 - (BOOL)isEmpty;
 - (BOOL)isFull;
