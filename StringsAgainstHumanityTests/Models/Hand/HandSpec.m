@@ -217,89 +217,58 @@ describe(@"Hand", ^{
   });
 
   describe(@"- removeCardAtIndex:", ^{
-    context(@"when Hand is not empty", ^{
-      context(@"when index is within Hand's size bounds", ^{
-        let(index, ^NSNumber *{
-          return [NSNumber numberWithInteger:hand.size - 1];
-        });
-
-        it(@"removes the cards", ^{
-          [[theBlock(^{
-            [hand removeCardAtIndex:index.integerValue];
-          }) should] change:^NSInteger {
-            return hand.size;
-          } by:-1];
-        });
+    context(@"when index is within Hand's size bounds", ^{
+      let(index, ^NSNumber *{
+        return [NSNumber numberWithInteger:hand.size - 1];
       });
 
-      context(@"when index is out of Hand's size bounds", ^{
-        let(index, ^NSNumber *{
-          return [NSNumber numberWithInteger:hand.size];
-        });
-
-        it(@"raises NSRangeException", ^{
-          [[theBlock(^{
-            [hand removeCardAtIndex:index.integerValue];
-          }) should] raiseWithName:@"NSRangeException"];
-        });
+      it(@"removes the cards", ^{
+        [[theBlock(^{
+          [hand removeCardAtIndex:index.integerValue];
+        }) should] change:^NSInteger {
+          return hand.size;
+        } by:-1];
       });
     });
 
-    context(@"when Hand is empty", ^{
+    context(@"when index is out of Hand's size bounds", ^{
+      let(index, ^NSNumber *{
+        return [NSNumber numberWithInteger:hand.size];
+      });
+
       it(@"raises NSRangeException", ^{
         [[theBlock(^{
-          [hand removeCardAtIndex:arc4random()];
+          [hand removeCardAtIndex:index.integerValue];
         }) should] raiseWithName:@"NSRangeException"];
       });
     });
   });
 
   describe(@"- removeCardsAtIndexes:", ^{
-    context(@"when Hand is not empty", ^{
-      context(@"when indexes are within Hand size bounds", ^{
-        let(indexes, ^NSIndexSet *{
-          NSLog(@"Hand Size: %ld", hand.size);
-          return [NSIndexSet indexSetWithIndexesInRange:NSMakeRange(0, hand.size)];
-        });
-
-        it(@"removes the cards", ^{
-          [[theBlock(^{
-            [hand removeCardsAtIndexes:indexes];
-          }) should] change:^NSInteger {
-            return hand.size;
-          } by:-indexes.count];
-        });
+    context(@"when indexes are within Hand size bounds", ^{
+      let(indexes, ^NSIndexSet *{
+        NSLog(@"Hand Size: %ld", hand.size);
+        return [NSIndexSet indexSetWithIndexesInRange:NSMakeRange(0, hand.size)];
       });
 
-      context(@"when indexes are outside Hand size bounds", ^{
-        let(indexes, ^NSIndexSet *{
-          return [NSIndexSet indexSetWithIndexesInRange:NSMakeRange(hand.size, hand.size)];
-        });
-
-        it(@"raises NSRangeException", ^{
-          [[theBlock(^{
-            [hand removeCardsAtIndexes:indexes];
-          }) should] raiseWithName:@"NSRangeException"];
-        });
+      it(@"removes the cards", ^{
+        [[theBlock(^{
+          [hand removeCardsAtIndexes:indexes];
+        }) should] change:^NSInteger {
+          return hand.size;
+        } by:-indexes.count];
       });
     });
 
-    context(@"when Hand is empty", ^{
-      let(hand, ^Hand *{
-        return FGBuildTrait(Hand.class, @"empty");
-      });
-
+    context(@"when indexes are outside Hand size bounds", ^{
       let(indexes, ^NSIndexSet *{
         return [NSIndexSet indexSetWithIndexesInRange:NSMakeRange(hand.size, hand.size)];
       });
 
-      it(@"does nothing", ^{
+      it(@"raises NSRangeException", ^{
         [[theBlock(^{
-          NSLog(@"Hand Index Set: %@", indexes);
           [hand removeCardsAtIndexes:indexes];
-        }) should] change:^NSInteger {
-          return hand.size;
-        } by:0];
+        }) should] raiseWithName:@"NSRangeException"];
       });
     });
   });
