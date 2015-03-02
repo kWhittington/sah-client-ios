@@ -15,6 +15,16 @@
   return [self cardAtIndex:indexPath.row];
 }
 
+- (NSArray *)cardsAtIndexPaths:(NSArray *)indexPaths {
+  NSMutableIndexSet *indexes = [NSMutableIndexSet indexSet];
+
+  [indexPaths each:^(NSIndexPath *indexPath) {
+    [indexes addIndex:indexPath.item];
+  }];
+
+  return [self cardsAtIndexes:indexes];
+}
+
 - (NSInteger)collectionView:(UICollectionView *)collectionView
      numberOfItemsInSection:(NSInteger)section {
   // We only have one section in a Hand.
@@ -45,12 +55,22 @@
 
 - (NSIndexPath *)indexPathOfCard:(Card *)card {
   NSInteger index = [self indexOfCard:card];
-  
+
   return [NSIndexPath indexPathForItem:index inSection:0];
 }
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
   // We will always only have one section.
   return 1;
+}
+
+- (void)removeCardsAtIndexPaths:(NSArray *)indexPaths {
+  NSMutableIndexSet *indexes = [NSMutableIndexSet indexSet];
+
+  [indexPaths each:^(NSIndexPath *indexPath) {
+    [indexes addIndex:indexPath.item];
+  }];
+
+  [self removeCardsAtIndexes:indexes];
 }
 @end
