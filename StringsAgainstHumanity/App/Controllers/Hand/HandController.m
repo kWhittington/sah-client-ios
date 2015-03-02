@@ -39,7 +39,7 @@ static NSString *const storyboardID = @"HandController";
 
   // Register cell classes
   [self initLayouts];
-  self.hand = [Hand empty];
+  self.hand = [Hand testHand];
   self.collectionView.dataSource = self.hand;
   [self.collectionView reloadData];
 
