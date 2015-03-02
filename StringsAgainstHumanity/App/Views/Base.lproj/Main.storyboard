@@ -48,7 +48,7 @@
                             </collectionViewCell>
                         </cells>
                         <connections>
-                            <outlet property="dataSource" destination="8Ud-wc-iRA" id="Rze-ZT-5Bs"/>
+                            <outlet property="dataSource" destination="2Kp-Wt-h8p" id="6iX-HN-hrw"/>
                             <outlet property="delegate" destination="8Ud-wc-iRA" id="lwa-lC-NZ9"/>
                             <outletCollection property="gestureRecognizers" destination="OeD-Wz-2qQ" appends="YES" id="HCK-Bj-AVP"/>
                         </connections>
@@ -60,6 +60,7 @@
                         <action selector="swipeUp:" destination="8Ud-wc-iRA" id="3ZF-vc-0pp"/>
                     </connections>
                 </swipeGestureRecognizer>
+                <customObject id="2Kp-Wt-h8p" customClass="Hand"/>
             </objects>
             <point key="canvasLocation" x="1903" y="1284"/>
         </scene>
