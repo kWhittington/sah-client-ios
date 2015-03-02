@@ -24,7 +24,7 @@
 + (Hand *)testHand {
   Hand *testHand = [[Hand alloc] init];
 
-  [@5 timesWithIndex:^(NSUInteger index) {
+  [Hand.SizeLimit timesWithIndex:^(NSUInteger index) {
     NSNumber *number = [NSNumber numberWithUnsignedInteger:index];
 
     NSString *string = NSStringWithFormat(@"Card #%@ text.", number);

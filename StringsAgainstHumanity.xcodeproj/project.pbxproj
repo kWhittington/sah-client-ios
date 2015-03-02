@@ -17,6 +17,12 @@
 		AD71F5921A9C049F0077BE8B /* CardFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = AD71F5911A9C049F0077BE8B /* CardFactory.m */; };
 		AD71F5951A9C11A70077BE8B /* HandFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = AD71F5941A9C11A70077BE8B /* HandFactory.m */; };
 		AD7C84DF1A95B34D00A2DE02 /* CardSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = AD7C84DE1A95B34D00A2DE02 /* CardSpec.m */; };
+		AD89D2EE1AA4C9AE0044F2C0 /* MainMenuController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD89D2ED1AA4C9AE0044F2C0 /* MainMenuController.m */; };
+		AD89D2F21AA4D79A0044F2C0 /* MainMenuControllerSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = AD89D2F11AA4D79A0044F2C0 /* MainMenuControllerSpec.m */; };
+		AD89D2F51AA4F4F30044F2C0 /* CardController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD89D2F41AA4F4F30044F2C0 /* CardController.m */; };
+		AD89D2F91AA4F8FB0044F2C0 /* MatchmakingController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD89D2F81AA4F8FB0044F2C0 /* MatchmakingController.m */; };
+		AD89D2FD1AA4FACA0044F2C0 /* PrivateGameStartController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD89D2FC1AA4FACA0044F2C0 /* PrivateGameStartController.m */; };
+		AD89D3011AA4FBE40044F2C0 /* NotCardCzarController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD89D3001AA4FBE40044F2C0 /* NotCardCzarController.m */; };
 		AD8B92E81AA2BB6E0044ECC0 /* Hand+DataSourceSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = AD8B92E71AA2BB6E0044ECC0 /* Hand+DataSourceSpec.m */; };
 		AD90F64E1AA0E11D008FF768 /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = AD90F64D1AA0E11D008FF768 /* Constants.m */; };
 		ADBF7F901A910CE300C5BB00 /* HandController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADBF7F8F1A910CE300C5BB00 /* HandController.m */; };
@@ -60,6 +66,17 @@
 		AD71F5931A9C09820077BE8B /* TestLibraries.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TestLibraries.pch; path = "Supporting Files/TestLibraries.pch"; sourceTree = "<group>"; };
 		AD71F5941A9C11A70077BE8B /* HandFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HandFactory.m; path = Factories/Models/Hand/HandFactory.m; sourceTree = "<group>"; };
 		AD7C84DE1A95B34D00A2DE02 /* CardSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CardSpec.m; path = Models/Card/CardSpec.m; sourceTree = "<group>"; };
+		AD89D2EC1AA4C9AE0044F2C0 /* MainMenuController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MainMenuController.h; path = App/Controllers/MainMenu/MainMenuController.h; sourceTree = "<group>"; };
+		AD89D2ED1AA4C9AE0044F2C0 /* MainMenuController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MainMenuController.m; path = App/Controllers/MainMenu/MainMenuController.m; sourceTree = "<group>"; };
+		AD89D2F11AA4D79A0044F2C0 /* MainMenuControllerSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MainMenuControllerSpec.m; path = Controllers/MainMenu/MainMenuControllerSpec.m; sourceTree = "<group>"; };
+		AD89D2F31AA4F4F30044F2C0 /* CardController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CardController.h; path = App/Controllers/Card/CardController.h; sourceTree = "<group>"; };
+		AD89D2F41AA4F4F30044F2C0 /* CardController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CardController.m; path = App/Controllers/Card/CardController.m; sourceTree = "<group>"; };
+		AD89D2F71AA4F8FB0044F2C0 /* MatchmakingController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MatchmakingController.h; path = App/Controllers/Matchmaking/MatchmakingController.h; sourceTree = "<group>"; };
+		AD89D2F81AA4F8FB0044F2C0 /* MatchmakingController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MatchmakingController.m; path = App/Controllers/Matchmaking/MatchmakingController.m; sourceTree = "<group>"; };
+		AD89D2FB1AA4FACA0044F2C0 /* PrivateGameStartController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PrivateGameStartController.h; path = App/Controllers/PrivateGameStart/PrivateGameStartController.h; sourceTree = "<group>"; };
+		AD89D2FC1AA4FACA0044F2C0 /* PrivateGameStartController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PrivateGameStartController.m; path = App/Controllers/PrivateGameStart/PrivateGameStartController.m; sourceTree = "<group>"; };
+		AD89D2FF1AA4FBE40044F2C0 /* NotCardCzarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NotCardCzarController.h; path = App/Controllers/NotCardCzar/NotCardCzarController.h; sourceTree = "<group>"; };
+		AD89D3001AA4FBE40044F2C0 /* NotCardCzarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NotCardCzarController.m; path = App/Controllers/NotCardCzar/NotCardCzarController.m; sourceTree = "<group>"; };
 		AD8B92E71AA2BB6E0044ECC0 /* Hand+DataSourceSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "Hand+DataSourceSpec.m"; path = "DataSources/Hand/Hand+DataSourceSpec.m"; sourceTree = "<group>"; };
 		AD90F64D1AA0E11D008FF768 /* Constants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Constants.m; path = App/Constants/Constants.m; sourceTree = "<group>"; };
 		AD90F64F1AA0E177008FF768 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Constants.h; path = App/Constants/Constants.h; sourceTree = "<group>"; };
@@ -145,6 +162,7 @@
 			isa = PBXGroup;
 			children = (
 				AD1337851AA01CEF002F1721 /* Hand */,
+				AD89D2F01AA4D7780044F2C0 /* MainMenu */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -185,6 +203,10 @@
 			children = (
 				ADBF7F9B1A913DFA00C5BB00 /* Card */,
 				ADBF7F8D1A9105A100C5BB00 /* Hand */,
+				AD89D2EF1AA4C9B10044F2C0 /* MainMenu */,
+				AD89D2F61AA4F8D70044F2C0 /* Matchmaking */,
+				AD89D2FE1AA4FBB60044F2C0 /* NotCardCzar */,
+				AD89D2FA1AA4FA9D0044F2C0 /* PrivateGameStart */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -331,6 +353,50 @@
 			name = Card;
 			sourceTree = "<group>";
 		};
+		AD89D2EF1AA4C9B10044F2C0 /* MainMenu */ = {
+			isa = PBXGroup;
+			children = (
+				AD89D2EC1AA4C9AE0044F2C0 /* MainMenuController.h */,
+				AD89D2ED1AA4C9AE0044F2C0 /* MainMenuController.m */,
+			);
+			name = MainMenu;
+			sourceTree = "<group>";
+		};
+		AD89D2F01AA4D7780044F2C0 /* MainMenu */ = {
+			isa = PBXGroup;
+			children = (
+				AD89D2F11AA4D79A0044F2C0 /* MainMenuControllerSpec.m */,
+			);
+			name = MainMenu;
+			sourceTree = "<group>";
+		};
+		AD89D2F61AA4F8D70044F2C0 /* Matchmaking */ = {
+			isa = PBXGroup;
+			children = (
+				AD89D2F71AA4F8FB0044F2C0 /* MatchmakingController.h */,
+				AD89D2F81AA4F8FB0044F2C0 /* MatchmakingController.m */,
+			);
+			name = Matchmaking;
+			sourceTree = "<group>";
+		};
+		AD89D2FA1AA4FA9D0044F2C0 /* PrivateGameStart */ = {
+			isa = PBXGroup;
+			children = (
+				AD89D2FB1AA4FACA0044F2C0 /* PrivateGameStartController.h */,
+				AD89D2FC1AA4FACA0044F2C0 /* PrivateGameStartController.m */,
+			);
+			name = PrivateGameStart;
+			sourceTree = "<group>";
+		};
+		AD89D2FE1AA4FBB60044F2C0 /* NotCardCzar */ = {
+			isa = PBXGroup;
+			children = (
+				AD89D2FF1AA4FBE40044F2C0 /* NotCardCzarController.h */,
+				AD89D3001AA4FBE40044F2C0 /* NotCardCzarController.m */,
+			);
+			name = NotCardCzar;
+			sourceTree = "<group>";
+		};
 		AD90F64C1AA0E0AA008FF768 /* Constants */ = {
 			isa = PBXGroup;
 			children = (
@@ -378,6 +444,8 @@
 		ADBF7F9B1A913DFA00C5BB00 /* Card */ = {
 			isa = PBXGroup;
 			children = (
+				AD89D2F31AA4F4F30044F2C0 /* CardController.h */,
+				AD89D2F41AA4F4F30044F2C0 /* CardController.m */,
 			);
 			name = Card;
 			sourceTree = "<group>";
@@ -615,13 +683,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AD89D3011AA4FBE40044F2C0 /* NotCardCzarController.m in Sources */,
+				AD89D2EE1AA4C9AE0044F2C0 /* MainMenuController.m in Sources */,
+				AD89D2F51AA4F4F30044F2C0 /* CardController.m in Sources */,
 				AD90F64E1AA0E11D008FF768 /* Constants.m in Sources */,
 				ADBF7FAA1A91661500C5BB00 /* ZoomInHandLayout.m in Sources */,
 				ADBF7F901A910CE300C5BB00 /* HandController.m in Sources */,
 				ADC195D21AA1545D00177660 /* Hand+DataSource.m in Sources */,
 				ADBF7F981A91171A00C5BB00 /* Card.m in Sources */,
+				AD89D2F91AA4F8FB0044F2C0 /* MatchmakingController.m in Sources */,
 				AD6272EF1A8341D000565A28 /* main.m in Sources */,
 				ADBF7F931A910E2800C5BB00 /* Hand.m in Sources */,
+				AD89D2FD1AA4FACA0044F2C0 /* PrivateGameStartController.m in Sources */,
 				ADBF7F9F1A913FE200C5BB00 /* CardCell.m in Sources */,
 				ADE4A6B61A844121008CB5D2 /* AppDelegate.m in Sources */,
 				ADBF7FA71A914D4D00C5BB00 /* BirdsEyeHandLayout.m in Sources */,
@@ -637,6 +710,7 @@
 				AD8B92E81AA2BB6E0044ECC0 /* Hand+DataSourceSpec.m in Sources */,
 				AD1337871AA01D6E002F1721 /* HandControllerSpec.m in Sources */,
 				AD71F5921A9C049F0077BE8B /* CardFactory.m in Sources */,
+				AD89D2F21AA4D79A0044F2C0 /* MainMenuControllerSpec.m in Sources */,
 				AD71F5951A9C11A70077BE8B /* HandFactory.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
