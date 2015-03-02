@@ -79,7 +79,6 @@
 - (NSArray *)cardsAtIndexes:(NSIndexSet *)indexes {
   return [self.mutableCards objectsAtIndexes:indexes];
 }
-
 - (NSUInteger)indexOfCard:(Card *)card {
   NSUInteger result = [self.mutableCards indexOfObject:card];
   return result;
@@ -91,6 +90,10 @@
 
 - (BOOL)isFull {
   return self.size == Hand.SizeLimit.unsignedIntegerValue;
+}
+
+- (void)removeAllCards {
+  [self.mutableCards removeAllObjects];
 }
 
 - (void)removeCard:(Card *)card {

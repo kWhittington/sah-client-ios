@@ -24,6 +24,7 @@
 - (NSUInteger)indexOfCard:(Card *)card;
 - (BOOL)isEmpty;
 - (BOOL)isFull;
+- (void)removeAllCards;
 - (void)removeCard:(Card *)card;
 - (void)removeCardAtIndex:(NSUInteger)index;
 - (void)removeCardsAtIndexes:(NSIndexSet *)indexes;

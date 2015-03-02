@@ -186,6 +186,13 @@ describe(@"Hand", ^{
     });
   });
 
+  describe(@"- removeAllCards", ^{
+    it(@"removes all Cards from the Hand", ^{
+      [hand removeAllCards];
+      [[theValue(hand.isEmpty) should] beYes];
+    });
+  });
+
   describe(@"- removeCard:", ^{
     context(@"when Hand contains the Card", ^{
       let(card, ^Card *{
