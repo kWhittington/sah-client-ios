@@ -14,7 +14,7 @@
 SPEC_BEGIN(MainMenuControllerSpec)
 describe(@"MainMenuController", ^{
   let(mainMenuController, ^MainMenuController *{
-    MainMenuController *result = [[UIStoryboard storyboardWithName:StoryboardName bundle:nil]
+    MainMenuController *result = [[UIStoryboard storyboardWithName:@"Main" bundle:nil]
       instantiateViewControllerWithIdentifier:MainMenuController.storyboardID];
     [result viewDidLoad];
     return result;

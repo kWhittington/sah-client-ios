@@ -2,13 +2,14 @@
 //  Constants.h
 //  StringsAgainstHumanity
 //
-//  Created by Kyle Whittington on 2/27/15.
+//  Created by Kyle Whittington on 3/3/15.
 //  Copyright (c) 2015 Kyle Whittington. All rights reserved.
 //
 
-#ifndef StringsAgainstHumanity_Constants_h
-#define StringsAgainstHumanity_Constants_h
+#import "SAHLibraries.pch"
 
-extern NSString *const StoryboardName;
+@interface Constants : NSObject
 
-#endif
++ (NSString *)StoryboardName;
+
+@end

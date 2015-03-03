@@ -14,7 +14,7 @@
 SPEC_BEGIN(HandControllerSpec)
 describe(@"HandController", ^{
   let(handController, ^HandController *{
-    HandController *result = [[UIStoryboard storyboardWithName:StoryboardName bundle:nil]
+    HandController *result = [[UIStoryboard storyboardWithName:Constants.StoryboardName bundle:nil]
       instantiateViewControllerWithIdentifier:HandController.storyboardID];
     [result viewDidLoad];
     return result;
