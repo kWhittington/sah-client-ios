@@ -14,6 +14,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Pods-HexColors.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-ObjectiveSugar.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -51,52 +56,6 @@
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
-	<dict>
-		<key>2FA05D81B5689805AD4518FF</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>5C6BBE7DCF9FD17F516FC5E9</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>7233CEFEBCF025949BC9006C</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>99CF0085E30D84A812083138</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>BBF658869AAF84A7AD7D4F60</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>E202C52AC24047C7F6D880B3</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>E443357A66C7D13F91A2DD66</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>F2675F50694C99747BC2ED32</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>F53B373EC27238DD62E182CD</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-	</dict>
+	<dict/>
 </dict>
 </plist>

@@ -3,6 +3,7 @@ xcodeproj 'StringsAgainstHumanity'
 
 pod 'ObjectiveSugar'
 pod 'CocoaLumberjack'
+pod 'HexColors'
 
 pod 'pop'
 pod 'Canvas'
