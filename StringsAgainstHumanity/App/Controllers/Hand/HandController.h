@@ -6,13 +6,16 @@
 //  Copyright (c) 2015 Kyle Whittington. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "SAHLibraries.pch"
 
-@class Hand;
+@class Card;
 
 @interface HandController : UICollectionViewController
+@property(readonly, strong) Card *blackCard;
 
-@property(strong, readonly) Hand *hand;
++ (NSString *)storyboardID;
 
+- (void)addCard:(Card *)card;
+- (void)setBlackCardString:(NSString *)string;
 
 @end

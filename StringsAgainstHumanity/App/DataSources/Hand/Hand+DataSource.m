@@ -1,73 +1,34 @@
 //
-//  HandViewDataSource.m
+//  Hand+DataSource.m
 //  StringsAgainstHumanity
 //
-//  Created by Kyle Whittington on 2/20/15.
+//  Created by Kyle Whittington on 2/27/15.
 //  Copyright (c) 2015 Kyle Whittington. All rights reserved.
 //
 
-#import "HandViewDataSource.h"
-#import "Hand.h"
-#import "HandView.h"
+#import "Hand+DataSource.h"
 #import "CardCell.h"
 #import "Card.h"
 
-@interface HandViewDataSource ()
-
-@property(strong) Hand *hand;
-
-@end
-
-@implementation HandViewDataSource
-
-- (instancetype)init {
-  self = [super init];
-
-  self.hand = [Hand testHand];
-
-  return self;
-}
-
+@implementation Hand (DataSource)
 - (Card *)cardAtIndexPath:(NSIndexPath *)indexPath {
-  return [self.hand cardAtIndex:indexPath.row];
+  return [self cardAtIndex:indexPath.row];
 }
 
 - (NSArray *)cardsAtIndexPaths:(NSArray *)indexPaths {
-  return [indexPaths map:^(NSIndexPath *indexPath) {
-    return [self cardAtIndexPath:indexPath];
-  }];
-}
+  NSMutableIndexSet *indexes = [NSMutableIndexSet indexSet];
 
-- (void)deleteCard:(Card *)card {
-  [self.hand removeCard:card];
-}
-
-- (void)deleteCards:(NSArray *)cards {
-  [self.hand removeCardsInArray:cards];
-}
-
-- (void)deleteCardAtIndexPath:(NSIndexPath *)indexPath {
-  [self.hand removeCardAtIndex:indexPath.row];
-}
-
-- (void)deleteCardsAtIndexPaths:(NSArray *)indexPaths {
   [indexPaths each:^(NSIndexPath *indexPath) {
-    [self deleteCardAtIndexPath:indexPath];
+    [indexes addIndex:indexPath.item];
   }];
-}
 
-#pragma mark <UICollectionViewDataSource>
-// Apple Doc:
-// https://developer.apple.com/library/ios/documentation/WindowsViews/Conceptual/CollectionViewPGforIOS/CollectionViewPGforIOS.pdf
-// If there will only be one section, numberOfSectionsInCollectionView is
-// optional.
-//- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
-//  return 0;
-//}
+  return [self cardsAtIndexes:indexes];
+}
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView
      numberOfItemsInSection:(NSInteger)section {
-  return [self.hand size];
+  // We only have one section in a Hand.
+  return self.size;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView
@@ -90,5 +51,26 @@
   dequeueCardCellForIndexPath:(NSIndexPath *)indexPath {
   return [collectionView dequeueReusableCellWithReuseIdentifier:[CardCell reusableID]
                                                    forIndexPath:indexPath];
+}
+
+- (NSIndexPath *)indexPathOfCard:(Card *)card {
+  NSInteger index = [self indexOfCard:card];
+
+  return [NSIndexPath indexPathForItem:index inSection:0];
+}
+
+- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
+  // We will always only have one section.
+  return 1;
+}
+
+- (void)removeCardsAtIndexPaths:(NSArray *)indexPaths {
+  NSMutableIndexSet *indexes = [NSMutableIndexSet indexSet];
+
+  [indexPaths each:^(NSIndexPath *indexPath) {
+    [indexes addIndex:indexPath.item];
+  }];
+
+  [self removeCardsAtIndexes:indexes];
 }
 @end

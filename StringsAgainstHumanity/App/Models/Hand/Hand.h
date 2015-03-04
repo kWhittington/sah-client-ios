@@ -6,7 +6,7 @@
 //  Copyright (c) 2015 Kyle Whittington. All rights reserved.
 //
 
-#import "PrefixHeader.pch"
+#import "SAHLibraries.pch"
 
 @class Card;
 
@@ -17,11 +17,14 @@
 + (Hand *)empty;
 + (Hand *)withArray:(NSArray *)cards;
 
-- (NSArray *)cards;
 - (void)addCard:(Card *)card;
 - (Card *)cardAtIndex:(NSUInteger)index;
+- (NSArray *)cards;
+- (NSArray *)cardsAtIndexes:(NSIndexSet *)indexes;
+- (NSUInteger)indexOfCard:(Card *)card;
 - (BOOL)isEmpty;
 - (BOOL)isFull;
+- (void)removeAllCards;
 - (void)removeCard:(Card *)card;
 - (void)removeCardAtIndex:(NSUInteger)index;
 - (void)removeCardsAtIndexes:(NSIndexSet *)indexes;

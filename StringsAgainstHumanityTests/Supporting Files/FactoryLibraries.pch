@@ -9,7 +9,7 @@
 #ifndef StringsAgainstHumanity_FactoryLibraries_pch
 #define StringsAgainstHumanity_FactoryLibraries_pch
 
-#import "PrefixHeader.pch"
+#import "SAHLibraries.pch"
 
 // All libraries specific to factories.
 #import <Gizou.h>

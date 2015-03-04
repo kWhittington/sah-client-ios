@@ -24,7 +24,7 @@
 + (Hand *)testHand {
   Hand *testHand = [[Hand alloc] init];
 
-  [@5 timesWithIndex:^(NSUInteger index) {
+  [Hand.SizeLimit timesWithIndex:^(NSUInteger index) {
     NSNumber *number = [NSNumber numberWithUnsignedInteger:index];
 
     NSString *string = NSStringWithFormat(@"Card #%@ text.", number);
@@ -76,12 +76,24 @@
   return self.mutableCards[index];
 }
 
+- (NSArray *)cardsAtIndexes:(NSIndexSet *)indexes {
+  return [self.mutableCards objectsAtIndexes:indexes];
+}
+- (NSUInteger)indexOfCard:(Card *)card {
+  NSUInteger result = [self.mutableCards indexOfObject:card];
+  return result;
+}
+
 - (BOOL)isEmpty {
   return self.size == 0;
 }
 
 - (BOOL)isFull {
   return self.size == Hand.SizeLimit.unsignedIntegerValue;
+}
+
+- (void)removeAllCards {
+  [self.mutableCards removeAllObjects];
 }
 
 - (void)removeCard:(Card *)card {
