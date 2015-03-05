@@ -15,6 +15,10 @@
   return @"Main";
 }
 
++ (UIColor *)BlackColor {
+  return [UIColor colorWithHexString:@"1A1818"];
+}
+
 + (UIColor *)WhiteColor {
   return [UIColor colorWithHexString:@"000000"];
 }
