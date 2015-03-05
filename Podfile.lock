@@ -1,30 +1,36 @@
 PODS:
   - Canvas (0.1.2)
-  - CocoaLumberjack (1.9.2):
-    - CocoaLumberjack/Extensions (= 1.9.2)
-  - CocoaLumberjack/Core (1.9.2)
-  - CocoaLumberjack/Extensions (1.9.2):
+  - CocoaLumberjack (2.0.0-rc2):
+    - CocoaLumberjack/Default (= 2.0.0-rc2)
+    - CocoaLumberjack/Extensions (= 2.0.0-rc2)
+  - CocoaLumberjack/Core (2.0.0-rc2)
+  - CocoaLumberjack/Default (2.0.0-rc2):
     - CocoaLumberjack/Core
+  - CocoaLumberjack/Extensions (2.0.0-rc2):
+    - CocoaLumberjack/Default
   - FactoryGentleman (1.2.2)
   - Gizou (0.1.3)
+  - HexColors (2.2.1)
   - Kiwi (2.3.1)
   - ObjectiveSugar (1.1.0)
   - pop (1.0.7)
 
 DEPENDENCIES:
   - Canvas
-  - CocoaLumberjack
+  - CocoaLumberjack (= 2.0.0-rc2)
   - FactoryGentleman
   - Gizou
+  - HexColors
   - Kiwi
   - ObjectiveSugar
   - pop
 
 SPEC CHECKSUMS:
   Canvas: ae2faca05a15c4d6659fb3ae5e2a14817df4449a
-  CocoaLumberjack: 205769c032b5fef85b92472046bcc8b7e7c8a817
+  CocoaLumberjack: 6027cd9a0665203a7df456c526e137f02cd547e1
   FactoryGentleman: d056e0c88b84d2657fbab13688985ecee5044b66
   Gizou: f0025df05b51197ab8979c728a1cd525b7d6911f
+  HexColors: 01384d2bbe8dc4ffa43c3b4135db6e976952d153
   Kiwi: 73e1400209055ee9c8ba78c6012b6b642d0fb9f7
   ObjectiveSugar: f48793f5902c77cfc02a4ce46d2e8ecddcad4dc2
   pop: 2f14a1ea61339767af9e66741b418c831b3844df

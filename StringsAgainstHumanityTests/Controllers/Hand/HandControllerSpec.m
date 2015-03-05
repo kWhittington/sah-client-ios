@@ -35,31 +35,17 @@ describe(@"HandController", ^{
       return FGBuildTrait(Card.class, @"withString");
     });
 
-    it(@"sends addCard: to its DataSource", ^{
+    it(@"sends addCard: to its DataSource and interItemsAtIndexPaths to its CollectionView", ^{
       // NOTE
-      // Kiwi's message matchers block the message from actually being run.
-      // This will cause the message to throw and error, which is expected below.
+      // Due to how Kiwi's matchers work, this function will fail if both the dataSource/hand
+      // and collectionView are mocked or expecting a message.
+      // The collectionView will cause a EXC_BAD_ACCESS error.
       [[(NSObject *)handController.collectionView.dataSource should] receive:@selector(addCard:)
                                                                withArguments:card];
-      [[theBlock(^{
-        [handController addCard:card];
-      }) should] raiseWithName:@"NSInternalInconsistencyException"];
-    });
-
-    it(@"sends insertItemsAtIndexPaths: to its CollectionView", ^{
       [[(NSObject *)handController.collectionView should]
         receive:@selector(insertItemsAtIndexPaths:)];
-      [[theBlock(^{
-        [handController addCard:card];
-      }) should] raiseWithName:@"NSInternalInconsistencyException"];
-    });
 
-    context(@"when not testing for message passing", ^{
-      it(@"raises no error", ^{
-        [[theBlock(^{
-          [handController addCard:card];
-        }) shouldNot] raise];
-      });
+      [handController addCard:card];
     });
   });
 

@@ -2,7 +2,8 @@ platform :ios, '7.0'
 xcodeproj 'StringsAgainstHumanity'
 
 pod 'ObjectiveSugar'
-pod 'CocoaLumberjack'
+pod 'CocoaLumberjack', '2.0.0-rc2'
+pod 'HexColors'
 
 pod 'pop'
 pod 'Canvas'

@@ -28,7 +28,7 @@ describe(@"Card", ^{
       return [Card blank];
     });
 
-    it(@"creates a Card with en empty string", ^{
+    it(@"creates a Card with an empty string", ^{
       [[result.string should] equal:@""];
     });
   });

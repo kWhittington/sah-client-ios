@@ -11,7 +11,7 @@
 #import "Card.h"
 
 FGFactoryBegin(Card)
-  // The default fatory will be equvialent to @"blank" trait.
+  // The default factory will be equvialent to @"blank" trait.
   [builder initWith:@selector(init) fieldNames:@[]];
 
   traitDefiners[@"blank"] = ^(FGDefinitionBuilder *blankBuilder) {

@@ -14,6 +14,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Pods-HexColors.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-ObjectiveSugar.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -52,47 +57,52 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>2FA05D81B5689805AD4518FF</key>
+		<key>02660FCB8C36E948EC4CC7AA</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>5C6BBE7DCF9FD17F516FC5E9</key>
+		<key>15B100EB81A6CF78782B259F</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>7233CEFEBCF025949BC9006C</key>
+		<key>241526816A4348F43C6606AE</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>99CF0085E30D84A812083138</key>
+		<key>24DF9CA4A26EC0AFF9636B8D</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>BBF658869AAF84A7AD7D4F60</key>
+		<key>40AAA2CE01497D157177750D</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>E202C52AC24047C7F6D880B3</key>
+		<key>53355E0B3C332C47E8109E04</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>E443357A66C7D13F91A2DD66</key>
+		<key>708F1A0EDA0DEE199CD0616B</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>F2675F50694C99747BC2ED32</key>
+		<key>8DFB27C999EBC57991B848B4</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>F53B373EC27238DD62E182CD</key>
+		<key>BAA53D9D91B5047EFA563389</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>FE9C1127CB9DEDEDF466018E</key>
 		<dict>
 			<key>primary</key>
 			<true/>

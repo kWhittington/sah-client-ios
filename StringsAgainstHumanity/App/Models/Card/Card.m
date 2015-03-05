@@ -17,7 +17,7 @@
 @implementation Card
 
 + (instancetype)blank {
-  return [[Card alloc] init];
+  return [[Card alloc] initWithString:@""];
 }
 
 + (instancetype)withString:(NSString *)string {
@@ -25,19 +25,14 @@
 }
 
 - (instancetype)init {
-  self = [super init];
-
-  [self initString];
+  self = [self initWithString:@""];
 
   return self;
 }
 
-- (void)initString {
-  self.string = [NSString string];
-}
-
+#pragma mark Designated Initializer
 - (instancetype)initWithString:(NSString *)string {
-  self = [self init];
+  self = [super init];
 
   self.string = [string copy];
 
