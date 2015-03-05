@@ -6,12 +6,17 @@
 //  Copyright (c) 2015 Kyle Whittington. All rights reserved.
 //
 
+#import "SAHLibraries.pch"
 #import "Constants.h"
 
 @implementation Constants
 
 + (NSString *)StoryboardName {
   return @"Main";
+}
+
++ (UIColor *)WhiteColor {
+  return [UIColor colorWithHexString:@"000000"];
 }
 
 - (instancetype)init {

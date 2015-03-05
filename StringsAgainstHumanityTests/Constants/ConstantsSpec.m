@@ -26,5 +26,19 @@ describe(@"Constants", ^{
       [[result should] equal:@"Main"];
     });
   });
+  
+  describe(@"+ WhiteColor", ^{
+    let(result, ^{
+      return Constants.WhiteColor;
+    });
+    
+    let(SAHWhiteColor, ^UIColor *{
+      return [UIColor colorWithHexString:@"000000"];
+    });
+    
+    specify(^{
+      [[result should] equal:SAHWhiteColor];
+    });
+  });
 });
 SPEC_END
