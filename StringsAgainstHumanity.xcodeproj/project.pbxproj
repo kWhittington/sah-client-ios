@@ -11,6 +11,9 @@
 		9E90AAB947D23AB961ED1298 /* libPods-StringsAgainstHumanityTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A27D956F47919DE0B0728BFE /* libPods-StringsAgainstHumanityTests.a */; };
 		AD1337871AA01D6E002F1721 /* HandControllerSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = AD1337861AA01D6E002F1721 /* HandControllerSpec.m */; };
 		AD1C3E061A8450F10001C833 /* _clang-format in Resources */ = {isa = PBXBuildFile; fileRef = AD1C3E051A8450F10001C833 /* _clang-format */; };
+		AD341F541AA8F4940040DA92 /* WhiteCard.m in Sources */ = {isa = PBXBuildFile; fileRef = AD341F531AA8F4940040DA92 /* WhiteCard.m */; };
+		AD341F571AA8F4F60040DA92 /* WhiteCardFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = AD341F561AA8F4F60040DA92 /* WhiteCardFactory.m */; };
+		AD341F5A1AA8F55C0040DA92 /* WhiteCardSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = AD341F591AA8F55C0040DA92 /* WhiteCardSpec.m */; };
 		AD518EEE1A8400BF00FA6CFF /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = AD518EEC1A8400BF00FA6CFF /* Podfile */; };
 		AD518EEF1A8400BF00FA6CFF /* uncrustify.cfg in Resources */ = {isa = PBXBuildFile; fileRef = AD518EED1A8400BF00FA6CFF /* uncrustify.cfg */; };
 		AD5E85671AA7E3680067ABF2 /* BlackCard.m in Sources */ = {isa = PBXBuildFile; fileRef = AD5E85661AA7E3680067ABF2 /* BlackCard.m */; };
@@ -58,6 +61,10 @@
 		A27D956F47919DE0B0728BFE /* libPods-StringsAgainstHumanityTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-StringsAgainstHumanityTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD1337861AA01D6E002F1721 /* HandControllerSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HandControllerSpec.m; path = Controllers/Hand/HandControllerSpec.m; sourceTree = "<group>"; };
 		AD1C3E051A8450F10001C833 /* _clang-format */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "_clang-format"; sourceTree = SOURCE_ROOT; };
+		AD341F521AA8F4940040DA92 /* WhiteCard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WhiteCard.h; path = App/Models/Card/WhiteCard/WhiteCard.h; sourceTree = "<group>"; };
+		AD341F531AA8F4940040DA92 /* WhiteCard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WhiteCard.m; path = App/Models/Card/WhiteCard/WhiteCard.m; sourceTree = "<group>"; };
+		AD341F561AA8F4F60040DA92 /* WhiteCardFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WhiteCardFactory.m; path = Factories/Models/Card/WhiteCard/WhiteCardFactory.m; sourceTree = "<group>"; };
+		AD341F591AA8F55C0040DA92 /* WhiteCardSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WhiteCardSpec.m; path = Models/Card/WhiteCard/WhiteCardSpec.m; sourceTree = "<group>"; };
 		AD518EEC1A8400BF00FA6CFF /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		AD518EED1A8400BF00FA6CFF /* uncrustify.cfg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = uncrustify.cfg; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		AD5E85651AA7E3680067ABF2 /* BlackCard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BlackCard.h; path = App/Models/Card/BlackCard/BlackCard.h; sourceTree = "<group>"; };
@@ -182,6 +189,31 @@
 				AD1337861AA01D6E002F1721 /* HandControllerSpec.m */,
 			);
 			name = Hand;
+			sourceTree = "<group>";
+		};
+		AD341F511AA8F40A0040DA92 /* WhiteCard */ = {
+			isa = PBXGroup;
+			children = (
+				AD341F521AA8F4940040DA92 /* WhiteCard.h */,
+				AD341F531AA8F4940040DA92 /* WhiteCard.m */,
+			);
+			name = WhiteCard;
+			sourceTree = "<group>";
+		};
+		AD341F551AA8F4CA0040DA92 /* WhiteCard */ = {
+			isa = PBXGroup;
+			children = (
+				AD341F561AA8F4F60040DA92 /* WhiteCardFactory.m */,
+			);
+			name = WhiteCard;
+			sourceTree = "<group>";
+		};
+		AD341F581AA8F52C0040DA92 /* WhiteCard */ = {
+			isa = PBXGroup;
+			children = (
+				AD341F591AA8F55C0040DA92 /* WhiteCardSpec.m */,
+			);
+			name = WhiteCard;
 			sourceTree = "<group>";
 		};
 		AD518EE41A83FEE500FA6CFF /* App */ = {
@@ -367,6 +399,7 @@
 			isa = PBXGroup;
 			children = (
 				AD5E856B1AA7E5450067ABF2 /* BlackCard */,
+				AD341F551AA8F4CA0040DA92 /* WhiteCard */,
 				AD71F5911A9C049F0077BE8B /* CardFactory.m */,
 			);
 			name = Card;
@@ -385,6 +418,7 @@
 			isa = PBXGroup;
 			children = (
 				AD5E85681AA7E3710067ABF2 /* BlackCard */,
+				AD341F581AA8F52C0040DA92 /* WhiteCard */,
 				AD7C84DE1A95B34D00A2DE02 /* CardSpec.m */,
 			);
 			name = Card;
@@ -464,6 +498,7 @@
 			isa = PBXGroup;
 			children = (
 				AD5E85641AA7E3390067ABF2 /* BlackCard */,
+				AD341F511AA8F40A0040DA92 /* WhiteCard */,
 				ADBF7F961A91171A00C5BB00 /* Card.h */,
 				ADBF7F971A91171A00C5BB00 /* Card.m */,
 			);
@@ -737,6 +772,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AD89D3011AA4FBE40044F2C0 /* NotCardCzarController.m in Sources */,
+				AD341F541AA8F4940040DA92 /* WhiteCard.m in Sources */,
 				AD89D2EE1AA4C9AE0044F2C0 /* MainMenuController.m in Sources */,
 				AD89D2F51AA4F4F30044F2C0 /* CardController.m in Sources */,
 				ADBF7FAA1A91661500C5BB00 /* ZoomInHandLayout.m in Sources */,
@@ -766,9 +802,11 @@
 				ADC687971AA6518C005F70C3 /* ConstantsSpec.m in Sources */,
 				AD8B92E81AA2BB6E0044ECC0 /* Hand+DataSourceSpec.m in Sources */,
 				AD1337871AA01D6E002F1721 /* HandControllerSpec.m in Sources */,
+				AD341F571AA8F4F60040DA92 /* WhiteCardFactory.m in Sources */,
 				AD71F5921A9C049F0077BE8B /* CardFactory.m in Sources */,
 				AD89D2F21AA4D79A0044F2C0 /* MainMenuControllerSpec.m in Sources */,
 				AD71F5951A9C11A70077BE8B /* HandFactory.m in Sources */,
+				AD341F5A1AA8F55C0040DA92 /* WhiteCardSpec.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
