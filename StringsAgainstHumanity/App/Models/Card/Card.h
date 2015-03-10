@@ -17,4 +17,5 @@
 
 - (instancetype)initWithString:(NSString *)string;
 
+- (BOOL)isEqualToCard:(Card *)card;
 @end

@@ -39,4 +39,23 @@
   return self;
 }
 
+- (NSUInteger)hash {
+  return [self.string hash];
+}
+
+- (BOOL)isEqual:(id)object {
+  if (self == object) {
+    return YES;
+  }
+
+  unless([object isKindOfClass:self.class]) { return NO; }
+
+  return [self isEqualToCard:(Card *)object];
+}
+
+- (BOOL)isEqualToCard:(Card *)card {
+  BOOL stringsAreEqual = [self.string isEqualToString:card.string];
+
+  return stringsAreEqual;
+}
 @end
