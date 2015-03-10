@@ -39,6 +39,12 @@
   return self;
 }
 
+- (instancetype)copyWithZone:(NSZone *)zone {
+  Card *copy = [Card withString:self.string.copy];
+
+  return copy;
+}
+
 - (NSUInteger)hash {
   return [self.string hash];
 }

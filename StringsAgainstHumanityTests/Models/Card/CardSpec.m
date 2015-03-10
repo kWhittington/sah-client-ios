@@ -23,6 +23,10 @@ describe(@"Card", ^{
     });
   });
 
+  it(@"conforms to the NSCopying protocol", ^{
+    [[card should] conformToProtocol:@protocol(NSCopying)];
+  });
+
   describe(@"+ blank", ^{
     let(result, ^Card *{
       return [Card blank];
@@ -60,6 +64,102 @@ describe(@"Card", ^{
 
     it(@"creates a Card with the given string", ^{
       [[result.string should] equal:string];
+    });
+  });
+
+  describe(@"- copy", ^{
+    let(result, ^{
+      return card.copy;
+    });
+
+    it(@"returns an equivalent Card", ^{
+      [[result should] equal:card];
+    });
+
+    it(@"returns a non-identical Card", ^{
+      [[result shouldNot] beIdenticalTo:card];
+    });
+  });
+
+  describe(@"- isEqual:", ^{
+    let(other, ^{
+      return theValue(nil);
+    });
+
+    let(result, ^{
+      return theValue([card isEqual:other]);
+    });
+
+    context(@"when other is not a Card", ^{
+      let(other, ^{
+        return GZWords.sentence;
+      });
+
+      it(@"returns NO", ^{
+        [[result should] beNo];
+      });
+    });
+
+    context(@"when other is a Card", ^{
+      let(other, ^{
+        return FGBuildTrait(Card.class, @"withString");
+      });
+
+      context(@"when other is identical to Card", ^{
+        let(other, ^{
+          return card;
+        });
+
+        it(@"returns YES", ^{
+          [[result should] beYes];
+        });
+      });
+
+      context(@"when other.string equals Card's string", ^{
+        let(other, ^{
+          return FGBuildTraitWith(Card.class, @"withString", @{ @"string" : card.string.copy });
+        });
+
+        it(@"returns YES", ^{
+          [[result should] beYes];
+        });
+      });
+
+      context(@"when other.string does not equal Card's string", ^{
+        it(@"returns NO", ^{
+          [[result should] beNo];
+        });
+      });
+    });
+  });
+
+  describe(@"- isEqualToCard:", ^{
+    let(other, ^{
+      return FGBuildTrait(Card.class, @"withString");
+    });
+
+    let(result, ^{
+      return theValue([card isEqualToCard:other]);
+    });
+
+    context(@"when other.string equals Card's string", ^{
+      let(other, ^{
+        return FGBuildTraitWith(Card.class, @"withString", @{ @"string" : card.string.copy });
+      });
+
+      it(@"returns YES", ^{
+        [[result should] beYes];
+      });
+    });
+
+    context(@"when other.string does not equal Card's string", ^{
+      let(other, ^{
+        return FGBuildTrait(Card.class, @"withString");
+      });
+
+      it(@"returns NO", ^{
+        [[result should] beNo];
+      });
     });
   });
 
