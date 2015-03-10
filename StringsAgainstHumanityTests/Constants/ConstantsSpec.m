@@ -17,16 +17,6 @@ describe(@"Constants", ^{
     }) should] raise];
   });
 
-  describe(@"+ StoryboardName", ^{
-    let(result, ^{
-      return Constants.StoryboardName;
-    });
-
-    specify(^{
-      [[result should] equal:@"Main"];
-    });
-  });
-
   describe(@"+ BlackColor", ^{
     let(result, ^{
       return Constants.BlackColor;
@@ -41,13 +31,33 @@ describe(@"Constants", ^{
     });
   });
 
+  describe(@"+ Storyboard", ^{
+    let(result, ^{
+      return Constants.Storyboard;
+    });
+
+    specify(^{
+      [[result should] beMemberOfClass:UIStoryboard.class];
+    });
+  });
+
+  describe(@"+ StoryboardName", ^{
+    let(result, ^{
+      return Constants.StoryboardName;
+    });
+
+    specify(^{
+      [[result should] equal:@"Main"];
+    });
+  });
+
   describe(@"+ WhiteColor", ^{
     let(result, ^{
       return Constants.WhiteColor;
     });
 
     let(SAHWhiteColor, ^UIColor *{
-      return [UIColor colorWithHexString:@"000000"];
+      return [UIColor colorWithHexString:@"FFFFFF"];
     });
 
     specify(^{

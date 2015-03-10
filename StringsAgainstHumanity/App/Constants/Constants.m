@@ -11,16 +11,20 @@
 
 @implementation Constants
 
-+ (NSString *)StoryboardName {
-  return @"Main";
-}
-
 + (UIColor *)BlackColor {
   return [UIColor colorWithHexString:@"1A1818"];
 }
 
++ (UIStoryboard *)Storyboard {
+  return [UIStoryboard storyboardWithName:Constants.StoryboardName bundle:nil];
+}
+
++ (NSString *)StoryboardName {
+  return @"Main";
+}
+
 + (UIColor *)WhiteColor {
-  return [UIColor colorWithHexString:@"000000"];
+  return [UIColor colorWithHexString:@"FFFFFF"];
 }
 
 - (instancetype)init {
