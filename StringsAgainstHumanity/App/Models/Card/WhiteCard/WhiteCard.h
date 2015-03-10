@@ -9,4 +9,5 @@
 #import "Card.h"
 
 @interface WhiteCard : Card
+- (BOOL)isEqualToWhiteCard:(WhiteCard *)other;
 @end

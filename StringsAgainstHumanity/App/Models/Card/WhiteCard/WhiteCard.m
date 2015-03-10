@@ -10,18 +10,14 @@
 
 @implementation WhiteCard
 - (BOOL)isEqual:(id)object {
-  if (self == object) {
-    return YES;
-  }
+  BOOL equalToSuperClass = [super isEqual:object];
 
-  if (![object isKindOfClass:WhiteCard.class]) {
-    return NO;
-  }
+  unless(equalToSuperClass) { return NO; }
 
   return [self isEqualToWhiteCard:(WhiteCard *)object];
 }
 
 - (BOOL)isEqualToWhiteCard:(WhiteCard *)other {
-  return [self.string isEqual:other.string];
+  return [self.string isEqualToString:other.string];
 }
 @end

@@ -127,7 +127,7 @@ describe(@"WhiteCard", ^{
     });
 
     let(result, ^{
-      return theValue([whiteCard isEqualToCard:other]);
+      return theValue([whiteCard isEqualToWhiteCard:other]);
     });
 
     context(@"when other.string equals WhiteCard's string", ^{
