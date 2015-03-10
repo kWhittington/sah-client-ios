@@ -19,7 +19,9 @@ FGFactoryBegin(Card)
   };
 
   traitDefiners[@"withString"] = ^(FGDefinitionBuilder *withStringBuilder) {
-    [withStringBuilder field:@"string" value:[GZWords sentence]];
+    [withStringBuilder field:@"string" by:^{
+      return GZWords.sentence;
+    }];
     [withStringBuilder initWith:@selector(initWithString:) fieldNames:@[@"string"]];
   };
 FGFactoryEnd

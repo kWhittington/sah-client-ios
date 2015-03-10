@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface Card : NSObject
+@interface Card : NSObject <NSCopying>
 
 @property(readonly, strong) NSString *string;
 
@@ -17,4 +17,6 @@
 
 - (instancetype)initWithString:(NSString *)string;
 
+- (instancetype)copyWithZone:(NSZone *)zone;
+- (BOOL)isEqualToCard:(Card *)card;
 @end

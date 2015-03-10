@@ -17,11 +17,11 @@
 @implementation Card
 
 + (instancetype)blank {
-  return [[Card alloc] initWithString:@""];
+  return [[self alloc] initWithString:@""];
 }
 
 + (instancetype)withString:(NSString *)string {
-  return [[Card alloc] initWithString:string];
+  return [[self alloc] initWithString:string];
 }
 
 - (instancetype)init {
@@ -39,4 +39,29 @@
   return self;
 }
 
+- (instancetype)copyWithZone:(NSZone *)zone {
+  Card *copy = [Card withString:self.string.copy];
+
+  return copy;
+}
+
+- (NSUInteger)hash {
+  return [self.string hash];
+}
+
+- (BOOL)isEqual:(id)object {
+  if (self == object) {
+    return YES;
+  }
+
+  unless([object isKindOfClass:self.class]) { return NO; }
+
+  return [self isEqualToCard:(Card *)object];
+}
+
+- (BOOL)isEqualToCard:(Card *)card {
+  BOOL stringsAreEqual = [self.string isEqualToString:card.string];
+
+  return stringsAreEqual;
+}
 @end
