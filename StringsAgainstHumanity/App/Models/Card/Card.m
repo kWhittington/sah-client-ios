@@ -17,11 +17,11 @@
 @implementation Card
 
 + (instancetype)blank {
-  return [[Card alloc] initWithString:@""];
+  return [[self alloc] initWithString:@""];
 }
 
 + (instancetype)withString:(NSString *)string {
-  return [[Card alloc] initWithString:string];
+  return [[self alloc] initWithString:string];
 }
 
 - (instancetype)init {
