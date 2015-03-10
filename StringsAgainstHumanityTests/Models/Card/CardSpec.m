@@ -10,7 +10,6 @@
 #import "Card.h"
 
 SPEC_BEGIN(CardSpec)
-
 describe(@"Card", ^{
   // Each example will inherit a NSString and a Card containing that NSString.
   let(string, ^NSString *{

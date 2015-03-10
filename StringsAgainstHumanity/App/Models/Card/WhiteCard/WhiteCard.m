@@ -9,5 +9,19 @@
 #import "WhiteCard.h"
 
 @implementation WhiteCard
+- (BOOL)isEqual:(id)object {
+  if (self == object) {
+    return YES;
+  }
 
+  if (![object isKindOfClass:WhiteCard.class]) {
+    return NO;
+  }
+
+  return [self isEqualToWhiteCard:(WhiteCard *)object];
+}
+
+- (BOOL)isEqualToWhiteCard:(WhiteCard *)other {
+  return [self.string isEqual:other.string];
+}
 @end

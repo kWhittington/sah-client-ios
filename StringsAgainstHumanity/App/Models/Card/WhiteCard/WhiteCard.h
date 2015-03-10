@@ -9,5 +9,4 @@
 #import "Card.h"
 
 @interface WhiteCard : Card
-
 @end
