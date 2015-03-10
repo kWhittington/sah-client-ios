@@ -16,9 +16,7 @@ describe(@"BlackCard", ^{
   });
 
   let(blackCard, ^BlackCard *{
-    return FGBuildTraitWith(BlackCard.class, @"withString", ^(FGDefinitionBuilder *builder) {
-      builder[@"string"] = string;
-    });
+    return FGBuildTraitWith(BlackCard.class, @"withString", @{ @"string" : string });
   });
 
   it(@"subclasses Card", ^{
@@ -53,13 +51,141 @@ describe(@"BlackCard", ^{
     });
   });
 
+  describe(@"+ withString:", ^{
+    let(result, ^{
+      return [BlackCard withString:string];
+    });
+
+    it(@"creates a BlackCard", ^{
+      [[result should] beMemberOfClass:BlackCard.class];
+    });
+
+    it(@"creates a BlackCard with the given string", ^{
+      [[result.string should] equal:string];
+    });
+  });
+
+  describe(@"- initWithString:", ^{
+    let(result, ^{
+      return [[BlackCard alloc] initWithString:string];
+    });
+
+    specify(^{
+      [[result should] beMemberOfClass:BlackCard.class];
+    });
+
+    it(@"creates a blackCard with the given string", ^{
+      [[result.string should] equal:string];
+    });
+  });
+
+  describe(@"- copy", ^{
+    let(result, ^{
+      return blackCard.copy;
+    });
+
+    it(@"returns an equivalent blackCard", ^{
+      [[result should] equal:blackCard];
+    });
+
+    it(@"returns a non-identical blackCard", ^{
+      [[result shouldNot] beIdenticalTo:blackCard];
+    });
+  });
+
   describe(@"- draw", ^{
     let(result, ^{
       return blackCard.draw;
     });
 
-    it(@"returns how many WhiteCards must be drawn by each player (before making plays)", ^{
+    it(@"returns how many blackCards must be drawn by each player (before making plays)", ^{
       [[result should] equal:BlackCard.DefaultDrawNumber];
+    });
+  });
+
+  describe(@"- isEqual:", ^{
+    let(other, ^{
+      return theValue(nil);
+    });
+
+    let(result, ^{
+      return theValue([blackCard isEqual:other]);
+    });
+
+    context(@"when other is not a BlackCard", ^{
+      let(other, ^{
+        return GZWords.sentence;
+      });
+
+      it(@"returns NO", ^{
+        [[result should] beNo];
+      });
+    });
+
+    context(@"when other is a BlackCard", ^{
+      let(other, ^{
+        return FGBuildTrait(blackCard.class, @"withString");
+      });
+
+      context(@"when other is identical to BlackCard", ^{
+        let(other, ^{
+          return blackCard;
+        });
+
+        it(@"returns YES", ^{
+          [[result should] beYes];
+        });
+      });
+
+      context(@"when other.string equals BlackCard's string", ^{
+        let(other, ^{
+          return FGBuildTraitWith(blackCard.class, @"withString", @{
+            @"string" : blackCard.string.copy
+          });
+        });
+
+        it(@"returns YES", ^{
+          [[result should] beYes];
+        });
+      });
+
+      context(@"when other.string does not equal BlackCard's string", ^{
+        it(@"returns NO", ^{
+          [[result should] beNo];
+        });
+      });
+    });
+  });
+
+  describe(@"- isEqualToBlackCard:", ^{
+    let(other, ^{
+      return FGBuildTrait(BlackCard.class, @"withString");
+    });
+
+    let(result, ^{
+      return theValue([blackCard isEqualToBlackCard:other]);
+    });
+
+    context(@"when other.string equals BlackCard's string", ^{
+      let(other, ^id {
+        return FGBuildTraitWith(BlackCard.class, @"withString", @{
+          @"string" : blackCard.string.copy
+        });
+      });
+
+      it(@"returns YES", ^{
+        [[result should] beYes];
+      });
+    });
+
+    context(@"when other.string does not equal BlackCard's string", ^{
+      let(other, ^{
+        return FGBuildTrait(BlackCard.class, @"withString");
+      });
+
+      it(@"returns NO", ^{
+        [[result should] beNo];
+      });
     });
   });
 
@@ -68,7 +194,7 @@ describe(@"BlackCard", ^{
       return blackCard.pick;
     });
 
-    it(@"returns how many WhiteCards must be played by each player", ^{
+    it(@"returns how many blackCards must be played by each player", ^{
       [[result should] equal:BlackCard.DefaultPickNumber];
     });
   });

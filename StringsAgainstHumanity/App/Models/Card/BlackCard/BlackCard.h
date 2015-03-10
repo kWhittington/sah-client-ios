@@ -14,4 +14,6 @@
 
 + (NSNumber *)DefaultDrawNumber;
 + (NSNumber *)DefaultPickNumber;
+
+- (BOOL)isEqualToBlackCard:(BlackCard *)other;
 @end
