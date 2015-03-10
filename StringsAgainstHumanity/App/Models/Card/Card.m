@@ -46,7 +46,7 @@
 }
 
 - (NSUInteger)hash {
-  return [self.string hash];
+  return self.string.hash;
 }
 
 - (BOOL)isEqual:(id)object {
