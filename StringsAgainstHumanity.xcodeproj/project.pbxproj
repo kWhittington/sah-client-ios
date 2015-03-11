@@ -25,7 +25,6 @@
 		AD7C84DF1A95B34D00A2DE02 /* CardSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = AD7C84DE1A95B34D00A2DE02 /* CardSpec.m */; };
 		AD89D2EE1AA4C9AE0044F2C0 /* MainMenuController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD89D2ED1AA4C9AE0044F2C0 /* MainMenuController.m */; };
 		AD89D2F21AA4D79A0044F2C0 /* MainMenuControllerSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = AD89D2F11AA4D79A0044F2C0 /* MainMenuControllerSpec.m */; };
-		AD89D2F51AA4F4F30044F2C0 /* CardController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD89D2F41AA4F4F30044F2C0 /* CardController.m */; };
 		AD89D2F91AA4F8FB0044F2C0 /* MatchmakingController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD89D2F81AA4F8FB0044F2C0 /* MatchmakingController.m */; };
 		AD89D2FD1AA4FACA0044F2C0 /* PrivateGameStartController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD89D2FC1AA4FACA0044F2C0 /* PrivateGameStartController.m */; };
 		AD89D3011AA4FBE40044F2C0 /* NotCardCzarController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD89D3001AA4FBE40044F2C0 /* NotCardCzarController.m */; };
@@ -84,8 +83,6 @@
 		AD89D2EC1AA4C9AE0044F2C0 /* MainMenuController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MainMenuController.h; path = App/Controllers/MainMenu/MainMenuController.h; sourceTree = "<group>"; };
 		AD89D2ED1AA4C9AE0044F2C0 /* MainMenuController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MainMenuController.m; path = App/Controllers/MainMenu/MainMenuController.m; sourceTree = "<group>"; };
 		AD89D2F11AA4D79A0044F2C0 /* MainMenuControllerSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MainMenuControllerSpec.m; path = Controllers/MainMenu/MainMenuControllerSpec.m; sourceTree = "<group>"; };
-		AD89D2F31AA4F4F30044F2C0 /* CardController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CardController.h; path = App/Controllers/Card/CardController.h; sourceTree = "<group>"; };
-		AD89D2F41AA4F4F30044F2C0 /* CardController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CardController.m; path = App/Controllers/Card/CardController.m; sourceTree = "<group>"; };
 		AD89D2F71AA4F8FB0044F2C0 /* MatchmakingController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MatchmakingController.h; path = App/Controllers/Matchmaking/MatchmakingController.h; sourceTree = "<group>"; };
 		AD89D2F81AA4F8FB0044F2C0 /* MatchmakingController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MatchmakingController.m; path = App/Controllers/Matchmaking/MatchmakingController.m; sourceTree = "<group>"; };
 		AD89D2FB1AA4FACA0044F2C0 /* PrivateGameStartController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PrivateGameStartController.h; path = App/Controllers/PrivateGameStart/PrivateGameStartController.h; sourceTree = "<group>"; };
@@ -508,8 +505,6 @@
 		ADBF7F9B1A913DFA00C5BB00 /* Card */ = {
 			isa = PBXGroup;
 			children = (
-				AD89D2F31AA4F4F30044F2C0 /* CardController.h */,
-				AD89D2F41AA4F4F30044F2C0 /* CardController.m */,
 			);
 			name = Card;
 			sourceTree = "<group>";
@@ -572,13 +567,6 @@
 				ADC687961AA6518C005F70C3 /* ConstantsSpec.m */,
 			);
 			name = Constants;
-			sourceTree = "<group>";
-		};
-		ADC687981AA65441005F70C3 /* Exceptions */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Exceptions;
 			sourceTree = "<group>";
 		};
 		ADC687991AA6574B005F70C3 /* Constants */ = {
@@ -774,7 +762,6 @@
 				AD89D3011AA4FBE40044F2C0 /* NotCardCzarController.m in Sources */,
 				AD341F541AA8F4940040DA92 /* WhiteCard.m in Sources */,
 				AD89D2EE1AA4C9AE0044F2C0 /* MainMenuController.m in Sources */,
-				AD89D2F51AA4F4F30044F2C0 /* CardController.m in Sources */,
 				ADBF7FAA1A91661500C5BB00 /* ZoomInHandLayout.m in Sources */,
 				ADBF7F901A910CE300C5BB00 /* HandController.m in Sources */,
 				ADC6879C1AA658BB005F70C3 /* Constants.m in Sources */,
