@@ -49,16 +49,6 @@ describe(@"HandController", ^{
     });
   });
 
-  describe(@"- blackCard", ^{
-    let(result, ^Card *{
-      return handController.blackCard;
-    });
-
-    it(@"has a string of \"Main Menu\"", ^{
-      [[result.string should] equal:@"Main Menu"];
-    });
-  });
-
   describe(@"- viewDidLoad", ^{
     it(@"assigns a new BirdsEyeHandLayout to collectionView", ^{
       [[theBlock(^{
