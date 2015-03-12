@@ -12,6 +12,9 @@
 
 @property(readonly, strong) NSString *string;
 
++ (UIColor *)CardColor;
++ (UIColor *)TextColor;
+
 + (instancetype)blank;
 + (instancetype)withString:(NSString *)string;
 

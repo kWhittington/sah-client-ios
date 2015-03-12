@@ -46,6 +46,26 @@ describe(@"Card", ^{
     });
   });
 
+  describe(@"+ CardColor", ^{
+    let(result, ^{
+      return Card.CardColor;
+    });
+
+    it(@"returns the Card's color", ^{
+      [[result should] equal:Constants.WhiteColor];
+    });
+  });
+
+  describe(@"+ TextColor", ^{
+    let(result, ^{
+      return Card.TextColor;
+    });
+
+    it(@"returns the Card's string's color", ^{
+      [[result should] equal:Constants.BlackColor];
+    });
+  });
+
   describe(@"- init", ^{
     let(result, ^Card *{
       return [[Card alloc] init];
