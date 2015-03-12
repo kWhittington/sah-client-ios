@@ -27,7 +27,7 @@
   return @1;
 }
 
-+ (UIColor *)TextColor {
++ (UIColor *)StringColor {
   return Constants.WhiteColor;
 }
 
