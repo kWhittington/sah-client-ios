@@ -10,7 +10,6 @@
 #import "Card.h"
 
 SPEC_BEGIN(CardSpec)
-
 describe(@"Card", ^{
   // Each example will inherit a NSString and a Card containing that NSString.
   let(string, ^NSString *{
@@ -44,6 +43,26 @@ describe(@"Card", ^{
 
     it(@"creates a Card with the given string", ^{
       [[result.string should] equal:string];
+    });
+  });
+
+  describe(@"+ CardColor", ^{
+    let(result, ^{
+      return Card.CardColor;
+    });
+
+    it(@"returns Constants.WhiteColor", ^{
+      [[result should] equal:Constants.WhiteColor];
+    });
+  });
+
+  describe(@"+ TextColor", ^{
+    let(result, ^{
+      return Card.TextColor;
+    });
+
+    it(@"returns Constants.BlackColor", ^{
+      [[result should] equal:Constants.BlackColor];
     });
   });
 

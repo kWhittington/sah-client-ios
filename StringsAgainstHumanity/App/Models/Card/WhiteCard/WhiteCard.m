@@ -9,5 +9,15 @@
 #import "WhiteCard.h"
 
 @implementation WhiteCard
+- (BOOL)isEqual:(id)object {
+  BOOL equalToSuperClass = [super isEqual:object];
 
+  unless(equalToSuperClass) { return NO; }
+
+  return [self isEqualToWhiteCard:(WhiteCard *)object];
+}
+
+- (BOOL)isEqualToWhiteCard:(WhiteCard *)other {
+  return [self.string isEqualToString:other.string];
+}
 @end

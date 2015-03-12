@@ -6,6 +6,7 @@
 //  Copyright (c) 2015 Kyle Whittington. All rights reserved.
 //
 
+#import "SAHLibraries.pch"
 #import "Card.h"
 
 @interface Card ()
@@ -15,6 +16,13 @@
 @end
 
 @implementation Card
++ (UIColor *)CardColor {
+  return Constants.WhiteColor;
+}
+
++ (UIColor *)TextColor {
+  return Constants.BlackColor;
+}
 
 + (instancetype)blank {
   return [[self alloc] initWithString:@""];
@@ -46,7 +54,7 @@
 }
 
 - (NSUInteger)hash {
-  return [self.string hash];
+  return self.string.hash;
 }
 
 - (BOOL)isEqual:(id)object {
