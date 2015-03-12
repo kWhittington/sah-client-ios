@@ -78,6 +78,10 @@ describe(@"WhiteCard", ^{
       return whiteCard.copy;
     });
 
+    specify(^{
+      [[result should] beMemberOfClass:WhiteCard.class];
+    });
+
     it(@"returns an equivalent WhiteCard", ^{
       [[result should] equal:whiteCard];
     });

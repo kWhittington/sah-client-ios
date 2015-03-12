@@ -41,6 +41,12 @@
   return self;
 }
 
+- (instancetype)copyWithZone:(NSZone *)zone {
+  BlackCard *copy = [BlackCard withString:self.string.copy];
+
+  return copy;
+}
+
 - (NSUInteger)hash {
   return self.string.hash ^ self.draw.hash ^ self.pick.hash;
 }

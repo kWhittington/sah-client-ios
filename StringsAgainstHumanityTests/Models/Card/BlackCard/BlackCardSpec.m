@@ -103,6 +103,10 @@ describe(@"BlackCard", ^{
     let(result, ^{
       return blackCard.copy;
     });
+    
+    specify(^{
+      [[result should] beMemberOfClass:BlackCard.class];
+    });
 
     it(@"returns an equivalent blackCard", ^{
       [[result should] equal:blackCard];
