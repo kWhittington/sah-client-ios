@@ -6,6 +6,7 @@
 //  Copyright (c) 2015 Kyle Whittington. All rights reserved.
 //
 
+#import "SAHLibraries.pch"
 #import "BlackCard.h"
 
 @interface BlackCard ()
@@ -14,12 +15,20 @@
 @end
 
 @implementation BlackCard
++ (UIColor *)CardColor {
+  return Constants.BlackColor;
+}
+
 + (NSNumber *)DefaultDrawNumber {
   return @0;
 }
 
 + (NSNumber *)DefaultPickNumber {
   return @1;
+}
+
++ (UIColor *)TextColor {
+  return Constants.WhiteColor;
 }
 
 #pragma mark Designated Initializer

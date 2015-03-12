@@ -25,6 +25,26 @@ describe(@"WhiteCard", ^{
     [[whiteCard should] beKindOfClass:Card.class];
   });
 
+  describe(@"+ CardColor", ^{
+    let(result, ^{
+      return WhiteCard.CardColor;
+    });
+
+    it(@"returns Constants.WhiteColor", ^{
+      [[result should] equal:Constants.WhiteColor];
+    });
+  });
+
+  describe(@"+ TextColor", ^{
+    let(result, ^{
+      return WhiteCard.TextColor;
+    });
+
+    it(@"returns Constants.BlackColor", ^{
+      [[result should] equal:Constants.BlackColor];
+    });
+  });
+
   describe(@"+ withString:", ^{
     let(result, ^{
       return [WhiteCard withString:string];
@@ -57,7 +77,7 @@ describe(@"WhiteCard", ^{
     let(result, ^{
       return whiteCard.copy;
     });
-    
+
     it(@"returns an equivalent WhiteCard", ^{
       [[result should] equal:whiteCard];
     });

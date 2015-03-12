@@ -51,7 +51,7 @@ describe(@"Card", ^{
       return Card.CardColor;
     });
 
-    it(@"returns the Card's color", ^{
+    it(@"returns Constants.WhiteColor", ^{
       [[result should] equal:Constants.WhiteColor];
     });
   });
@@ -61,7 +61,7 @@ describe(@"Card", ^{
       return Card.TextColor;
     });
 
-    it(@"returns the Card's string's color", ^{
+    it(@"returns Constants.BlackColor", ^{
       [[result should] equal:Constants.BlackColor];
     });
   });

@@ -23,6 +23,16 @@ describe(@"BlackCard", ^{
     [[blackCard should] beKindOfClass:Card.class];
   });
 
+  describe(@"+ CardColor", ^{
+    let(result, ^{
+      return BlackCard.CardColor;
+    });
+
+    it(@"returns Constants.BlackColor", ^{
+      [[result should] equal:Constants.BlackColor];
+    });
+  });
+
   describe(@"+ DefaultPickNumber", ^{
     let(result, ^{
       return BlackCard.DefaultPickNumber;
@@ -48,6 +58,16 @@ describe(@"BlackCard", ^{
 
     it(@"returns the default - draw value for all BlackCards", ^{
       [[result should] equal:expectedNumber];
+    });
+  });
+
+  describe(@"+ TextColor", ^{
+    let(result, ^{
+      return BlackCard.TextColor;
+    });
+
+    it(@"returns Constants.WhiteColor", ^{
+      [[result should] equal:Constants.WhiteColor];
     });
   });
 
