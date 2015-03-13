@@ -22,6 +22,8 @@
 		AD6272EF1A8341D000565A28 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AD6272EE1A8341D000565A28 /* main.m */; };
 		AD62DCE91AB2398600F70C51 /* UnimplementedException.m in Sources */ = {isa = PBXBuildFile; fileRef = AD62DCE81AB2398600F70C51 /* UnimplementedException.m */; };
 		AD62DCED1AB23A6700F70C51 /* UnimplementedExceptionSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = AD62DCEC1AB23A6700F70C51 /* UnimplementedExceptionSpec.m */; };
+		AD62DCF11AB2481600F70C51 /* BlackCardController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD62DCF01AB2481600F70C51 /* BlackCardController.m */; };
+		AD62DCF41AB2493D00F70C51 /* BlackCardControllerSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = AD62DCF31AB2493D00F70C51 /* BlackCardControllerSpec.m */; };
 		AD71F5921A9C049F0077BE8B /* CardFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = AD71F5911A9C049F0077BE8B /* CardFactory.m */; };
 		AD71F5951A9C11A70077BE8B /* HandFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = AD71F5941A9C11A70077BE8B /* HandFactory.m */; };
 		AD7C84DF1A95B34D00A2DE02 /* CardSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = AD7C84DE1A95B34D00A2DE02 /* CardSpec.m */; };
@@ -80,6 +82,9 @@
 		AD62DCE71AB2398600F70C51 /* UnimplementedException.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UnimplementedException.h; path = App/Exceptions/UnimplementedException/UnimplementedException.h; sourceTree = "<group>"; };
 		AD62DCE81AB2398600F70C51 /* UnimplementedException.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UnimplementedException.m; path = App/Exceptions/UnimplementedException/UnimplementedException.m; sourceTree = "<group>"; };
 		AD62DCEC1AB23A6700F70C51 /* UnimplementedExceptionSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UnimplementedExceptionSpec.m; path = Exceptions/UnimplementedException/UnimplementedExceptionSpec.m; sourceTree = "<group>"; };
+		AD62DCEF1AB2481600F70C51 /* BlackCardController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BlackCardController.h; path = App/Controllers/Card/BlackCard/BlackCardController.h; sourceTree = "<group>"; };
+		AD62DCF01AB2481600F70C51 /* BlackCardController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BlackCardController.m; path = App/Controllers/Card/BlackCard/BlackCardController.m; sourceTree = "<group>"; };
+		AD62DCF31AB2493D00F70C51 /* BlackCardControllerSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BlackCardControllerSpec.m; path = Controllers/Card/BlackCard/BlackCardControllerSpec.m; sourceTree = "<group>"; };
 		AD71F58D1A9BFF340077BE8B /* FactoryLibraries.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FactoryLibraries.pch; path = "Supporting Files/FactoryLibraries.pch"; sourceTree = "<group>"; };
 		AD71F5911A9C049F0077BE8B /* CardFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CardFactory.m; path = Factories/Models/Card/CardFactory.m; sourceTree = "<group>"; };
 		AD71F5931A9C09820077BE8B /* TestLibraries.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TestLibraries.pch; path = "Supporting Files/TestLibraries.pch"; sourceTree = "<group>"; };
@@ -179,6 +184,7 @@
 		AD1337841AA01CE4002F1721 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				ADD5CD761AB0F88000CA420D /* Card */,
 				AD1337851AA01CEF002F1721 /* Hand */,
 				AD89D2F01AA4D7780044F2C0 /* MainMenu */,
 			);
@@ -415,6 +421,23 @@
 			name = UnimplementedException;
 			sourceTree = "<group>";
 		};
+		AD62DCEE1AB247C900F70C51 /* BlackCard */ = {
+			isa = PBXGroup;
+			children = (
+				AD62DCEF1AB2481600F70C51 /* BlackCardController.h */,
+				AD62DCF01AB2481600F70C51 /* BlackCardController.m */,
+			);
+			name = BlackCard;
+			sourceTree = "<group>";
+		};
+		AD62DCF21AB2491C00F70C51 /* BlackCard */ = {
+			isa = PBXGroup;
+			children = (
+				AD62DCF31AB2493D00F70C51 /* BlackCardControllerSpec.m */,
+			);
+			name = BlackCard;
+			sourceTree = "<group>";
+		};
 		AD71F58E1A9C01060077BE8B /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -545,6 +568,7 @@
 		ADBF7F9B1A913DFA00C5BB00 /* Card */ = {
 			isa = PBXGroup;
 			children = (
+				AD62DCEE1AB247C900F70C51 /* BlackCard */,
 			);
 			name = Card;
 			sourceTree = "<group>";
@@ -616,6 +640,14 @@
 				ADC6879B1AA658BB005F70C3 /* Constants.m */,
 			);
 			name = Constants;
+			sourceTree = "<group>";
+		};
+		ADD5CD761AB0F88000CA420D /* Card */ = {
+			isa = PBXGroup;
+			children = (
+				AD62DCF21AB2491C00F70C51 /* BlackCard */,
+			);
+			name = Card;
 			sourceTree = "<group>";
 		};
 		C4EB91360EE2B4394439E2DB /* Pods */ = {
@@ -810,6 +842,7 @@
 				AD89D2F91AA4F8FB0044F2C0 /* MatchmakingController.m in Sources */,
 				AD6272EF1A8341D000565A28 /* main.m in Sources */,
 				ADBF7F931A910E2800C5BB00 /* Hand.m in Sources */,
+				AD62DCF11AB2481600F70C51 /* BlackCardController.m in Sources */,
 				AD62DCE91AB2398600F70C51 /* UnimplementedException.m in Sources */,
 				AD89D2FD1AA4FACA0044F2C0 /* PrivateGameStartController.m in Sources */,
 				ADBF7F9F1A913FE200C5BB00 /* CardCell.m in Sources */,
@@ -823,6 +856,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AD62DCF41AB2493D00F70C51 /* BlackCardControllerSpec.m in Sources */,
 				AD5E856D1AA7E57C0067ABF2 /* BlackCardFactory.m in Sources */,
 				AD5E856A1AA7E3880067ABF2 /* BlackCardSpec.m in Sources */,
 				ADDE7F891A9C33C700E232EC /* HandSpec.m in Sources */,
