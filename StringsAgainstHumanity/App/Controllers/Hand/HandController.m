@@ -24,10 +24,10 @@
 @end
 
 @implementation HandController
-static NSString *const storyboardID = @"HandController";
+static NSString *const StoryboardID = @"HandController";
 
-+ (NSString *)storyboardID {
-  return storyboardID;
++ (NSString *)StoryboardID {
+  return StoryboardID;
 }
 
 - (void)viewDidLoad {

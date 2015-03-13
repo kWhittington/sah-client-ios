@@ -13,9 +13,7 @@
 @interface HandController : UICollectionViewController
 @property(readonly, strong) Card *blackCard;
 
-+ (NSString *)storyboardID;
++ (NSString *)StoryboardID;
 
 - (void)addCard:(Card *)card;
-- (void)setBlackCardString:(NSString *)string;
-
 @end

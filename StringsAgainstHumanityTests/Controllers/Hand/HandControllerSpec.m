@@ -15,14 +15,14 @@ SPEC_BEGIN(HandControllerSpec)
 describe(@"HandController", ^{
   let(handController, ^HandController *{
     HandController *result = [[UIStoryboard storyboardWithName:Constants.StoryboardName bundle:nil]
-      instantiateViewControllerWithIdentifier:HandController.storyboardID];
+      instantiateViewControllerWithIdentifier:HandController.StoryboardID];
     [result viewDidLoad];
     return result;
   });
 
-  describe(@"+ storyboardID", ^{
-    let(result, ^NSString *{
-      return HandController.storyboardID;
+  describe(@"+ StoryboardID", ^{
+    let(result, ^{
+      return HandController.StoryboardID;
     });
 
     it(@"returns NSString of HandController's Storyboard ID", ^{
