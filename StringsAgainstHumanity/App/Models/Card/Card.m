@@ -20,7 +20,7 @@
   return Constants.WhiteColor;
 }
 
-+ (UIColor *)TextColor {
++ (UIColor *)StringColor {
   return Constants.BlackColor;
 }
 

@@ -56,9 +56,9 @@ describe(@"Card", ^{
     });
   });
 
-  describe(@"+ TextColor", ^{
+  describe(@"+ StringColor", ^{
     let(result, ^{
-      return Card.TextColor;
+      return Card.StringColor;
     });
 
     it(@"returns Constants.BlackColor", ^{

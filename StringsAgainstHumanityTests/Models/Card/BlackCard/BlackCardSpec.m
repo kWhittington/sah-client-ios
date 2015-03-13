@@ -61,9 +61,9 @@ describe(@"BlackCard", ^{
     });
   });
 
-  describe(@"+ TextColor", ^{
+  describe(@"+ StringColor", ^{
     let(result, ^{
-      return BlackCard.TextColor;
+      return BlackCard.StringColor;
     });
 
     it(@"returns Constants.WhiteColor", ^{
@@ -102,6 +102,10 @@ describe(@"BlackCard", ^{
   describe(@"- copy", ^{
     let(result, ^{
       return blackCard.copy;
+    });
+    
+    specify(^{
+      [[result should] beMemberOfClass:BlackCard.class];
     });
 
     it(@"returns an equivalent blackCard", ^{

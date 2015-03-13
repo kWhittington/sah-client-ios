@@ -27,7 +27,7 @@
   return @1;
 }
 
-+ (UIColor *)TextColor {
++ (UIColor *)StringColor {
   return Constants.WhiteColor;
 }
 
@@ -39,6 +39,12 @@
   self.pick = BlackCard.DefaultPickNumber;
 
   return self;
+}
+
+- (instancetype)copyWithZone:(NSZone *)zone {
+  BlackCard *copy = [BlackCard withString:self.string.copy];
+
+  return copy;
 }
 
 - (NSUInteger)hash {
