@@ -9,5 +9,6 @@
 @import Foundation;
 
 @interface NSObject (TypeChecking)
+- (BOOL)instanceOf:(Class) class;
 - (BOOL)kindOf:(Class) class;
 @end

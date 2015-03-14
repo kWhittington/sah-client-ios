@@ -47,6 +47,48 @@ describe(@"NSObject+TypeChecking", ^{
     return [ThirdClass new];
   });
 
+  describe(@"- instanceOf:", ^{
+    let(class, ^{
+      return theValue(nil);
+    });
+
+    let(object, ^{
+      return theValue(nil);
+    });
+
+    let(instanceOf, ^{
+      return theValue([object instanceOf:class]);
+    });
+
+    context(@"when Object is an instance of the Class", ^{
+      let(class, ^{
+        return SuperClass.class;
+      });
+
+      let(object, ^{
+        return superClass;
+      });
+
+      it(@"returns YES", ^{
+        [[instanceOf should] beYes];
+      });
+    });
+
+    context(@"when Object is not an instance of the Class", ^{
+      let(class, ^{
+        return SuperClass.class;
+      });
+
+      let(object, ^{
+        return subClass;
+      });
+
+      it(@"returns NO", ^{
+        [[instanceOf should] beNo];
+      });
+    });
+  });
+
   describe(@"- kindOf:", ^{
     let(class, ^{
       return theValue(nil);
@@ -60,7 +102,7 @@ describe(@"NSObject+TypeChecking", ^{
       return theValue([object kindOf:class]);
     });
 
-    context(@"when NSObject is an instance of the Class", ^{
+    context(@"when Object is an instance of the Class", ^{
       let(class, ^{
         return SuperClass.class;
       });
@@ -74,7 +116,7 @@ describe(@"NSObject+TypeChecking", ^{
       });
     });
 
-    context(@"when NSObject is an instance of a subclass of the Class", ^{
+    context(@"when Object is an instance of a subclass of the Class", ^{
       let(class, ^{
         return SuperClass.class;
       });
@@ -88,7 +130,21 @@ describe(@"NSObject+TypeChecking", ^{
       });
     });
 
-    context(@"when NSObject is not an instance of the Class", ^{
+    context(@"when Object is an instance of a superclass of the Class", ^{
+      let(class, ^{
+        return ThirdClass.class;
+      });
+
+      let(object, ^{
+        return SuperClass.class;
+      });
+
+      it(@"returns NO", ^{
+        [[result should] beNo];
+      });
+    });
+
+    context(@"when Object is an instance not related to the Class", ^{
       let(class, ^{
         return ThirdClass.class;
       });
@@ -97,20 +153,6 @@ describe(@"NSObject+TypeChecking", ^{
         return subClass;
       });
 
-      it(@"returns NO", ^{
-        [[result should] beNo];
-      });
-    });
-    
-    context(@"when NSObject is an instance of a superclass of the Class", ^{
-      let(class, ^{
-        return ThirdClass.class;
-      });
-      
-      let(object, ^{
-        return SuperClass.class;
-      });
-      
       it(@"returns NO", ^{
         [[result should] beNo];
       });
