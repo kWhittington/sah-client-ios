@@ -80,6 +80,36 @@ describe(@"Card", ^{
     });
   });
 
+  describe(@"- debugDescription", ^{
+    let(debugDescription, ^{
+      return card.debugDescription;
+    });
+
+    specify(^{
+      [[debugDescription should] beKindOfClass:NSString.class];
+    });
+
+    it(@"returns '<Card: [memory_address] string=[card.string.description]>'", ^{
+      NSString *string = NSStringWithFormat(@"<Card: %p string=%@>", card, card.string);
+      [[debugDescription should] equal:string];
+    });
+  });
+
+  describe(@"- description", ^{
+    let(description, ^{
+      return card.description;
+    });
+
+    specify(^{
+      [[description should] beKindOfClass:NSString.class];
+    });
+
+    it(@"returns '<Card: [memory_address] string=[card.string.description]>'", ^{
+      NSString *string = NSStringWithFormat(@"<Card: %p string=%@>", card, card.string);
+      [[description should] equal:string];
+    });
+  });
+
   describe(@"- init", ^{
     let(result, ^Card *{
       return [[Card alloc] init];

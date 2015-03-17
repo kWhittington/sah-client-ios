@@ -38,6 +38,14 @@
   return copy;
 }
 
+- (NSString *)debugDescription {
+  return self.description;
+}
+
+- (NSString *)description {
+  return NSStringWithFormat(@"<Card: %p string=%@>", self, self.string);
+}
+
 - (NSUInteger)hash {
   return self.string.hash;
 }
