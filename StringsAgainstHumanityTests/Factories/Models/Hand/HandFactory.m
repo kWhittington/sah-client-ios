@@ -29,6 +29,7 @@ FGFactoryBegin(Hand)
       ];
     }];
     
+    [builder initFrom:[Hand class]];
     [withCardsBuilder initWith:@selector(withArray:) fieldNames:@[@"cards"]];
   };
 

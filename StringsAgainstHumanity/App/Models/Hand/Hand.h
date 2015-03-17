@@ -6,11 +6,11 @@
 //  Copyright (c) 2015 Kyle Whittington. All rights reserved.
 //
 
-#import "SAHLibraries.pch"
+@import Foundation;
 
 @class Card;
 
-@interface Hand : NSObject
+@interface Hand : NSObject <NSCopying>
 
 + (NSNumber *)SizeLimit;
 + (Hand *)testHand;
@@ -21,8 +21,13 @@
 - (Card *)cardAtIndex:(NSUInteger)index;
 - (NSArray *)cards;
 - (NSArray *)cardsAtIndexes:(NSIndexSet *)indexes;
+- (instancetype)copyWithZone:(NSZone *)zone;
+- (NSString *)debugDescription;
+- (NSString *)description;
 - (NSUInteger)indexOfCard:(Card *)card;
 - (BOOL)isEmpty;
+- (BOOL)isEqual:(id)object;
+- (BOOL)isEqualToHand:(Hand *)object;
 - (BOOL)isFull;
 - (void)removeAllCards;
 - (void)removeCard:(Card *)card;

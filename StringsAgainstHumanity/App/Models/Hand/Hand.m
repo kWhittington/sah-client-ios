@@ -13,6 +13,7 @@
 
 @property NSMutableArray *mutableCards;
 
+- (instancetype)initWithArray:(NSArray *)array;
 @end
 
 @implementation Hand
@@ -50,20 +51,6 @@
 
   return hand;
 }
-
-// Designated Initializer
-- (instancetype)init {
-  self = [super init];
-
-  [self initCards];
-
-  return self;
-}
-
-- (void)initCards {
-  self.mutableCards = [[NSMutableArray alloc] init];
-}
-
 - (NSArray *)cards {
   return [self.mutableCards copy];
 }
@@ -79,13 +66,49 @@
 - (NSArray *)cardsAtIndexes:(NSIndexSet *)indexes {
   return [self.mutableCards objectsAtIndexes:indexes];
 }
+
+- (instancetype)copyWithZone:(NSZone *)zone {
+  Hand *copy = [Hand withArray:self.cards.copy];
+
+  return copy;
+}
+
 - (NSUInteger)indexOfCard:(Card *)card {
   NSUInteger result = [self.mutableCards indexOfObject:card];
   return result;
 }
 
+- (instancetype)init {
+  return [self initWithArray:@[]];
+}
+
+#pragma mark Designated Initializer
+- (instancetype)initWithArray:(NSArray *)array {
+  self = [super init];
+
+  self.mutableCards = [NSMutableArray arrayWithArray:array];
+
+  return self;
+}
+
 - (BOOL)isEmpty {
   return self.size == 0;
+}
+
+- (BOOL)isEqual:(id)object {
+  if (self == object) {
+    return YES;
+  }
+
+  unless([object isKindOfClass:self.class]) { return NO; }
+
+  return [self isEqualToHand:(Hand *)object];
+}
+
+- (BOOL)isEqualToHand:(Hand *)object {
+  BOOL haveEqualCards = [self.cards isEqualToArray:object.cards];
+
+  return haveEqualCards;
 }
 
 - (BOOL)isFull {

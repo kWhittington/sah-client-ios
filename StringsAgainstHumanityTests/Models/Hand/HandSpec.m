@@ -12,21 +12,16 @@
 
 SPEC_BEGIN(HandSpec)
 describe(@"Hand", ^{
-  // Each example will inherit a NSArray of Cards and a Hand containing those Cards.
-  let(cards, ^NSArray *{
-    __block NSArray *cards = @[];
-
-    [@3 times:^{
-      cards = [cards arrayByAddingObject:FGBuildTrait(Hand.class, @"withCards")];
-    }];
-
-    return cards;
+  let(hand, ^Hand *{
+    return FGBuildTrait(Hand.class, @"withCards");
   });
 
-  let(hand, ^Hand *{
-    return FGBuildTraitWith(Hand.class, @"withCards", ^(FGDefinitionBuilder *builder) {
-      builder[@"cards"] = cards;
-    });
+  let(cards, ^NSArray *{
+    return hand.cards;
+  });
+
+  it(@"conforms the NSCopying protocol", ^{
+    [[hand should] conformToProtocol:@protocol(NSCopying)];
   });
 
   describe(@"+ empty", ^{
@@ -51,12 +46,12 @@ describe(@"Hand", ^{
   });
 
   describe(@"+ withArray:", ^{
-    let(result, ^Hand *{
+    let(withArray, ^{
       return [Hand withArray:cards];
     });
 
     it(@"inits a Hand with all given cards", ^{
-      [[result.cards should] containObjectsInArray:cards];
+      [[withArray.cards should] containObjectsInArray:cards];
     });
   });
 
@@ -136,6 +131,20 @@ describe(@"Hand", ^{
     });
   });
 
+  describe(@"- init", ^{
+    let(init, ^{
+      return [[Hand alloc] init];
+    });
+
+    specify(^{
+      [[init should] beMemberOfClass:Hand.class];
+    });
+
+    it(@"has 0 Cards", ^{
+      [[init.cards should] beEmpty];
+    });
+  });
+
   describe(@"- isEmpty", ^{
     let(result, ^{
       return theValue(hand.isEmpty);
@@ -154,6 +163,95 @@ describe(@"Hand", ^{
 
       specify(^{
         [[result should] beYes];
+      });
+    });
+  });
+
+  describe(@"- isEqual:", ^{
+    let(other, ^{
+      return theValue(nil);
+    });
+
+    let(isEqual, ^{
+      return theValue([hand isEqual:other]);
+    });
+
+    context(@"when other is not a Hand", ^{
+      let(other, ^{
+        return GZWords.sentence;
+      });
+
+      it(@"returns NO", ^{
+        [[isEqual should] beNo];
+      });
+    });
+
+    context(@"when other is a Hand", ^{
+      context(@"and is identical to Hand", ^{
+        let(other, ^{
+          return hand;
+        });
+
+        it(@"returns YES", ^{
+          [[isEqual should] beYes];
+        });
+      });
+
+      context(@"and has the same Cards as Hand", ^{
+        let(other, ^{
+          return FGBuildTraitWith(Hand.class, @"withCards", @{ @"cards" : cards.copy });
+        });
+
+        it(@"returns YES", ^{
+          [[isEqual should] beYes];
+        });
+      });
+
+      context(@"and doesn't have the same Cards as Hand", ^{
+        let(other, ^{
+          return FGBuildTrait(Hand.class, @"withCards");
+        });
+
+        it(@"returns NO", ^{
+          [[isEqual should] beNo];
+        });
+      });
+    });
+  });
+
+  describe(@"- isEqualToHand:", ^{
+    let(object, ^{
+      return NSObject.nullMock;
+    });
+
+    let(isEqualToHand, ^{
+      return theValue([hand isEqualToHand:object]);
+    });
+
+    context(@"when object has the same Cards as Hand", ^{
+      let(object, ^Hand *{
+        return FGBuildTraitWith(Hand.class, @"withCards", @{ @"cards" : cards.copy });
+      });
+
+      it(@"object has cards", ^{
+        [[theValue(object.size) should] equal:theValue(cards.count)];
+      });
+
+      it(@"returns YES", ^{
+        object;
+        [[isEqualToHand should] beYes];
+      });
+
+    });
+
+    context(@"when other doesn't have the same Cards as Hand", ^{
+      let(object, ^{
+        return FGBuildTrait(Hand.class, @"withCards");
+      });
+
+      it(@"returns NO", ^{
+        object;
+        [[isEqualToHand should] beNo];
       });
     });
   });
