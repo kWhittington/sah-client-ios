@@ -51,12 +51,12 @@
 
   return hand;
 }
-- (NSArray *)cards {
-  return [self.mutableCards copy];
-}
-
 - (void)addCard:(Card *)card {
   [self.mutableCards push:card];
+}
+
+- (NSArray *)cards {
+  return [self.mutableCards copy];
 }
 
 - (Card *)cardAtIndex:(NSUInteger)index {
