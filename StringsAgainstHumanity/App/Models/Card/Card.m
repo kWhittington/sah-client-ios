@@ -32,6 +32,16 @@
   return [[self alloc] initWithString:string];
 }
 
+- (instancetype)copyWithZone:(NSZone *)zone {
+  Card *copy = [Card withString:self.string.copy];
+
+  return copy;
+}
+
+- (NSUInteger)hash {
+  return self.string.hash;
+}
+
 - (instancetype)init {
   self = [self initWithString:@""];
 
@@ -45,16 +55,6 @@
   self.string = [string copy];
 
   return self;
-}
-
-- (instancetype)copyWithZone:(NSZone *)zone {
-  Card *copy = [Card withString:self.string.copy];
-
-  return copy;
-}
-
-- (NSUInteger)hash {
-  return self.string.hash;
 }
 
 - (BOOL)isEqual:(id)object {
