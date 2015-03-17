@@ -6,7 +6,7 @@
 //  Copyright (c) 2015 Kyle Whittington. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+@import Foundation;
 
 @interface Card : NSObject <NSCopying>
 
