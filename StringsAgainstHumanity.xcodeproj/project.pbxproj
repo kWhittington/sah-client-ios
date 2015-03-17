@@ -37,6 +37,7 @@
 		ADA8C8701AB33DB7000987EC /* WhiteCardController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADA8C86F1AB33DB7000987EC /* WhiteCardController.m */; };
 		ADA8C8A41AB4C782000987EC /* NSObject+TypeChecking.m in Sources */ = {isa = PBXBuildFile; fileRef = ADA8C8A31AB4C782000987EC /* NSObject+TypeChecking.m */; };
 		ADA8C8A91AB4C8DD000987EC /* NSObject+TypeCheckingSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = ADA8C8A81AB4C8DD000987EC /* NSObject+TypeCheckingSpec.m */; };
+		ADA8C8AD1AB505BC000987EC /* HandControllerFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = ADA8C8AC1AB505BC000987EC /* HandControllerFactory.m */; };
 		ADBF7F901A910CE300C5BB00 /* HandController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADBF7F8F1A910CE300C5BB00 /* HandController.m */; };
 		ADBF7F931A910E2800C5BB00 /* Hand.m in Sources */ = {isa = PBXBuildFile; fileRef = ADBF7F921A910E2800C5BB00 /* Hand.m */; };
 		ADBF7F981A91171A00C5BB00 /* Card.m in Sources */ = {isa = PBXBuildFile; fileRef = ADBF7F971A91171A00C5BB00 /* Card.m */; };
@@ -110,6 +111,7 @@
 		ADA8C8A21AB4C782000987EC /* NSObject+TypeChecking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSObject+TypeChecking.h"; path = "App/Categories/NSObject/TypeChecking/NSObject+TypeChecking.h"; sourceTree = "<group>"; };
 		ADA8C8A31AB4C782000987EC /* NSObject+TypeChecking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSObject+TypeChecking.m"; path = "App/Categories/NSObject/TypeChecking/NSObject+TypeChecking.m"; sourceTree = "<group>"; };
 		ADA8C8A81AB4C8DD000987EC /* NSObject+TypeCheckingSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSObject+TypeCheckingSpec.m"; path = "Categories/NSObject/TypeChecking/NSObject+TypeCheckingSpec.m"; sourceTree = "<group>"; };
+		ADA8C8AC1AB505BC000987EC /* HandControllerFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HandControllerFactory.m; path = Factories/Controllers/Hand/HandControllerFactory.m; sourceTree = "<group>"; };
 		ADBF7F8E1A910CE300C5BB00 /* HandController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HandController.h; path = App/Controllers/Hand/HandController.h; sourceTree = "<group>"; };
 		ADBF7F8F1A910CE300C5BB00 /* HandController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HandController.m; path = App/Controllers/Hand/HandController.m; sourceTree = "<group>"; };
 		ADBF7F911A910E2800C5BB00 /* Hand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Hand.h; path = App/Models/Hand/Hand.h; sourceTree = "<group>"; };
@@ -606,6 +608,22 @@
 			name = TypeChecking;
 			sourceTree = "<group>";
 		};
+		ADA8C8AA1AB50573000987EC /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				ADA8C8AB1AB50597000987EC /* Hand */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		ADA8C8AB1AB50597000987EC /* Hand */ = {
+			isa = PBXGroup;
+			children = (
+				ADA8C8AC1AB505BC000987EC /* HandControllerFactory.m */,
+			);
+			name = Hand;
+			sourceTree = "<group>";
+		};
 		ADABB3F31A9A48D90092B717 /* Hand */ = {
 			isa = PBXGroup;
 			children = (
@@ -699,6 +717,7 @@
 		ADC2AC621A9BCD29008EF494 /* Factories */ = {
 			isa = PBXGroup;
 			children = (
+				ADA8C8AA1AB50573000987EC /* Controllers */,
 				AD71F58E1A9C01060077BE8B /* Models */,
 			);
 			name = Factories;
@@ -951,6 +970,7 @@
 				AD341F571AA8F4F60040DA92 /* WhiteCardFactory.m in Sources */,
 				AD71F5921A9C049F0077BE8B /* CardFactory.m in Sources */,
 				AD89D2F21AA4D79A0044F2C0 /* MainMenuControllerSpec.m in Sources */,
+				ADA8C8AD1AB505BC000987EC /* HandControllerFactory.m in Sources */,
 				AD71F5951A9C11A70077BE8B /* HandFactory.m in Sources */,
 				ADA8C86C1AB33D70000987EC /* WhiteCardControllerSpec.m in Sources */,
 				AD341F5A1AA8F55C0040DA92 /* WhiteCardSpec.m in Sources */,
