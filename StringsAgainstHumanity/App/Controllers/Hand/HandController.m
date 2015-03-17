@@ -8,19 +8,17 @@
 
 #import "SAHLibraries.pch"
 #import "HandController.h"
-#import "Card.h"
-#import "CardCell.h"
 #import "ZoomInHandLayout.h"
 #import "BirdsEyeHandLayout.h"
+#import "CardCell.h"
 #import "Hand+DataSource.h"
+#import "BlackCard.h"
+#import "WhiteCard.h"
 
 @interface HandController ()
-
-@property(strong) BirdsEyeHandLayout *birdsEyeLayout;
-@property(weak, readonly) NSArray *selectedCells;
-@property(strong) Hand *hand;
-@property(strong) Card *blackCard;
-
+@property(nonatomic) BirdsEyeHandLayout *birdsEyeLayout;
+@property(copy, nonatomic) Hand *hand;
+@property(readonly, weak, nonatomic) NSArray *selectedCells;
 @end
 
 @implementation HandController
@@ -30,6 +28,22 @@ static NSString *const StoryboardID = @"HandController";
   return StoryboardID;
 }
 
++ (instancetype)empty {
+  Hand *hand = [Hand empty];
+  HandController *controller = [HandController withHand:hand];
+
+  return controller;
+}
+
++ (instancetype)withHand:(Hand *)hand {
+  HandController *controller =
+    [Constants.Storyboard instantiateViewControllerWithIdentifier:HandController.StoryboardID];
+
+  controller.hand = hand;
+
+  return controller;
+}
+
 - (void)viewDidLoad {
   [super viewDidLoad];
 
@@ -37,12 +51,9 @@ static NSString *const StoryboardID = @"HandController";
   //  self.clearsSelectionOnViewWillAppear = NO;
 
   // Register cell classes
-  [self initLayouts];
-  self.hand = [Hand testHand];
-  self.collectionView.dataSource = self.hand;
-  [self.collectionView reloadData];
 
   // Do any additional setup after loading the view.
+  [self initLayouts];
 }
 
 - (void)initLayouts {
@@ -62,23 +73,6 @@ static NSString *const StoryboardID = @"HandController";
 - (void)didReceiveMemoryWarning {
   [super didReceiveMemoryWarning];
   // Dispose of any resources that can be recreated.
-}
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before
-navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
-
-- (IBAction)swipeUp:(UISwipeGestureRecognizer *)sender {
-  NSLog(@"Swipe Up");
-
-  [self playSelectedCards];
 }
 
 - (void)playSelectedCards {

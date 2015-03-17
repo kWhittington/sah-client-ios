@@ -9,15 +9,22 @@
 #import "TestLibraries.pch"
 #import "HandController.h"
 #import "Hand+DataSource.h"
-#import "Card.h"
+#import "BlackCard.h"
+#import "WhiteCard.h"
+#import "BirdsEyeHandLayout.h"
 
 SPEC_BEGIN(HandControllerSpec)
 describe(@"HandController", ^{
   let(handController, ^HandController *{
-    HandController *result = [[UIStoryboard storyboardWithName:Constants.StoryboardName bundle:nil]
-      instantiateViewControllerWithIdentifier:HandController.StoryboardID];
-    [result viewDidLoad];
-    return result;
+    return FGBuildTrait(HandController.class, @"withHand");
+  });
+
+  let(hand, ^Hand *{
+    return handController.hand;
+  });
+
+  let(newWhiteCard, ^WhiteCard *{
+    return FGBuildTrait(WhiteCard.class, @"withString");
   });
 
   describe(@"+ StoryboardID", ^{
