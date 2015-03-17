@@ -42,7 +42,32 @@ describe(@"HandController", ^{
       return [HandController empty];
     });
 
-    it(@"sends addCard: to its DataSource and interItemsAtIndexPaths to its CollectionView", ^{
+    specify(^{
+      [[empty should] beMemberOfClass:HandController.class];
+    });
+
+    it(@"has an empty Hand", ^{
+      [[theValue(empty.hand.isEmpty) should] beYes];
+    });
+  });
+
+  describe(@"+ withHand:", ^{
+    let(withHand, ^{
+      return [HandController withHand:hand];
+    });
+
+    specify(^{
+      [[withHand should] beMemberOfClass:HandController.class];
+    });
+
+    it(@"has a copy of the given Hand of WhiteCards", ^{
+      [[withHand.hand should] equal:hand];
+    });
+  });
+
+  describe(@"- addWhiteCard:", ^{
+    it(@"sends addCard: to its DataSource and insertItemsAtIndexPaths to its CollectionView", ^{
+
       // NOTE
       // Due to how Kiwi's matchers work, this function will fail if both the dataSource/hand
       // and collectionView are mocked or expecting a message.
@@ -52,25 +77,7 @@ describe(@"HandController", ^{
       [[(NSObject *)handController.collectionView should]
         receive:@selector(insertItemsAtIndexPaths:)];
 
-      [handController addCard:card];
-    });
-  });
-
-  describe(@"- viewDidLoad", ^{
-    it(@"assigns a new BirdsEyeHandLayout to collectionView", ^{
-      [[theBlock(^{
-        [handController viewDidLoad];
-      }) should] change:^NSInteger {
-        return handController.collectionView.collectionViewLayout.hash;
-      }];
-    });
-
-    it(@"assigns a new HandViewDataSource to collectionView", ^{
-      [[theBlock(^{
-        [handController viewDidLoad];
-      }) should] change:^NSInteger {
-        return handController.collectionView.dataSource.hash;
-      }];
+      [handController addWhiteCard:newWhiteCard];
     });
   });
 
