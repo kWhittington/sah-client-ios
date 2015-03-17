@@ -140,8 +140,8 @@ describe(@"Hand", ^{
       [[debugDescription should] beKindOfClass:NSString.class];
     });
 
-    it(@"returns '<Hand [memory_address]: [hand.cards.description]>", ^{
-      NSString *string = NSStringWithFormat(@"<Hand %p: %@>", hand, hand.cards);
+    it(@"returns '<Hand: [memory_address] cards=[hand.cards.description]>", ^{
+      NSString *string = NSStringWithFormat(@"<Hand: %p cards=%@>", hand, hand.cards);
 
       [[debugDescription should] equal:string];
     });
@@ -156,8 +156,8 @@ describe(@"Hand", ^{
       [[description should] beKindOfClass:NSString.class];
     });
 
-    it(@"returns '<Hand [memory_address]: [hand.cards.description]>", ^{
-      NSString *string = NSStringWithFormat(@"<Hand %p: %@>", hand, hand.cards);
+    it(@"returns '<Hand: [memory_address] cards=[hand.cards.description]>", ^{
+      NSString *string = NSStringWithFormat(@"<Hand: %p cards=%@>", hand, hand.cards);
 
       [[description should] equal:string];
     });

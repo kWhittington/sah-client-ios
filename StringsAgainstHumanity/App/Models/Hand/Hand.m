@@ -74,11 +74,11 @@
 }
 
 - (NSString *)debugDescription {
-  return NSStringWithFormat(@"<Hand %p: %@>", self, self.cards);
+  return NSStringWithFormat(@"<Hand: %p cards=%@>", self, self.cards);
 }
 
 - (NSString *)description {
-  return NSStringWithFormat(@"<Hand %p: %@>", self, self.cards);
+  return NSStringWithFormat(@"<Hand: %p cards=%@>", self, self.cards);
 }
 
 - (NSUInteger)indexOfCard:(Card *)card {
