@@ -72,8 +72,7 @@ describe(@"HandController", ^{
       // Due to how Kiwi's matchers work, this function will fail if both the dataSource/hand
       // and collectionView are mocked or expecting a message.
       // The collectionView will cause a EXC_BAD_ACCESS error.
-      [[(NSObject *)handController.collectionView.dataSource should] receive:@selector(addCard:)
-                                                               withArguments:card];
+      [[handController.hand should] receive:@selector(addCard:) withArguments:newWhiteCard];
       [[(NSObject *)handController.collectionView should]
         receive:@selector(insertItemsAtIndexPaths:)];
 

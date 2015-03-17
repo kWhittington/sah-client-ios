@@ -62,12 +62,17 @@ static NSString *const StoryboardID = @"HandController";
   self.collectionView.collectionViewLayout = self.birdsEyeLayout;
 }
 
-- (void)addCard:(Card *)card {
-  [self.collectionView performBatchUpdates:^{
-    [self.hand addCard:card];
-    NSIndexPath *indexPath = [self.hand indexPathOfCard:card];
-    [self.collectionView insertItemsAtIndexPaths:@[ indexPath ]];
-  } completion:nil];
+//- (void)addCard:(Card *)card {
+//  [self.collectionView performBatchUpdates:^{
+//    [self.hand addCard:card];
+//    NSIndexPath *indexPath = [self.hand indexPathOfCard:card];
+//    [self.collectionView insertItemsAtIndexPaths:@[ indexPath ]];
+//  } completion:nil];
+//}
+- (void)addWhiteCard:(WhiteCard *)card {
+  [self.hand addCard:card];
+  NSIndexPath *indexPath = [self.hand indexPathOfCard:card];
+  [self.collectionView insertItemsAtIndexPaths:@[ indexPath ]];
 }
 
 - (void)didReceiveMemoryWarning {
