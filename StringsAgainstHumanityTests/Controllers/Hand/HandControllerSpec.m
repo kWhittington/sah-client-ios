@@ -33,13 +33,13 @@ describe(@"HandController", ^{
     });
 
     it(@"returns NSString of HandController's Storyboard ID", ^{
-      [[result should] equal:@"HandController"];
+      [[result should] equal:NSStringFromClass(HandController.class)];
     });
   });
 
-  describe(@"- addCard:", ^{
-    let(card, ^Card *{
-      return FGBuildTrait(Card.class, @"withString");
+  describe(@"+ empty", ^{
+    let(empty, ^{
+      return [HandController empty];
     });
 
     it(@"sends addCard: to its DataSource and interItemsAtIndexPaths to its CollectionView", ^{
