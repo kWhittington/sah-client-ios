@@ -15,6 +15,14 @@
   return card;
 }
 
+- (NSString *)debugDescription {
+  return self.description;
+}
+
+- (NSString *)description {
+  return NSStringWithFormat(@"<WhiteCard: %p string=%@>", self, self.string);
+}
+
 - (BOOL)isEqual:(id)object {
   BOOL equalToSuperClass = [super isEqual:object];
 

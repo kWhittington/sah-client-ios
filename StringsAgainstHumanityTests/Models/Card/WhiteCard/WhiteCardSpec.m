@@ -59,20 +59,6 @@ describe(@"WhiteCard", ^{
     });
   });
 
-  describe(@"- initWithString:", ^{
-    let(result, ^{
-      return [[WhiteCard alloc] initWithString:string];
-    });
-
-    specify(^{
-      [[result should] beMemberOfClass:WhiteCard.class];
-    });
-
-    it(@"creates a WhiteCard with the given string", ^{
-      [[result.string should] equal:string];
-    });
-  });
-
   describe(@"- copy", ^{
     let(result, ^{
       return whiteCard.copy;
@@ -88,6 +74,50 @@ describe(@"WhiteCard", ^{
 
     it(@"returns a non-identical WhiteCard", ^{
       [[result shouldNot] beIdenticalTo:whiteCard];
+    });
+  });
+
+  describe(@"- debugDescription", ^{
+    let(debugDescription, ^{
+      return whiteCard.debugDescription;
+    });
+
+    specify(^{
+      [[debugDescription should] beKindOfClass:NSString.class];
+    });
+
+    it(@"returns card.description", ^{
+      [[debugDescription should] equal:whiteCard.description];
+    });
+  });
+
+  describe(@"- description", ^{
+    let(description, ^{
+      return whiteCard.description;
+    });
+
+    specify(^{
+      [[description should] beKindOfClass:NSString.class];
+    });
+
+    it(@"returns '<WhiteCard: [memory_address] string=[whiteCard.string]>", ^{
+      NSString *string =
+        NSStringWithFormat(@"<WhiteCard: %p string=%@>", whiteCard, whiteCard.string);
+      [[description should] equal:string];
+    });
+  });
+
+  describe(@"- initWithString:", ^{
+    let(result, ^{
+      return [[WhiteCard alloc] initWithString:string];
+    });
+
+    specify(^{
+      [[result should] beMemberOfClass:WhiteCard.class];
+    });
+
+    it(@"creates a WhiteCard with the given string", ^{
+      [[result.string should] equal:string];
     });
   });
 
