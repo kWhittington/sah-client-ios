@@ -73,6 +73,14 @@
   return copy;
 }
 
+- (NSString *)debugDescription {
+  return NSStringWithFormat(@"<Hand %p: %@>", self, self.cards);
+}
+
+- (NSString *)description {
+  return NSStringWithFormat(@"<Hand %p: %@>", self, self.cards);
+}
+
 - (NSUInteger)indexOfCard:(Card *)card {
   NSUInteger result = [self.mutableCards indexOfObject:card];
   return result;

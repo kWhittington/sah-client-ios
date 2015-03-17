@@ -131,6 +131,38 @@ describe(@"Hand", ^{
     });
   });
 
+  describe(@"- debugDescription", ^{
+    let(debugDescription, ^{
+      return hand.debugDescription;
+    });
+
+    specify(^{
+      [[debugDescription should] beKindOfClass:NSString.class];
+    });
+
+    it(@"returns '<Hand [memory_address]: [hand.cards.description]>", ^{
+      NSString *string = NSStringWithFormat(@"<Hand %p: %@>", hand, hand.cards);
+
+      [[debugDescription should] equal:string];
+    });
+  });
+
+  describe(@"- description", ^{
+    let(description, ^{
+      return hand.description;
+    });
+
+    specify(^{
+      [[description should] beKindOfClass:NSString.class];
+    });
+
+    it(@"returns '<Hand [memory_address]: [hand.cards.description]>", ^{
+      NSString *string = NSStringWithFormat(@"<Hand %p: %@>", hand, hand.cards);
+
+      [[description should] equal:string];
+    });
+  });
+
   describe(@"- init", ^{
     let(init, ^{
       return [[Hand alloc] init];
