@@ -44,31 +44,6 @@ static NSString *const StoryboardID = @"HandController";
   return controller;
 }
 
-- (void)viewDidLoad {
-  [super viewDidLoad];
-
-  // Uncomment the following line to preserve selection between presentations
-  //  self.clearsSelectionOnViewWillAppear = NO;
-
-  // Register cell classes
-
-  // Do any additional setup after loading the view.
-  [self initLayouts];
-}
-
-- (void)initLayouts {
-  self.birdsEyeLayout = [[BirdsEyeHandLayout alloc] init];
-
-  self.collectionView.collectionViewLayout = self.birdsEyeLayout;
-}
-
-//- (void)addCard:(Card *)card {
-//  [self.collectionView performBatchUpdates:^{
-//    [self.hand addCard:card];
-//    NSIndexPath *indexPath = [self.hand indexPathOfCard:card];
-//    [self.collectionView insertItemsAtIndexPaths:@[ indexPath ]];
-//  } completion:nil];
-//}
 - (void)addWhiteCard:(WhiteCard *)card {
   [self.hand addCard:card];
   NSIndexPath *indexPath = [self.hand indexPathOfCard:card];
@@ -78,6 +53,12 @@ static NSString *const StoryboardID = @"HandController";
 - (void)didReceiveMemoryWarning {
   [super didReceiveMemoryWarning];
   // Dispose of any resources that can be recreated.
+}
+
+- (void)initLayouts {
+  self.birdsEyeLayout = [[BirdsEyeHandLayout alloc] init];
+
+  self.collectionView.collectionViewLayout = self.birdsEyeLayout;
 }
 
 - (void)playSelectedCards {
@@ -100,6 +81,24 @@ static NSString *const StoryboardID = @"HandController";
 
 - (NSArray *)selectedCards {
   return [self.hand cardsAtIndexPaths:[self.collectionView indexPathsForSelectedItems]];
+}
+
+- (IBAction)swipeUp:(UISwipeGestureRecognizer *)sender {
+  NSLog(@"Swipe Up");
+
+  [self playSelectedCards];
+}
+
+- (void)viewDidLoad {
+  [super viewDidLoad];
+
+  // Uncomment the following line to preserve selection between presentations
+  //  self.clearsSelectionOnViewWillAppear = NO;
+
+  // Register cell classes
+
+  // Do any additional setup after loading the view.
+  [self initLayouts];
 }
 
 #pragma mark <UICollectionViewDelegate>
