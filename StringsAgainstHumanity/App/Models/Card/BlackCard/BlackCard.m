@@ -31,16 +31,6 @@
   return Constants.WhiteColor;
 }
 
-#pragma mark Designated Initializer
-- (instancetype)initWithString:(NSString *)string {
-  self = [super initWithString:string];
-
-  self.draw = BlackCard.DefaultDrawNumber;
-  self.pick = BlackCard.DefaultPickNumber;
-
-  return self;
-}
-
 - (instancetype)copyWithZone:(NSZone *)zone {
   BlackCard *copy = [BlackCard withString:self.string.copy];
 
@@ -49,6 +39,16 @@
 
 - (NSUInteger)hash {
   return self.string.hash ^ self.draw.hash ^ self.pick.hash;
+}
+
+#pragma mark Designated Initializer
+- (instancetype)initWithString:(NSString *)string {
+  self = [super initWithString:string];
+
+  self.draw = BlackCard.DefaultDrawNumber;
+  self.pick = BlackCard.DefaultPickNumber;
+
+  return self;
 }
 
 - (BOOL)isEqual:(id)object {
