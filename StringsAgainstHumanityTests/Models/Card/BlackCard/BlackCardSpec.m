@@ -103,7 +103,7 @@ describe(@"BlackCard", ^{
     let(result, ^{
       return blackCard.copy;
     });
-    
+
     specify(^{
       [[result should] beMemberOfClass:BlackCard.class];
     });
@@ -148,7 +148,7 @@ describe(@"BlackCard", ^{
 
     context(@"when other is a BlackCard", ^{
       let(other, ^{
-        return FGBuildTrait(blackCard.class, @"withString");
+        return FGBuildTrait(BlackCard.class, @"withString");
       });
 
       context(@"when other is identical to BlackCard", ^{
@@ -163,7 +163,7 @@ describe(@"BlackCard", ^{
 
       context(@"when other.string equals BlackCard's string", ^{
         let(other, ^{
-          return FGBuildTraitWith(blackCard.class, @"withString", @{
+          return FGBuildTraitWith(BlackCard.class, @"withString", @{
             @"string" : blackCard.string.copy
           });
         });
