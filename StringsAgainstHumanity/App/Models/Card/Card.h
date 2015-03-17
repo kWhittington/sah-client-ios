@@ -19,8 +19,6 @@
 + (instancetype)withString:(NSString *)string;
 
 - (instancetype)copyWithZone:(NSZone *)zone;
-- (NSString *)debugDescription;
-- (NSString *)description;
 - (instancetype)initWithString:(NSString *)string;
 - (BOOL)isEqualToCard:(Card *)card;
 @end
