@@ -37,6 +37,14 @@
   return copy;
 }
 
+- (NSString *)debugDescription {
+  return self.description;
+}
+
+- (NSString *)description {
+  return NSStringWithFormat(@"<BlackCard: %p string=%@>", self, self.string);
+}
+
 - (NSUInteger)hash {
   return self.string.hash ^ self.draw.hash ^ self.pick.hash;
 }

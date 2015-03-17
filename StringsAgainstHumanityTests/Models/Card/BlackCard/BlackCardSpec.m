@@ -117,6 +117,36 @@ describe(@"BlackCard", ^{
     });
   });
 
+  describe(@"- debugDescription", ^{
+    let(debugDescription, ^{
+      return blackCard.debugDescription;
+    });
+
+    specify(^{
+      [[debugDescription should] beKindOfClass:NSString.class];
+    });
+
+    it(@"returns self.description", ^{
+      [[debugDescription should] equal:blackCard.description];
+    });
+  });
+
+  describe(@"- description", ^{
+    let(description, ^{
+      return blackCard.description;
+    });
+
+    specify(^{
+      [[description should] beKindOfClass:NSString.class];
+    });
+
+    it(@"returns self.description", ^{
+      NSString *string =
+        NSStringWithFormat(@"<BlackCard: %p string=%@>", blackCard, blackCard.string);
+      [[description should] equal:string];
+    });
+  });
+
   describe(@"- draw", ^{
     let(result, ^{
       return blackCard.draw;
