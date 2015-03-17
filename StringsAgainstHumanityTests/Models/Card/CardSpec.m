@@ -26,26 +26,6 @@ describe(@"Card", ^{
     [[card should] conformToProtocol:@protocol(NSCopying)];
   });
 
-  describe(@"+ blank", ^{
-    let(result, ^Card *{
-      return [Card blank];
-    });
-
-    it(@"creates a Card with an empty string", ^{
-      [[result.string should] equal:@""];
-    });
-  });
-
-  describe(@"+ withString:", ^{
-    let(result, ^Card *{
-      return [Card withString:string];
-    });
-
-    it(@"creates a Card with the given string", ^{
-      [[result.string should] equal:string];
-    });
-  });
-
   describe(@"+ CardColor", ^{
     let(result, ^{
       return Card.CardColor;
@@ -66,9 +46,9 @@ describe(@"Card", ^{
     });
   });
 
-  describe(@"- init", ^{
+  describe(@"+ blank", ^{
     let(result, ^Card *{
-      return [[Card alloc] init];
+      return [Card blank];
     });
 
     it(@"creates a Card with an empty string", ^{
@@ -76,9 +56,9 @@ describe(@"Card", ^{
     });
   });
 
-  describe(@"- initWithString:", ^{
+  describe(@"+ withString:", ^{
     let(result, ^Card *{
-      return [[Card alloc] initWithString:string];
+      return [Card withString:string];
     });
 
     it(@"creates a Card with the given string", ^{
@@ -97,6 +77,26 @@ describe(@"Card", ^{
 
     it(@"returns a non-identical Card", ^{
       [[result shouldNot] beIdenticalTo:card];
+    });
+  });
+
+  describe(@"- init", ^{
+    let(result, ^Card *{
+      return [[Card alloc] init];
+    });
+
+    it(@"creates a Card with an empty string", ^{
+      [[result.string should] equal:@""];
+    });
+  });
+
+  describe(@"- initWithString:", ^{
+    let(result, ^Card *{
+      return [[Card alloc] initWithString:string];
+    });
+
+    it(@"creates a Card with the given string", ^{
+      [[result.string should] equal:string];
     });
   });
 
@@ -192,5 +192,4 @@ describe(@"Card", ^{
     });
   });
 });
-
 SPEC_END
