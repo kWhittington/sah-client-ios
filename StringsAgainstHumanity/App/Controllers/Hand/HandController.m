@@ -18,7 +18,6 @@
 @interface HandController ()
 @property(nonatomic) BirdsEyeHandLayout *birdsEyeLayout;
 @property(copy, nonatomic) Hand *hand;
-@property(readonly, nonatomic) NSArray *selectedCells;
 
 - (void)initCollectionViewDataSource;
 - (void)initLayouts;
@@ -132,20 +131,11 @@ static NSString *const StoryboardID = @"HandController";
 
 // Uncomment this method to specify if the specified item should be highlighted
 // during tracking
-// static int count = 0;
-//- (BOOL)collectionView:(UICollectionView *)collectionView
-//    shouldHighlightItemAtIndexPath:(NSIndexPath *)indexPath {
-//
-//  Card *card = [self collectionView:collectionView cardAtIndexPath:indexPath];
-//
-//  if ((count % 2) == 0) {
-//    NSLog(@"Should be highlighted, '%@'.", card.string);
-//    return YES;
-//  } else {
-//    NSLog(@"Shouldn't be highlighted, '%@'.", card.string);
-//    return NO;
-//  }
-//}
+- (BOOL)collectionView:(UICollectionView *)collectionView
+  shouldHighlightItemAtIndexPath:(NSIndexPath *)indexPath {
+
+  return YES;
+}
 
 //- (void)collectionView:(UICollectionView *)collectionView
 //    didUnhighlightItemAtIndexPath:(NSIndexPath *)indexPath {

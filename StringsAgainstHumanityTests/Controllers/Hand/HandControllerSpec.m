@@ -99,6 +99,40 @@ describe(@"HandController", ^{
     });
   });
 
+  describe(@"- selectedCards", ^{
+    let(selectedCards, ^{
+      return handController.selectedCards;
+    });
+
+    specify(^{
+      [[selectedCards should] beKindOfClass:NSArray.class];
+    });
+
+    it(@"returns the Cards located at the CollectionView's - indexPathsForSelectedItems:", ^{
+      [[selectedCards should]
+        equal:[hand cardsAtIndexPaths:handController.collectionView.indexPathsForSelectedItems]];
+    });
+  });
+
+#pragma mark <UICollectionViewDelegate>
+  describe(@"- collectionView:shouldHighlightItemAtIndexPath:", ^{
+    let(collectionView, ^{
+      return UICollectionView.nullMock;
+    });
+
+    let(indexPath, ^{
+      return NSIndexPath.nullMock;
+    });
+
+    let(shouldHighlight, ^{
+      return theValue(
+        [handController collectionView:collectionView shouldHighlightItemAtIndexPath:indexPath]);
+    });
+
+    specify(^{
+      [[shouldHighlight should] beYes];
+    });
+  });
   // TODO
   // Specifications for touch input.
 });

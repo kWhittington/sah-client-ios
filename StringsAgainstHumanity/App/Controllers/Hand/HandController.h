@@ -13,6 +13,7 @@
 
 @interface HandController : UICollectionViewController
 @property(readonly, copy, nonatomic) Hand *hand;
+@property(readonly, nonatomic) NSArray *selectedCards;
 
 + (NSString *)StoryboardID;
 
