@@ -9,6 +9,7 @@
 #import "SAHLibraries.pch"
 
 @class Hand;
+@class Card;
 @class WhiteCard;
 
 @interface HandController : UICollectionViewController
@@ -22,4 +23,5 @@
 
 - (void)addWhiteCard:(WhiteCard *)card;
 - (void)removeWhiteCard:(WhiteCard *)card;
+- (void)selectCard:(Card *)card;
 @end

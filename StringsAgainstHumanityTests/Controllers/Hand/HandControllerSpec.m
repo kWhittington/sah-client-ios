@@ -99,6 +99,25 @@ describe(@"HandController", ^{
     });
   });
 
+  describe(@"- selectCard:", ^{
+    let(cardToSelect, ^{
+      return hand.cards.first;
+    });
+
+    let(selectionIndexPath, ^{
+      return [hand indexPathOfCard:cardToSelect];
+    });
+
+    it(@"calls CollectionView's selectItemAtIndexPath:animated:scrollPosition:", ^{
+      [[handController.collectionView should]
+              receive:@selector(selectItemAtIndexPath:animated:scrollPosition:)
+        withArguments:selectionIndexPath, theValue(NO),
+                      theValue(UICollectionViewScrollPositionNone)];
+
+      [handController selectCard:cardToSelect];
+    });
+  });
+
   describe(@"- selectedCards", ^{
     let(selectedCards, ^{
       return handController.selectedCards;

@@ -99,6 +99,13 @@ static NSString *const StoryboardID = @"HandController";
   [self.collectionView deleteItemsAtIndexPaths:@[ indexPath ]];
 }
 
+- (void)selectCard:(Card *)card {
+  NSIndexPath *selectionIndexPath = [self.hand indexPathOfCard:card];
+  [self.collectionView selectItemAtIndexPath:selectionIndexPath
+                                    animated:NO
+                              scrollPosition:UICollectionViewScrollPositionNone];
+}
+
 - (NSArray *)selectedCards {
   return [self.hand cardsAtIndexPaths:[self.collectionView indexPathsForSelectedItems]];
 }
