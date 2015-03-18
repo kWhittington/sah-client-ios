@@ -20,4 +20,5 @@
 + (instancetype)withHand:(Hand *)hand;
 
 - (void)addWhiteCard:(WhiteCard *)card;
+- (void)removeWhiteCard:(WhiteCard *)card;
 @end

@@ -66,17 +66,36 @@ describe(@"HandController", ^{
   });
 
   describe(@"- addWhiteCard:", ^{
-    it(@"sends addCard: to its DataSource and insertItemsAtIndexPaths to its CollectionView", ^{
+    let(card, ^{
+      return newWhiteCard;
+    });
 
+    it(@"sends addCard: to its Hand and insertItemsAtIndexPaths: to its CollectionView", ^{
       // NOTE
       // Due to how Kiwi's matchers work, this function will fail if both the dataSource/hand
       // and collectionView are mocked or expecting a message.
       // The collectionView will cause a EXC_BAD_ACCESS error.
-      [[handController.hand should] receive:@selector(addCard:) withArguments:newWhiteCard];
-      [[(NSObject *)handController.collectionView should]
-        receive:@selector(insertItemsAtIndexPaths:)];
+      [[handController.hand should] receive:@selector(addCard:) withArguments:card];
+      [[handController.collectionView should] receive:@selector(insertItemsAtIndexPaths:)];
 
-      [handController addWhiteCard:newWhiteCard];
+      [handController addWhiteCard:card];
+    });
+  });
+
+  describe(@"- removeWhiteCard:", ^{
+    let(card, ^{
+      return handController.hand.cards.first;
+    });
+
+    it(@"sends removeCard: to its Hand and deleteItemsAtIndexPaths: to its CollectionView", ^{
+      // NOTE
+      // Due to how Kiwi's matchers work, this function will fail if both the dataSource/hand
+      // and collectionView are mocked or expecting a message.
+      // The collectionView will cause a EXC_BAD_ACCESS error.
+      [[handController.hand should] receive:@selector(removeCard:) withArguments:card];
+      [[handController.collectionView should] receive:@selector(deleteItemsAtIndexPaths:)];
+
+      [handController removeWhiteCard:card];
     });
   });
 

@@ -18,7 +18,12 @@
 @interface HandController ()
 @property(nonatomic) BirdsEyeHandLayout *birdsEyeLayout;
 @property(copy, nonatomic) Hand *hand;
-@property(readonly, weak, nonatomic) NSArray *selectedCells;
+@property(readonly, nonatomic) NSArray *selectedCells;
+
+- (void)initCollectionViewDataSource;
+- (void)initLayouts;
+- (void)playSelectedCards;
+- (void)removeSelectedCards;
 @end
 
 @implementation HandController
@@ -55,6 +60,16 @@ static NSString *const StoryboardID = @"HandController";
   // Dispose of any resources that can be recreated.
 }
 
+- (void)initCollectionViewDataSource {
+  self.hand = [Hand withArray:@[
+    [Card withString:@"Card #1"],
+    [Card withString:@"Card #2"],
+    [Card withString:@"Card #3"],
+  ]];
+
+  self.collectionView.dataSource = self.hand;
+}
+
 - (void)initLayouts {
   self.birdsEyeLayout = [[BirdsEyeHandLayout alloc] init];
 
@@ -77,6 +92,12 @@ static NSString *const StoryboardID = @"HandController";
   [self.hand removeCardsAtIndexPaths:itemPaths];
   [self.collectionView deleteItemsAtIndexPaths:itemPaths];
   //  } completion:nil];
+}
+
+- (void)removeWhiteCard:(WhiteCard *)card {
+  NSIndexPath *indexPath = [self.hand indexPathOfCard:card];
+  [self.hand removeCard:card];
+  [self.collectionView deleteItemsAtIndexPaths:@[ indexPath ]];
 }
 
 - (NSArray *)selectedCards {
