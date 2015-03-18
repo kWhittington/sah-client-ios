@@ -6,20 +6,20 @@
 //  Copyright (c) 2015 Kyle Whittington. All rights reserved.
 //
 
-#import "CardCell.h"
+#import "CardViewCell.h"
 #import "Card.h"
 
-@interface CardCell ()
+@interface CardViewCell ()
 
 @property(strong) Card *card;
 @property(weak, nonatomic) IBOutlet UIButton *button;
 
 @end
 
-@implementation CardCell
+@implementation CardViewCell
 
 + (NSString *)reusableID {
-  return @"CardCell";
+  return @"CardViewCell";
 }
 
 + (NSNumber *)width {
@@ -31,7 +31,7 @@
 }
 
 + (CGSize)size {
-  return CGSizeMake([CardCell width].floatValue, [CardCell height].floatValue);
+  return CGSizeMake([CardViewCell width].floatValue, [CardViewCell height].floatValue);
 }
 
 - (void)configureForCard:(Card *)card {

@@ -10,7 +10,7 @@
 
 @class Card;
 
-@interface CardCell : UICollectionViewCell
+@interface CardViewCell : UICollectionViewCell
 
 @property(readonly, strong) Card *card;
 @property(weak, nonatomic) IBOutlet UILabel *label;

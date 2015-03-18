@@ -8,55 +8,50 @@
 
 #import "SAHLibraries.pch"
 #import "HandController.h"
-#import "Card.h"
-#import "CardCell.h"
 #import "ZoomInHandLayout.h"
 #import "BirdsEyeHandLayout.h"
+#import "CardViewCell.h"
 #import "Hand+DataSource.h"
+#import "BlackCard.h"
+#import "WhiteCard.h"
 
 @interface HandController ()
+@property(nonatomic) BirdsEyeHandLayout *birdsEyeLayout;
+@property(copy, nonatomic) Hand *hand;
 
-@property(strong) BirdsEyeHandLayout *birdsEyeLayout;
-@property(weak, readonly) NSArray *selectedCells;
-@property(strong) Hand *hand;
-@property(strong) Card *blackCard;
-
+- (void)initCollectionViewDataSource;
+- (void)initLayouts;
+- (void)playSelectedCards;
+- (void)removeSelectedCards;
 @end
 
 @implementation HandController
-static NSString *const storyboardID = @"HandController";
+static NSString *const StoryboardID = @"HandController";
 
-+ (NSString *)storyboardID {
-  return storyboardID;
++ (NSString *)StoryboardID {
+  return StoryboardID;
 }
 
-- (void)viewDidLoad {
-  [super viewDidLoad];
++ (instancetype)empty {
+  Hand *hand = [Hand empty];
+  HandController *controller = [HandController withHand:hand];
 
-  // Uncomment the following line to preserve selection between presentations
-  //  self.clearsSelectionOnViewWillAppear = NO;
-
-  // Register cell classes
-  [self initLayouts];
-  self.hand = [Hand testHand];
-  self.collectionView.dataSource = self.hand;
-  [self.collectionView reloadData];
-
-  // Do any additional setup after loading the view.
+  return controller;
 }
 
-- (void)initLayouts {
-  self.birdsEyeLayout = [[BirdsEyeHandLayout alloc] init];
++ (instancetype)withHand:(Hand *)hand {
+  HandController *controller =
+    [Constants.Storyboard instantiateViewControllerWithIdentifier:HandController.StoryboardID];
 
-  self.collectionView.collectionViewLayout = self.birdsEyeLayout;
+  controller.hand = hand;
+
+  return controller;
 }
 
-- (void)addCard:(Card *)card {
-  [self.collectionView performBatchUpdates:^{
-    [self.hand addCard:card];
-    NSIndexPath *indexPath = [self.hand indexPathOfCard:card];
-    [self.collectionView insertItemsAtIndexPaths:@[ indexPath ]];
-  } completion:nil];
+- (void)addWhiteCard:(WhiteCard *)card {
+  [self.hand addCard:card];
+  NSIndexPath *indexPath = [self.hand indexPathOfCard:card];
+  [self.collectionView insertItemsAtIndexPaths:@[ indexPath ]];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -64,21 +59,20 @@ static NSString *const storyboardID = @"HandController";
   // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
+- (void)initCollectionViewDataSource {
+  self.hand = [Hand withArray:@[
+    [Card withString:@"Card #1"],
+    [Card withString:@"Card #2"],
+    [Card withString:@"Card #3"],
+  ]];
 
-// In a storyboard-based application, you will often want to do a little preparation before
-navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+  self.collectionView.dataSource = self.hand;
 }
-*/
 
-- (IBAction)swipeUp:(UISwipeGestureRecognizer *)sender {
-  NSLog(@"Swipe Up");
+- (void)initLayouts {
+  self.birdsEyeLayout = [[BirdsEyeHandLayout alloc] init];
 
-  [self playSelectedCards];
+  self.collectionView.collectionViewLayout = self.birdsEyeLayout;
 }
 
 - (void)playSelectedCards {
@@ -99,8 +93,39 @@ navigation
   //  } completion:nil];
 }
 
+- (void)removeWhiteCard:(WhiteCard *)card {
+  NSIndexPath *indexPath = [self.hand indexPathOfCard:card];
+  [self.hand removeCard:card];
+  [self.collectionView deleteItemsAtIndexPaths:@[ indexPath ]];
+}
+
+- (void)selectCard:(Card *)card {
+  NSIndexPath *selectionIndexPath = [self.hand indexPathOfCard:card];
+  [self.collectionView selectItemAtIndexPath:selectionIndexPath
+                                    animated:NO
+                              scrollPosition:UICollectionViewScrollPositionNone];
+}
+
 - (NSArray *)selectedCards {
   return [self.hand cardsAtIndexPaths:[self.collectionView indexPathsForSelectedItems]];
+}
+
+- (IBAction)swipeUp:(UISwipeGestureRecognizer *)sender {
+  NSLog(@"Swipe Up");
+
+  [self playSelectedCards];
+}
+
+- (void)viewDidLoad {
+  [super viewDidLoad];
+
+  // Uncomment the following line to preserve selection between presentations
+  //  self.clearsSelectionOnViewWillAppear = NO;
+
+  // Register cell classes
+
+  // Do any additional setup after loading the view.
+  [self initLayouts];
 }
 
 #pragma mark <UICollectionViewDelegate>
@@ -111,25 +136,18 @@ navigation
   NSLog(@"Selected Card: %@", card.string);
 }
 
-// Uncomment this method to specify if the specified item should be highlighted during tracking
-// static int count = 0;
-//- (BOOL)collectionView:(UICollectionView *)collectionView
-//    shouldHighlightItemAtIndexPath:(NSIndexPath *)indexPath {
-//
-//  Card *card = [self collectionView:collectionView cardAtIndexPath:indexPath];
-//
-//  if ((count % 2) == 0) {
-//    NSLog(@"Should be highlighted, '%@'.", card.string);
-//    return YES;
-//  } else {
-//    NSLog(@"Shouldn't be highlighted, '%@'.", card.string);
-//    return NO;
-//  }
-//}
+// Uncomment this method to specify if the specified item should be highlighted
+// during tracking
+- (BOOL)collectionView:(UICollectionView *)collectionView
+  shouldHighlightItemAtIndexPath:(NSIndexPath *)indexPath {
+
+  return YES;
+}
 
 //- (void)collectionView:(UICollectionView *)collectionView
 //    didUnhighlightItemAtIndexPath:(NSIndexPath *)indexPath {
-//  //  UICollectionViewCell *cell = [collectionView cellForItemAtIndexPath:indexPath];
+//  //  UICollectionViewCell *cell = [collectionView
+//  cellForItemAtIndexPath:indexPath];
 //  //  cell.contentView.backgroundColor = [UIColor greenColor];
 //  NSLog(@"Did Unhighlight");
 //}
@@ -143,7 +161,8 @@ navigation
 //- (void)collectionView:(UICollectionView *)collectionView
 //    didHighlightItemAtIndexPath:(NSIndexPath *)indexPath {
 //  NSLog(@"Did Highlight");
-//  //  [super collectionView:collectionView didHighlightItemAtIndexPath:indexPath];
+//  //  [super collectionView:collectionView
+//  didHighlightItemAtIndexPath:indexPath];
 //}
 
 - (void)collectionView:(UICollectionView *)collectionView
@@ -152,7 +171,8 @@ navigation
   NSLog(@"Did Deselect, '%@'.", card.string);
 }
 
-// Uncomment these methods to specify if an action menu should be displayed for the specified item,
+// Uncomment these methods to specify if an action menu should be displayed for
+// the specified item,
 // and react to actions performed on the item
 - (BOOL)collectionView:(UICollectionView *)collectionView
   shouldShowMenuForItemAtIndexPath:(NSIndexPath *)indexPath {

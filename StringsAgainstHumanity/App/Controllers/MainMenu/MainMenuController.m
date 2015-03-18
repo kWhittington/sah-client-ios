@@ -18,7 +18,7 @@
 
 @implementation MainMenuController
 
-+ (NSString *)storyboardID {
++ (NSString *)StoryboardID {
   return @"MainMenuController";
 }
 

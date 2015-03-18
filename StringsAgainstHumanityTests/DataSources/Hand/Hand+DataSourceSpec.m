@@ -13,26 +13,16 @@
 //
 SPEC_BEGIN(HandDataSourceSpec)
 describe(@"Hand+DataSource", ^{
-  // Each example will inherit a NSArray of Cards, a Hand containing those Cards, and a new Card
-  // not contained in the Hand.
-  let(newCard, ^Card *{
-    return FGBuildTrait(Card.class, @"withString");
+  let(hand, ^Hand *{
+    return FGBuildTrait(Hand.class, @"withCards");
   });
 
   let(cards, ^NSArray *{
-    __block NSArray *cards = @[];
-
-    [@3 times:^{
-      cards = [cards arrayByAddingObject:FGBuildTrait(Card.class, @"withString")];
-    }];
-
-    return cards;
+    return hand.cards;
   });
 
-  let(hand, ^Hand *{
-    return FGBuildTraitWith(Hand.class, @"withCards", ^(FGDefinitionBuilder *builder) {
-      builder[@"cards"] = cards;
-    });
+  let(newCard, ^Card *{
+    return FGBuildTrait(Card.class, @"withString");
   });
 
   it(@"conforms to the UICollectionViewDataSource protocol", ^{

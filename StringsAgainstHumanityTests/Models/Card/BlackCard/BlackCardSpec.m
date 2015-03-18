@@ -103,7 +103,7 @@ describe(@"BlackCard", ^{
     let(result, ^{
       return blackCard.copy;
     });
-    
+
     specify(^{
       [[result should] beMemberOfClass:BlackCard.class];
     });
@@ -114,6 +114,36 @@ describe(@"BlackCard", ^{
 
     it(@"returns a non-identical blackCard", ^{
       [[result shouldNot] beIdenticalTo:blackCard];
+    });
+  });
+
+  describe(@"- debugDescription", ^{
+    let(debugDescription, ^{
+      return blackCard.debugDescription;
+    });
+
+    specify(^{
+      [[debugDescription should] beKindOfClass:NSString.class];
+    });
+
+    it(@"returns self.description", ^{
+      [[debugDescription should] equal:blackCard.description];
+    });
+  });
+
+  describe(@"- description", ^{
+    let(description, ^{
+      return blackCard.description;
+    });
+
+    specify(^{
+      [[description should] beKindOfClass:NSString.class];
+    });
+
+    it(@"returns self.description", ^{
+      NSString *string =
+        NSStringWithFormat(@"<BlackCard: %p string=%@>", blackCard, blackCard.string);
+      [[description should] equal:string];
     });
   });
 
@@ -148,7 +178,7 @@ describe(@"BlackCard", ^{
 
     context(@"when other is a BlackCard", ^{
       let(other, ^{
-        return FGBuildTrait(blackCard.class, @"withString");
+        return FGBuildTrait(BlackCard.class, @"withString");
       });
 
       context(@"when other is identical to BlackCard", ^{
@@ -163,7 +193,7 @@ describe(@"BlackCard", ^{
 
       context(@"when other.string equals BlackCard's string", ^{
         let(other, ^{
-          return FGBuildTraitWith(blackCard.class, @"withString", @{
+          return FGBuildTraitWith(BlackCard.class, @"withString", @{
             @"string" : blackCard.string.copy
           });
         });

@@ -15,14 +15,14 @@ SPEC_BEGIN(MainMenuControllerSpec)
 describe(@"MainMenuController", ^{
   let(mainMenuController, ^MainMenuController *{
     MainMenuController *result = [[UIStoryboard storyboardWithName:@"Main" bundle:nil]
-      instantiateViewControllerWithIdentifier:MainMenuController.storyboardID];
+      instantiateViewControllerWithIdentifier:MainMenuController.StoryboardID];
     [result viewDidLoad];
     return result;
   });
   
   describe(@"+ storyboardID", ^{
     let(result, ^NSString *{
-      return MainMenuController.storyboardID;
+      return MainMenuController.StoryboardID;
     });
     
     it(@"returns @\"MainMenuController\"", ^{

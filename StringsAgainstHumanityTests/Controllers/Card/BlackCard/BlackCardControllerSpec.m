@@ -20,6 +20,16 @@ describe(@"BlackCardController", ^{
   let(blackCardController, ^BlackCardController *{
     return [BlackCardController withBlackCard:blackCard];
   });
+  
+  describe(@"+ StoryboardID", ^{
+    let(result, ^{
+      return BlackCardController.StoryboardID;
+    });
+    
+    it(@"equals 'BlackCardController'", ^{
+      [[result should] equal:NSStringFromClass(BlackCardController.class)];
+    });
+  });
 
   describe(@"+ withBlackCard:", ^{
     let(result, ^{

@@ -6,7 +6,7 @@
 //  Copyright (c) 2015 Kyle Whittington. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+@import Foundation;
 
 @interface Card : NSObject <NSCopying>
 
@@ -18,8 +18,7 @@
 + (instancetype)blank;
 + (instancetype)withString:(NSString *)string;
 
-- (instancetype)initWithString:(NSString *)string;
-
 - (instancetype)copyWithZone:(NSZone *)zone;
+- (instancetype)initWithString:(NSString *)string;
 - (BOOL)isEqualToCard:(Card *)card;
 @end

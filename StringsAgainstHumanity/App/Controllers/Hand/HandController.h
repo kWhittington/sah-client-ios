@@ -8,14 +8,20 @@
 
 #import "SAHLibraries.pch"
 
+@class Hand;
 @class Card;
+@class WhiteCard;
 
 @interface HandController : UICollectionViewController
-@property(readonly, strong) Card *blackCard;
+@property(readonly, copy, nonatomic) Hand *hand;
+@property(readonly, nonatomic) NSArray *selectedCards;
 
-+ (NSString *)storyboardID;
++ (NSString *)StoryboardID;
 
-- (void)addCard:(Card *)card;
-- (void)setBlackCardString:(NSString *)string;
++ (instancetype)empty;
++ (instancetype)withHand:(Hand *)hand;
 
+- (void)addWhiteCard:(WhiteCard *)card;
+- (void)removeWhiteCard:(WhiteCard *)card;
+- (void)selectCard:(Card *)card;
 @end
