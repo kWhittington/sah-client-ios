@@ -41,7 +41,7 @@
 		ADBF7F901A910CE300C5BB00 /* HandController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADBF7F8F1A910CE300C5BB00 /* HandController.m */; };
 		ADBF7F931A910E2800C5BB00 /* Hand.m in Sources */ = {isa = PBXBuildFile; fileRef = ADBF7F921A910E2800C5BB00 /* Hand.m */; };
 		ADBF7F981A91171A00C5BB00 /* Card.m in Sources */ = {isa = PBXBuildFile; fileRef = ADBF7F971A91171A00C5BB00 /* Card.m */; };
-		ADBF7F9F1A913FE200C5BB00 /* CardCell.m in Sources */ = {isa = PBXBuildFile; fileRef = ADBF7F9E1A913FE200C5BB00 /* CardCell.m */; };
+		ADBF7F9F1A913FE200C5BB00 /* CardViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = ADBF7F9E1A913FE200C5BB00 /* CardViewCell.m */; };
 		ADBF7FA71A914D4D00C5BB00 /* BirdsEyeHandLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = ADBF7FA61A914D4D00C5BB00 /* BirdsEyeHandLayout.m */; };
 		ADBF7FAA1A91661500C5BB00 /* ZoomInHandLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = ADBF7FA91A91661500C5BB00 /* ZoomInHandLayout.m */; };
 		ADC195D21AA1545D00177660 /* Hand+DataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = ADC195D11AA1545D00177660 /* Hand+DataSource.m */; };
@@ -119,8 +119,8 @@
 		ADBF7F951A91120100C5BB00 /* SAHLibraries.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SAHLibraries.pch; sourceTree = "<group>"; };
 		ADBF7F961A91171A00C5BB00 /* Card.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Card.h; path = App/Models/Card/Card.h; sourceTree = "<group>"; };
 		ADBF7F971A91171A00C5BB00 /* Card.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Card.m; path = App/Models/Card/Card.m; sourceTree = "<group>"; };
-		ADBF7F9D1A913FE200C5BB00 /* CardCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CardCell.h; path = App/Views/Card/CardCell.h; sourceTree = "<group>"; };
-		ADBF7F9E1A913FE200C5BB00 /* CardCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CardCell.m; path = App/Views/Card/CardCell.m; sourceTree = "<group>"; };
+		ADBF7F9D1A913FE200C5BB00 /* CardViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CardViewCell.h; path = App/Views/Card/CardViewCell.h; sourceTree = "<group>"; };
+		ADBF7F9E1A913FE200C5BB00 /* CardViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CardViewCell.m; path = App/Views/Card/CardViewCell.m; sourceTree = "<group>"; };
 		ADBF7FA51A914D4D00C5BB00 /* BirdsEyeHandLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BirdsEyeHandLayout.h; path = App/Layouts/Hand/BirdsEyeHandLayout.h; sourceTree = "<group>"; };
 		ADBF7FA61A914D4D00C5BB00 /* BirdsEyeHandLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BirdsEyeHandLayout.m; path = App/Layouts/Hand/BirdsEyeHandLayout.m; sourceTree = "<group>"; };
 		ADBF7FA81A91661500C5BB00 /* ZoomInHandLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZoomInHandLayout.h; path = App/Layouts/Hand/ZoomInHandLayout.h; sourceTree = "<group>"; };
@@ -672,8 +672,8 @@
 		ADBF7F9C1A913F4700C5BB00 /* Card */ = {
 			isa = PBXGroup;
 			children = (
-				ADBF7F9D1A913FE200C5BB00 /* CardCell.h */,
-				ADBF7F9E1A913FE200C5BB00 /* CardCell.m */,
+				ADBF7F9D1A913FE200C5BB00 /* CardViewCell.h */,
+				ADBF7F9E1A913FE200C5BB00 /* CardViewCell.m */,
 			);
 			name = Card;
 			sourceTree = "<group>";
@@ -954,7 +954,7 @@
 				AD62DCF11AB2481600F70C51 /* BlackCardController.m in Sources */,
 				AD62DCE91AB2398600F70C51 /* UnimplementedException.m in Sources */,
 				AD89D2FD1AA4FACA0044F2C0 /* PrivateGameStartController.m in Sources */,
-				ADBF7F9F1A913FE200C5BB00 /* CardCell.m in Sources */,
+				ADBF7F9F1A913FE200C5BB00 /* CardViewCell.m in Sources */,
 				AD5E85671AA7E3680067ABF2 /* BlackCard.m in Sources */,
 				ADE4A6B61A844121008CB5D2 /* AppDelegate.m in Sources */,
 				ADBF7FA71A914D4D00C5BB00 /* BirdsEyeHandLayout.m in Sources */,

@@ -10,7 +10,7 @@
 #import "HandController.h"
 #import "ZoomInHandLayout.h"
 #import "BirdsEyeHandLayout.h"
-#import "CardCell.h"
+#import "CardViewCell.h"
 #import "Hand+DataSource.h"
 #import "BlackCard.h"
 #import "WhiteCard.h"
@@ -109,7 +109,8 @@ static NSString *const StoryboardID = @"HandController";
   NSLog(@"Selected Card: %@", card.string);
 }
 
-// Uncomment this method to specify if the specified item should be highlighted during tracking
+// Uncomment this method to specify if the specified item should be highlighted
+// during tracking
 // static int count = 0;
 //- (BOOL)collectionView:(UICollectionView *)collectionView
 //    shouldHighlightItemAtIndexPath:(NSIndexPath *)indexPath {
@@ -127,7 +128,8 @@ static NSString *const StoryboardID = @"HandController";
 
 //- (void)collectionView:(UICollectionView *)collectionView
 //    didUnhighlightItemAtIndexPath:(NSIndexPath *)indexPath {
-//  //  UICollectionViewCell *cell = [collectionView cellForItemAtIndexPath:indexPath];
+//  //  UICollectionViewCell *cell = [collectionView
+//  cellForItemAtIndexPath:indexPath];
 //  //  cell.contentView.backgroundColor = [UIColor greenColor];
 //  NSLog(@"Did Unhighlight");
 //}
@@ -141,7 +143,8 @@ static NSString *const StoryboardID = @"HandController";
 //- (void)collectionView:(UICollectionView *)collectionView
 //    didHighlightItemAtIndexPath:(NSIndexPath *)indexPath {
 //  NSLog(@"Did Highlight");
-//  //  [super collectionView:collectionView didHighlightItemAtIndexPath:indexPath];
+//  //  [super collectionView:collectionView
+//  didHighlightItemAtIndexPath:indexPath];
 //}
 
 - (void)collectionView:(UICollectionView *)collectionView
@@ -150,7 +153,8 @@ static NSString *const StoryboardID = @"HandController";
   NSLog(@"Did Deselect, '%@'.", card.string);
 }
 
-// Uncomment these methods to specify if an action menu should be displayed for the specified item,
+// Uncomment these methods to specify if an action menu should be displayed for
+// the specified item,
 // and react to actions performed on the item
 - (BOOL)collectionView:(UICollectionView *)collectionView
   shouldShowMenuForItemAtIndexPath:(NSIndexPath *)indexPath {

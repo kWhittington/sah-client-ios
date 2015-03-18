@@ -7,7 +7,7 @@
 //
 
 #import "BirdsEyeHandLayout.h"
-#import "CardCell.h"
+#import "CardViewCell.h"
 
 @interface BirdsEyeHandLayout ()
 
@@ -32,8 +32,9 @@
 }
 
 - (NSArray *)updateActionDeleteItemIndexPaths {
-  return [self.updateActionDeleteItems
-    map:^(UICollectionViewUpdateItem *updateItem) { return updateItem.indexPathBeforeUpdate; }];
+  return [self.updateActionDeleteItems map:^(UICollectionViewUpdateItem *updateItem) {
+    return updateItem.indexPathBeforeUpdate;
+  }];
 }
 
 - (void)refresh {
@@ -45,7 +46,7 @@
 }
 
 - (void)refreshItemSize {
-  self.itemSize = [self shrinkToHalfViewHeight:[CardCell size]];
+  self.itemSize = [self shrinkToHalfViewHeight:[CardViewCell size]];
 }
 
 - (CGSize)shrinkToHalfViewHeight:(CGSize)largeSize {
@@ -88,7 +89,7 @@
 }
 
 - (UICollectionViewLayoutAttributes *)finalLayoutAttributesForDisappearingItemAtIndexPath:
-                                        (NSIndexPath *)itemIndexPath {
+    (NSIndexPath *)itemIndexPath {
   UICollectionViewLayoutAttributes *attributes =
     [super finalLayoutAttributesForDisappearingItemAtIndexPath:itemIndexPath];
 
@@ -104,7 +105,7 @@
 }
 
 - (UICollectionViewLayoutAttributes *)configureForDeletion:
-                                        (UICollectionViewLayoutAttributes *)attributes {
+    (UICollectionViewLayoutAttributes *)attributes {
   UICollectionViewLayoutAttributes *deletionAttributes = [attributes copy];
 
   deletionAttributes.transform =

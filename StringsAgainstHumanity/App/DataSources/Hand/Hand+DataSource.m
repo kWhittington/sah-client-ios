@@ -7,7 +7,7 @@
 //
 
 #import "Hand+DataSource.h"
-#import "CardCell.h"
+#import "CardViewCell.h"
 #import "Card.h"
 
 @implementation Hand (DataSource)
@@ -38,18 +38,19 @@
   return cell;
 }
 
-- (CardCell *)collectionView:(UICollectionView *)collectionView
-  cardCellForItemAtIndexPath:(NSIndexPath *)indexPath {
-  CardCell *cardCell = [self collectionView:collectionView dequeueCardCellForIndexPath:indexPath];
+- (CardViewCell *)collectionView:(UICollectionView *)collectionView
+      cardCellForItemAtIndexPath:(NSIndexPath *)indexPath {
+  CardViewCell *cardCell =
+    [self collectionView:collectionView dequeueCardCellForIndexPath:indexPath];
 
   [cardCell configureForCard:[self cardAtIndexPath:indexPath]];
 
   return cardCell;
 }
 
-- (CardCell *)collectionView:(UICollectionView *)collectionView
-  dequeueCardCellForIndexPath:(NSIndexPath *)indexPath {
-  return [collectionView dequeueReusableCellWithReuseIdentifier:[CardCell reusableID]
+- (CardViewCell *)collectionView:(UICollectionView *)collectionView
+     dequeueCardCellForIndexPath:(NSIndexPath *)indexPath {
+  return [collectionView dequeueReusableCellWithReuseIdentifier:[CardViewCell reusableID]
                                                    forIndexPath:indexPath];
 }
 

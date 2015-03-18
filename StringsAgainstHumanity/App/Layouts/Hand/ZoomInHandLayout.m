@@ -7,7 +7,7 @@
 //
 
 #import "ZoomInHandLayout.h"
-#import "CardCell.h"
+#import "CardViewCell.h"
 
 @implementation ZoomInHandLayout
 - (instancetype)init {
@@ -32,7 +32,7 @@
 }
 
 - (void)refreshItemSize {
-  self.itemSize = [self growToFullViewHeight:[CardCell size]];
+  self.itemSize = [self growToFullViewHeight:[CardViewCell size]];
 }
 
 - (CGSize)growToFullViewHeight:(CGSize)smallSize {
@@ -49,7 +49,7 @@
 
 - (void)refreshItemPosition {
   self.itemSize =
-      CGSizeMake([UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height);
+    CGSizeMake([UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height);
   self.sectionInset = UIEdgeInsetsMake(0, 0, 0, 0);
   self.minimumInteritemSpacing = 10.0f;
   self.minimumLineSpacing = 10.0f;
@@ -66,7 +66,7 @@
   CGFloat horizontalCenter = proposedContentOffset.x + (self.itemSize.width / 2.0);
 
   CGRect targetRect =
-      CGRectMake(proposedContentOffset.x, 0.0, self.itemSize.width, self.itemSize.height);
+    CGRectMake(proposedContentOffset.x, 0.0, self.itemSize.width, self.itemSize.height);
   NSArray *array = [self layoutAttributesForElementsInRect:targetRect];
 
   for (UICollectionViewLayoutAttributes *layoutAttributes in array) {
