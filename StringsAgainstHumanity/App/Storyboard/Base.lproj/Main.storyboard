@@ -360,12 +360,12 @@
                     </collectionView>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yot-i6-lHM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <customObject id="2Kp-Wt-h8p" customClass="Hand"/>
                 <swipeGestureRecognizer direction="up" id="OeD-Wz-2qQ">
                     <connections>
                         <action selector="swipeUp:" destination="8Ud-wc-iRA" id="3ZF-vc-0pp"/>
                     </connections>
                 </swipeGestureRecognizer>
-                <customObject id="2Kp-Wt-h8p" customClass="Hand"/>
             </objects>
             <point key="canvasLocation" x="283" y="2053"/>
         </scene>

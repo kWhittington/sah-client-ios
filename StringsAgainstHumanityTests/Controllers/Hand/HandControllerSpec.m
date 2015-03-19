@@ -52,6 +52,27 @@ describe(@"HandController", ^{
       });
     });
 
+    describe(@".backgroundColor", ^{
+      let(backgroundColor, ^{
+        return collectionView.backgroundColor;
+      });
+
+      it(@"returns UIColor + clearColor", ^{
+        NSLog(@"%@", backgroundColor);
+        [[backgroundColor should] equal:[UIColor clearColor]];
+      });
+    });
+
+    describe(@".backgroundView", ^{
+      let(backgroundView, ^{
+        return collectionView.backgroundView;
+      });
+
+      it(@"returns nil", ^{
+        [[backgroundView should] beNil];
+      });
+    });
+
     describe(@".collectionViewLayout", ^{
       let(collectionViewLayout, ^{
         return (NSObject *)collectionView.collectionViewLayout;
@@ -65,6 +86,16 @@ describe(@"HandController", ^{
 
       it(@"returns a reference to HandController.hand", ^{
         [[dataSource should] beIdenticalTo:hand];
+      });
+    });
+
+    describe(@".opaque", ^{
+      let(opaque, ^{
+        return theValue(collectionView.opaque);
+      });
+
+      it(@"returns NO", ^{
+        [[opaque should] beNo];
       });
     });
   });

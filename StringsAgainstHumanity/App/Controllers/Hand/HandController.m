@@ -19,6 +19,7 @@
 @property(nonatomic) BirdsEyeHandLayout *birdsEyeLayout;
 @property(copy, nonatomic) Hand *hand;
 
+- (void)initBackground;
 - (void)initCollectionViewDataSource;
 - (void)initLayouts;
 @end
@@ -55,6 +56,12 @@ static NSString *const StoryboardID = @"HandController";
 - (void)didReceiveMemoryWarning {
   [super didReceiveMemoryWarning];
   // Dispose of any resources that can be recreated.
+}
+
+- (void)initBackground {
+  self.collectionView.backgroundView = nil;
+  self.collectionView.backgroundColor = [UIColor clearColor];
+  self.collectionView.opaque = NO;
 }
 
 - (void)initCollectionViewDataSource {
@@ -101,6 +108,7 @@ static NSString *const StoryboardID = @"HandController";
   // Register cell classes
 
   // Do any additional setup after loading the view.
+  [self initBackground];
   [self initCollectionViewDataSource];
   [self initLayouts];
 }
