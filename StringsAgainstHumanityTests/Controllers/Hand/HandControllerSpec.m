@@ -139,6 +139,15 @@ describe(@"HandController", ^{
     });
   });
 
+  describe(@"- playSelectedCard:", ^{
+    it(@"calls HandController - removeCard: with HandController.selectedCard", ^{
+      [[handController should] receive:@selector(removeCard:)
+                         withArguments:handController.selectedCard];
+
+      [handController playSelectedCard];
+    });
+  });
+
   describe(@"- removeCard:", ^{
     let(card, ^{
       return handController.hand.cards.first;
