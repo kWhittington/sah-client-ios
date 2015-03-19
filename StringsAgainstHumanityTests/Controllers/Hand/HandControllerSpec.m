@@ -27,6 +27,21 @@ describe(@"HandController", ^{
     return FGBuildTrait(Card.class, @"withString");
   });
 
+  describe(@".selectedCards", ^{
+    let(selectedCards, ^{
+      return handController.selectedCards;
+    });
+
+    specify(^{
+      [[selectedCards should] beKindOfClass:NSArray.class];
+    });
+
+    it(@"returns the Cards located at the CollectionView's - indexPathsForSelectedItems:", ^{
+      [[selectedCards should]
+        equal:[hand cardsAtIndexPaths:handController.collectionView.indexPathsForSelectedItems]];
+    });
+  });
+
   describe(@"+ StoryboardID", ^{
     let(result, ^{
       return HandController.StoryboardID;
@@ -115,21 +130,6 @@ describe(@"HandController", ^{
                       theValue(UICollectionViewScrollPositionNone)];
 
       [handController selectCard:cardToSelect];
-    });
-  });
-
-  describe(@"- selectedCards", ^{
-    let(selectedCards, ^{
-      return handController.selectedCards;
-    });
-
-    specify(^{
-      [[selectedCards should] beKindOfClass:NSArray.class];
-    });
-
-    it(@"returns the Cards located at the CollectionView's - indexPathsForSelectedItems:", ^{
-      [[selectedCards should]
-        equal:[hand cardsAtIndexPaths:handController.collectionView.indexPathsForSelectedItems]];
     });
   });
 
