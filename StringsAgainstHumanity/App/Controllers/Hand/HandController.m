@@ -58,12 +58,6 @@ static NSString *const StoryboardID = @"HandController";
 }
 
 - (void)initCollectionViewDataSource {
-  self.hand = [Hand withArray:@[
-    [Card withString:@"Card #1"],
-    [Card withString:@"Card #2"],
-    [Card withString:@"Card #3"],
-  ]];
-
   self.collectionView.dataSource = self.hand;
 }
 
@@ -73,22 +67,8 @@ static NSString *const StoryboardID = @"HandController";
   self.collectionView.collectionViewLayout = self.birdsEyeLayout;
 }
 
-- (void)playSelectedCards {
-  [self.selectedCards each:^(Card *selectedCard) {
-    NSLog(@"Play %@", selectedCard.string);
-  }];
-
-  [self removeSelectedCards];
-}
-
-- (void)removeSelectedCards {
-  //  TODO
-  //  Figure out if performBatchUpdates:completion: is needed.
-  //  [self.collectionView performBatchUpdates:^{
-  NSArray *itemPaths = [self.collectionView indexPathsForSelectedItems];
-  [self.hand removeCardsAtIndexPaths:itemPaths];
-  [self.collectionView deleteItemsAtIndexPaths:itemPaths];
-  //  } completion:nil];
+- (void)playSelectedCard {
+  [self removeCard:self.selectedCard];
 }
 
 - (void)removeCard:(Card *)card {
@@ -104,14 +84,12 @@ static NSString *const StoryboardID = @"HandController";
                               scrollPosition:UICollectionViewScrollPositionNone];
 }
 
-- (NSArray *)selectedCards {
+- (NSArray *)selectedCard {
   return [self.hand cardsAtIndexPaths:[self.collectionView indexPathsForSelectedItems]];
 }
 
 - (IBAction)swipeUp:(UISwipeGestureRecognizer *)sender {
-  NSLog(@"Swipe Up");
-
-  [self playSelectedCards];
+  [self playSelectedCard];
 }
 
 - (void)viewDidLoad {
@@ -123,6 +101,7 @@ static NSString *const StoryboardID = @"HandController";
   // Register cell classes
 
   // Do any additional setup after loading the view.
+  [self initCollectionViewDataSource];
   [self initLayouts];
 }
 

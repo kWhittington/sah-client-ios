@@ -27,6 +27,63 @@ describe(@"HandController", ^{
     return FGBuildTrait(Card.class, @"withString");
   });
 
+  describe(@".collectionView", ^{
+    let(collectionView, ^{
+      return handController.collectionView;
+    });
+
+    describe(@".allowsSelection", ^{
+      let(allowsSelection, ^{
+        return theValue(collectionView.allowsSelection);
+      });
+
+      it(@"returns YES", ^{
+        [[allowsSelection should] beYes];
+      });
+    });
+
+    describe(@".allowsMultipleSelection", ^{
+      let(allowsMultipleSelection, ^{
+        return theValue(collectionView.allowsMultipleSelection);
+      });
+
+      it(@"returns NO", ^{
+        [[allowsMultipleSelection should] beNo];
+      });
+    });
+
+    describe(@".dataSource", ^{
+      let(dataSource, ^{
+        return (NSObject *)collectionView.dataSource;
+      });
+
+      it(@"returns a reference to HandController.hand", ^{
+        [[dataSource should] beIdenticalTo:hand];
+      });
+    });
+  });
+
+  describe(@".hand", ^{
+    it(@"returns a copy of the Hand managed by HandController", ^{
+      [[hand should] beMemberOfClass:Hand.class];
+    });
+  });
+
+  describe(@".selectedCard", ^{
+    let(selectedCard, ^{
+      return handController.selectedCard;
+    });
+
+    specify(^{
+      [[selectedCard should] beKindOfClass:NSArray.class];
+    });
+
+    it(@"returns the Cards located at the CollectionView's - indexPathsForSelectedItems:", ^{
+      [[selectedCard should]
+        equal:[hand cardsAtIndexPaths:handController.collectionView.indexPathsForSelectedItems]];
+    });
+  });
+
   describe(@"+ StoryboardID", ^{
     let(result, ^{
       return HandController.StoryboardID;
@@ -82,6 +139,15 @@ describe(@"HandController", ^{
     });
   });
 
+  describe(@"- playSelectedCard:", ^{
+    it(@"calls HandController - removeCard: with HandController.selectedCard", ^{
+      [[handController should] receive:@selector(removeCard:)
+                         withArguments:handController.selectedCard];
+
+      [handController playSelectedCard];
+    });
+  });
+
   describe(@"- removeCard:", ^{
     let(card, ^{
       return handController.hand.cards.first;
@@ -92,7 +158,8 @@ describe(@"HandController", ^{
       // Due to how Kiwi's matchers work, this function will fail if both the dataSource/hand
       // and collectionView are mocked or expecting a message.
       // The collectionView will cause a EXC_BAD_ACCESS error.
-      [[handController.hand should] receive:@selector(removeCard:) withArguments:card];
+      [[(NSObject *)handController.collectionView.dataSource should] receive:@selector(removeCard:)
+                                                               withArguments:card];
       [[handController.collectionView should] receive:@selector(deleteItemsAtIndexPaths:)];
 
       [handController removeCard:card];
@@ -115,21 +182,6 @@ describe(@"HandController", ^{
                       theValue(UICollectionViewScrollPositionNone)];
 
       [handController selectCard:cardToSelect];
-    });
-  });
-
-  describe(@"- selectedCards", ^{
-    let(selectedCards, ^{
-      return handController.selectedCards;
-    });
-
-    specify(^{
-      [[selectedCards should] beKindOfClass:NSArray.class];
-    });
-
-    it(@"returns the Cards located at the CollectionView's - indexPathsForSelectedItems:", ^{
-      [[selectedCards should]
-        equal:[hand cardsAtIndexPaths:handController.collectionView.indexPathsForSelectedItems]];
     });
   });
 
@@ -158,8 +210,8 @@ describe(@"HandController", ^{
       return UISwipeGestureRecognizer.nullMock;
     });
 
-    it(@"calls HandController - playSelectedCards", ^{
-      [[handController should] receive:@selector(playSelectedCards)];
+    it(@"calls HandController - playSelectedCard", ^{
+      [[handController should] receive:@selector(playSelectedCard)];
 
       [handController swipeUp:sender];
     });
