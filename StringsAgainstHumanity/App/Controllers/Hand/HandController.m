@@ -58,12 +58,6 @@ static NSString *const StoryboardID = @"HandController";
 }
 
 - (void)initCollectionViewDataSource {
-  self.hand = [Hand withArray:@[
-    [Card withString:@"Card #1"],
-    [Card withString:@"Card #2"],
-    [Card withString:@"Card #3"],
-  ]];
-
   self.collectionView.dataSource = self.hand;
 }
 
@@ -123,6 +117,7 @@ static NSString *const StoryboardID = @"HandController";
   // Register cell classes
 
   // Do any additional setup after loading the view.
+  [self initCollectionViewDataSource];
   [self initLayouts];
 }
 

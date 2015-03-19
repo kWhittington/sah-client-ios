@@ -51,6 +51,16 @@ describe(@"HandController", ^{
         [[allowsMultipleSelection should] beNo];
       });
     });
+
+    describe(@".dataSource", ^{
+      let(dataSource, ^{
+        return (NSObject *)collectionView.dataSource;
+      });
+
+      it(@"returns a reference to HandController.hand", ^{
+        [[dataSource should] beIdenticalTo:hand];
+      });
+    });
   });
 
   describe(@".hand", ^{
@@ -139,7 +149,8 @@ describe(@"HandController", ^{
       // Due to how Kiwi's matchers work, this function will fail if both the dataSource/hand
       // and collectionView are mocked or expecting a message.
       // The collectionView will cause a EXC_BAD_ACCESS error.
-      [[handController.hand should] receive:@selector(removeCard:) withArguments:card];
+      [[(NSObject *)handController.collectionView.dataSource should] receive:@selector(removeCard:)
+                                                               withArguments:card];
       [[handController.collectionView should] receive:@selector(deleteItemsAtIndexPaths:)];
 
       [handController removeCard:card];
