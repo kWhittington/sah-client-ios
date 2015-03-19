@@ -13,7 +13,7 @@
 
 @interface HandController : UICollectionViewController
 @property(readonly, copy, nonatomic) Hand *hand;
-@property(readonly, nonatomic) NSArray *selectedCards;
+@property(readonly, nonatomic) Card *selectedCard;
 
 + (NSString *)StoryboardID;
 
@@ -21,7 +21,7 @@
 + (instancetype)withHand:(Hand *)hand;
 
 - (void)addCard:(Card *)card;
-- (void)playSelectedCards;
+- (void)playSelectedCard;
 - (void)removeCard:(Card *)card;
 - (void)selectCard:(Card *)card;
 - (IBAction)swipeUp:(UISwipeGestureRecognizer *)sender;

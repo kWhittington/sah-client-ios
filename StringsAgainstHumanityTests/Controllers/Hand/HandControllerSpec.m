@@ -69,17 +69,17 @@ describe(@"HandController", ^{
     });
   });
 
-  describe(@".selectedCards", ^{
-    let(selectedCards, ^{
-      return handController.selectedCards;
+  describe(@".selectedCard", ^{
+    let(selectedCard, ^{
+      return handController.selectedCard;
     });
 
     specify(^{
-      [[selectedCards should] beKindOfClass:NSArray.class];
+      [[selectedCard should] beKindOfClass:NSArray.class];
     });
 
     it(@"returns the Cards located at the CollectionView's - indexPathsForSelectedItems:", ^{
-      [[selectedCards should]
+      [[selectedCard should]
         equal:[hand cardsAtIndexPaths:handController.collectionView.indexPathsForSelectedItems]];
     });
   });
@@ -201,8 +201,8 @@ describe(@"HandController", ^{
       return UISwipeGestureRecognizer.nullMock;
     });
 
-    it(@"calls HandController - playSelectedCards", ^{
-      [[handController should] receive:@selector(playSelectedCards)];
+    it(@"calls HandController - playSelectedCard", ^{
+      [[handController should] receive:@selector(playSelectedCard)];
 
       [handController swipeUp:sender];
     });
