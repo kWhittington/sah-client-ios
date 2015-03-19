@@ -52,6 +52,12 @@ describe(@"HandController", ^{
       });
     });
 
+    describe(@".collectionViewLayout", ^{
+      let(collectionViewLayout, ^{
+        return (NSObject *)collectionView.collectionViewLayout;
+      });
+    });
+
     describe(@".dataSource", ^{
       let(dataSource, ^{
         return (NSObject *)collectionView.dataSource;
