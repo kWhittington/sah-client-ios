@@ -27,6 +27,32 @@ describe(@"HandController", ^{
     return FGBuildTrait(Card.class, @"withString");
   });
 
+  describe(@".collectionView", ^{
+    let(collectionView, ^{
+      return handController.collectionView;
+    });
+
+    describe(@".allowsSelection", ^{
+      let(allowsSelection, ^{
+        return theValue(collectionView.allowsSelection);
+      });
+
+      it(@"returns YES", ^{
+        [[allowsSelection should] beYes];
+      });
+    });
+
+    describe(@".allowsMultipleSelection", ^{
+      let(allowsMultipleSelection, ^{
+        return theValue(collectionView.allowsMultipleSelection);
+      });
+
+      it(@"returns NO", ^{
+        [[allowsMultipleSelection should] beNo];
+      });
+    });
+  });
+
   describe(@".hand", ^{
     it(@"returns a copy of the Hand managed by HandController", ^{
       [[hand should] beMemberOfClass:Hand.class];
