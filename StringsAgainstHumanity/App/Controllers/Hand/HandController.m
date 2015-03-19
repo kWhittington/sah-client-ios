@@ -21,8 +21,6 @@
 
 - (void)initCollectionViewDataSource;
 - (void)initLayouts;
-- (void)playSelectedCards;
-- (void)removeSelectedCards;
 @end
 
 @implementation HandController

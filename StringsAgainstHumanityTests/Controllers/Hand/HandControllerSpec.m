@@ -152,6 +152,18 @@ describe(@"HandController", ^{
       [[shouldHighlight should] beYes];
     });
   });
+
+  describe(@"- swipeUp:", ^{
+    let(sender, ^{
+      return UISwipeGestureRecognizer.nullMock;
+    });
+
+    it(@"calls HandController - playSelectedCards", ^{
+      [[handController should] receive:@selector(playSelectedCards)];
+
+      [handController swipeUp:sender];
+    });
+  });
   // TODO
   // Specifications for touch input.
 });

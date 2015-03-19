@@ -21,6 +21,8 @@
 + (instancetype)withHand:(Hand *)hand;
 
 - (void)addCard:(Card *)card;
+- (void)playSelectedCards;
 - (void)removeCard:(Card *)card;
 - (void)selectCard:(Card *)card;
+- (IBAction)swipeUp:(UISwipeGestureRecognizer *)sender;
 @end
