@@ -10,7 +10,7 @@
 #import "HandController.h"
 #import "Hand+DataSource.h"
 #import "BlackCard.h"
-#import "WhiteCard.h"
+#import "Card.h"
 #import "BirdsEyeHandLayout.h"
 
 SPEC_BEGIN(HandControllerSpec)
@@ -23,8 +23,8 @@ describe(@"HandController", ^{
     return handController.hand;
   });
 
-  let(newWhiteCard, ^WhiteCard *{
-    return FGBuildTrait(WhiteCard.class, @"withString");
+  let(newCard, ^Card *{
+    return FGBuildTrait(Card.class, @"withString");
   });
 
   describe(@"+ StoryboardID", ^{
@@ -60,14 +60,14 @@ describe(@"HandController", ^{
       [[withHand should] beMemberOfClass:HandController.class];
     });
 
-    it(@"has a copy of the given Hand of WhiteCards", ^{
+    it(@"has a copy of the given Hand of Cards", ^{
       [[withHand.hand should] equal:hand];
     });
   });
 
-  describe(@"- addWhiteCard:", ^{
+  describe(@"- addCard:", ^{
     let(card, ^{
-      return newWhiteCard;
+      return newCard;
     });
 
     it(@"sends addCard: to its Hand and insertItemsAtIndexPaths: to its CollectionView", ^{
@@ -78,11 +78,11 @@ describe(@"HandController", ^{
       [[handController.hand should] receive:@selector(addCard:) withArguments:card];
       [[handController.collectionView should] receive:@selector(insertItemsAtIndexPaths:)];
 
-      [handController addWhiteCard:card];
+      [handController addCard:card];
     });
   });
 
-  describe(@"- removeWhiteCard:", ^{
+  describe(@"- removeCard:", ^{
     let(card, ^{
       return handController.hand.cards.first;
     });
@@ -95,7 +95,7 @@ describe(@"HandController", ^{
       [[handController.hand should] receive:@selector(removeCard:) withArguments:card];
       [[handController.collectionView should] receive:@selector(deleteItemsAtIndexPaths:)];
 
-      [handController removeWhiteCard:card];
+      [handController removeCard:card];
     });
   });
 
@@ -150,6 +150,18 @@ describe(@"HandController", ^{
 
     specify(^{
       [[shouldHighlight should] beYes];
+    });
+  });
+
+  describe(@"- swipeUp:", ^{
+    let(sender, ^{
+      return UISwipeGestureRecognizer.nullMock;
+    });
+
+    it(@"calls HandController - playSelectedCards", ^{
+      [[handController should] receive:@selector(playSelectedCards)];
+
+      [handController swipeUp:sender];
     });
   });
   // TODO
