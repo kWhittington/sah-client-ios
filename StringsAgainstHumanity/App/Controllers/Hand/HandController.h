@@ -10,7 +10,6 @@
 
 @class Hand;
 @class Card;
-@class WhiteCard;
 
 @interface HandController : UICollectionViewController
 @property(readonly, copy, nonatomic) Hand *hand;
@@ -21,7 +20,7 @@
 + (instancetype)empty;
 + (instancetype)withHand:(Hand *)hand;
 
-- (void)addWhiteCard:(WhiteCard *)card;
-- (void)removeWhiteCard:(WhiteCard *)card;
+- (void)addCard:(Card *)card;
+- (void)removeCard:(Card *)card;
 - (void)selectCard:(Card *)card;
 @end

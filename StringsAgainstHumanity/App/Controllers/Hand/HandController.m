@@ -13,7 +13,7 @@
 #import "CardViewCell.h"
 #import "Hand+DataSource.h"
 #import "BlackCard.h"
-#import "WhiteCard.h"
+#import "Card.h"
 
 @interface HandController ()
 @property(nonatomic) BirdsEyeHandLayout *birdsEyeLayout;
@@ -48,7 +48,7 @@ static NSString *const StoryboardID = @"HandController";
   return controller;
 }
 
-- (void)addWhiteCard:(WhiteCard *)card {
+- (void)addCard:(Card *)card {
   [self.hand addCard:card];
   NSIndexPath *indexPath = [self.hand indexPathOfCard:card];
   [self.collectionView insertItemsAtIndexPaths:@[ indexPath ]];
@@ -93,7 +93,7 @@ static NSString *const StoryboardID = @"HandController";
   //  } completion:nil];
 }
 
-- (void)removeWhiteCard:(WhiteCard *)card {
+- (void)removeCard:(Card *)card {
   NSIndexPath *indexPath = [self.hand indexPathOfCard:card];
   [self.hand removeCard:card];
   [self.collectionView deleteItemsAtIndexPaths:@[ indexPath ]];
