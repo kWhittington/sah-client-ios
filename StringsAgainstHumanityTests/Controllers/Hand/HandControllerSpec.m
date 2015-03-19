@@ -27,6 +27,12 @@ describe(@"HandController", ^{
     return FGBuildTrait(Card.class, @"withString");
   });
 
+  describe(@".hand", ^{
+    it(@"returns a copy of the Hand managed by HandController", ^{
+      [[hand should] beMemberOfClass:Hand.class];
+    });
+  });
+
   describe(@".selectedCards", ^{
     let(selectedCards, ^{
       return handController.selectedCards;
