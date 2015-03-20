@@ -59,26 +59,26 @@
 - (void)initBlackCardController {
   BlackCard *startingBlackCard = [BlackCard withString:@"[Default String]"];
   self.blackCardController = [BlackCardController withBlackCard:startingBlackCard];
+  [self addChildViewController:self.blackCardController];
+  [self.blackCardController didMoveToParentViewController:self];
 }
 
 - (void)initBlackCardControllerView {
-  [self addChildViewController:self.blackCardController];
   self.blackCardController.view.frame = self.view.frame;
   [self.view addSubview:self.blackCardController.view];
-  [self.blackCardController didMoveToParentViewController:self];
 }
 
 - (void)initHandController {
   NSArray *startingCards = @[ [WhiteCard withString:@"Starting Card"] ];
   Hand *startingHand = [Hand withArray:startingCards];
   self.handController = [HandController withHand:startingHand];
+  [self addChildViewController:self.handController];
+  [self.handController didMoveToParentViewController:self];
 }
 
 - (void)initHandControllerView {
-  [self addChildViewController:self.handController];
   self.handController.view.frame = self.view.frame;
   [self.view addSubview:self.handController.view];
-  [self.handController didMoveToParentViewController:self];
 }
 
 - (void)initSubControllers {

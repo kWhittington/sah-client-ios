@@ -15,9 +15,6 @@ SPEC_BEGIN(PlaymatControllerSpec)
 describe(@"PlaymatController", ^{
   let(playmatController, ^PlaymatController *{
     return FGBuildTrait(PlaymatController.class, @"empty");
-    //    return
-    //      [Constants.Storyboard
-    //      instantiateViewControllerWithIdentifier:PlaymatController.StoryboardID];
   });
 
   let(blackCardController, ^BlackCardController *{
