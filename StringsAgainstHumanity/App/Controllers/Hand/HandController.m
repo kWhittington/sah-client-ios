@@ -67,6 +67,10 @@ static NSString *const StoryboardID = @"HandController";
   // Dispose of any resources that can be recreated.
 }
 
+- (BOOL)hasSelectedCard {
+  return self.selectedCard != nil;
+}
+
 - (void)initBackground {
   self.collectionView.backgroundView = nil;
   self.collectionView.backgroundColor = [UIColor clearColor];

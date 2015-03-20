@@ -21,6 +21,7 @@
 + (instancetype)withHand:(Hand *)hand;
 
 - (void)addCard:(Card *)card;
+- (BOOL)hasSelectedCard;
 - (void)playSelectedCard;
 - (void)removeCard:(Card *)card;
 - (void)selectCard:(Card *)card;

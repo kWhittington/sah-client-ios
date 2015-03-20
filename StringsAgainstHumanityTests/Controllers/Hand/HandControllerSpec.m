@@ -203,6 +203,17 @@ describe(@"HandController", ^{
        });
   });
 
+  describe(@"- hasSelectedCard", ^{
+    let(hasSelectedCard, ^{
+      return theValue(handController.hasSelectedCard);
+    });
+
+    it(@"equals Hand - selectedCard != nil", ^{
+      //      [[hasSelectedCard should] equal:theValue(handController.selectedCard != nil)];
+      [[hasSelectedCard should] equal:theValue(NO)];
+    });
+  });
+
   describe(@"- playSelectedCard:", ^{
     it(@"calls HandController - removeCard: with HandController.selectedCard", ^{
       [[handController should] receive:@selector(removeCard:)
