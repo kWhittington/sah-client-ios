@@ -29,6 +29,10 @@
   return [BlackCard withString:@"[Please assign a BlackCard]"];
 }
 
++ (Hand *)StartingHand {
+  return [Hand empty];
+}
+
 + (NSString *)StoryboardID {
   return NSStringFromClass(self.class);
 }
