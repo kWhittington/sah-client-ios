@@ -176,6 +176,33 @@ describe(@"HandController", ^{
     });
   });
 
+  describe(@"- debugDescription", ^{
+    let(debugDescription, ^{
+      return handController.debugDescription;
+    });
+
+    it(@"equals HandController - description", ^{
+      [[debugDescription should] equal:handController.description];
+    });
+  });
+
+  describe(@"- description", ^{
+    let(description, ^{
+      return handController.description;
+    });
+
+    let(expectedString, ^{
+      return NSStringWithFormat(@"<HandController: %p; hand = %@; selectedCard = %@>",
+                                handController, hand, handController.selectedCard);
+    });
+
+    it(@"returns '<HandController: [memory_address]; hand = [hand.description];"
+        " selectedCard = [selectedCard.description]>",
+       ^{
+         [[description should] equal:expectedString];
+       });
+  });
+
   describe(@"- playSelectedCard:", ^{
     it(@"calls HandController - removeCard: with HandController.selectedCard", ^{
       [[handController should] receive:@selector(removeCard:)
