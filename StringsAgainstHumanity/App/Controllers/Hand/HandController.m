@@ -104,8 +104,8 @@ static NSString *const StoryboardID = @"HandController";
                               scrollPosition:UICollectionViewScrollPositionNone];
 }
 
-- (NSArray *)selectedCard {
-  return [self.hand cardsAtIndexPaths:[self.collectionView indexPathsForSelectedItems]];
+- (Card *)selectedCard {
+  return [self.hand cardsAtIndexPaths:[self.collectionView indexPathsForSelectedItems]].first;
 }
 
 - (IBAction)swipeUp:(UISwipeGestureRecognizer *)sender {

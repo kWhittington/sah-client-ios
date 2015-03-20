@@ -111,13 +111,29 @@ describe(@"HandController", ^{
       return handController.selectedCard;
     });
 
-    specify(^{
-      [[selectedCard should] beKindOfClass:NSArray.class];
+    context(@"when no Card has been selected", ^{
+      it(@"returns (nil)", ^{
+        [[selectedCard should] beNil];
+      });
     });
 
-    it(@"returns the Cards located at the CollectionView's - indexPathsForSelectedItems:", ^{
-      [[selectedCard should]
-        equal:[hand cardsAtIndexPaths:handController.collectionView.indexPathsForSelectedItems]];
+    context(@"when a Card has been selected", ^{
+      let(targetCard, ^{
+        NSLog(@"HandController: %@", handController);
+        return hand.cards.sample;
+      });
+
+      beforeEach(^{
+        [handController selectCard:targetCard];
+      });
+
+      specify(^{
+        [[handController.selectedCard should] beKindOfClass:Card.class];
+      });
+
+      it(@"returns that Card", ^{
+        [[handController.selectedCard should] equal:targetCard];
+      });
     });
   });
 
