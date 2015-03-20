@@ -96,14 +96,16 @@ describe(@"WhiteCard", ^{
       return whiteCard.description;
     });
 
+    let(expectedString, ^{
+      return NSStringWithFormat(@"<WhiteCard: %p; string = %@>", whiteCard, whiteCard.string);
+    });
+
     specify(^{
       [[description should] beKindOfClass:NSString.class];
     });
 
-    it(@"returns '<WhiteCard: [memory_address] string=[whiteCard.string]>", ^{
-      NSString *string =
-        NSStringWithFormat(@"<WhiteCard: %p string=%@>", whiteCard, whiteCard.string);
-      [[description should] equal:string];
+    it(@"returns '<WhiteCard: [memory_address]; string = [whiteCard.string]>", ^{
+      [[description should] equal:expectedString];
     });
   });
 

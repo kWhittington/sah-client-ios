@@ -20,7 +20,7 @@
 }
 
 - (NSString *)description {
-  return NSStringWithFormat(@"<WhiteCard: %p string=%@>", self, self.string);
+  return NSStringWithFormat(@"<WhiteCard: %p; string = %@>", self, self.string);
 }
 
 - (BOOL)isEqual:(id)object {
