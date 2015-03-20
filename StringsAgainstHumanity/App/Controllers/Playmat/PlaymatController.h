@@ -10,11 +10,13 @@
 
 @class BlackCardController;
 @class HandController;
+@class BlackCard;
 
 @interface PlaymatController : UIViewController
 @property(readonly, strong, nonatomic) BlackCardController *blackCardController;
 @property(readonly, strong, nonatomic) HandController *handController;
 
++ (BlackCard *)StartingBlackCard;
 + (NSString *)StoryboardID;
 
 + (instancetype)empty;

@@ -25,6 +25,10 @@
 @end
 
 @implementation PlaymatController
++ (BlackCard *)StartingBlackCard {
+  return [BlackCard withString:@"[Please assign a BlackCard]"];
+}
+
 + (NSString *)StoryboardID {
   return NSStringFromClass(self.class);
 }

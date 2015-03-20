@@ -10,6 +10,7 @@
 #import "PlaymatController.h"
 #import "BlackCardController.h"
 #import "HandController.h"
+#import "BlackCard.h"
 
 SPEC_BEGIN(PlaymatControllerSpec)
 describe(@"PlaymatController", ^{
@@ -38,6 +39,20 @@ describe(@"PlaymatController", ^{
   describe(@".handController", ^{
     it(@"returns the HandController reponsible for the foreground Hand", ^{
       [[handController should] beKindOfClass:HandController.class];
+    });
+  });
+
+  describe(@"+ StartingBlackCard", ^{
+    let(startingBlackCard, ^{
+      return PlaymatController.StartingBlackCard;
+    });
+
+    let(expectedString, ^{
+      return @"[Please assign a BlackCard]";
+    });
+
+    it(@"has string of '[Please assign a BlackCard]'", ^{
+      [[startingBlackCard.string should] equal:expectedString];
     });
   });
 
