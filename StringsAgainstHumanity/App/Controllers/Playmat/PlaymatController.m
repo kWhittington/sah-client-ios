@@ -61,8 +61,7 @@
 }
 
 - (void)initBlackCardController {
-  BlackCard *startingBlackCard = [BlackCard withString:@"[Default String]"];
-  self.blackCardController = [BlackCardController withBlackCard:startingBlackCard];
+  self.blackCardController = [BlackCardController withBlackCard:self.class.StartingBlackCard];
   [self addChildViewController:self.blackCardController];
   [self.blackCardController didMoveToParentViewController:self];
 }
