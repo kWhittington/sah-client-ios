@@ -60,8 +60,9 @@ describe(@"PlaymatController", ^{
     });
 
     let(expectedFormat, ^{
-      return NSStringWithFormat(@"<PlaymatController: %p blackCardController=%@ handController=%@>",
-                                playmatController, blackCardController, handController);
+      return NSStringWithFormat(
+        @"<PlaymatController: %p; blackCardController = %@; handController = %@>",
+        playmatController, blackCardController, handController);
     });
 
     it(@"returns '<PlaymatController: [memory_address]' blackCardController=[blackCardController"

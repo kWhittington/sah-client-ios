@@ -46,8 +46,9 @@
 }
 
 - (NSString *)description {
-  return NSStringWithFormat(@"<PlaymatController: %p blackCardController=%@ handController=%@>",
-                            self, self.blackCardController, self.handController);
+  return NSStringWithFormat(
+    @"<PlaymatController: %p; blackCardController = %@; handController = %@>", self,
+    self.blackCardController, self.handController);
 }
 
 - (void)didReceiveMemoryWarning {
