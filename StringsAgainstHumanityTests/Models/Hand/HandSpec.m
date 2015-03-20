@@ -136,14 +136,8 @@ describe(@"Hand", ^{
       return hand.debugDescription;
     });
 
-    specify(^{
-      [[debugDescription should] beKindOfClass:NSString.class];
-    });
-
-    it(@"returns '<Hand: [memory_address] cards=[hand.cards.description]>", ^{
-      NSString *string = NSStringWithFormat(@"<Hand: %p cards=%@>", hand, hand.cards);
-
-      [[debugDescription should] equal:string];
+    it(@"equals Hand - description", ^{
+      [[debugDescription should] equal:hand.description];
     });
   });
 
@@ -152,14 +146,12 @@ describe(@"Hand", ^{
       return hand.description;
     });
 
-    specify(^{
-      [[description should] beKindOfClass:NSString.class];
+    let(expectedString, ^{
+      return NSStringWithFormat(@"<Hand: %p; cards = %@>", hand, hand.cards);
     });
 
-    it(@"returns '<Hand: [memory_address] cards=[hand.cards.description]>", ^{
-      NSString *string = NSStringWithFormat(@"<Hand: %p cards=%@>", hand, hand.cards);
-
-      [[description should] equal:string];
+    it(@"returns '<Hand: [memory_address]; cards = [hand.cards.description]>", ^{
+      [[description should] equal:expectedString];
     });
   });
 
