@@ -79,6 +79,10 @@ describe(@"PlaymatController", ^{
     it(@"has BlackCard equal to PlaymatController + StartingBlackCard", ^{
       [[empty.blackCardController.blackCard should] equal:PlaymatController.StartingBlackCard];
     });
+
+    it(@"has Hand equal to PlaymatController + StartingHand", ^{
+      [[empty.handController.hand should] equal:PlaymatController.StartingHand];
+    });
   });
 
   describe(@"- debugDescription", ^{

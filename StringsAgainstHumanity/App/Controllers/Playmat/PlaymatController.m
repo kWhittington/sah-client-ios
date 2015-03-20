@@ -76,9 +76,7 @@
 }
 
 - (void)initHandController {
-  NSArray *startingCards = @[ [WhiteCard withString:@"Starting Card"] ];
-  Hand *startingHand = [Hand withArray:startingCards];
-  self.handController = [HandController withHand:startingHand];
+  self.handController = [HandController withHand:self.class.StartingHand];
   [self addChildViewController:self.handController];
   [self.handController didMoveToParentViewController:self];
 }
