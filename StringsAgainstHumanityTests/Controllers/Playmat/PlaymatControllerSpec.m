@@ -49,7 +49,7 @@ describe(@"PlaymatController", ^{
       return playmatController.debugDescription;
     });
 
-    it(@"equals HandController - description", ^{
+    it(@"equals PlaymatController - description", ^{
       [[debugDescription should] equal:playmatController.description];
     });
   });
