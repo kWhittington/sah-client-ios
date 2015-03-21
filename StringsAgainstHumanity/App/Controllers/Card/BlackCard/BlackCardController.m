@@ -49,15 +49,6 @@
   self.label.text = self.blackCard.string;
 }
 
-- (NSString *)debugDescription {
-  return self.description;
-}
-
-- (NSString *)description {
-  return NSStringWithFormat(@"<BlackCardController: %p; blackCard = %@; label = %@>", self,
-                            self.blackCard, self.label);
-}
-
 - (void)didReceiveMemoryWarning {
   [super didReceiveMemoryWarning];
   // Dispose of any resources that can be recreated.

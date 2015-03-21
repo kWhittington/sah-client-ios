@@ -22,6 +22,8 @@
 - (NSArray *)cards;
 - (NSArray *)cardsAtIndexes:(NSIndexSet *)indexes;
 - (instancetype)copyWithZone:(NSZone *)zone;
+- (NSString *)debugDescription;
+- (NSString *)description;
 - (NSUInteger)indexOfCard:(Card *)card;
 - (BOOL)isEmpty;
 - (BOOL)isEqual:(id)object;

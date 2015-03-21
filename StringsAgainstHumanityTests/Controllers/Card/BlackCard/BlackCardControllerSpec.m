@@ -20,12 +20,12 @@ describe(@"BlackCardController", ^{
   let(blackCardController, ^BlackCardController *{
     return [BlackCardController withBlackCard:blackCard];
   });
-
+  
   describe(@"+ StoryboardID", ^{
     let(result, ^{
       return BlackCardController.StoryboardID;
     });
-
+    
     it(@"equals 'BlackCardController'", ^{
       [[result should] equal:NSStringFromClass(BlackCardController.class)];
     });
@@ -53,34 +53,6 @@ describe(@"BlackCardController", ^{
     specify(^{
       [[result should] beMemberOfClass:BlackCard.class];
     });
-  });
-
-  describe(@"- debugDescription", ^{
-    let(debugDescription, ^{
-      return blackCardController.debugDescription;
-    });
-
-    it(@"equals BlackCardController - description", ^{
-      [[debugDescription should] equal:blackCardController.description];
-    });
-  });
-
-  describe(@"- description", ^{
-    let(description, ^{
-      return blackCardController.description;
-    });
-
-    let(expectedString, ^{
-      return NSStringWithFormat(@"<BlackCardController: %p; blackCard = %@; label = %@>",
-                                blackCardController, blackCardController.blackCard,
-                                blackCardController.label);
-    });
-
-    it(@"returns '<BlackCardController: [memory_address]; blackCard = [blackCard.description];"
-        " label = [label.description]>'",
-       ^{
-         [[description should] equal:expectedString];
-       });
   });
 
   describe(@"- label", ^{
