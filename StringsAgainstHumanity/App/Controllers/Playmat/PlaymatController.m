@@ -48,6 +48,7 @@
   [super awakeFromNib];
 
   [self initSubControllers];
+  [self initSubControllerViews];
 }
 - (NSString *)debugDescription {
   return self.description;
@@ -100,6 +101,5 @@
   [super viewDidLoad];
 
   // Do any additional setup after loading the view.
-  [self initSubControllerViews];
 }
 @end

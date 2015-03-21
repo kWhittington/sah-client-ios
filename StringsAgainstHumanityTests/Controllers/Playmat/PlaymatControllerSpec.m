@@ -43,6 +43,25 @@ describe(@"PlaymatController", ^{
     });
   });
 
+  describe(@".view", ^{
+    let(view, ^{
+      return playmatController.view;
+    });
+
+    describe(@".subviews", ^{
+      let(subviews, ^{
+        return view.subviews;
+      });
+
+      it(@"displays BlackCard behind Hand", ^{
+        NSUInteger blackCardViewIndex = [subviews indexOfObject:blackCardController.view];
+        NSUInteger handViewIndex = [subviews indexOfObject:handController.view];
+
+        [[theValue(blackCardViewIndex) should] beLessThan:theValue(handViewIndex)];
+      });
+    });
+  });
+
   describe(@"+ StartingBlackCard", ^{
     let(startingBlackCard, ^{
       return PlaymatController.StartingBlackCard;
