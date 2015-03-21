@@ -111,13 +111,29 @@ describe(@"HandController", ^{
       return handController.selectedCard;
     });
 
-    specify(^{
-      [[selectedCard should] beKindOfClass:NSArray.class];
+    context(@"when no Card has been selected", ^{
+      it(@"returns (nil)", ^{
+        [[selectedCard should] beNil];
+      });
     });
 
-    it(@"returns the Cards located at the CollectionView's - indexPathsForSelectedItems:", ^{
-      [[selectedCard should]
-        equal:[hand cardsAtIndexPaths:handController.collectionView.indexPathsForSelectedItems]];
+    context(@"when a Card has been selected", ^{
+      let(targetCard, ^{
+        NSLog(@"HandController: %@", handController);
+        return hand.cards.sample;
+      });
+
+      beforeEach(^{
+        [handController selectCard:targetCard];
+      });
+
+      specify(^{
+        [[handController.selectedCard should] beKindOfClass:Card.class];
+      });
+
+      it(@"returns that Card", ^{
+        [[handController.selectedCard should] equal:targetCard];
+      });
     });
   });
 
@@ -173,6 +189,44 @@ describe(@"HandController", ^{
       [[handController.collectionView should] receive:@selector(insertItemsAtIndexPaths:)];
 
       [handController addCard:card];
+    });
+  });
+
+  describe(@"- debugDescription", ^{
+    let(debugDescription, ^{
+      return handController.debugDescription;
+    });
+
+    it(@"equals HandController - description", ^{
+      [[debugDescription should] equal:handController.description];
+    });
+  });
+
+  describe(@"- description", ^{
+    let(description, ^{
+      return handController.description;
+    });
+
+    let(expectedString, ^{
+      return NSStringWithFormat(@"<HandController: %p; hand = %@; selectedCard = %@>",
+                                handController, hand, handController.selectedCard);
+    });
+
+    it(@"returns '<HandController: [memory_address]; hand = [hand.description];"
+        " selectedCard = [selectedCard.description]>",
+       ^{
+         [[description should] equal:expectedString];
+       });
+  });
+
+  describe(@"- hasSelectedCard", ^{
+    let(hasSelectedCard, ^{
+      return theValue(handController.hasSelectedCard);
+    });
+
+    it(@"equals Hand - selectedCard != nil", ^{
+      //      [[hasSelectedCard should] equal:theValue(handController.selectedCard != nil)];
+      [[hasSelectedCard should] equal:theValue(NO)];
     });
   });
 

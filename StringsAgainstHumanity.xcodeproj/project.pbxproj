@@ -16,6 +16,9 @@
 		AD341F5A1AA8F55C0040DA92 /* WhiteCardSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = AD341F591AA8F55C0040DA92 /* WhiteCardSpec.m */; };
 		AD518EEE1A8400BF00FA6CFF /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = AD518EEC1A8400BF00FA6CFF /* Podfile */; };
 		AD518EEF1A8400BF00FA6CFF /* uncrustify.cfg in Resources */ = {isa = PBXBuildFile; fileRef = AD518EED1A8400BF00FA6CFF /* uncrustify.cfg */; };
+		AD5641961ABB3FC10078F5F0 /* PlaymatController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD5641951ABB3FC10078F5F0 /* PlaymatController.m */; };
+		AD5641991ABB3FF20078F5F0 /* PlaymatControllerSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = AD5641981ABB3FF20078F5F0 /* PlaymatControllerSpec.m */; };
+		AD56419C1ABB404D0078F5F0 /* PlaymatControllerFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = AD56419B1ABB404D0078F5F0 /* PlaymatControllerFactory.m */; };
 		AD5E85671AA7E3680067ABF2 /* BlackCard.m in Sources */ = {isa = PBXBuildFile; fileRef = AD5E85661AA7E3680067ABF2 /* BlackCard.m */; };
 		AD5E856A1AA7E3880067ABF2 /* BlackCardSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = AD5E85691AA7E3880067ABF2 /* BlackCardSpec.m */; };
 		AD5E856D1AA7E57C0067ABF2 /* BlackCardFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = AD5E856C1AA7E57C0067ABF2 /* BlackCardFactory.m */; };
@@ -75,6 +78,10 @@
 		AD341F591AA8F55C0040DA92 /* WhiteCardSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WhiteCardSpec.m; path = Models/Card/WhiteCard/WhiteCardSpec.m; sourceTree = "<group>"; };
 		AD518EEC1A8400BF00FA6CFF /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		AD518EED1A8400BF00FA6CFF /* uncrustify.cfg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = uncrustify.cfg; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		AD5641941ABB3FC10078F5F0 /* PlaymatController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PlaymatController.h; path = App/Controllers/Playmat/PlaymatController.h; sourceTree = "<group>"; };
+		AD5641951ABB3FC10078F5F0 /* PlaymatController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PlaymatController.m; path = App/Controllers/Playmat/PlaymatController.m; sourceTree = "<group>"; };
+		AD5641981ABB3FF20078F5F0 /* PlaymatControllerSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PlaymatControllerSpec.m; path = Controllers/Playmat/PlaymatControllerSpec.m; sourceTree = "<group>"; };
+		AD56419B1ABB404D0078F5F0 /* PlaymatControllerFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PlaymatControllerFactory.m; path = Factories/Controllers/Playmat/PlaymatControllerFactory.m; sourceTree = "<group>"; };
 		AD5E85651AA7E3680067ABF2 /* BlackCard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BlackCard.h; path = App/Models/Card/BlackCard/BlackCard.h; sourceTree = "<group>"; };
 		AD5E85661AA7E3680067ABF2 /* BlackCard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BlackCard.m; path = App/Models/Card/BlackCard/BlackCard.m; sourceTree = "<group>"; };
 		AD5E85691AA7E3880067ABF2 /* BlackCardSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BlackCardSpec.m; path = Models/Card/BlackCard/BlackCardSpec.m; sourceTree = "<group>"; };
@@ -192,6 +199,7 @@
 				ADD5CD761AB0F88000CA420D /* Card */,
 				AD1337851AA01CEF002F1721 /* Hand */,
 				AD89D2F01AA4D7780044F2C0 /* MainMenu */,
+				AD5641971ABB3FCC0078F5F0 /* Playmat */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -264,6 +272,7 @@
 				AD89D2EF1AA4C9B10044F2C0 /* MainMenu */,
 				AD89D2F61AA4F8D70044F2C0 /* Matchmaking */,
 				AD89D2FE1AA4FBB60044F2C0 /* NotCardCzar */,
+				AD5641931ABB3F8F0078F5F0 /* Playmat */,
 				AD89D2FA1AA4FA9D0044F2C0 /* PrivateGameStart */,
 			);
 			name = Controllers;
@@ -298,6 +307,31 @@
 			children = (
 			);
 			name = Lib;
+			sourceTree = "<group>";
+		};
+		AD5641931ABB3F8F0078F5F0 /* Playmat */ = {
+			isa = PBXGroup;
+			children = (
+				AD5641941ABB3FC10078F5F0 /* PlaymatController.h */,
+				AD5641951ABB3FC10078F5F0 /* PlaymatController.m */,
+			);
+			name = Playmat;
+			sourceTree = "<group>";
+		};
+		AD5641971ABB3FCC0078F5F0 /* Playmat */ = {
+			isa = PBXGroup;
+			children = (
+				AD5641981ABB3FF20078F5F0 /* PlaymatControllerSpec.m */,
+			);
+			name = Playmat;
+			sourceTree = "<group>";
+		};
+		AD56419A1ABB40270078F5F0 /* Playmat */ = {
+			isa = PBXGroup;
+			children = (
+				AD56419B1ABB404D0078F5F0 /* PlaymatControllerFactory.m */,
+			);
+			name = Playmat;
 			sourceTree = "<group>";
 		};
 		AD5E85641AA7E3390067ABF2 /* BlackCard */ = {
@@ -603,6 +637,7 @@
 			isa = PBXGroup;
 			children = (
 				ADA8C8AB1AB50597000987EC /* Hand */,
+				AD56419A1ABB40270078F5F0 /* Playmat */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -934,6 +969,7 @@
 				AD341F541AA8F4940040DA92 /* WhiteCard.m in Sources */,
 				AD89D2EE1AA4C9AE0044F2C0 /* MainMenuController.m in Sources */,
 				ADA8C8701AB33DB7000987EC /* WhiteCardController.m in Sources */,
+				AD5641961ABB3FC10078F5F0 /* PlaymatController.m in Sources */,
 				ADBF7FAA1A91661500C5BB00 /* ZoomInHandLayout.m in Sources */,
 				ADBF7F901A910CE300C5BB00 /* HandController.m in Sources */,
 				ADC6879C1AA658BB005F70C3 /* Constants.m in Sources */,
@@ -964,10 +1000,12 @@
 				ADDE7F891A9C33C700E232EC /* HandSpec.m in Sources */,
 				AD7C84DF1A95B34D00A2DE02 /* CardSpec.m in Sources */,
 				ADC687971AA6518C005F70C3 /* ConstantsSpec.m in Sources */,
+				AD56419C1ABB404D0078F5F0 /* PlaymatControllerFactory.m in Sources */,
 				AD8B92E81AA2BB6E0044ECC0 /* Hand+DataSourceSpec.m in Sources */,
 				AD1337871AA01D6E002F1721 /* HandControllerSpec.m in Sources */,
 				AD62DCED1AB23A6700F70C51 /* UnimplementedExceptionSpec.m in Sources */,
 				AD341F571AA8F4F60040DA92 /* WhiteCardFactory.m in Sources */,
+				AD5641991ABB3FF20078F5F0 /* PlaymatControllerSpec.m in Sources */,
 				AD71F5921A9C049F0077BE8B /* CardFactory.m in Sources */,
 				AD89D2F21AA4D79A0044F2C0 /* MainMenuControllerSpec.m in Sources */,
 				ADA8C8AD1AB505BC000987EC /* HandControllerFactory.m in Sources */,

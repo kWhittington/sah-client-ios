@@ -136,14 +136,16 @@ describe(@"BlackCard", ^{
       return blackCard.description;
     });
 
+    let(expectedString, ^{
+      return NSStringWithFormat(@"<BlackCard: %p; string = %@>", blackCard, blackCard.string);
+    });
+
     specify(^{
       [[description should] beKindOfClass:NSString.class];
     });
 
     it(@"returns self.description", ^{
-      NSString *string =
-        NSStringWithFormat(@"<BlackCard: %p string=%@>", blackCard, blackCard.string);
-      [[description should] equal:string];
+      [[description should] equal:expectedString];
     });
   });
 

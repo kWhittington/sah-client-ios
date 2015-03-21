@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1510" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="8Ud-wc-iRA">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1510" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="fel-xd-5H9">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -271,7 +271,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wnD-EX-RfY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="983" y="2053"/>
+            <point key="canvasLocation" x="965" y="2053"/>
         </scene>
         <!--White Card Controller-->
         <scene sceneID="BC8-xz-aKv">
@@ -353,14 +353,12 @@
                             </collectionViewCell>
                         </cells>
                         <connections>
-                            <outlet property="dataSource" destination="2Kp-Wt-h8p" id="6iX-HN-hrw"/>
                             <outlet property="delegate" destination="8Ud-wc-iRA" id="lwa-lC-NZ9"/>
                             <outletCollection property="gestureRecognizers" destination="OeD-Wz-2qQ" appends="YES" id="HCK-Bj-AVP"/>
                         </connections>
                     </collectionView>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yot-i6-lHM" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <customObject id="2Kp-Wt-h8p" customClass="Hand"/>
                 <swipeGestureRecognizer direction="up" id="OeD-Wz-2qQ">
                     <connections>
                         <action selector="swipeUp:" destination="8Ud-wc-iRA" id="3ZF-vc-0pp"/>
@@ -368,6 +366,24 @@
                 </swipeGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="283" y="2053"/>
+        </scene>
+        <!--Playmat Controller-->
+        <scene sceneID="jDB-yN-Ymk">
+            <objects>
+                <viewController storyboardIdentifier="PlaymatController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Frb-2W-s1W" customClass="PlaymatController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="iz9-m6-b5f"/>
+                        <viewControllerLayoutGuide type="bottom" id="QKX-e1-aPB"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="jGP-mz-cZU">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yrm-X5-bfv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="276" y="2739"/>
         </scene>
     </scenes>
 </document>
