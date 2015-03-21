@@ -42,7 +42,7 @@
 }
 
 - (NSString *)description {
-  return NSStringWithFormat(@"<BlackCard: %p; string = %@>", self, self.string);
+  return NSStringWithFormat(@"<BlackCard: %p string=%@>", self, self.string);
 }
 
 - (NSUInteger)hash {
