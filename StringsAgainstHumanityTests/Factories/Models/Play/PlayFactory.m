@@ -14,4 +14,7 @@
 FGFactoryBegin(Play)
 [builder field:@"card" assoc:Card.class trait:@"withString"];
 builder[@"action"] = ^(Card *card) {};
+
+[builder initFrom:Play.class];
+[builder initWith:@selector(withCard:andAction:) fieldNames:@[@"card", @"action"]];
 FGFactoryEnd

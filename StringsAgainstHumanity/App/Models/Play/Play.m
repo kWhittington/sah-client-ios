@@ -14,4 +14,13 @@
 @end
 
 @implementation Play
+#pragma mark Designated Initializer
++ (instancetype)withCard:(Card *)card andAction:(void (^)(Card *))action {
+  Play *play = [[Play alloc] init];
+
+  play.card = card;
+  play.action = action;
+
+  return play;
+}
 @end
