@@ -13,4 +13,5 @@
 
 FGFactoryBegin(Play)
 [builder field:@"card" assoc:Card.class trait:@"withString"];
+builder[@"action"] = ^(Card *card) {};
 FGFactoryEnd
