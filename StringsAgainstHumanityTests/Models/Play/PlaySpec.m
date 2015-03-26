@@ -71,5 +71,30 @@ describe(@"Play", ^{
       [[init.action should] beNil];
     });
   });
+
+  describe(@"- debugDescription", ^{
+    let(debugDescription, ^{
+      return play.debugDescription;
+    });
+
+    it(@"equals - description", ^{
+      [[debugDescription should] equal:play.description];
+    });
+  });
+
+  describe(@"-description", ^{
+    let(description, ^{
+      return play.description;
+    });
+
+    let(expectedString, ^{
+      return NSStringWithFormat(@"<Play: %p; card = %@; action = %@>", play, play.card,
+                                play.action);
+    });
+
+    it(@"equals expectedString", ^{
+      [[description should] equal:expectedString];
+    });
+  });
 });
 SPEC_END

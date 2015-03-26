@@ -23,4 +23,12 @@
 
   return play;
 }
+
+- (NSString *)debugDescription {
+  return self.description;
+}
+
+- (NSString *)description {
+  return NSStringWithFormat(@"<Play: %p; card = %@; action = %@>", self, self.card, self.action);
+}
 @end
