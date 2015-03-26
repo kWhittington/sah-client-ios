@@ -26,6 +26,10 @@ describe(@"Play", ^{
     action = play.action;
   });
 
+  it(@"subclasses NSObject", ^{
+    [[play should] beKindOfClass:NSObject.class];
+  });
+
   describe(@".card", ^{
     let(card, ^{
       return play.card;
