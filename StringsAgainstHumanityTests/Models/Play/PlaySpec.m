@@ -39,5 +39,20 @@ describe(@"Play", ^{
       [[card should] beKindOfClass:Card.class];
     });
   });
+
+  describe(@"+ withCard:andAction:", ^{
+    let(withCardandAction, ^{
+      return [Play withCard:card andAction:action];
+    });
+
+    it(@"has a copy of the given Card", ^{
+      [[withCardandAction.card should] equal:card];
+      [[withCardandAction.card shouldNot] beIdenticalTo:card];
+    });
+
+    it(@"has a reference to the block", ^{
+      [[withCardandAction.action should] beIdenticalTo:action];
+    });
+  });
 });
 SPEC_END
