@@ -11,4 +11,5 @@
 @class Card;
 
 @interface Play : NSObject
+@property(readonly, copy, nonatomic) Card *card;
 @end

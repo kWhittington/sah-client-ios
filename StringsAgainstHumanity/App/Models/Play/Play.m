@@ -9,6 +9,7 @@
 #import "Play.h"
 
 @interface Play ()
+@property(copy, nonatomic) Card *card;
 @end
 
 @implementation Play

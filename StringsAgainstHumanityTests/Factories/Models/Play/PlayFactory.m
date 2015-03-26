@@ -12,4 +12,5 @@
 #import "Card.h"
 
 FGFactoryBegin(Play)
+[builder field:@"card" assoc:Card.class trait:@"withString"];
 FGFactoryEnd
