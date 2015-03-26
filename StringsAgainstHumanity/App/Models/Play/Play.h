@@ -12,7 +12,7 @@
 
 @interface Play : NSObject
 @property(readonly, copy, nonatomic) Card *card;
-@property(readonly, nonatomic) void (^action)(Card *);
+@property(readonly, copy, nonatomic) void (^action)(Card *);
 
 + (instancetype)withCard:(Card *)card andAction:(void (^)(Card *))action;
 @end

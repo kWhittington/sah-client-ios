@@ -10,7 +10,7 @@
 
 @interface Play ()
 @property(copy, nonatomic) Card *card;
-@property(nonatomic) void (^action)(Card *);
+@property(copy, nonatomic) void (^action)(Card *);
 @end
 
 @implementation Play
