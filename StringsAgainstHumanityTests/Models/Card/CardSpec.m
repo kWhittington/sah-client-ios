@@ -89,8 +89,9 @@ describe(@"Card", ^{
       [[debugDescription should] beKindOfClass:NSString.class];
     });
 
-    it(@"equals Card - description", ^{
-      [[debugDescription should] equal:card.description];
+    it(@"returns '<Card: [memory_address] string=[card.string.description]>'", ^{
+      NSString *string = NSStringWithFormat(@"<Card: %p string=%@>", card, card.string);
+      [[debugDescription should] equal:string];
     });
   });
 
@@ -99,16 +100,13 @@ describe(@"Card", ^{
       return card.description;
     });
 
-    let(expectedString, ^id {
-      return NSStringWithFormat(@"<Card: %p; string = %@>", card, card.string);
-    });
-
     specify(^{
       [[description should] beKindOfClass:NSString.class];
     });
 
-    it(@"returns '<Card: [memory_address]; string = [card.string.description]>'", ^{
-      [[description should] equal:expectedString];
+    it(@"returns '<Card: [memory_address] string=[card.string.description]>'", ^{
+      NSString *string = NSStringWithFormat(@"<Card: %p string=%@>", card, card.string);
+      [[description should] equal:string];
     });
   });
 

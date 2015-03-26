@@ -53,22 +53,9 @@ static NSString *const StoryboardID = @"HandController";
   [self.collectionView insertItemsAtIndexPaths:@[ indexPath ]];
 }
 
-- (NSString *)debugDescription {
-  return self.description;
-}
-
-- (NSString *)description {
-  return NSStringWithFormat(@"<HandController: %p; hand = %@; selectedCard = %@>", self, self.hand,
-                            self.selectedCard);
-}
-
 - (void)didReceiveMemoryWarning {
   [super didReceiveMemoryWarning];
   // Dispose of any resources that can be recreated.
-}
-
-- (BOOL)hasSelectedCard {
-  return self.selectedCard != nil;
 }
 
 - (void)initBackground {
@@ -104,8 +91,8 @@ static NSString *const StoryboardID = @"HandController";
                               scrollPosition:UICollectionViewScrollPositionNone];
 }
 
-- (Card *)selectedCard {
-  return [self.hand cardsAtIndexPaths:[self.collectionView indexPathsForSelectedItems]].first;
+- (NSArray *)selectedCard {
+  return [self.hand cardsAtIndexPaths:[self.collectionView indexPathsForSelectedItems]];
 }
 
 - (IBAction)swipeUp:(UISwipeGestureRecognizer *)sender {
