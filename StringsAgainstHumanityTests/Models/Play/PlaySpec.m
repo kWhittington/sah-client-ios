@@ -57,5 +57,19 @@ describe(@"Play", ^{
       [[withCardandAction.action should] beIdenticalTo:action];
     });
   });
+
+  describe(@"- init", ^{
+    let(init, ^{
+      return [[Play alloc] init];
+    });
+
+    it(@"has no Card", ^{
+      [[init.card should] beNil];
+    });
+
+    it(@"has no action", ^{
+      [[init.action should] beNil];
+    });
+  });
 });
 SPEC_END
