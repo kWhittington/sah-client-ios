@@ -12,5 +12,28 @@
 
 SPEC_BEGIN(PlaySpec)
 describe(@"Play", ^{
+  let(play, ^Play *{
+    return FGBuild(Play.class);
+  });
+
+  let(card, ^Card *{
+    return play.card;
+  });
+
+  __block void (^action)(Card *);
+
+  beforeEach(^{
+    action = play.action;
+  });
+
+  describe(@".card", ^{
+    let(card, ^{
+      return play.card;
+    });
+
+    specify(^{
+      [[card should] beKindOfClass:Card.class];
+    });
+  });
 });
 SPEC_END
