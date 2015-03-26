@@ -14,33 +14,22 @@
 SPEC_BEGIN(MainMenuControllerSpec)
 describe(@"MainMenuController", ^{
   let(mainMenuController, ^MainMenuController *{
-    MainMenuController *result = [[UIStoryboard storyboardWithName:@"Main" bundle:nil]
+    return [Constants.Storyboard
       instantiateViewControllerWithIdentifier:MainMenuController.StoryboardID];
-    [result viewDidLoad];
-    return result;
   });
   
-  describe(@"+ storyboardID", ^{
-    let(result, ^NSString *{
+  it(@"subclasses PlaymatController", ^{
+    [[mainMenuController should] beKindOfClass:PlaymatController.class];
+  });
+
+  describe(@"+ StoryboardID", ^{
+    let(storyboardID, ^{
       return MainMenuController.StoryboardID;
     });
-    
-    it(@"returns @\"MainMenuController\"", ^{
-      [[result should] equal:@"MainMenuController"];
+
+    it(@"equals MainMenuController'", ^{
+      [[storyboardID should] equal:@"MainMenuController"];
     });
   });
-  
-  describe(@"- viewDidLoad", ^{
-    let(dataSource, ^Hand *{
-      return (Hand *)mainMenuController.collectionView.dataSource;
-    });
-    
-    it(@"empties the Hand and adds one \"Play\" Card", ^{
-      [mainMenuController viewDidLoad];
-      [[theValue(dataSource.size) should] equal:theValue(1)];
-      [[((Card *)dataSource.cards.first).string should] equal:@"Play"];
-    });
-  });
-  
 });
 SPEC_END
