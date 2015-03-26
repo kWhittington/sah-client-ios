@@ -15,4 +15,6 @@
 @property(readonly, copy, nonatomic) void (^action)(Card *);
 
 + (instancetype)withCard:(Card *)card andAction:(void (^)(Card *))action;
+
+- (void)perform;
 @end

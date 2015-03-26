@@ -96,5 +96,31 @@ describe(@"Play", ^{
       [[description should] equal:expectedString];
     });
   });
+
+  describe(@"- perform", ^{
+    __block void (^newAction)(Card *);
+    __block int count;
+
+    beforeAll(^{
+      count = 0;
+
+      newAction = ^(Card *card) {
+        NSLog(@"This is a new action. %@", card);
+        count = count + 1;
+      };
+    });
+
+    let(play, ^Play *{
+      return FGBuildWith(Play.class, @{ @"action" : newAction });
+    });
+
+    it(@"executes .action with .card", ^{
+      [[theBlock(^{
+        [play perform];
+      }) should] change:^NSInteger {
+        return count;
+      }];
+    });
+  });
 });
 SPEC_END

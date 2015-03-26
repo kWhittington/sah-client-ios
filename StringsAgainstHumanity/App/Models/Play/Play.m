@@ -31,4 +31,8 @@
 - (NSString *)description {
   return NSStringWithFormat(@"<Play: %p; card = %@; action = %@>", self, self.card, self.action);
 }
+
+- (void)perform {
+  self.action(self.card);
+}
 @end
