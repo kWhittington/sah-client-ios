@@ -32,9 +32,6 @@
 		AD7C84DF1A95B34D00A2DE02 /* CardSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = AD7C84DE1A95B34D00A2DE02 /* CardSpec.m */; };
 		AD89D2EE1AA4C9AE0044F2C0 /* MainMenuController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD89D2ED1AA4C9AE0044F2C0 /* MainMenuController.m */; };
 		AD89D2F21AA4D79A0044F2C0 /* MainMenuControllerSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = AD89D2F11AA4D79A0044F2C0 /* MainMenuControllerSpec.m */; };
-		AD89D2F91AA4F8FB0044F2C0 /* MatchmakingController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD89D2F81AA4F8FB0044F2C0 /* MatchmakingController.m */; };
-		AD89D2FD1AA4FACA0044F2C0 /* PrivateGameStartController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD89D2FC1AA4FACA0044F2C0 /* PrivateGameStartController.m */; };
-		AD89D3011AA4FBE40044F2C0 /* NotCardCzarController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD89D3001AA4FBE40044F2C0 /* NotCardCzarController.m */; };
 		AD8B92E81AA2BB6E0044ECC0 /* Hand+DataSourceSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = AD8B92E71AA2BB6E0044ECC0 /* Hand+DataSourceSpec.m */; };
 		ADA8C86C1AB33D70000987EC /* WhiteCardControllerSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = ADA8C86B1AB33D70000987EC /* WhiteCardControllerSpec.m */; };
 		ADA8C8701AB33DB7000987EC /* WhiteCardController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADA8C86F1AB33DB7000987EC /* WhiteCardController.m */; };
@@ -108,12 +105,6 @@
 		AD89D2EC1AA4C9AE0044F2C0 /* MainMenuController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MainMenuController.h; path = App/Controllers/MainMenu/MainMenuController.h; sourceTree = "<group>"; };
 		AD89D2ED1AA4C9AE0044F2C0 /* MainMenuController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MainMenuController.m; path = App/Controllers/MainMenu/MainMenuController.m; sourceTree = "<group>"; };
 		AD89D2F11AA4D79A0044F2C0 /* MainMenuControllerSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MainMenuControllerSpec.m; path = Controllers/MainMenu/MainMenuControllerSpec.m; sourceTree = "<group>"; };
-		AD89D2F71AA4F8FB0044F2C0 /* MatchmakingController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MatchmakingController.h; path = App/Controllers/Matchmaking/MatchmakingController.h; sourceTree = "<group>"; };
-		AD89D2F81AA4F8FB0044F2C0 /* MatchmakingController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MatchmakingController.m; path = App/Controllers/Matchmaking/MatchmakingController.m; sourceTree = "<group>"; };
-		AD89D2FB1AA4FACA0044F2C0 /* PrivateGameStartController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PrivateGameStartController.h; path = App/Controllers/PrivateGameStart/PrivateGameStartController.h; sourceTree = "<group>"; };
-		AD89D2FC1AA4FACA0044F2C0 /* PrivateGameStartController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PrivateGameStartController.m; path = App/Controllers/PrivateGameStart/PrivateGameStartController.m; sourceTree = "<group>"; };
-		AD89D2FF1AA4FBE40044F2C0 /* NotCardCzarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NotCardCzarController.h; path = App/Controllers/NotCardCzar/NotCardCzarController.h; sourceTree = "<group>"; };
-		AD89D3001AA4FBE40044F2C0 /* NotCardCzarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NotCardCzarController.m; path = App/Controllers/NotCardCzar/NotCardCzarController.m; sourceTree = "<group>"; };
 		AD8B92E71AA2BB6E0044ECC0 /* Hand+DataSourceSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "Hand+DataSourceSpec.m"; path = "DataSources/Hand/Hand+DataSourceSpec.m"; sourceTree = "<group>"; };
 		ADA8C86B1AB33D70000987EC /* WhiteCardControllerSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WhiteCardControllerSpec.m; path = Controllers/Card/WhiteCard/WhiteCardControllerSpec.m; sourceTree = "<group>"; };
 		ADA8C86E1AB33DB7000987EC /* WhiteCardController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WhiteCardController.h; path = App/Controllers/Card/WhiteCard/WhiteCardController.h; sourceTree = "<group>"; };
@@ -277,10 +268,7 @@
 				ADBF7F9B1A913DFA00C5BB00 /* Card */,
 				ADBF7F8D1A9105A100C5BB00 /* Hand */,
 				AD89D2EF1AA4C9B10044F2C0 /* MainMenu */,
-				AD89D2F61AA4F8D70044F2C0 /* Matchmaking */,
-				AD89D2FE1AA4FBB60044F2C0 /* NotCardCzar */,
 				AD5641931ABB3F8F0078F5F0 /* Playmat */,
-				AD89D2FA1AA4FA9D0044F2C0 /* PrivateGameStart */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -548,33 +536,6 @@
 				AD89D2F11AA4D79A0044F2C0 /* MainMenuControllerSpec.m */,
 			);
 			name = MainMenu;
-			sourceTree = "<group>";
-		};
-		AD89D2F61AA4F8D70044F2C0 /* Matchmaking */ = {
-			isa = PBXGroup;
-			children = (
-				AD89D2F71AA4F8FB0044F2C0 /* MatchmakingController.h */,
-				AD89D2F81AA4F8FB0044F2C0 /* MatchmakingController.m */,
-			);
-			name = Matchmaking;
-			sourceTree = "<group>";
-		};
-		AD89D2FA1AA4FA9D0044F2C0 /* PrivateGameStart */ = {
-			isa = PBXGroup;
-			children = (
-				AD89D2FB1AA4FACA0044F2C0 /* PrivateGameStartController.h */,
-				AD89D2FC1AA4FACA0044F2C0 /* PrivateGameStartController.m */,
-			);
-			name = PrivateGameStart;
-			sourceTree = "<group>";
-		};
-		AD89D2FE1AA4FBB60044F2C0 /* NotCardCzar */ = {
-			isa = PBXGroup;
-			children = (
-				AD89D2FF1AA4FBE40044F2C0 /* NotCardCzarController.h */,
-				AD89D3001AA4FBE40044F2C0 /* NotCardCzarController.m */,
-			);
-			name = NotCardCzar;
 			sourceTree = "<group>";
 		};
 		ADA8C86A1AB33D4B000987EC /* WhiteCard */ = {
@@ -1000,7 +961,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AD89D3011AA4FBE40044F2C0 /* NotCardCzarController.m in Sources */,
 				AD341F541AA8F4940040DA92 /* WhiteCard.m in Sources */,
 				AD89D2EE1AA4C9AE0044F2C0 /* MainMenuController.m in Sources */,
 				ADA8C8701AB33DB7000987EC /* WhiteCardController.m in Sources */,
@@ -1012,12 +972,10 @@
 				ADC195D21AA1545D00177660 /* Hand+DataSource.m in Sources */,
 				ADBF7F981A91171A00C5BB00 /* Card.m in Sources */,
 				ADBE80E71AC39636001A672C /* Play.m in Sources */,
-				AD89D2F91AA4F8FB0044F2C0 /* MatchmakingController.m in Sources */,
 				AD6272EF1A8341D000565A28 /* main.m in Sources */,
 				ADBF7F931A910E2800C5BB00 /* Hand.m in Sources */,
 				AD62DCF11AB2481600F70C51 /* BlackCardController.m in Sources */,
 				AD62DCE91AB2398600F70C51 /* UnimplementedException.m in Sources */,
-				AD89D2FD1AA4FACA0044F2C0 /* PrivateGameStartController.m in Sources */,
 				ADBF7F9F1A913FE200C5BB00 /* CardViewCell.m in Sources */,
 				AD5E85671AA7E3680067ABF2 /* BlackCard.m in Sources */,
 				ADE4A6B61A844121008CB5D2 /* AppDelegate.m in Sources */,
