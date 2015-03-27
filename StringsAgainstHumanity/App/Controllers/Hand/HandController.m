@@ -25,10 +25,8 @@
 @end
 
 @implementation HandController
-static NSString *const StoryboardID = @"HandController";
-
 + (NSString *)StoryboardID {
-  return StoryboardID;
+  return NSStringFromClass(self.class);
 }
 
 + (instancetype)empty {
