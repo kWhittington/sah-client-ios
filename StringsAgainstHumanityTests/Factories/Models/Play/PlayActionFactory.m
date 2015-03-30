@@ -8,13 +8,13 @@
 // clang-format off
 //
 #import "FactoryLibraries.pch"
-#import "Play.h"
+#import "PlayAction.h"
 #import "Card.h"
 
-FGFactoryBegin(Play)
+FGFactoryBegin(PlayAction)
 [builder field:@"card" assoc:Card.class trait:@"withString"];
 builder[@"action"] = ^(Card *card) {};
 
-[builder initFrom:Play.class];
+[builder initFrom:PlayAction.class];
 [builder initWith:@selector(withCard:andAction:) fieldNames:@[@"card", @"action"]];
 FGFactoryEnd

@@ -1,5 +1,5 @@
 //
-//  Play.h
+//  PlayAction.h
 //  StringsAgainstHumanity
 //
 //  Created by Kyle Whittington on 3/25/15.
@@ -10,7 +10,7 @@
 
 @class Card;
 
-@interface Play : NSObject
+@interface PlayAction : NSObject
 @property(readonly, copy, nonatomic) void (^action)(Card *);
 @property(readonly, weak, nonatomic) Card *card;
 

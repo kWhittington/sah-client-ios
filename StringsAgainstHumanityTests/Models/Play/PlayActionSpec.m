@@ -1,5 +1,5 @@
 //
-//  PlaySpec.m
+//  PlayActionSpec.m
 //  StringsAgainstHumanity
 //
 //  Created by Kyle Whittington on 3/25/15.
@@ -8,34 +8,34 @@
 
 @import ObjectiveC.runtime;
 #import "TestLibraries.pch"
-#import "Play.h"
+#import "PlayAction.h"
 #import "Card.h"
 
-SPEC_BEGIN(PlaySpec)
+SPEC_BEGIN(PlayActionSpec)
 describe(@"Play", ^{
-  let(play, ^Play *{
-    return FGBuild(Play.class);
+  let(playAction, ^PlayAction *{
+    return FGBuild(PlayAction.class);
   });
 
   let(card, ^Card *{
-    return play.card;
+    return playAction.card;
   });
 
   __block void (^action)(Card *);
 
   beforeEach(^{
-    action = play.action;
+    action = playAction.action;
   });
 
   it(@"subclasses NSObject", ^{
-    [[play should] beKindOfClass:NSObject.class];
+    [[playAction should] beKindOfClass:NSObject.class];
   });
 
   describe(@".action", ^{
     __block objc_property_t actionProperty;
 
     beforeEach(^{
-      actionProperty = class_getProperty(Play.class, "action");
+      actionProperty = class_getProperty(PlayAction.class, "action");
     });
 
     it(@"is a copy of the original action block", ^{
@@ -47,7 +47,7 @@ describe(@"Play", ^{
 
   describe(@".card", ^{
     let(card, ^{
-      return play.card;
+      return playAction.card;
     });
 
     specify(^{
@@ -55,7 +55,7 @@ describe(@"Play", ^{
     });
 
     it(@"is a weak reference to the original Card", ^{
-      objc_property_t cardProperty = class_getProperty(Play.class, "card");
+      objc_property_t cardProperty = class_getProperty(PlayAction.class, "card");
       char *weakAttributeValue = property_copyAttributeValue(cardProperty, "W");
 
       [[theValue(weakAttributeValue) shouldNot] beNil];
@@ -64,22 +64,22 @@ describe(@"Play", ^{
 
   describe(@"- debugDescription", ^{
     let(debugDescription, ^{
-      return play.debugDescription;
+      return playAction.debugDescription;
     });
 
     it(@"equals - description", ^{
-      [[debugDescription should] equal:play.description];
+      [[debugDescription should] equal:playAction.description];
     });
   });
 
   describe(@"- description", ^{
     let(description, ^{
-      return play.description;
+      return playAction.description;
     });
 
     let(expectedString, ^{
-      return NSStringWithFormat(@"<Play: %p; card = %@; action = %@>", play, play.card,
-                                play.action);
+      return NSStringWithFormat(@"<PlayAction: %p; card = %@; action = %@>", playAction,
+                                playAction.card, playAction.action);
     });
 
     it(@"equals expectedString", ^{
@@ -100,13 +100,13 @@ describe(@"Play", ^{
       };
     });
 
-    let(play, ^Play *{
-      return FGBuildWith(Play.class, @{ @"action" : newAction });
+    let(playAction, ^PlayAction *{
+      return FGBuildWith(PlayAction.class, @{ @"action" : newAction });
     });
 
     it(@"executes .action with .card", ^{
       [[theBlock(^{
-        [play perform];
+        [playAction perform];
       }) should] change:^NSInteger {
         return count;
       }];

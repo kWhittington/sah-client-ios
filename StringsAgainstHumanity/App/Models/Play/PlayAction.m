@@ -1,27 +1,27 @@
 //
-//  Play.m
+//  PlayAction.m
 //  StringsAgainstHumanity
 //
 //  Created by Kyle Whittington on 3/25/15.
 //  Copyright (c) 2015 Kyle Whittington. All rights reserved.
 //
 
-#import "Play.h"
+#import "PlayAction.h"
 
-@interface Play ()
+@interface PlayAction ()
 @property(copy, nonatomic) void (^action)(Card *);
 @property(weak, nonatomic) Card *card;
 @end
 
-@implementation Play
+@implementation PlayAction
 #pragma mark Designated Initializer
 + (instancetype)withCard:(Card *)card andAction:(void (^)(Card *))action {
-  Play *play = [[Play alloc] init];
+  PlayAction *playAction = [[PlayAction alloc] init];
 
-  play.card = card;
-  play.action = action;
+  playAction.card = card;
+  playAction.action = action;
 
-  return play;
+  return playAction;
 }
 
 - (NSString *)debugDescription {
@@ -29,7 +29,8 @@
 }
 
 - (NSString *)description {
-  return NSStringWithFormat(@"<Play: %p; card = %@; action = %@>", self, self.card, self.action);
+  return NSStringWithFormat(@"<PlayAction: %p; card = %@; action = %@>", self, self.card,
+                            self.action);
 }
 
 - (void)perform {
