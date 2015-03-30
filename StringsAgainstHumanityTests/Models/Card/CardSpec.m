@@ -64,23 +64,23 @@ describe(@"Card", ^{
     });
   });
 
-  describe(@"+ blank", ^{
-    let(result, ^Card *{
-      return [Card blank];
+  describe(@"+ CardColor", ^{
+    let(result, ^{
+      return Card.CardColor;
     });
 
-    it(@"creates a Card with an empty string", ^{
-      [[result.string should] equal:@""];
+    it(@"returns Constants.WhiteColor", ^{
+      [[result should] equal:Constants.WhiteColor];
     });
   });
 
-  describe(@"+ withString:", ^{
-    let(result, ^Card *{
-      return [Card withString:string];
+  describe(@"+ StringColor", ^{
+    let(result, ^{
+      return Card.StringColor;
     });
 
-    it(@"creates a Card with the given string", ^{
-      [[result.string should] equal:string];
+    it(@"returns Constants.BlackColor", ^{
+      [[result should] equal:Constants.BlackColor];
     });
   });
 
@@ -127,26 +127,6 @@ describe(@"Card", ^{
 
     it(@"returns '<Card: [memory_address]; string = [card.string.description]>'", ^{
       [[description should] equal:expectedString];
-    });
-  });
-
-  describe(@"- init", ^{
-    let(result, ^Card *{
-      return [[Card alloc] init];
-    });
-
-    it(@"creates a Card with an empty string", ^{
-      [[result.string should] equal:@""];
-    });
-  });
-
-  describe(@"- initWithString:", ^{
-    let(result, ^Card *{
-      return [[Card alloc] initWithString:string];
-    });
-
-    it(@"creates a Card with the given string", ^{
-      [[result.string should] equal:string];
     });
   });
 

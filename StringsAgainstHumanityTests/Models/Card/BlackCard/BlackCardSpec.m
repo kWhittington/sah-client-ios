@@ -71,34 +71,6 @@ describe(@"BlackCard", ^{
     });
   });
 
-  describe(@"+ withString:", ^{
-    let(result, ^{
-      return [BlackCard withString:string];
-    });
-
-    it(@"creates a BlackCard", ^{
-      [[result should] beMemberOfClass:BlackCard.class];
-    });
-
-    it(@"creates a BlackCard with the given string", ^{
-      [[result.string should] equal:string];
-    });
-  });
-
-  describe(@"- initWithString:", ^{
-    let(result, ^{
-      return [[BlackCard alloc] initWithString:string];
-    });
-
-    specify(^{
-      [[result should] beMemberOfClass:BlackCard.class];
-    });
-
-    it(@"creates a blackCard with the given string", ^{
-      [[result.string should] equal:string];
-    });
-  });
-
   describe(@"- copy", ^{
     let(result, ^{
       return blackCard.copy;

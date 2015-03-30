@@ -109,20 +109,6 @@ describe(@"WhiteCard", ^{
     });
   });
 
-  describe(@"- initWithString:", ^{
-    let(result, ^{
-      return [[WhiteCard alloc] initWithString:string];
-    });
-
-    specify(^{
-      [[result should] beMemberOfClass:WhiteCard.class];
-    });
-
-    it(@"creates a WhiteCard with the given string", ^{
-      [[result.string should] equal:string];
-    });
-  });
-
   describe(@"- isEqual:", ^{
     let(other, ^{
       return theValue(nil);
