@@ -12,7 +12,7 @@
 SPEC_BEGIN(BlackCardSpec)
 describe(@"BlackCard", ^{
   let(blackCard, ^BlackCard *{
-    return FGBuildTraitWith(BlackCard.class, @"withString", @{ @"string" : string });
+    return FGBuild(BlackCard.class);
   });
 
   it(@"subclasses Card", ^{
