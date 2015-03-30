@@ -62,7 +62,7 @@ describe(@"Play", ^{
     });
   });
 
-  describe(@"-description", ^{
+  describe(@"- description", ^{
     let(description, ^{
       return play.description;
     });
