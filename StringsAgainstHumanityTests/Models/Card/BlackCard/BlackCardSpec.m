@@ -165,21 +165,11 @@ describe(@"BlackCard", ^{
         });
       });
 
-      context(@"when other.string equals BlackCard's string", ^{
-        let(other, ^{
-          return FGBuildTraitWith(BlackCard.class, @"withString", @{
-            @"string" : blackCard.string.copy
-          });
-        });
+      context(@"when other is not identical to BlackCard", ^{
+        it(@"calls BlackCard - isEqualToBlackCard:other", ^{
+          [[blackCard should] receive:@selector(isEqualToBlackCard:) withArguments:other];
 
-        it(@"returns YES", ^{
-          [[result should] beYes];
-        });
-      });
-
-      context(@"when other.string does not equal BlackCard's string", ^{
-        it(@"returns NO", ^{
-          [[result should] beNo];
+          [blackCard isEqual:other];
         });
       });
     });
