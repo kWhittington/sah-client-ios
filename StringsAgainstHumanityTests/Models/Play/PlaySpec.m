@@ -54,12 +54,11 @@ describe(@"Play", ^{
       [[card should] beKindOfClass:Card.class];
     });
 
-    it(@"is a weak reference", ^{
+    it(@"is a weak reference to the original Card", ^{
       objc_property_t cardProperty = class_getProperty(Play.class, "card");
-      NSString *copyAttributeValue =
-        [NSString stringWithUTF8String:property_copyAttributeValue(cardProperty, "W")];
+      char *weakAttributeValue = property_copyAttributeValue(cardProperty, "W");
 
-      [[copyAttributeValue should] equal:[NSString string]];
+      [[theValue(weakAttributeValue) shouldNot] beNil];
     });
   });
 
