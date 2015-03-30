@@ -60,9 +60,11 @@
 }
 
 - (BOOL)isEqual:(id)object {
-  BOOL equalToSuperClass = [super isEqual:object];
+  if (self == object) {
+    return YES;
+  }
 
-  unless(equalToSuperClass) { return NO; }
+  unless([object isKindOfClass:self.class]) { return NO; }
 
   return [self isEqualToBlackCard:(BlackCard *)object];
 }
