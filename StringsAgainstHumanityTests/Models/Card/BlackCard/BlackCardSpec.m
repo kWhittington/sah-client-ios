@@ -20,17 +20,17 @@ describe(@"BlackCard", ^{
   });
 
   describe(@"+ CardColor", ^{
-    let(result, ^{
+    let(cardColor, ^{
       return BlackCard.CardColor;
     });
 
     it(@"returns Constants.BlackColor", ^{
-      [[result should] equal:Constants.BlackColor];
+      [[cardColor should] equal:Constants.BlackColor];
     });
   });
 
   describe(@"+ DefaultPickNumber", ^{
-    let(result, ^{
+    let(defaultPickNumber, ^{
       return BlackCard.DefaultPickNumber;
     });
 
@@ -39,12 +39,12 @@ describe(@"BlackCard", ^{
     });
 
     it(@"returns the default - pick value for all BlackCards", ^{
-      [[result should] equal:expectedNumber];
+      [[defaultPickNumber should] equal:expectedNumber];
     });
   });
 
   describe(@"+ DefaultDrawNumber", ^{
-    let(result, ^{
+    let(defaultDrawNumber, ^{
       return BlackCard.DefaultDrawNumber;
     });
 
@@ -53,35 +53,35 @@ describe(@"BlackCard", ^{
     });
 
     it(@"returns the default - draw value for all BlackCards", ^{
-      [[result should] equal:expectedNumber];
+      [[defaultDrawNumber should] equal:expectedNumber];
     });
   });
 
   describe(@"+ StringColor", ^{
-    let(result, ^{
+    let(stringColor, ^{
       return BlackCard.StringColor;
     });
 
     it(@"returns Constants.WhiteColor", ^{
-      [[result should] equal:Constants.WhiteColor];
+      [[stringColor should] equal:Constants.WhiteColor];
     });
   });
 
   describe(@"- copy", ^{
-    let(result, ^{
+    let(copy, ^{
       return blackCard.copy;
     });
 
     specify(^{
-      [[result should] beMemberOfClass:BlackCard.class];
+      [[copy should] beMemberOfClass:BlackCard.class];
     });
 
     it(@"returns an equivalent blackCard", ^{
-      [[result should] equal:blackCard];
+      [[copy should] equal:blackCard];
     });
 
     it(@"returns a non-identical blackCard", ^{
-      [[result shouldNot] beIdenticalTo:blackCard];
+      [[copy shouldNot] beIdenticalTo:blackCard];
     });
   });
 
@@ -118,12 +118,12 @@ describe(@"BlackCard", ^{
   });
 
   describe(@"- draw", ^{
-    let(result, ^{
+    let(draw, ^{
       return blackCard.draw;
     });
 
     it(@"returns how many blackCards must be drawn by each player (before making plays)", ^{
-      [[result should] equal:BlackCard.DefaultDrawNumber];
+      [[draw should] equal:BlackCard.DefaultDrawNumber];
     });
   });
 
@@ -132,7 +132,7 @@ describe(@"BlackCard", ^{
       return theValue(nil);
     });
 
-    let(result, ^{
+    let(isEqual, ^{
       return theValue([blackCard isEqual:other]);
     });
 
@@ -142,7 +142,7 @@ describe(@"BlackCard", ^{
       });
 
       it(@"returns NO", ^{
-        [[result should] beNo];
+        [[isEqual should] beNo];
       });
     });
 
@@ -157,7 +157,7 @@ describe(@"BlackCard", ^{
         });
 
         it(@"returns YES", ^{
-          [[result should] beYes];
+          [[isEqual should] beYes];
         });
       });
 
@@ -176,7 +176,7 @@ describe(@"BlackCard", ^{
       return FGBuildTrait(BlackCard.class, @"withString");
     });
 
-    let(result, ^{
+    let(isEqualToBlackCard, ^{
       return theValue([blackCard isEqualToBlackCard:other]);
     });
 
@@ -188,7 +188,7 @@ describe(@"BlackCard", ^{
       });
 
       it(@"returns YES", ^{
-        [[result should] beYes];
+        [[isEqualToBlackCard should] beYes];
       });
     });
 
@@ -198,18 +198,18 @@ describe(@"BlackCard", ^{
       });
 
       it(@"returns NO", ^{
-        [[result should] beNo];
+        [[isEqualToBlackCard should] beNo];
       });
     });
   });
 
   describe(@"- pick", ^{
-    let(result, ^{
+    let(pick, ^{
       return blackCard.pick;
     });
 
     it(@"returns how many blackCards must be played by each player", ^{
-      [[result should] equal:BlackCard.DefaultPickNumber];
+      [[pick should] equal:BlackCard.DefaultPickNumber];
     });
   });
 });
