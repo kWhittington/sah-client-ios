@@ -12,9 +12,13 @@
 #import "Card.h"
 
 FGFactoryBegin(PlayAction)
-[builder field:@"card" assoc:Card.class trait:@"withString"];
-builder[@"action"] = ^(Card *card) {};
+  [builder initFrom:PlayAction.class];
+  [builder initWith:@selector(withCard:andAction:) fieldNames:@[@"card", @"action"]];
 
-[builder initFrom:PlayAction.class];
-[builder initWith:@selector(withCard:andAction:) fieldNames:@[@"card", @"action"]];
+  builder[@"action"] = ^(Card *card) {};
+  // NOTE:
+  // The association only works because Card is created with an empty action block.
+  // I do not believe the PlayAction created has a reference to the same action block given to the
+  // Card in the CardFactory.
+  [builder field:@"card" assoc:Card.class];
 FGFactoryEnd
