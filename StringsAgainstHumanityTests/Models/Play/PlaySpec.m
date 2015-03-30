@@ -31,8 +31,19 @@ describe(@"Play", ^{
     [[play should] beKindOfClass:NSObject.class];
   });
 
-  // NOTE:
-  //  Cannot think of how to test the block property.
+  describe(@".action", ^{
+    __block objc_property_t actionProperty;
+
+    beforeEach(^{
+      actionProperty = class_getProperty(Play.class, "action");
+    });
+
+    it(@"is a copy of the original action block", ^{
+      char *copyAttributeValue = property_copyAttributeValue(actionProperty, "C");
+
+      [[theValue(copyAttributeValue) shouldNot] beNil];
+    });
+  });
 
   describe(@".card", ^{
     let(card, ^{
