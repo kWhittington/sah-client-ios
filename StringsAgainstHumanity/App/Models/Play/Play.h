@@ -11,8 +11,8 @@
 @class Card;
 
 @interface Play : NSObject
-@property(readonly, weak, nonatomic) Card *card;
 @property(readonly, copy, nonatomic) void (^action)(Card *);
+@property(readonly, weak, nonatomic) Card *card;
 
 + (instancetype)withCard:(Card *)card andAction:(void (^)(Card *))action;
 
