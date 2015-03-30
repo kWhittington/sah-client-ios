@@ -9,8 +9,8 @@
 #import "Card.h"
 
 @interface BlackCard : Card
-@property(readonly, strong, nonatomic) NSNumber *draw;
-@property(readonly, strong, nonatomic) NSNumber *pick;
+@property(readonly, nonatomic) NSNumber *draw;
+@property(readonly, nonatomic) NSNumber *pick;
 
 + (NSNumber *)DefaultDrawNumber;
 + (NSNumber *)DefaultPickNumber;

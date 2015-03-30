@@ -10,8 +10,8 @@
 #import "BlackCard.h"
 
 @interface BlackCard ()
-@property(strong) NSNumber *draw;
-@property(strong) NSNumber *pick;
+@property(nonatomic) NSNumber *draw;
+@property(nonatomic) NSNumber *pick;
 @end
 
 @implementation BlackCard
