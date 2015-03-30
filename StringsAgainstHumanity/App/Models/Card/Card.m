@@ -37,9 +37,7 @@
 }
 
 - (instancetype)copyWithZone:(NSZone *)zone {
-  Card *copy = [Card withString:self.string.copy];
-
-  return copy;
+  return [Card withString:self.string.copy andAction:self.playAction.action];
 }
 
 - (NSString *)debugDescription {
