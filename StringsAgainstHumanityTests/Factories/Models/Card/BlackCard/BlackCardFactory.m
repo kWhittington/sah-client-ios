@@ -11,15 +11,18 @@
 #import "BlackCard.h"
 
 FGFactoryBegin(BlackCard)
-  // The default factory will be equivalent to @"blank" trait.
-  [builder initWith:@selector(init) fieldNames:@[]];
+  [builder initFrom:BlackCard.class];
+  [builder initWith:@selector(withString:andAction:) fieldNames:@[@"string", @"action"]];
 
-  traitDefiners[@"blank"] = ^(FGDefinitionBuilder *blankBuilder) {
-    [blankBuilder initWith:@selector(init) fieldNames:@[]];
+  [builder field:@"string" by:^{
+    return GZWords.sentence;
+  }];
+  builder[@"action"] = ^(Card *card) {
   };
 
   traitDefiners[@"withString"] = ^(FGDefinitionBuilder *withStringBuilder) {
-    [withStringBuilder field:@"string" value:[GZWords sentence]];
-    [withStringBuilder initWith:@selector(initWithString:) fieldNames:@[@"string"]];
+    [withStringBuilder field:@"string" by:^{
+      return GZWords.sentence;
+    }];
   };
 FGFactoryEnd
