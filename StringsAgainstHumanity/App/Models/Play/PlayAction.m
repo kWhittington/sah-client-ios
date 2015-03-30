@@ -24,6 +24,10 @@
   return playAction;
 }
 
+- (instancetype)copyWithZone:(NSZone *)zone {
+  return [PlayAction withCard:self.card andAction:self.action];
+}
+
 - (NSString *)debugDescription {
   return self.description;
 }

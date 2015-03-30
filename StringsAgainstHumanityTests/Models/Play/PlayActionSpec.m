@@ -31,6 +31,10 @@ describe(@"Play", ^{
     [[playAction should] beKindOfClass:NSObject.class];
   });
 
+  it(@"conforms to the NSCopying protocol", ^{
+    [[playAction should] conformToProtocol:@protocol(NSCopying)];
+  });
+
   describe(@".action", ^{
     __block objc_property_t actionProperty;
 

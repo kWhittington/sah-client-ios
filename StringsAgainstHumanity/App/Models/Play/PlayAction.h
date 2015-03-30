@@ -10,7 +10,7 @@
 
 @class Card;
 
-@interface PlayAction : NSObject
+@interface PlayAction : NSObject <NSCopying>
 @property(readonly, copy, nonatomic) void (^action)(Card *);
 @property(readonly, weak, nonatomic) Card *card;
 
