@@ -25,7 +25,7 @@
 }
 
 + (instancetype)blank {
-  return [[self alloc] initWithString:@""];
+  return [[self alloc] init];
 }
 
 + (instancetype)withString:(NSString *)string {
@@ -53,9 +53,15 @@
 }
 
 - (instancetype)init {
-  self = [self initWithString:@""];
+  return [self initWithString:@""
+                    andAction:^(Card *card){
+                    }];
+}
 
-  return self;
+- (instancetype)initWithString:(NSString *)string {
+  return [self initWithString:string
+                    andAction:^(Card *card){
+                    }];
 }
 
 #pragma mark Designated Initializer
