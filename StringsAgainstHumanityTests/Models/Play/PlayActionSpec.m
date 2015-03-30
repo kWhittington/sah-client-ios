@@ -91,6 +91,89 @@ describe(@"Play", ^{
     });
   });
 
+  describe(@"- hash", ^{
+    let(hash, ^{
+      return theValue(playAction.hash);
+    });
+
+    it(@"is equal to .card.hash", ^{
+      [[hash should] equal:theValue(playAction.card.hash)];
+    });
+  });
+
+  describe(@"- isEqual:", ^{
+    let(other, ^{
+      return theValue(nil);
+    });
+
+    let(isEqual, ^{
+      return theValue([playAction isEqual:other]);
+    });
+
+    context(@"when other is not a PlayAction", ^{
+      let(other, ^{
+        return GZWords.sentence;
+      });
+
+      it(@"is NO", ^{
+        [[isEqual should] beNo];
+      });
+    });
+
+    context(@"when other is a PlayAction", ^{
+      let(other, ^{
+        return FGBuild(PlayAction.class);
+      });
+
+      context(@"when other is identical to PlayAction", ^{
+        let(other, ^{
+          return playAction;
+        });
+
+        it(@"is YES", ^{
+          [[isEqual should] beYes];
+        });
+      });
+
+      context(@"when other is not identical to PlayAction", ^{
+        it(@"calls PlayAction - isEqualToPlayAction:other", ^{
+          [[playAction should] receive:@selector(isEqualToPlayAction:) withArguments:other];
+
+          [playAction isEqual:other];
+        });
+      });
+    });
+  });
+
+  describe(@"- isEqualToPlayAction:", ^{
+    let(other, ^{
+      return FGBuild(PlayAction.class);
+    });
+
+    let(isEqualToPlayAction, ^{
+      return theValue([playAction isEqualToPlayAction:other]);
+    });
+
+    context(@"when other doesn't have identical .card and .action values", ^{
+      it(@"is NO", ^{
+        [[isEqualToPlayAction should] beNo];
+      });
+    });
+
+    context(@"when other has identical .card and .action values", ^{
+      let(other, ^{
+        return FGBuildWith(PlayAction.class, @{
+          @"card" : playAction.card,
+          @"action" : playAction.action
+        });
+      });
+
+      it(@"is YES", ^{
+        [[isEqualToPlayAction should] beYes];
+      });
+    });
+  });
+
   describe(@"- perform", ^{
     __block void (^newAction)(Card *);
     __block int count;

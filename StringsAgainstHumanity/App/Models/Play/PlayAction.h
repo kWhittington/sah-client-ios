@@ -16,5 +16,6 @@
 
 + (instancetype)withCard:(Card *)card andAction:(void (^)(Card *))action;
 
+- (BOOL)isEqualToPlayAction:(PlayAction *)playAction;
 - (void)perform;
 @end
