@@ -19,8 +19,10 @@
 
 + (instancetype)blank;
 + (instancetype)withString:(NSString *)string;
++ (instancetype)withString:(NSString *)string andAction:(void (^)(Card *))action;
 
 - (instancetype)copyWithZone:(NSZone *)zone;
 - (instancetype)initWithString:(NSString *)string;
+- (instancetype)initWithString:(NSString *)string andAction:(void (^)(Card *))action;
 - (BOOL)isEqualToCard:(Card *)card;
 @end

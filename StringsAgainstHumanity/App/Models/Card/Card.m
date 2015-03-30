@@ -32,6 +32,10 @@
   return [[self alloc] initWithString:string];
 }
 
++ (instancetype)withString:(NSString *)string andAction:(void (^)(Card *))action {
+  return [[self alloc] initWithString:string andAction:action];
+}
+
 - (instancetype)copyWithZone:(NSZone *)zone {
   Card *copy = [Card withString:self.string.copy];
 
@@ -57,10 +61,11 @@
 }
 
 #pragma mark Designated Initializer
-- (instancetype)initWithString:(NSString *)string {
+- (instancetype)initWithString:(NSString *)string andAction:(void (^)(Card *))action {
   self = [super init];
 
   self.string = [string copy];
+  self.playAction = [PlayAction withCard:self andAction:action];
 
   return self;
 }
