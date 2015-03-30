@@ -158,7 +158,7 @@ describe(@"Card", ^{
       return theValue(nil);
     });
 
-    let(result, ^{
+    let(isEqual, ^{
       return theValue([card isEqual:other]);
     });
 
@@ -168,13 +168,13 @@ describe(@"Card", ^{
       });
 
       it(@"returns NO", ^{
-        [[result should] beNo];
+        [[isEqual should] beNo];
       });
     });
 
     context(@"when other is a Card", ^{
       let(other, ^{
-        return FGBuildTrait(Card.class, @"withString");
+        return FGBuild(Card.class);
       });
 
       context(@"when other is identical to Card", ^{
@@ -183,23 +183,15 @@ describe(@"Card", ^{
         });
 
         it(@"returns YES", ^{
-          [[result should] beYes];
+          [[isEqual should] beYes];
         });
       });
 
-      context(@"when other.string equals Card's string", ^{
-        let(other, ^{
-          return FGBuildTraitWith(Card.class, @"withString", @{ @"string" : card.string.copy });
-        });
+      context(@"when other is not identical to Card", ^{
+        it(@"calls Card - isEqualToCard:other", ^{
+          [[card should] receive:@selector(isEqualToCard:) withArguments:other];
 
-        it(@"returns YES", ^{
-          [[result should] beYes];
-        });
-      });
-
-      context(@"when other.string does not equal Card's string", ^{
-        it(@"returns NO", ^{
-          [[result should] beNo];
+          [card isEqual:other];
         });
       });
     });
@@ -207,30 +199,30 @@ describe(@"Card", ^{
 
   describe(@"- isEqualToCard:", ^{
     let(other, ^{
-      return FGBuildTrait(Card.class, @"withString");
+      return FGBuild(Card.class);
     });
 
-    let(result, ^{
+    let(isEqualToCard, ^{
       return theValue([card isEqualToCard:other]);
     });
 
     context(@"when other.string equals Card's string", ^{
       let(other, ^{
-        return FGBuildTraitWith(Card.class, @"withString", @{ @"string" : card.string.copy });
+        return FGBuildWith(Card.class, @{ @"string" : card.string.copy });
       });
 
       it(@"returns YES", ^{
-        [[result should] beYes];
+        [[isEqualToCard should] beYes];
       });
     });
 
     context(@"when other.string does not equal Card's string", ^{
       let(other, ^{
-        return FGBuildTrait(Card.class, @"withString");
+        return FGBuild(Card.class);
       });
 
       it(@"returns NO", ^{
-        [[result should] beNo];
+        [[isEqualToCard should] beNo];
       });
     });
   });
