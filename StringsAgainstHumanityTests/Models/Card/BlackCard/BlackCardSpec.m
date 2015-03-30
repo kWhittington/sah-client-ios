@@ -11,10 +11,6 @@
 
 SPEC_BEGIN(BlackCardSpec)
 describe(@"BlackCard", ^{
-  let(string, ^NSString *{
-    return GZWords.sentence;
-  });
-
   let(blackCard, ^BlackCard *{
     return FGBuildTraitWith(BlackCard.class, @"withString", @{ @"string" : string });
   });
