@@ -54,13 +54,36 @@ describe(@"Card", ^{
     });
   });
 
-  describe(@"+ StringColor", ^{
-    let(result, ^{
-      return Card.StringColor;
+  describe(@".string", ^{
+    __block objc_property_t stringProperty;
+
+    beforeEach(^{
+      stringProperty = class_getProperty(Card.class, "string");
     });
 
-    it(@"returns Constants.BlackColor", ^{
-      [[result should] equal:Constants.BlackColor];
+    it(@"is a NSString", ^{
+      char *type = property_copyAttributeValue(stringProperty, "T");
+      NSString *typeString = [NSString stringWithUTF8String:type];
+
+      [[typeString should] equal:@"@\"NSString\""];
+
+      free(type);
+    });
+
+    it(@"is a strong reference", ^{
+      char *strongAttribute = property_copyAttributeValue(stringProperty, "&");
+
+      [[theValue(strongAttribute) shouldNot] beNil];
+
+      free(strongAttribute);
+    });
+
+    it(@"is nonatomic", ^{
+      char *nonatomicAttribute = property_copyAttributeValue(stringProperty, "N");
+
+      [[theValue(nonatomicAttribute) shouldNot] beNil];
+
+      free(nonatomicAttribute);
     });
   });
 
@@ -209,16 +232,6 @@ describe(@"Card", ^{
       it(@"returns NO", ^{
         [[result should] beNo];
       });
-    });
-  });
-
-  describe(@"- string", ^{
-    let(result, ^NSString *{
-      return card.string;
-    });
-
-    it(@"returns the Card's NSString", ^{
-      [[result should] equal:string];
     });
   });
 });
