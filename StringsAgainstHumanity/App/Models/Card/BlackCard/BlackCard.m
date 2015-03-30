@@ -50,8 +50,8 @@
 }
 
 #pragma mark Designated Initializer
-- (instancetype)initWithString:(NSString *)string {
-  self = [super initWithString:string];
+- (instancetype)initWithString:(NSString *)string andAction:(void (^)(Card *))action {
+  self = [super initWithString:string andAction:action];
 
   self.draw = BlackCard.DefaultDrawNumber;
   self.pick = BlackCard.DefaultPickNumber;
