@@ -9,7 +9,7 @@
 #import "Play.h"
 
 @interface Play ()
-@property(copy, nonatomic) Card *card;
+@property(weak, nonatomic) Card *card;
 @property(copy, nonatomic) void (^action)(Card *);
 @end
 

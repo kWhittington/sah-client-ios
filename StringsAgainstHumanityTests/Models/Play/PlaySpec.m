@@ -6,6 +6,7 @@
 //  Copyright (c) 2015 Kyle Whittington. All rights reserved.
 //
 
+@import ObjectiveC.runtime;
 #import "TestLibraries.pch"
 #import "Play.h"
 #import "Card.h"
@@ -42,7 +43,12 @@ describe(@"Play", ^{
       [[card should] beKindOfClass:Card.class];
     });
 
+    it(@"is a weak reference", ^{
+      objc_property_t cardProperty = class_getProperty(Play.class, "card");
+      NSString *copyAttributeValue =
+        [NSString stringWithUTF8String:property_copyAttributeValue(cardProperty, "W")];
 
+      [[copyAttributeValue should] equal:[NSString string]];
     });
   });
 
