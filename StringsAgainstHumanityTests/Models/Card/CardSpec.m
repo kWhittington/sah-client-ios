@@ -6,8 +6,10 @@
 //  Copyright 2015 Kyle Whittington. All rights reserved.
 //
 
+@import ObjectiveC.runtime;
 #import "TestLibraries.pch"
 #import "Card.h"
+#import "PlayAction.h"
 
 SPEC_BEGIN(CardSpec)
 describe(@"Card", ^{
@@ -26,13 +28,36 @@ describe(@"Card", ^{
     [[card should] conformToProtocol:@protocol(NSCopying)];
   });
 
-  describe(@"+ CardColor", ^{
-    let(result, ^{
-      return Card.CardColor;
+  describe(@".playAction", ^{
+    __block objc_property_t playActionProperty;
+
+    beforeEach(^{
+      playActionProperty = class_getProperty(Card.class, "playAction");
     });
 
-    it(@"returns Constants.WhiteColor", ^{
-      [[result should] equal:Constants.WhiteColor];
+    it(@"is a PlayAction", ^{
+      char *type = property_copyAttributeValue(playActionProperty, "T");
+      NSString *typeString = [NSString stringWithUTF8String:type];
+
+      [[typeString should] equal:@"@\"PlayAction\""];
+
+      free(type);
+    });
+
+    it(@"is a strong reference", ^{
+      char *strongAttribute = property_copyAttributeValue(playActionProperty, "&");
+
+      [[theValue(strongAttribute) shouldNot] beNil];
+
+      free(strongAttribute);
+    });
+
+    it(@"is nonatomic", ^{
+      char *nonatomicAttribute = property_copyAttributeValue(playActionProperty, "N");
+
+      [[theValue(nonatomicAttribute) shouldNot] beNil];
+
+      free(nonatomicAttribute);
     });
   });
 

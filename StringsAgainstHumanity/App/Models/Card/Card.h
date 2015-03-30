@@ -8,9 +8,11 @@
 
 @import Foundation;
 
-@interface Card : NSObject <NSCopying>
+@class PlayAction;
 
-@property(readonly, strong) NSString *string;
+@interface Card : NSObject <NSCopying>
+@property(readonly, nonatomic) PlayAction *playAction;
+@property(readonly, nonatomic) NSString *string;
 
 + (UIColor *)CardColor;
 + (UIColor *)StringColor;

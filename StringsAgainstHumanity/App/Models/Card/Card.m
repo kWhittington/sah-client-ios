@@ -8,11 +8,11 @@
 
 #import "SAHLibraries.pch"
 #import "Card.h"
+#import "PlayAction.h"
 
 @interface Card ()
-
-@property(strong) NSString *string;
-
+@property(nonatomic) PlayAction *playAction;
+@property(nonatomic) NSString *string;
 @end
 
 @implementation Card
