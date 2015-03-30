@@ -13,15 +13,8 @@
 
 SPEC_BEGIN(CardSpec)
 describe(@"Card", ^{
-  // Each example will inherit a NSString and a Card containing that NSString.
-  let(string, ^NSString *{
-    return [GZWords sentence];
-  });
-
   let(card, ^Card *{
-    return FGBuildTraitWith(Card.class, @"withString", ^(FGDefinitionBuilder *builder) {
-      builder[@"string"] = string;
-    });
+    return FGBuild(Card.class);
   });
 
   it(@"conforms to the NSCopying protocol", ^{

@@ -11,17 +11,20 @@
 #import "Card.h"
 
 FGFactoryBegin(Card)
-  // The default factory will be equvialent to @"blank" trait.
-  [builder initWith:@selector(init) fieldNames:@[]];
+  [builder initFrom:Card.class];
+  [builder initWith:@selector(withString:andAction:) fieldNames:@[@"string", @"action"]];
 
-  traitDefiners[@"blank"] = ^(FGDefinitionBuilder *blankBuilder) {
-    [blankBuilder initWith:@selector(init) fieldNames:@[]];
+  [builder field:@"string" by:^{
+    return GZWords.sentence;
+  }];
+  builder[@"action"] = ^(Card *card) {
   };
 
   traitDefiners[@"withString"] = ^(FGDefinitionBuilder *withStringBuilder) {
+    [withStringBuilder initWith:@selector(withString:) fieldNames:@[@"string"]];
+
     [withStringBuilder field:@"string" by:^{
       return GZWords.sentence;
     }];
-    [withStringBuilder initWith:@selector(initWithString:) fieldNames:@[@"string"]];
   };
 FGFactoryEnd
