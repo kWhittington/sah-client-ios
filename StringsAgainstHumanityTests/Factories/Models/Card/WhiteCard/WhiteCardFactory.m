@@ -11,15 +11,28 @@
 #import "WhiteCard.h"
 
 FGFactoryBegin(WhiteCard)
-  // The default factory will be equivalent to @"blank" trait.
-  [builder initWith:@selector(init) fieldNames:@[]];
+  [builder initFrom:WhiteCard.class];
+  [builder initWith:@selector(withString:andAction:) fieldNames:@[@"string", @"action"]];
+
+  [builder field:@"string" by:^{
+    return GZWords.sentence;
+  }];
+  builder[@"action"] = ^(Card *card) {
+  };
 
   traitDefiners[@"blank"] = ^(FGDefinitionBuilder *blankBuilder) {
     [blankBuilder initWith:@selector(init) fieldNames:@[]];
   };
 
   traitDefiners[@"withString"] = ^(FGDefinitionBuilder *withStringBuilder) {
-    [withStringBuilder field:@"string" value:[GZWords sentence]];
-    [withStringBuilder initWith:@selector(initWithString:) fieldNames:@[@"string"]];
+    [withStringBuilder field:@"string" by:^{
+      return GZWords.sentence;
+    }];
+  };
+
+  traitDefiners[@"withDifferentAction"] = ^(FGDefinitionBuilder *differentAction) {
+    differentAction[@"action"] = ^(Card *card) {
+      [@"This is just a" isEqualToString:@"Dummy block"];
+    };
   };
 FGFactoryEnd

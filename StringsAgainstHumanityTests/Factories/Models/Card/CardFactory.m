@@ -27,4 +27,10 @@ FGFactoryBegin(Card)
       return GZWords.sentence;
     }];
   };
+
+  traitDefiners[@"withDifferentAction"] = ^(FGDefinitionBuilder *differentAction) {
+    differentAction[@"action"] = ^(Card *card) {
+      [@"This is just a" isEqualToString:@"Dummy block"];
+    };
+  };
 FGFactoryEnd
