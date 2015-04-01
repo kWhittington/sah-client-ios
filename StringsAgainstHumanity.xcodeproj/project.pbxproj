@@ -38,9 +38,6 @@
 		ADA8C8A41AB4C782000987EC /* NSObject+TypeChecking.m in Sources */ = {isa = PBXBuildFile; fileRef = ADA8C8A31AB4C782000987EC /* NSObject+TypeChecking.m */; };
 		ADA8C8A91AB4C8DD000987EC /* NSObject+TypeCheckingSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = ADA8C8A81AB4C8DD000987EC /* NSObject+TypeCheckingSpec.m */; };
 		ADA8C8AD1AB505BC000987EC /* HandControllerFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = ADA8C8AC1AB505BC000987EC /* HandControllerFactory.m */; };
-		ADBE80E31AC39553001A672C /* PlayActionSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = ADBE80E21AC39553001A672C /* PlayActionSpec.m */; };
-		ADBE80E71AC39636001A672C /* PlayAction.m in Sources */ = {isa = PBXBuildFile; fileRef = ADBE80E61AC39636001A672C /* PlayAction.m */; };
-		ADBE80EA1AC39681001A672C /* PlayActionFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = ADBE80E91AC39681001A672C /* PlayActionFactory.m */; };
 		ADBF7F901A910CE300C5BB00 /* HandController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADBF7F8F1A910CE300C5BB00 /* HandController.m */; };
 		ADBF7F931A910E2800C5BB00 /* Hand.m in Sources */ = {isa = PBXBuildFile; fileRef = ADBF7F921A910E2800C5BB00 /* Hand.m */; };
 		ADBF7F981A91171A00C5BB00 /* Card.m in Sources */ = {isa = PBXBuildFile; fileRef = ADBF7F971A91171A00C5BB00 /* Card.m */; };
@@ -50,6 +47,9 @@
 		ADC195D21AA1545D00177660 /* Hand+DataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = ADC195D11AA1545D00177660 /* Hand+DataSource.m */; };
 		ADC687971AA6518C005F70C3 /* ConstantsSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = ADC687961AA6518C005F70C3 /* ConstantsSpec.m */; };
 		ADC6879C1AA658BB005F70C3 /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = ADC6879B1AA658BB005F70C3 /* Constants.m */; };
+		ADC8B6681ACCA703000BC883 /* PlayAction.m in Sources */ = {isa = PBXBuildFile; fileRef = ADC8B6671ACCA703000BC883 /* PlayAction.m */; };
+		ADC8B66A1ACCA782000BC883 /* PlayActionFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = ADC8B6691ACCA782000BC883 /* PlayActionFactory.m */; };
+		ADC8B66C1ACCA78E000BC883 /* PlayActionSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = ADC8B66B1ACCA78E000BC883 /* PlayActionSpec.m */; };
 		ADD2AA5E1AB909A3007096FE /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = ADD2AA5A1AB909A3007096FE /* LaunchScreen.xib */; };
 		ADD2AA5F1AB909A3007096FE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ADD2AA5C1AB909A3007096FE /* Main.storyboard */; };
 		ADDE7F891A9C33C700E232EC /* HandSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = ADDE7F881A9C33C700E232EC /* HandSpec.m */; };
@@ -113,10 +113,6 @@
 		ADA8C8A31AB4C782000987EC /* NSObject+TypeChecking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSObject+TypeChecking.m"; path = "App/Categories/NSObject/TypeChecking/NSObject+TypeChecking.m"; sourceTree = "<group>"; };
 		ADA8C8A81AB4C8DD000987EC /* NSObject+TypeCheckingSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSObject+TypeCheckingSpec.m"; path = "Categories/NSObject/TypeChecking/NSObject+TypeCheckingSpec.m"; sourceTree = "<group>"; };
 		ADA8C8AC1AB505BC000987EC /* HandControllerFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HandControllerFactory.m; path = Factories/Controllers/Hand/HandControllerFactory.m; sourceTree = "<group>"; };
-		ADBE80E21AC39553001A672C /* PlayActionSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PlayActionSpec.m; path = Models/Play/PlayActionSpec.m; sourceTree = "<group>"; };
-		ADBE80E51AC39636001A672C /* PlayAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PlayAction.h; path = App/Models/Play/PlayAction.h; sourceTree = "<group>"; };
-		ADBE80E61AC39636001A672C /* PlayAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PlayAction.m; path = App/Models/Play/PlayAction.m; sourceTree = "<group>"; };
-		ADBE80E91AC39681001A672C /* PlayActionFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PlayActionFactory.m; path = Factories/Models/Play/PlayActionFactory.m; sourceTree = "<group>"; };
 		ADBF7F8E1A910CE300C5BB00 /* HandController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HandController.h; path = App/Controllers/Hand/HandController.h; sourceTree = "<group>"; };
 		ADBF7F8F1A910CE300C5BB00 /* HandController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HandController.m; path = App/Controllers/Hand/HandController.m; sourceTree = "<group>"; };
 		ADBF7F911A910E2800C5BB00 /* Hand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Hand.h; path = App/Models/Hand/Hand.h; sourceTree = "<group>"; };
@@ -135,6 +131,10 @@
 		ADC687961AA6518C005F70C3 /* ConstantsSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ConstantsSpec.m; path = Constants/ConstantsSpec.m; sourceTree = "<group>"; };
 		ADC6879A1AA658BB005F70C3 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Constants.h; path = App/Constants/Constants.h; sourceTree = "<group>"; };
 		ADC6879B1AA658BB005F70C3 /* Constants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Constants.m; path = App/Constants/Constants.m; sourceTree = "<group>"; };
+		ADC8B6661ACCA703000BC883 /* PlayAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PlayAction.h; path = App/Models/PlayAction/PlayAction.h; sourceTree = "<group>"; };
+		ADC8B6671ACCA703000BC883 /* PlayAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PlayAction.m; path = App/Models/PlayAction/PlayAction.m; sourceTree = "<group>"; };
+		ADC8B6691ACCA782000BC883 /* PlayActionFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PlayActionFactory.m; path = Factories/Models/PlayAction/PlayActionFactory.m; sourceTree = "<group>"; };
+		ADC8B66B1ACCA78E000BC883 /* PlayActionSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PlayActionSpec.m; path = Models/PlayAction/PlayActionSpec.m; sourceTree = "<group>"; };
 		ADD2AA5B1AB909A3007096FE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = App/Storyboard/Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		ADD2AA5D1AB909A3007096FE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = App/Storyboard/Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		ADDE7F881A9C33C700E232EC /* HandSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HandSpec.m; path = Models/Hand/HandSpec.m; sourceTree = "<group>"; };
@@ -632,7 +632,7 @@
 		ADBE80E11AC39523001A672C /* PlayAction */ = {
 			isa = PBXGroup;
 			children = (
-				ADBE80E21AC39553001A672C /* PlayActionSpec.m */,
+				ADC8B66B1ACCA78E000BC883 /* PlayActionSpec.m */,
 			);
 			name = PlayAction;
 			sourceTree = "<group>";
@@ -640,8 +640,8 @@
 		ADBE80E41AC39618001A672C /* PlayAction */ = {
 			isa = PBXGroup;
 			children = (
-				ADBE80E51AC39636001A672C /* PlayAction.h */,
-				ADBE80E61AC39636001A672C /* PlayAction.m */,
+				ADC8B6661ACCA703000BC883 /* PlayAction.h */,
+				ADC8B6671ACCA703000BC883 /* PlayAction.m */,
 			);
 			name = PlayAction;
 			sourceTree = "<group>";
@@ -649,7 +649,7 @@
 		ADBE80E81AC39669001A672C /* PlayAction */ = {
 			isa = PBXGroup;
 			children = (
-				ADBE80E91AC39681001A672C /* PlayActionFactory.m */,
+				ADC8B6691ACCA782000BC883 /* PlayActionFactory.m */,
 			);
 			name = PlayAction;
 			sourceTree = "<group>";
@@ -971,7 +971,6 @@
 				ADA8C8A41AB4C782000987EC /* NSObject+TypeChecking.m in Sources */,
 				ADC195D21AA1545D00177660 /* Hand+DataSource.m in Sources */,
 				ADBF7F981A91171A00C5BB00 /* Card.m in Sources */,
-				ADBE80E71AC39636001A672C /* PlayAction.m in Sources */,
 				AD6272EF1A8341D000565A28 /* main.m in Sources */,
 				ADBF7F931A910E2800C5BB00 /* Hand.m in Sources */,
 				AD62DCF11AB2481600F70C51 /* BlackCardController.m in Sources */,
@@ -980,6 +979,7 @@
 				AD5E85671AA7E3680067ABF2 /* BlackCard.m in Sources */,
 				ADE4A6B61A844121008CB5D2 /* AppDelegate.m in Sources */,
 				ADBF7FA71A914D4D00C5BB00 /* BirdsEyeHandLayout.m in Sources */,
+				ADC8B6681ACCA703000BC883 /* PlayAction.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -991,18 +991,18 @@
 				AD5E856D1AA7E57C0067ABF2 /* BlackCardFactory.m in Sources */,
 				ADA8C8A91AB4C8DD000987EC /* NSObject+TypeCheckingSpec.m in Sources */,
 				AD5E856A1AA7E3880067ABF2 /* BlackCardSpec.m in Sources */,
+				ADC8B66C1ACCA78E000BC883 /* PlayActionSpec.m in Sources */,
 				ADDE7F891A9C33C700E232EC /* HandSpec.m in Sources */,
 				AD7C84DF1A95B34D00A2DE02 /* CardSpec.m in Sources */,
 				ADC687971AA6518C005F70C3 /* ConstantsSpec.m in Sources */,
 				AD56419C1ABB404D0078F5F0 /* PlaymatControllerFactory.m in Sources */,
 				AD8B92E81AA2BB6E0044ECC0 /* Hand+DataSourceSpec.m in Sources */,
+				ADC8B66A1ACCA782000BC883 /* PlayActionFactory.m in Sources */,
 				AD1337871AA01D6E002F1721 /* HandControllerSpec.m in Sources */,
 				AD62DCED1AB23A6700F70C51 /* UnimplementedExceptionSpec.m in Sources */,
 				AD341F571AA8F4F60040DA92 /* WhiteCardFactory.m in Sources */,
 				AD5641991ABB3FF20078F5F0 /* PlaymatControllerSpec.m in Sources */,
-				ADBE80EA1AC39681001A672C /* PlayActionFactory.m in Sources */,
 				AD71F5921A9C049F0077BE8B /* CardFactory.m in Sources */,
-				ADBE80E31AC39553001A672C /* PlayActionSpec.m in Sources */,
 				AD89D2F21AA4D79A0044F2C0 /* MainMenuControllerSpec.m in Sources */,
 				ADA8C8AD1AB505BC000987EC /* HandControllerFactory.m in Sources */,
 				AD71F5951A9C11A70077BE8B /* HandFactory.m in Sources */,
