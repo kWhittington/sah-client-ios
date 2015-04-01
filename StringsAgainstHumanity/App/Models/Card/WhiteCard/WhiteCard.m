@@ -24,9 +24,11 @@
 }
 
 - (BOOL)isEqual:(id)object {
-  BOOL equalToSuperClass = [super isEqual:object];
+  if ([self isIdenticalTo:object]) {
+    return YES;
+  }
 
-  unless(equalToSuperClass) { return NO; }
+  unless([object isKindOfClass:self.class]) { return NO; }
 
   return [self isEqualToWhiteCard:(WhiteCard *)object];
 }
