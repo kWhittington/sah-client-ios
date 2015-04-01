@@ -42,7 +42,8 @@
 }
 
 - (NSString *)description {
-  return NSStringWithFormat(@"<BlackCard: %p; string = %@>", self, self.string);
+  return NSStringWithFormat(@"<BlackCard: %p; string = %@; playAction = %@>", self, self.string,
+                            self.playAction);
 }
 
 - (NSUInteger)hash {

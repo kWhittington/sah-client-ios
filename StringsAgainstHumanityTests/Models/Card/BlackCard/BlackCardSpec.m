@@ -105,7 +105,8 @@ describe(@"BlackCard", ^{
     });
 
     let(expectedString, ^{
-      return NSStringWithFormat(@"<BlackCard: %p; string = %@>", blackCard, blackCard.string);
+      return NSStringWithFormat(@"<BlackCard: %p; string = %@; playAction = %@>", blackCard,
+                                blackCard.string, blackCard.playAction);
     });
 
     specify(^{
