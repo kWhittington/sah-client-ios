@@ -30,7 +30,7 @@
 }
 
 - (NSString *)description {
-  return NSStringWithFormat(@"<PlayAction: %p; card = %@; action = %@>", self, self.card,
+  return NSStringWithFormat(@"<PlayAction: %p; card = %p; action = %@>", self, self.card,
                             self.action);
 }
 

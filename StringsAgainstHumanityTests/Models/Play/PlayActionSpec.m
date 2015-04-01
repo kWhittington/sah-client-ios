@@ -78,7 +78,7 @@ describe(@"Play", ^{
     });
 
     let(expectedString, ^{
-      return NSStringWithFormat(@"<PlayAction: %p; card = %@; action = %@>", playAction,
+      return NSStringWithFormat(@"<PlayAction: %p; card = %p; action = %@>", playAction,
                                 playAction.card, playAction.action);
     });
 
