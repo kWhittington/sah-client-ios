@@ -49,10 +49,9 @@
 }
 
 - (BOOL)isEqualToPlayAction:(PlayAction *)playAction {
-  BOOL haveIdenticalCard = self.card == playAction.card;
   BOOL haveIdenticalAction = self.action == playAction.action;
 
-  return haveIdenticalCard && haveIdenticalAction;
+  return haveIdenticalAction;
 }
 
 - (void)perform {

@@ -21,4 +21,10 @@ FGFactoryBegin(PlayAction)
   // I do not believe the PlayAction created has a reference to the same action block given to the
   // Card in the CardFactory.
   [builder field:@"card" assoc:Card.class];
+
+  traitDefiners[@"withDifferentAction"] = ^(FGDefinitionBuilder *differentAction) {
+    differentAction[@"action"] = ^(Card *card) {
+      [@"This is just a" isEqualToString:@"Dummy block"];
+    };
+  };
 FGFactoryEnd

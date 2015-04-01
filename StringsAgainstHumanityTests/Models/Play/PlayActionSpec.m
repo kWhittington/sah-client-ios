@@ -13,12 +13,12 @@
 
 SPEC_BEGIN(PlayActionSpec)
 describe(@"Play", ^{
-  let(playAction, ^PlayAction *{
-    return FGBuild(PlayAction.class);
+  let(card, ^Card *{
+    return FGBuild(Card.class);
   });
 
-  let(card, ^Card *{
-    return playAction.card;
+  let(playAction, ^PlayAction *{
+    return card.playAction;
   });
 
   __block void (^action)(Card *);
@@ -118,7 +118,7 @@ describe(@"Play", ^{
 
     context(@"when other is a PlayAction", ^{
       let(other, ^{
-        return FGBuild(PlayAction.class);
+        return ((Card *)FGBuild(Card.class)).playAction;
       });
 
       context(@"when other is identical to PlayAction", ^{
@@ -143,25 +143,26 @@ describe(@"Play", ^{
 
   describe(@"- isEqualToPlayAction:", ^{
     let(other, ^{
-      return FGBuild(PlayAction.class);
+      return PlayAction.nullMock;
     });
 
     let(isEqualToPlayAction, ^{
       return theValue([playAction isEqualToPlayAction:other]);
     });
 
-    context(@"when other doesn't have identical .card and .action values", ^{
+    context(@"when other doesn't have an identical .action value", ^{
+      let(other, ^{
+        return FGBuildTrait(PlayAction.class, @"withDifferentAction");
+      });
+
       it(@"is NO", ^{
         [[isEqualToPlayAction should] beNo];
       });
     });
 
-    context(@"when other has identical .card and .action values", ^{
+    context(@"when other has an identical .action values", ^{
       let(other, ^{
-        return FGBuildWith(PlayAction.class, @{
-          @"card" : playAction.card,
-          @"action" : playAction.action
-        });
+        return FGBuildWith(PlayAction.class, @{ @"action" : playAction.action });
       });
 
       it(@"is YES", ^{
