@@ -45,7 +45,8 @@
 }
 
 - (NSString *)description {
-  return NSStringWithFormat(@"<Card: %p; string = %@>", self, self.string);
+  return NSStringWithFormat(@"<Card: %p; string = %@; playAction = %@>", self, self.string,
+                            self.playAction);
 }
 
 - (NSUInteger)hash {

@@ -140,17 +140,20 @@ describe(@"Card", ^{
       return card.description;
     });
 
-    let(expectedString, ^id {
-      return NSStringWithFormat(@"<Card: %p; string = %@>", card, card.string);
+    let(expectedString, ^{
+      return NSStringWithFormat(@"<Card: %p; string = %@; playAction = %@>", card, card.string,
+                                card.playAction);
     });
 
     specify(^{
       [[description should] beKindOfClass:NSString.class];
     });
 
-    it(@"returns '<Card: [memory_address]; string = [card.string.description]>'", ^{
-      [[description should] equal:expectedString];
-    });
+    it(@"returns '<Card: [memory_address]; string = [card.string.description]; playAction = "
+        "[card.playAction.description>",
+       ^{
+         [[description should] equal:expectedString];
+       });
   });
 
   describe(@"- isEqual:", ^{
