@@ -87,7 +87,8 @@
 
 - (BOOL)isEqualToCard:(Card *)card {
   BOOL stringsAreEqual = [self.string isEqualToString:card.string];
+  BOOL playActionsAreEqual = [self.playAction isEqualToPlayAction:card.playAction];
 
-  return stringsAreEqual;
+  return stringsAreEqual && playActionsAreEqual;
 }
 @end

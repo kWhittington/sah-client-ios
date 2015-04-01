@@ -202,21 +202,11 @@ describe(@"Card", ^{
 
   describe(@"- isEqualToCard:", ^{
     let(other, ^{
-      return FGBuild(Card.class);
+      return Card.nullMock;
     });
 
     let(isEqualToCard, ^{
       return theValue([card isEqualToCard:other]);
-    });
-
-    context(@"when other.string equals Card's string", ^{
-      let(other, ^{
-        return FGBuildWith(Card.class, @{ @"string" : card.string.copy });
-      });
-
-      it(@"returns YES", ^{
-        [[isEqualToCard should] beYes];
-      });
     });
 
     context(@"when other.string does not equal Card's string", ^{
@@ -226,6 +216,19 @@ describe(@"Card", ^{
 
       it(@"returns NO", ^{
         [[isEqualToCard should] beNo];
+      });
+    });
+
+    context(@"when other's string and playAction equals Card's string and playAction", ^{
+      let(other, ^{
+        return FGBuildWith(Card.class, @{
+          @"string" : card.string.copy,
+          @"action" : card.playAction.action
+        });
+      });
+
+      it(@"returns YES", ^{
+        [[isEqualToCard should] beYes];
       });
     });
   });
