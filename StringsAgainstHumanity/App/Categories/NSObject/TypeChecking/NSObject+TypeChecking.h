@@ -10,5 +10,6 @@
 
 @interface NSObject (TypeChecking)
 - (BOOL)instanceOf:(Class) class;
+- (BOOL)isIdenticalTo:(NSObject *)other;
 - (BOOL)kindOf:(Class) class;
 @end

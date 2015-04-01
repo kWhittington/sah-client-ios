@@ -13,6 +13,10 @@
   return [self isMemberOfClass:class];
 }
 
+- (BOOL)isIdenticalTo:(NSObject *)other {
+  return self == other;
+}
+
 - (BOOL)kindOf:(Class) class {
   return [self isKindOfClass:class];
 } @end

@@ -89,6 +89,28 @@ describe(@"NSObject+TypeChecking", ^{
     });
   });
 
+  describe(@"- isIdenticalTo:", ^{
+    context(@"when other == object", ^{
+      let(isIdenticalTo, ^{
+        return theValue([superClass isIdenticalTo:superClass]);
+      });
+
+      specify(^{
+        [[isIdenticalTo should] beYes];
+      });
+    });
+
+    context(@"when other != object", ^{
+      let(isIdenticalTo, ^{
+        return theValue([superClass isIdenticalTo:SuperClass.new]);
+      });
+
+      specify(^{
+        [[isIdenticalTo should] beNo];
+      });
+    });
+  });
+
   describe(@"- kindOf:", ^{
     let(class, ^{
       return theValue(nil);
