@@ -31,12 +31,6 @@
   return Constants.WhiteColor;
 }
 
-- (instancetype)copyWithZone:(NSZone *)zone {
-  BlackCard *copy = [BlackCard withString:self.string.copy];
-
-  return copy;
-}
-
 - (NSString *)debugDescription {
   return self.description;
 }
