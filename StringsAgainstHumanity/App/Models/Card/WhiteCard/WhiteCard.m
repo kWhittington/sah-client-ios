@@ -9,10 +9,6 @@
 #import "WhiteCard.h"
 
 @implementation WhiteCard
-- (NSString *)debugDescription {
-  return self.description;
-}
-
 - (NSString *)description {
   return NSStringWithFormat(@"<WhiteCard: %p; string = %@; playAction = %@>", self, self.string,
                             self.playAction);
