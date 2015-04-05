@@ -114,7 +114,7 @@ describe(@"BlackCard", ^{
       [[description should] beKindOfClass:NSString.class];
     });
 
-    it(@"returns self.description", ^{
+    specify(^{
       [[description should] equal:expectedString];
     });
   });
