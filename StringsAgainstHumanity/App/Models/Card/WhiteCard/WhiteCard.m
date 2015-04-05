@@ -35,6 +35,7 @@
 }
 
 - (BOOL)isEqualToWhiteCard:(WhiteCard *)other {
-  return [self.string isEqualToString:other.string];
+  return [self isEqualToCard:other];
 }
+
 @end

@@ -113,10 +113,10 @@ describe(@"WhiteCard", ^{
 
   describe(@"- isEqual:", ^{
     let(other, ^{
-      return theValue(nil);
+      return WhiteCard.nullMock;
     });
 
-    let(result, ^{
+    let(isEqual, ^{
       return theValue([whiteCard isEqual:other]);
     });
 
@@ -125,8 +125,8 @@ describe(@"WhiteCard", ^{
         return GZWords.sentence;
       });
 
-      it(@"returns NO", ^{
-        [[result should] beNo];
+      it(@"is NO", ^{
+        [[isEqual should] beNo];
       });
     });
 
@@ -140,26 +140,27 @@ describe(@"WhiteCard", ^{
           return whiteCard;
         });
 
-        it(@"returns YES", ^{
-          [[result should] beYes];
+        it(@"is YES", ^{
+          [[isEqual should] beYes];
         });
       });
 
-      context(@"when other.string equals WhiteCard's string", ^{
+      context(@"when other.string and .playAction do not equal WhiteCard.string and .playAction", ^{
+        it(@"is NO", ^{
+          [[isEqual should] beNo];
+        });
+      });
+
+      context(@"when other.string and .playAction equal WhiteCard.string and .playAction", ^{
         let(other, ^{
           return FGBuildTraitWith(WhiteCard.class, @"withString", @{
-            @"string" : whiteCard.string.copy
+            @"string" : whiteCard.string.copy,
+            @"action" : whiteCard.playAction.action
           });
         });
 
-        it(@"returns YES", ^{
-          [[result should] beYes];
-        });
-      });
-
-      context(@"when other.string does not equal WhiteCard's string", ^{
-        it(@"returns NO", ^{
-          [[result should] beNo];
+        it(@"is YES", ^{
+          [[isEqual should] beYes];
         });
       });
     });
@@ -167,32 +168,33 @@ describe(@"WhiteCard", ^{
 
   describe(@"- isEqualToWhiteCard:", ^{
     let(other, ^{
-      return FGBuildTrait(WhiteCard.class, @"withString");
+      return WhiteCard.nullMock;
     });
 
-    let(result, ^{
+    let(isEqualToWhiteCard, ^{
       return theValue([whiteCard isEqualToWhiteCard:other]);
     });
 
-    context(@"when other.string equals WhiteCard's string", ^{
-      let(other, ^id {
-        return FGBuildTraitWith(WhiteCard.class, @"withString", @{
-          @"string" : whiteCard.string.copy
-        });
+    context(@"when other.string and .playAction do not equal WhiteCard.string and .playAction", ^{
+      let(other, ^{
+        return FGBuildTrait(WhiteCard.class, @"withDifferentAction");
       });
 
-      it(@"returns YES", ^{
-        [[result should] beYes];
+      it(@"is NO", ^{
+        [[isEqualToWhiteCard should] beNo];
       });
     });
 
-    context(@"when other.string does not equal WhiteCard's string", ^{
+    context(@"when other.string and .playAction equal WhiteCard.string and .playAction", ^{
       let(other, ^{
-        return FGBuildTrait(WhiteCard.class, @"withString");
+        return FGBuildWith(WhiteCard.class, @{
+          @"string" : whiteCard.string.copy,
+          @"action" : whiteCard.playAction.action
+        });
       });
 
-      it(@"returns NO", ^{
-        [[result should] beNo];
+      it(@"is YES", ^{
+        [[isEqualToWhiteCard should] beYes];
       });
     });
   });
