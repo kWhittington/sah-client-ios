@@ -150,7 +150,7 @@ describe(@"BlackCard", ^{
 
     context(@"when other is a BlackCard", ^{
       let(other, ^{
-        return FGBuildTrait(BlackCard.class, @"withString");
+        return FGBuild(BlackCard.class);
       });
 
       context(@"when other is identical to BlackCard", ^{
