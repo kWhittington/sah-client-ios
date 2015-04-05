@@ -9,12 +9,6 @@
 #import "WhiteCard.h"
 
 @implementation WhiteCard
-- (instancetype)copyWithZone:(NSZone *)zone {
-  WhiteCard *card = [WhiteCard withString:self.string.copy];
-
-  return card;
-}
-
 - (NSString *)debugDescription {
   return self.description;
 }
