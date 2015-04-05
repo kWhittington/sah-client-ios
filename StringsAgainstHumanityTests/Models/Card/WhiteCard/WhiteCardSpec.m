@@ -69,11 +69,11 @@ describe(@"WhiteCard", ^{
       [[result should] beMemberOfClass:WhiteCard.class];
     });
 
-    it(@"returns an equivalent WhiteCard", ^{
+    it(@"is an equivalent WhiteCard", ^{
       [[result should] equal:whiteCard];
     });
 
-    it(@"returns a non-identical WhiteCard", ^{
+    it(@"is a non-identical WhiteCard", ^{
       [[result shouldNot] beIdenticalTo:whiteCard];
     });
   });
