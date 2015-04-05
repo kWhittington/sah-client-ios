@@ -8,6 +8,7 @@
 
 #import "SAHLibraries.pch"
 #import "BlackCard.h"
+#import "PlayAction.h"
 
 @interface BlackCard ()
 @property(nonatomic) NSNumber *draw;
@@ -65,10 +66,10 @@
 }
 
 - (BOOL)isEqualToBlackCard:(BlackCard *)other {
-  BOOL stringsAreEqual = [self.string isEqualToString:other.string];
+  BOOL cardAttributesAreEqual = [self isEqualToCard:other];
   BOOL drawsAreEqual = [self.draw isEqualToNumber:other.draw];
   BOOL picksAreEqual = [self.pick isEqualToNumber:other.pick];
 
-  return stringsAreEqual && drawsAreEqual && picksAreEqual;
+  return cardAttributesAreEqual && drawsAreEqual && picksAreEqual;
 }
 @end

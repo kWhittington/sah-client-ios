@@ -8,6 +8,7 @@
 
 #import "TestLibraries.pch"
 #import "BlackCard.h"
+#import "PlayAction.h"
 
 SPEC_BEGIN(BlackCardSpec)
 describe(@"BlackCard", ^{
@@ -174,34 +175,39 @@ describe(@"BlackCard", ^{
 
   describe(@"- isEqualToBlackCard:", ^{
     let(other, ^{
-      return FGBuildTrait(BlackCard.class, @"withString");
+      return FGBuild(BlackCard.class);
     });
 
     let(isEqualToBlackCard, ^{
       return theValue([blackCard isEqualToBlackCard:other]);
     });
 
-    context(@"when other.string equals BlackCard's string", ^{
-      let(other, ^id {
-        return FGBuildTraitWith(BlackCard.class, @"withString", @{
-          @"string" : blackCard.string.copy
-        });
-      });
+    context(@"when other.string, .playAtion, .draw. and .pick do not equal BlackCard's .string,"
+            @".playAction, .draw, and .pick",
+            ^{
+              let(other, ^{
+                return FGBuild(BlackCard.class);
+              });
 
-      it(@"returns YES", ^{
-        [[isEqualToBlackCard should] beYes];
-      });
-    });
+              it(@"returns NO", ^{
+                [[isEqualToBlackCard should] beNo];
+              });
+            });
 
-    context(@"when other.string does not equal BlackCard's string", ^{
-      let(other, ^{
-        return FGBuildTrait(BlackCard.class, @"withString");
-      });
+    context(@"when other.string, .playAction, .draw, and .pick equals BlackCard's .string, "
+            @".playAction, .draw, and .pick",
+            ^{
+              let(other, ^{
+                return FGBuildWith(BlackCard.class, @{
+                  @"string" : blackCard.string.copy,
+                  @"action" : blackCard.playAction.action
+                });
+              });
 
-      it(@"returns NO", ^{
-        [[isEqualToBlackCard should] beNo];
-      });
-    });
+              it(@"returns YES", ^{
+                [[isEqualToBlackCard should] beYes];
+              });
+            });
   });
 
   describe(@"- pick", ^{
