@@ -8,6 +8,7 @@
 
 #import "TestLibraries.pch"
 #import "WhiteCard.h"
+#import "PlayAction.h"
 
 SPEC_BEGIN(WhiteCardSpec)
 describe(@"WhiteCard", ^{
@@ -86,7 +87,7 @@ describe(@"WhiteCard", ^{
       [[debugDescription should] beKindOfClass:NSString.class];
     });
 
-    it(@"returns card.description", ^{
+    it(@"equals WhiteCard - description", ^{
       [[debugDescription should] equal:whiteCard.description];
     });
   });
@@ -97,14 +98,15 @@ describe(@"WhiteCard", ^{
     });
 
     let(expectedString, ^{
-      return NSStringWithFormat(@"<WhiteCard: %p; string = %@>", whiteCard, whiteCard.string);
+      return NSStringWithFormat(@"<WhiteCard: %p; string = %@; playAction = %@>", whiteCard,
+                                whiteCard.string, whiteCard.playAction);
     });
 
     specify(^{
       [[description should] beKindOfClass:NSString.class];
     });
 
-    it(@"returns '<WhiteCard: [memory_address]; string = [whiteCard.string]>", ^{
+    specify(^{
       [[description should] equal:expectedString];
     });
   });
