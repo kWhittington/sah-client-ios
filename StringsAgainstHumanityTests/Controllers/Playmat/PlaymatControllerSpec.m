@@ -86,24 +86,6 @@ describe(@"PlaymatController", ^{
     });
   });
 
-  describe(@"+ empty", ^{
-    let(empty, ^{
-      return [PlaymatController empty];
-    });
-
-    specify(^{
-      [[empty should] beMemberOfClass:PlaymatController.class];
-    });
-
-    it(@"has BlackCard equal to PlaymatController + StartingBlackCard", ^{
-      [[empty.blackCardController.blackCard should] equal:PlaymatController.StartingBlackCard];
-    });
-
-    it(@"has Hand equal to PlaymatController + StartingHand", ^{
-      [[empty.handController.hand should] equal:PlaymatController.StartingHand];
-    });
-  });
-
   describe(@"- debugDescription", ^{
     let(debugDescription, ^{
       return playmatController.debugDescription;
