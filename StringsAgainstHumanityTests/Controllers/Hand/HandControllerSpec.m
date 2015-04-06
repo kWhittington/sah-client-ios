@@ -200,11 +200,31 @@ describe(@"HandController", ^{
   });
 
   describe(@"- playSelectedCard:", ^{
-    it(@"calls HandController - removeCard: with HandController.selectedCard", ^{
-      [[handController should] receive:@selector(removeCard:)
-                         withArguments:handController.selectedCard];
+    context(@"when a Card is not selected", ^{
+      specify(^{
+        [[theBlock(^{
+          [handController playSelectedCard];
+        }) should] raiseWithName:@"NSInternalInconsistencyException"];
+      });
+    });
 
-      [handController playSelectedCard];
+    context(@"when a Card is selected", ^{
+      beforeEach(^{
+        [handController selectCard:handController.hand.cards.first];
+      });
+
+      it(@"calls HandController - removeCard: with HandController.selectedCard", ^{
+        [[handController should] receive:@selector(removeCard:)
+                           withArguments:handController.selectedCard];
+
+        [handController playSelectedCard];
+      });
+
+      it(@"performs the selected card's play action", ^{
+        [[handController.selectedCard should] receive:@selector(play)];
+
+        [handController playSelectedCard];
+      });
     });
   });
 

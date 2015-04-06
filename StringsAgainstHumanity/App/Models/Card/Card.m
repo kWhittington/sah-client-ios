@@ -97,6 +97,6 @@
 }
 
 - (void)play {
-  self.playAction.perform;
+  [self.playAction perform];
 }
 @end

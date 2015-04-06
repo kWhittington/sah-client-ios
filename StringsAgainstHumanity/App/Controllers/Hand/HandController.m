@@ -86,6 +86,7 @@
 }
 
 - (void)playSelectedCard {
+  [self.selectedCard play];
   [self removeCard:self.selectedCard];
 }
 
