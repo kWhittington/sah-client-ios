@@ -37,7 +37,7 @@ describe(@"HandController", ^{
         return theValue(collectionView.allowsSelection);
       });
 
-      it(@"returns YES", ^{
+      it(@"is YES", ^{
         [[allowsSelection should] beYes];
       });
     });
@@ -47,7 +47,7 @@ describe(@"HandController", ^{
         return theValue(collectionView.allowsMultipleSelection);
       });
 
-      it(@"returns NO", ^{
+      it(@"is NO", ^{
         [[allowsMultipleSelection should] beNo];
       });
     });
@@ -57,7 +57,7 @@ describe(@"HandController", ^{
         return collectionView.backgroundColor;
       });
 
-      it(@"returns UIColor + clearColor", ^{
+      it(@"equals UIColor + clearColor", ^{
         NSLog(@"%@", backgroundColor);
         [[backgroundColor should] equal:[UIColor clearColor]];
       });
@@ -68,7 +68,7 @@ describe(@"HandController", ^{
         return collectionView.backgroundView;
       });
 
-      it(@"returns nil", ^{
+      it(@"is nil", ^{
         [[backgroundView should] beNil];
       });
     });
@@ -84,7 +84,7 @@ describe(@"HandController", ^{
         return (NSObject *)collectionView.dataSource;
       });
 
-      it(@"returns a reference to HandController.hand", ^{
+      it(@"is a reference to HandController.hand", ^{
         [[dataSource should] beIdenticalTo:hand];
       });
     });
@@ -94,14 +94,14 @@ describe(@"HandController", ^{
         return theValue(collectionView.opaque);
       });
 
-      it(@"returns NO", ^{
+      it(@"is NO", ^{
         [[opaque should] beNo];
       });
     });
   });
 
   describe(@".hand", ^{
-    it(@"returns a copy of the Hand managed by HandController", ^{
+    it(@"is a copy of the Hand managed by HandController", ^{
       [[hand should] beMemberOfClass:Hand.class];
     });
   });
@@ -112,7 +112,7 @@ describe(@"HandController", ^{
     });
 
     context(@"when no Card has been selected", ^{
-      it(@"returns (nil)", ^{
+      it(@"is (nil)", ^{
         [[selectedCard should] beNil];
       });
     });
@@ -131,7 +131,7 @@ describe(@"HandController", ^{
         [[handController.selectedCard should] beKindOfClass:Card.class];
       });
 
-      it(@"returns that Card", ^{
+      it(@"is that Card", ^{
         [[handController.selectedCard should] equal:targetCard];
       });
     });
@@ -142,36 +142,8 @@ describe(@"HandController", ^{
       return HandController.StoryboardID;
     });
 
-    it(@"returns NSString of HandController's Storyboard ID", ^{
+    specify(^{
       [[result should] equal:NSStringFromClass(HandController.class)];
-    });
-  });
-
-  describe(@"+ empty", ^{
-    let(empty, ^{
-      return [HandController empty];
-    });
-
-    specify(^{
-      [[empty should] beMemberOfClass:HandController.class];
-    });
-
-    it(@"has an empty Hand", ^{
-      [[theValue(empty.hand.isEmpty) should] beYes];
-    });
-  });
-
-  describe(@"+ withHand:", ^{
-    let(withHand, ^{
-      return [HandController withHand:hand];
-    });
-
-    specify(^{
-      [[withHand should] beMemberOfClass:HandController.class];
-    });
-
-    it(@"has a copy of the given Hand of Cards", ^{
-      [[withHand.hand should] equal:hand];
     });
   });
 
@@ -212,11 +184,9 @@ describe(@"HandController", ^{
                                 handController, hand, handController.selectedCard);
     });
 
-    it(@"returns '<HandController: [memory_address]; hand = [hand.description];"
-        " selectedCard = [selectedCard.description]>",
-       ^{
-         [[description should] equal:expectedString];
-       });
+    specify(^{
+      [[description should] equal:expectedString];
+    });
   });
 
   describe(@"- hasSelectedCard", ^{
@@ -225,7 +195,6 @@ describe(@"HandController", ^{
     });
 
     it(@"equals Hand - selectedCard != nil", ^{
-      //      [[hasSelectedCard should] equal:theValue(handController.selectedCard != nil)];
       [[hasSelectedCard should] equal:theValue(NO)];
     });
   });
