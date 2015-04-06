@@ -107,11 +107,9 @@ describe(@"PlaymatController", ^{
         playmatController, blackCardController, handController);
     });
 
-    it(@"returns '<PlaymatController: [memory_address]' blackCardController=[blackCardController"
-        ".description] handController=[handController.description]>",
-       ^{
-         [[description should] equal:expectedFormat];
-       });
+    specify(^{
+      [[description should] equal:expectedFormat];
+    });
   });
 });
 SPEC_END
