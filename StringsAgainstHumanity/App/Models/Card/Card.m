@@ -75,6 +75,10 @@
   return self;
 }
 
+- (instancetype)initWithString:(NSString *)string andPlayAction:(PlayAction *)playAction {
+  return [self initWithString:string andPlayAction:playAction.action];
+}
+
 - (BOOL)isEqual:(id)object {
   if (self == object) {
     return YES;

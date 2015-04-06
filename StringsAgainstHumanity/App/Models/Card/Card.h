@@ -24,5 +24,6 @@
 - (instancetype)copyWithZone:(NSZone *)zone;
 - (instancetype)initWithString:(NSString *)string;
 - (instancetype)initWithString:(NSString *)string andAction:(void (^)(Card *))action;
+- (instancetype)initWithString:(NSString *)string andPlayAction:(PlayAction *)playAction;
 - (BOOL)isEqualToCard:(Card *)card;
 @end
