@@ -95,4 +95,8 @@
 
   return stringsAreEqual && playActionsAreEqual;
 }
+
+- (void)play {
+  self.playAction.perform;
+}
 @end

@@ -232,5 +232,13 @@ describe(@"Card", ^{
       });
     });
   });
+
+  describe(@"- play", ^{
+    it(@"calls .playAction.perform", ^{
+      [[card.playAction should] receive:@selector(perform)];
+
+      [card play];
+    });
+  });
 });
 SPEC_END

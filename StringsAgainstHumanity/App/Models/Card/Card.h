@@ -26,4 +26,5 @@
 - (instancetype)initWithString:(NSString *)string andAction:(void (^)(Card *))action;
 - (instancetype)initWithString:(NSString *)string andPlayAction:(PlayAction *)playAction;
 - (BOOL)isEqualToCard:(Card *)card;
+- (void)play;
 @end
