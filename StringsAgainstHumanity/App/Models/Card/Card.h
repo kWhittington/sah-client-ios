@@ -20,6 +20,7 @@
 + (instancetype)blank;
 + (instancetype)withString:(NSString *)string;
 + (instancetype)withString:(NSString *)string andAction:(void (^)(Card *))action;
++ (instancetype)withString:(NSString *)string andPlayAction:(PlayAction *)playAction;
 
 - (instancetype)copyWithZone:(NSZone *)zone;
 - (instancetype)initWithString:(NSString *)string;

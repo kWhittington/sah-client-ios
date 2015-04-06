@@ -36,6 +36,10 @@
   return [[self alloc] initWithString:string andAction:action];
 }
 
++ (instancetype)withString:(NSString *)string andPlayAction:(PlayAction *)playAction {
+  return [[self alloc] initWithString:string andPlayAction:playAction];
+}
+
 - (instancetype)copyWithZone:(NSZone *)zone {
   return [self.class withString:self.string.copy andAction:self.playAction.action];
 }
