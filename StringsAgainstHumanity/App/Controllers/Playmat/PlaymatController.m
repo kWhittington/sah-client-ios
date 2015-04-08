@@ -29,10 +29,6 @@
   return [BlackCard withString:@"[Please assign a BlackCard]"];
 }
 
-+ (Hand *)StartingHand {
-  return [Hand empty];
-}
-
 + (NSString *)StoryboardID {
   return NSStringFromClass(self.class);
 }
@@ -77,7 +73,7 @@
 }
 
 - (void)initHandController {
-  self.handController = [HandController withHand:self.class.StartingHand];
+  self.handController = [HandController withHand:[self startingHand]];
   [self addChildViewController:self.handController];
   [self.handController didMoveToParentViewController:self];
 }
@@ -95,6 +91,10 @@
 - (void)initSubControllerViews {
   [self initBlackCardControllerView];
   [self initHandControllerView];
+}
+
+- (Hand *)startingHand {
+  return [Hand empty];
 }
 
 - (void)viewDidLoad {

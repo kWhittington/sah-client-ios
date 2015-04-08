@@ -76,16 +76,6 @@ describe(@"PlaymatController", ^{
     });
   });
 
-  describe(@"+ StartingHand", ^{
-    let(startingHand, ^{
-      return PlaymatController.StartingHand;
-    });
-
-    it(@"is empty", ^{
-      [[startingHand should] equal:[Hand empty]];
-    });
-  });
-
   describe(@"- debugDescription", ^{
     let(debugDescription, ^{
       return playmatController.debugDescription;
@@ -109,6 +99,16 @@ describe(@"PlaymatController", ^{
 
     specify(^{
       [[description should] equal:expectedFormat];
+    });
+  });
+
+  describe(@"- startingHand", ^{
+    let(startingHand, ^{
+      return [playmatController startingHand];
+    });
+
+    it(@"is empty", ^{
+      [[theValue(startingHand.isEmpty) should] beYes];
     });
   });
 });
