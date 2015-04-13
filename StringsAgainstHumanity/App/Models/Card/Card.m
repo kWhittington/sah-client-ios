@@ -80,7 +80,7 @@
 }
 
 - (instancetype)initWithString:(NSString *)string andPlayAction:(PlayAction *)playAction {
-  return [self initWithString:string andPlayAction:playAction.action];
+  return [self initWithString:string andPlayAction:playAction];
 }
 
 - (BOOL)isEqual:(id)object {
