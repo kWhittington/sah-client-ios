@@ -10,8 +10,7 @@
 #import "POPAnimationExtras.h"
 #import "POPPropertyAnimationInternal.h"
 
-struct _POPSpringAnimationState : _POPPropertyAnimationState
-{
+struct _POPSpringAnimationState : _POPPropertyAnimationState {
   SpringSolver4d *solver;
   CGFloat springSpeed;
   CGFloat springBounciness; // normalized springiness
@@ -19,19 +18,13 @@ struct _POPSpringAnimationState : _POPPropertyAnimationState
   CGFloat dynamicsFriction; // friction
   CGFloat dynamicsMass;     // mass
 
-  _POPSpringAnimationState(id __unsafe_unretained anim) : _POPPropertyAnimationState(anim),
-  solver(nullptr),
-  springSpeed(12.),
-  springBounciness(4.),
-  dynamicsTension(0),
-  dynamicsFriction(0),
-  dynamicsMass(0)
-  {
+  _POPSpringAnimationState(id __unsafe_unretained anim)
+    : _POPPropertyAnimationState(anim), solver(nullptr), springSpeed(12.), springBounciness(4.),
+      dynamicsTension(0), dynamicsFriction(0), dynamicsMass(0) {
     type = kPOPAnimationSpring;
   }
 
-  bool hasConverged()
-  {
+  bool hasConverged() {
     NSUInteger count = valueCount;
     if (shouldRound()) {
       return vec_equal(previous2Vec, previousVec) && vec_equal(previousVec, toVec);
@@ -39,16 +32,20 @@ struct _POPSpringAnimationState : _POPPropertyAnimationState
       if (!previousVec || !previous2Vec)
         return false;
 
-      CGFloat t  = dynamicsThreshold / 5;
+      CGFloat t = dynamicsThreshold / 5;
 
       const CGFloat *toValues = toVec->data();
       const CGFloat *previousValues = previousVec->data();
       const CGFloat *previous2Values = previous2Vec->data();
 
       for (NSUInteger idx = 0; idx < count; idx++) {
-        if ((fabsf(toValues[idx] - previousValues[idx]) >= t) || (fabsf(previous2Values[idx] - previousValues[idx]) >= t)) {
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wabsolute-value"
+        if ((fabsf(toValues[idx] - previousValues[idx]) >= t) ||
+            (fabsf(previous2Values[idx] - previousValues[idx]) >= t)) {
           return false;
         }
+#pragma clang diagnostic pop
       }
       return true;
     }
@@ -61,15 +58,13 @@ struct _POPSpringAnimationState : _POPPropertyAnimationState
     return solver->started() && (hasConverged() || solver->hasConverged());
   }
 
-  void updatedDynamics()
-  {
+  void updatedDynamics() {
     if (NULL != solver) {
       solver->setConstants(dynamicsTension, dynamicsFriction, dynamicsMass);
     }
   }
 
-  void updatedDynamicsThreshold()
-  {
+  void updatedDynamicsThreshold() {
     _POPPropertyAnimationState::updatedDynamicsThreshold();
     if (NULL != solver) {
       solver->setThreshold(dynamicsThreshold);
@@ -77,7 +72,11 @@ struct _POPSpringAnimationState : _POPPropertyAnimationState
   }
 
   void updatedBouncinessAndSpeed() {
-    [POPSpringAnimation convertBounciness:springBounciness speed:springSpeed toTension:&dynamicsTension friction:&dynamicsFriction mass:&dynamicsMass];
+    [POPSpringAnimation convertBounciness:springBounciness
+                                    speed:springSpeed
+                                toTension:&dynamicsTension
+                                 friction:&dynamicsFriction
+                                     mass:&dynamicsMass];
     updatedDynamics();
   }
 

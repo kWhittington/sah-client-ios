@@ -16,8 +16,8 @@ static CGFloat kPOPAnimationDecayMinimalVelocityFactor = 5.;
 // default decay animation deceleration
 static CGFloat kPOPAnimationDecayDecelerationDefault = 0.998;
 
-static void decay_position(CGFloat *x, CGFloat *v, NSUInteger count, CFTimeInterval dt, CGFloat deceleration)
-{
+static void decay_position(CGFloat *x, CGFloat *v, NSUInteger count, CFTimeInterval dt,
+                           CGFloat deceleration) {
   dt *= 1000;
 
   // v0 = v / 1000
@@ -37,16 +37,13 @@ static void decay_position(CGFloat *x, CGFloat *v, NSUInteger count, CFTimeInter
   }
 }
 
-struct _POPDecayAnimationState : _POPPropertyAnimationState
-{
+struct _POPDecayAnimationState : _POPPropertyAnimationState {
   double deceleration;
   CFTimeInterval duration;
 
-  _POPDecayAnimationState(id __unsafe_unretained anim) :
-  _POPPropertyAnimationState(anim),
-  deceleration(kPOPAnimationDecayDecelerationDefault),
-  duration(0)
-  {
+  _POPDecayAnimationState(id __unsafe_unretained anim)
+    : _POPPropertyAnimationState(anim), deceleration(kPOPAnimationDecayDecelerationDefault),
+      duration(0) {
     type = kPOPAnimationDecay;
   }
 
@@ -57,12 +54,14 @@ struct _POPDecayAnimationState : _POPPropertyAnimationState
 
     CGFloat f = dynamicsThreshold * kPOPAnimationDecayMinimalVelocityFactor;
     const CGFloat *velocityValues = vec_data(velocityVec);
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wabsolute-value"
     for (NSUInteger idx = 0; idx < valueCount; idx++) {
       if (fabsf(velocityValues[idx]) >= f)
         return false;
     }
+#pragma clang diagnostic pop
     return true;
-
   }
 
   void computeDuration() {
@@ -76,7 +75,8 @@ struct _POPDecayAnimationState : _POPPropertyAnimationState
     double vz = k / scaledVelocity.z;
     double vw = k / scaledVelocity.w;
     double d = log(deceleration) * 1000.;
-    duration = MAX(MAX(MAX(log(fabs(vx)) / d, log(fabs(vy)) / d), log(fabs(vz)) / d), log(fabs(vw)) / d);
+    duration =
+      MAX(MAX(MAX(log(fabs(vx)) / d, log(fabs(vy)) / d), log(fabs(vz)) / d), log(fabs(vw)) / d);
 
     // ensure velocity threshold is exceeded
     if (isnan(duration) || duration < 0) {
@@ -125,7 +125,8 @@ struct _POPDecayAnimationState : _POPPropertyAnimationState
     double vz = k / scaledVelocity.z;
     double vw = k / scaledVelocity.w;
     double d = log(deceleration) * 1000.;
-    duration = MAX(MAX(MAX(log(fabs(vx)) / d, log(fabs(vy)) / d), log(fabs(vz)) / d), log(fabs(vw)) / d);
+    duration =
+      MAX(MAX(MAX(log(fabs(vx)) / d, log(fabs(vy)) / d), log(fabs(vz)) / d), log(fabs(vw)) / d);
 
     // ensure velocity threshold is exceeded
     if (isnan(duration) || duration < 0) {
@@ -152,7 +153,6 @@ struct _POPDecayAnimationState : _POPPropertyAnimationState
 
     return true;
   }
-
 };
 
 typedef struct _POPDecayAnimationState POPDecayAnimationState;
