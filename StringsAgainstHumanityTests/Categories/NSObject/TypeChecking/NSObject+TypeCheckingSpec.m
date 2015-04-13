@@ -47,6 +47,28 @@ describe(@"NSObject+TypeChecking", ^{
     return [ThirdClass new];
   });
 
+  describe(@"- identicalTo:", ^{
+    context(@"when other == object", ^{
+      let(identicalTo, ^{
+        return theValue([superClass identicalTo:superClass]);
+      });
+
+      specify(^{
+        [[identicalTo should] beYes];
+      });
+    });
+
+    context(@"when other != other", ^{
+      let(identicalTo, ^{
+        return theValue([superClass identicalTo:SuperClass.new]);
+      });
+
+      specify(^{
+        [[identicalTo should] beNo];
+      });
+    });
+  });
+
   describe(@"- instanceOf:", ^{
     let(class, ^{
       return theValue(nil);

@@ -9,6 +9,10 @@
 #import "NSObject+TypeChecking.h"
 
 @implementation NSObject (TypeChecking)
+- (BOOL)identicalTo:(NSObject *)other {
+  return [self isIdenticalTo:other];
+}
+
 - (BOOL)instanceOf:(Class) class {
   return [self isMemberOfClass:class];
 }

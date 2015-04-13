@@ -9,6 +9,7 @@
 @import Foundation;
 
 @interface NSObject (TypeChecking)
+- (BOOL)identicalTo:(NSObject *)other;
 - (BOOL)instanceOf:(Class) class;
 - (BOOL)isIdenticalTo:(NSObject *)other;
 - (BOOL)kindOf:(Class) class;
