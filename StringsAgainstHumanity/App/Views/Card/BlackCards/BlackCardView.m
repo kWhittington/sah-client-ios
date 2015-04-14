@@ -7,6 +7,11 @@
 //
 
 #import "BlackCardView.h"
+#import "BlackCard.h"
+
+@interface BlackCardView ()
+@property(nonatomic) BlackCard *blackCard;
+@end
 
 @implementation BlackCardView
 

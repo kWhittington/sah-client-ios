@@ -8,6 +8,8 @@
 
 @import UIKit;
 
-@interface BlackCardView : UIView
+@class BlackCard;
 
+@interface BlackCardView : UIView
+@property(readonly, nonatomic) BlackCard *blackCard;
 @end
