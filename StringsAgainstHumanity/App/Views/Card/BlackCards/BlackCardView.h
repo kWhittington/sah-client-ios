@@ -12,4 +12,5 @@
 
 @interface BlackCardView : UIView
 @property(readonly, nonatomic) BlackCard *blackCard;
+@property(readonly, nonatomic) UILabel *textLabel;
 @end

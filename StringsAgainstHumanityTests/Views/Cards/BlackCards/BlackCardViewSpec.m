@@ -69,5 +69,46 @@ describe(@"BlackCardView", ^{
       free(readonlyAttribute);
     });
   });
+
+  describe(@".textLabel", ^{
+    __block objc_property_t textLabelProperty;
+
+    beforeEach(^{
+      textLabelProperty = class_getProperty(BlackCardView.class, "textLabel");
+    });
+
+    it(@"is a UILabel", ^{
+      char *type = property_copyAttributeValue(textLabelProperty, "T");
+      NSString *typeString = [NSString stringWithUTF8String:type];
+
+      [[typeString should] equal:@"@\"UILabel\""];
+
+      free(type);
+    });
+
+    it(@"is a strong reference", ^{
+      char *strongAttribute = property_copyAttributeValue(textLabelProperty, "&");
+
+      [[theValue(strongAttribute) shouldNot] beNil];
+
+      free(strongAttribute);
+    });
+
+    it(@"is nonatomic", ^{
+      char *nonatomicAttribute = property_copyAttributeValue(textLabelProperty, "N");
+
+      [[theValue(nonatomicAttribute) shouldNot] beNil];
+
+      free(nonatomicAttribute);
+    });
+
+    it(@"is readonly", ^{
+      char *readonlyAttribute = property_copyAttributeValue(textLabelProperty, "R");
+
+      [[theValue(readonlyAttribute) shouldNot] beNil];
+
+      free(readonlyAttribute);
+    });
+  });
 });
 SPEC_END

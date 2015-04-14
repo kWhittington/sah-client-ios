@@ -11,6 +11,7 @@
 
 @interface BlackCardView ()
 @property(nonatomic) BlackCard *blackCard;
+@property(nonatomic) UILabel *textLabel;
 @end
 
 @implementation BlackCardView
