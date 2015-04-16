@@ -24,6 +24,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Pods-PureLayout.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-StringsAgainstHumanityTests-FactoryGentleman.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -57,52 +62,57 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>0744070D849D058715229ACD</key>
+		<key>3CF0C72CAC19FFEAAEE4312B</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>1E0A96F4A1FB261C3B31BBC9</key>
+		<key>4AB36E3D56567EEB4209F6C9</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>54320BEEBD6CE8D6D2043713</key>
+		<key>695918B676B70445C25DFE95</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>61BA6DCF896469BFD0A60DF9</key>
+		<key>7262D5C94E9B798E50FFC75C</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>8D4EB8F7B0F0949430EF727A</key>
+		<key>751C4E58127C2144F6C10CA0</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>9C6AB0FEB69488CF1AFF26D5</key>
+		<key>860178EE07035043F23A5F79</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>9F1E524AA4B94E28D7323CA4</key>
+		<key>93337F0D4D649DFAFD096DAE</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>BA69130C2755A12E42290839</key>
+		<key>966F10C38B7F873AFD8EFC3C</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>C33FF03D0D97FFF175C37B39</key>
+		<key>B98C0CC404209B5A629F056D</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>D9E956ED54FE40A79DFE24E4</key>
+		<key>CE1FF897270D19C756DC12EE</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>D9E5A81B66FAF8E67A93ABBA</key>
 		<dict>
 			<key>primary</key>
 			<true/>

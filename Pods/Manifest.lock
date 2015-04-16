@@ -14,6 +14,7 @@ PODS:
   - Kiwi (2.3.1)
   - ObjectiveSugar (1.1.0)
   - pop (1.0.7)
+  - PureLayout (2.0.5)
 
 DEPENDENCIES:
   - Canvas
@@ -24,15 +25,17 @@ DEPENDENCIES:
   - Kiwi
   - ObjectiveSugar
   - pop
+  - PureLayout
 
 SPEC CHECKSUMS:
-  Canvas: ae2faca05a15c4d6659fb3ae5e2a14817df4449a
-  CocoaLumberjack: 6027cd9a0665203a7df456c526e137f02cd547e1
-  FactoryGentleman: d056e0c88b84d2657fbab13688985ecee5044b66
-  Gizou: f0025df05b51197ab8979c728a1cd525b7d6911f
-  HexColors: 01384d2bbe8dc4ffa43c3b4135db6e976952d153
-  Kiwi: 73e1400209055ee9c8ba78c6012b6b642d0fb9f7
-  ObjectiveSugar: f48793f5902c77cfc02a4ce46d2e8ecddcad4dc2
-  pop: 2f14a1ea61339767af9e66741b418c831b3844df
+  Canvas: eb861e3b555d032648146c8ffda1a5dea40059ca
+  CocoaLumberjack: dd725ca9088af37f16f957f6d88fbed69d54381c
+  FactoryGentleman: 0c9e66b1012a8dc51fa646b282dff473e16330f5
+  Gizou: 93853bf634a9382c257795db052aa9a75e972c43
+  HexColors: abfd172e329dab59888614ccba6f216cec59289d
+  Kiwi: f038a6c61f7a9e4d7766bff5717aa3b3fdb75f55
+  ObjectiveSugar: a6a25f23d657c19df0a0b972466d5b5ca9f5295c
+  pop: 628ffc631644601567ee8bfaaaea493ebd7d0923
+  PureLayout: a0fe75f1cf485801e7e00b723b8a3c32dca558e2
 
 COCOAPODS: 0.35.0
