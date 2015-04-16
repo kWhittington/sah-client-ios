@@ -83,6 +83,10 @@ describe(@"BlackCardView", ^{
   describe(@".textLabel", ^{
     __block objc_property_t textLabelProperty;
 
+    let(textLabel, ^{
+      return blackCardView.textLabel;
+    });
+
     beforeEach(^{
       textLabelProperty = class_getProperty(BlackCardView.class, "textLabel");
     });
@@ -118,6 +122,10 @@ describe(@"BlackCardView", ^{
       [[theValue(readonlyAttribute) shouldNot] beNil];
 
       free(readonlyAttribute);
+    });
+
+    it(@"has Constants.WhiteColor textColor", ^{
+      [[textLabel.textColor should] equal:Constants.WhiteColor];
     });
   });
 });

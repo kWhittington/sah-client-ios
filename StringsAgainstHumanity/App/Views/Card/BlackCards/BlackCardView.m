@@ -13,7 +13,7 @@
 @property(nonatomic) BlackCard *blackCard;
 @property(nonatomic) UILabel *textLabel;
 
-- (void)initColor;
+- (void)initBackgroundColor;
 - (void)initLabel;
 @end
 
@@ -27,7 +27,7 @@
 }
 */
 
-- (void)initColor {
+- (void)initBackgroundColor {
   self.backgroundColor = Constants.BlackColor;
 }
 
@@ -42,7 +42,7 @@
 
   if (self) {
     [self initLabel];
-    [self initColor];
+    [self initBackgroundColor];
   }
 
   return self;
