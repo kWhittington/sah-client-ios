@@ -12,6 +12,9 @@
 @interface BlackCardView ()
 @property(nonatomic) BlackCard *blackCard;
 @property(nonatomic) UILabel *textLabel;
+
+- (void)initColor;
+- (void)initLabel;
 @end
 
 @implementation BlackCardView
@@ -23,5 +26,29 @@
     // Drawing code
 }
 */
+
+- (void)initColor {
+  self.backgroundColor = Constants.BlackColor;
+}
+
+- (void)initLabel {
+  self.textLabel = [[UILabel alloc] init];
+  self.textLabel.text = self.blackCard.string;
+  self.textLabel.textColor = Constants.WhiteColor;
+}
+
+- (instancetype)initWithFrame:(CGRect)frame {
+  self = [super initWithFrame:frame];
+
+  if (self) {
+    [self initLabel];
+    [self initColor];
+  }
+
+  return self;
+}
+
+- (void)updateConstraints {
+}
 
 @end

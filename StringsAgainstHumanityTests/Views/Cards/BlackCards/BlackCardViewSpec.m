@@ -29,6 +29,16 @@ describe(@"BlackCardView", ^{
     [[blackCardView should] beMemberOfClass:BlackCardView.class];
   });
 
+  describe(@".backgroundColor", ^{
+    let(backgroundColor, ^{
+      return blackCardView.backgroundColor;
+    });
+
+    specify(^{
+      [[backgroundColor should] equal:Constants.BlackColor];
+    });
+  });
+
   describe(@".blackCard", ^{
     __block objc_property_t blackCardProperty;
 
