@@ -14,5 +14,7 @@
 @interface BlackCardController : UIViewController
 + (instancetype)withBlackCard:(BlackCard *)blackCard;
 
+- (instancetype)initWithBlackCard:(BlackCard *)blackCard;
+
 - (BlackCardView *)blackCardView;
 @end

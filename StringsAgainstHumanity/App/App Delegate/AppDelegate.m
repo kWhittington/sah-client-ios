@@ -7,6 +7,8 @@
 //
 
 #import "AppDelegate.h"
+#import "BlackCardController.h"
+#import "BlackCard.h"
 
 @interface AppDelegate ()
 @end
@@ -19,6 +21,8 @@
   [self initializeCocoaLumberjack];
 
   self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+  self.window.rootViewController =
+    [BlackCardController withBlackCard:[BlackCard withString:@"Hello"]];
 
   return YES;
 }
