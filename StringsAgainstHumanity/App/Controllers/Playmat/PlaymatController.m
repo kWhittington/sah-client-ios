@@ -29,10 +29,6 @@
   return [BlackCard withString:@"[Please assign a BlackCard]"];
 }
 
-+ (NSString *)StoryboardID {
-  return NSStringFromClass(self.class);
-}
-
 + (instancetype)empty {
   return [[self alloc] init];
 }

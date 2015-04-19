@@ -21,16 +21,6 @@ describe(@"WhiteCardController", ^{
     return [WhiteCardController withWhiteCard:whiteCard];
   });
 
-  describe(@"+ StoryboardID", ^{
-    let(result, ^{
-      return WhiteCardController.StoryboardID;
-    });
-
-    it(@"equals 'WhiteCardController'", ^{
-      [[result should] equal:NSStringFromClass(WhiteCardController.class)];
-    });
-  });
-
   describe(@"+ withWhiteCard:", ^{
     let(result, ^{
       return [WhiteCardController withWhiteCard:whiteCard];

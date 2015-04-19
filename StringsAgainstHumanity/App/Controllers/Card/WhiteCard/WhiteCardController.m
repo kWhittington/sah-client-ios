@@ -19,13 +19,8 @@
 @end
 
 @implementation WhiteCardController
-+ (NSString *)StoryboardID {
-  return NSStringFromClass(self.class);
-}
-
 + (instancetype)withWhiteCard:(WhiteCard *)whiteCard {
   WhiteCardController *controller = [[self alloc] init];
-  //    [Constants.Storyboard instantiateViewControllerWithIdentifier:self.class.StoryboardID];
 
   [controller loadView];
   [controller configureColors];
@@ -51,8 +46,8 @@
 
 - (void)loadView {
   [super loadView];
-  
-  self.label = [[UILabel alloc]init];
+
+  self.label = [[UILabel alloc] init];
 }
 
 - (void)viewDidLoad {

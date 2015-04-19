@@ -15,8 +15,6 @@
 @property(readonly, copy, nonatomic) Hand *hand;
 @property(readonly, nonatomic) Card *selectedCard;
 
-+ (NSString *)StoryboardID;
-
 + (instancetype)empty;
 + (instancetype)withHand:(Hand *)hand;
 

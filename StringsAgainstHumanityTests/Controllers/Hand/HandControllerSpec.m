@@ -137,16 +137,6 @@ describe(@"HandController", ^{
     });
   });
 
-  describe(@"+ StoryboardID", ^{
-    let(result, ^{
-      return HandController.StoryboardID;
-    });
-
-    specify(^{
-      [[result should] equal:NSStringFromClass(HandController.class)];
-    });
-  });
-
   describe(@"- addCard:", ^{
     let(card, ^{
       return newCard;

@@ -13,7 +13,4 @@
 @end
 
 @implementation MainMenuController
-+ (NSString *)StoryboardID {
-  return @"MainMenuController";
-}
 @end

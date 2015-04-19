@@ -25,10 +25,6 @@
 @end
 
 @implementation HandController
-+ (NSString *)StoryboardID {
-  return NSStringFromClass(self.class);
-}
-
 + (instancetype)empty {
   Hand *hand = [Hand empty];
   HandController *controller = [HandController withHand:hand];
@@ -38,7 +34,6 @@
 
 + (instancetype)withHand:(Hand *)hand {
   HandController *controller = [[self alloc] init];
-  //    [Constants.Storyboard instantiateViewControllerWithIdentifier:HandController.StoryboardID];
 
   controller.hand = hand;
   controller.collectionView.dataSource = controller.hand;

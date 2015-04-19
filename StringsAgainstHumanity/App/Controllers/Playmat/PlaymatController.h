@@ -18,7 +18,6 @@
 @property(readonly, strong, nonatomic) HandController *handController;
 
 + (BlackCard *)StartingBlackCard;
-+ (NSString *)StoryboardID;
 
 + (instancetype)empty;
 

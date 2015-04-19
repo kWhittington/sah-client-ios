@@ -14,7 +14,5 @@
 @property(readonly, copy, nonatomic) WhiteCard *whiteCard;
 @property(strong, nonatomic) IBOutlet UILabel *label;
 
-+ (NSString *)StoryboardID;
-
 + (instancetype)withWhiteCard:(WhiteCard *)whiteCard;
 @end
