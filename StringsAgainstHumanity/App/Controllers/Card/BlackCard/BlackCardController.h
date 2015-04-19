@@ -9,12 +9,10 @@
 @import UIKit;
 
 @class BlackCard;
+@class BlackCardView;
 
 @interface BlackCardController : UIViewController
-@property(readonly, copy, nonatomic) BlackCard *blackCard;
-@property(strong, nonatomic) IBOutlet UILabel *label;
-
-+ (NSString *)StoryboardID;
-
 + (instancetype)withBlackCard:(BlackCard *)blackCard;
+
+- (BlackCardView *)blackCardView;
 @end

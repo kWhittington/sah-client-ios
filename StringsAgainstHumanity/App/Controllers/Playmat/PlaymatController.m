@@ -34,10 +34,19 @@
 }
 
 + (instancetype)empty {
-  PlaymatController *controller =
-    [Constants.Storyboard instantiateViewControllerWithIdentifier:PlaymatController.StoryboardID];
+  return [[self alloc] init];
+}
 
-  return controller;
+- (instancetype)init {
+  self = [super init];
+
+  if (self) {
+    self.view = [[UIView alloc] initWithFrame:UIScreen.mainScreen.bounds];
+    [self initSubControllers];
+    [self initSubControllerViews];
+  }
+
+  return self;
 }
 
 - (void)awakeFromNib {

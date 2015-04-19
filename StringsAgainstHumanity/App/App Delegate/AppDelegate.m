@@ -19,6 +19,7 @@
   // Override point for customization after application launch.
   [self initializeCocoaLumberjack];
 
+  self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
   return YES;
 }
 

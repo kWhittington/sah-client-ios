@@ -8,45 +8,34 @@
 
 #import "SAHLibraries.pch"
 #import "BlackCardController.h"
+#import "BlackCardView.h"
 #import "BlackCard.h"
 
 @interface BlackCardController ()
-@property(copy, nonatomic) BlackCard *blackCard;
-
-- (void)configureColors;
-- (void)configureForBlackCard:(BlackCard *)blackCard;
-- (void)configureLabel;
+- (instancetype)initWithBlackCard:(BlackCard *)blackCard;
 @end
 
 @implementation BlackCardController
-+ (NSString *)StoryboardID {
-  return NSStringFromClass(self.class);
-}
-
 + (instancetype)withBlackCard:(BlackCard *)blackCard {
-  BlackCardController *controller =
-    [Constants.Storyboard instantiateViewControllerWithIdentifier:self.class.StoryboardID];
-
-  [controller loadView];
-  [controller configureColors];
-  [controller configureForBlackCard:blackCard];
-
-  return controller;
+  return [[self alloc] initWithBlackCard:blackCard];
 }
 
-- (void)configureColors {
-  self.label.textColor = BlackCard.StringColor;
-  self.view.backgroundColor = BlackCard.CardColor;
+- (instancetype)init {
+  return [self initWithBlackCard:[BlackCard withString:@"Default string."]];
 }
 
-- (void)configureForBlackCard:(BlackCard *)blackCard {
-  self.blackCard = blackCard;
+- (instancetype)initWithBlackCard:(BlackCard *)blackCard {
+  self = [super init];
 
-  [self configureLabel];
+  if (self) {
+    self.view = [[BlackCardView alloc] initWithFrame:UIScreen.mainScreen.bounds];
+  }
+
+  return self;
 }
 
-- (void)configureLabel {
-  self.label.text = self.blackCard.string;
+- (BlackCardView *)blackCardView {
+  return (BlackCardView *)self.view;
 }
 
 - (NSString *)debugDescription {
@@ -54,8 +43,7 @@
 }
 
 - (NSString *)description {
-  return NSStringWithFormat(@"<BlackCardController: %p; blackCard = %@; label = %@>", self,
-                            self.blackCard, self.label);
+  return NSStringWithFormat(@"<BlackCardController: %p; view = %@;>", self, self.view);
 }
 
 - (void)didReceiveMemoryWarning {

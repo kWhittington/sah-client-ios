@@ -15,14 +15,6 @@
   return [UIColor colorWithHexString:@"1A1818"];
 }
 
-+ (UIStoryboard *)Storyboard {
-  return [UIStoryboard storyboardWithName:Constants.StoryboardName bundle:nil];
-}
-
-+ (NSString *)StoryboardName {
-  return @"Main";
-}
-
 + (UIColor *)WhiteColor {
   return [UIColor colorWithHexString:@"FFFFFF"];
 }

@@ -31,7 +31,6 @@
 		AD71F5951A9C11A70077BE8B /* HandFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = AD71F5941A9C11A70077BE8B /* HandFactory.m */; };
 		AD7C84DF1A95B34D00A2DE02 /* CardSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = AD7C84DE1A95B34D00A2DE02 /* CardSpec.m */; };
 		AD89D2EE1AA4C9AE0044F2C0 /* MainMenuController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD89D2ED1AA4C9AE0044F2C0 /* MainMenuController.m */; };
-		AD89D2F21AA4D79A0044F2C0 /* MainMenuControllerSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = AD89D2F11AA4D79A0044F2C0 /* MainMenuControllerSpec.m */; };
 		AD8B92E81AA2BB6E0044ECC0 /* Hand+DataSourceSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = AD8B92E71AA2BB6E0044ECC0 /* Hand+DataSourceSpec.m */; };
 		AD99B3E41ADC584D00507C10 /* BlackCardViewSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = AD99B3E31ADC584D00507C10 /* BlackCardViewSpec.m */; };
 		AD99B3E81ADC593900507C10 /* BlackCardView.m in Sources */ = {isa = PBXBuildFile; fileRef = AD99B3E71ADC593900507C10 /* BlackCardView.m */; };
@@ -53,7 +52,6 @@
 		ADC8B66A1ACCA782000BC883 /* PlayActionFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = ADC8B6691ACCA782000BC883 /* PlayActionFactory.m */; };
 		ADC8B66C1ACCA78E000BC883 /* PlayActionSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = ADC8B66B1ACCA78E000BC883 /* PlayActionSpec.m */; };
 		ADD2AA5E1AB909A3007096FE /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = ADD2AA5A1AB909A3007096FE /* LaunchScreen.xib */; };
-		ADD2AA5F1AB909A3007096FE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ADD2AA5C1AB909A3007096FE /* Main.storyboard */; };
 		ADDE7F891A9C33C700E232EC /* HandSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = ADDE7F881A9C33C700E232EC /* HandSpec.m */; };
 		ADE4A6B61A844121008CB5D2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = ADE4A6B51A844121008CB5D2 /* AppDelegate.m */; };
 /* End PBXBuildFile section */
@@ -106,7 +104,6 @@
 		AD7C84DE1A95B34D00A2DE02 /* CardSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CardSpec.m; path = Models/Card/CardSpec.m; sourceTree = "<group>"; };
 		AD89D2EC1AA4C9AE0044F2C0 /* MainMenuController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MainMenuController.h; path = App/Controllers/MainMenu/MainMenuController.h; sourceTree = "<group>"; };
 		AD89D2ED1AA4C9AE0044F2C0 /* MainMenuController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MainMenuController.m; path = App/Controllers/MainMenu/MainMenuController.m; sourceTree = "<group>"; };
-		AD89D2F11AA4D79A0044F2C0 /* MainMenuControllerSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MainMenuControllerSpec.m; path = Controllers/MainMenu/MainMenuControllerSpec.m; sourceTree = "<group>"; };
 		AD8B92E71AA2BB6E0044ECC0 /* Hand+DataSourceSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "Hand+DataSourceSpec.m"; path = "DataSources/Hand/Hand+DataSourceSpec.m"; sourceTree = "<group>"; };
 		AD99B3E31ADC584D00507C10 /* BlackCardViewSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BlackCardViewSpec.m; path = Views/Cards/BlackCards/BlackCardViewSpec.m; sourceTree = "<group>"; };
 		AD99B3E61ADC593900507C10 /* BlackCardView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BlackCardView.h; path = App/Views/Card/BlackCards/BlackCardView.h; sourceTree = "<group>"; };
@@ -141,7 +138,6 @@
 		ADC8B6691ACCA782000BC883 /* PlayActionFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PlayActionFactory.m; path = Factories/Models/PlayAction/PlayActionFactory.m; sourceTree = "<group>"; };
 		ADC8B66B1ACCA78E000BC883 /* PlayActionSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PlayActionSpec.m; path = Models/PlayAction/PlayActionSpec.m; sourceTree = "<group>"; };
 		ADD2AA5B1AB909A3007096FE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = App/Storyboard/Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		ADD2AA5D1AB909A3007096FE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = App/Storyboard/Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		ADDE7F881A9C33C700E232EC /* HandSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HandSpec.m; path = Models/Hand/HandSpec.m; sourceTree = "<group>"; };
 		ADE4A6B41A844121008CB5D2 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = "App/App Delegate/AppDelegate.h"; sourceTree = "<group>"; };
 		ADE4A6B51A844121008CB5D2 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = "App/App Delegate/AppDelegate.m"; sourceTree = "<group>"; };
@@ -539,7 +535,6 @@
 		AD89D2F01AA4D7780044F2C0 /* MainMenu */ = {
 			isa = PBXGroup;
 			children = (
-				AD89D2F11AA4D79A0044F2C0 /* MainMenuControllerSpec.m */,
 			);
 			name = MainMenu;
 			sourceTree = "<group>";
@@ -806,7 +801,6 @@
 			isa = PBXGroup;
 			children = (
 				ADD2AA5A1AB909A3007096FE /* LaunchScreen.xib */,
-				ADD2AA5C1AB909A3007096FE /* Main.storyboard */,
 			);
 			name = Storyboard;
 			sourceTree = "<group>";
@@ -917,7 +911,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				ADD2AA5E1AB909A3007096FE /* LaunchScreen.xib in Resources */,
-				ADD2AA5F1AB909A3007096FE /* Main.storyboard in Resources */,
 				AD518EEF1A8400BF00FA6CFF /* uncrustify.cfg in Resources */,
 				AD1C3E061A8450F10001C833 /* _clang-format in Resources */,
 				AD518EEE1A8400BF00FA6CFF /* Podfile in Resources */,
@@ -1045,7 +1038,6 @@
 				AD341F571AA8F4F60040DA92 /* WhiteCardFactory.m in Sources */,
 				AD5641991ABB3FF20078F5F0 /* PlaymatControllerSpec.m in Sources */,
 				AD71F5921A9C049F0077BE8B /* CardFactory.m in Sources */,
-				AD89D2F21AA4D79A0044F2C0 /* MainMenuControllerSpec.m in Sources */,
 				ADA8C8AD1AB505BC000987EC /* HandControllerFactory.m in Sources */,
 				AD71F5951A9C11A70077BE8B /* HandFactory.m in Sources */,
 				ADA8C86C1AB33D70000987EC /* WhiteCardControllerSpec.m in Sources */,
@@ -1070,14 +1062,6 @@
 				ADD2AA5B1AB909A3007096FE /* Base */,
 			);
 			name = LaunchScreen.xib;
-			sourceTree = "<group>";
-		};
-		ADD2AA5C1AB909A3007096FE /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				ADD2AA5D1AB909A3007096FE /* Base */,
-			);
-			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

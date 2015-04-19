@@ -31,26 +31,6 @@ describe(@"Constants", ^{
     });
   });
 
-  describe(@"+ Storyboard", ^{
-    let(result, ^{
-      return Constants.Storyboard;
-    });
-
-    specify(^{
-      [[result should] beMemberOfClass:UIStoryboard.class];
-    });
-  });
-
-  describe(@"+ StoryboardName", ^{
-    let(result, ^{
-      return Constants.StoryboardName;
-    });
-
-    specify(^{
-      [[result should] equal:@"Main"];
-    });
-  });
-
   describe(@"+ WhiteColor", ^{
     let(result, ^{
       return Constants.WhiteColor;

@@ -38,9 +38,14 @@
 }
 
 - (instancetype)initWithFrame:(CGRect)frame {
+  return [self initWithFrame:frame andBlackCard:[BlackCard withString:@"Made by BlackCardView"]];
+}
+
+- (instancetype)initWithFrame:(CGRect)frame andBlackCard:(BlackCard *)blackCard {
   self = [super initWithFrame:frame];
 
   if (self) {
+    self.blackCard = blackCard;
     [self initLabel];
     [self initBackgroundColor];
   }

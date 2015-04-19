@@ -11,8 +11,6 @@
 @interface Constants : NSObject
 
 + (UIColor *)BlackColor;
-+ (UIStoryboard *)Storyboard;
-+ (NSString *)StoryboardName;
 + (UIColor *)WhiteColor;
 
 @end

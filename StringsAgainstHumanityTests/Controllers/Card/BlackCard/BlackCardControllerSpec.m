@@ -9,6 +9,7 @@
 #import "TestLibraries.pch"
 @import UIKit;
 #import "BlackCardController.h"
+#import "BlackCardView.h"
 #import "BlackCard.h"
 
 SPEC_BEGIN(BlackCardControllerSpec)
@@ -19,40 +20,6 @@ describe(@"BlackCardController", ^{
 
   let(blackCardController, ^BlackCardController *{
     return [BlackCardController withBlackCard:blackCard];
-  });
-
-  describe(@"+ StoryboardID", ^{
-    let(result, ^{
-      return BlackCardController.StoryboardID;
-    });
-
-    it(@"equals 'BlackCardController'", ^{
-      [[result should] equal:NSStringFromClass(BlackCardController.class)];
-    });
-  });
-
-  describe(@"+ withBlackCard:", ^{
-    let(result, ^{
-      return [BlackCardController withBlackCard:blackCard];
-    });
-
-    specify(^{
-      [[result should] beMemberOfClass:BlackCardController.class];
-    });
-
-    it(@"returns a BlackCardController with a copy of the given BlackCard", ^{
-      [[result.blackCard should] equal:blackCard];
-    });
-  });
-
-  describe(@"- blackCard", ^{
-    let(result, ^{
-      return blackCardController.blackCard;
-    });
-
-    specify(^{
-      [[result should] beMemberOfClass:BlackCard.class];
-    });
   });
 
   describe(@"- debugDescription", ^{
@@ -71,43 +38,25 @@ describe(@"BlackCardController", ^{
     });
 
     let(expectedString, ^{
-      return NSStringWithFormat(@"<BlackCardController: %p; blackCard = %@; label = %@>",
-                                blackCardController, blackCardController.blackCard,
-                                blackCardController.label);
+      return NSStringWithFormat(@"<BlackCardController: %p; view = %@;>", blackCardController,
+                                blackCardController.blackCardView);
     });
 
     it(@"returns '<BlackCardController: [memory_address]; blackCard = [blackCard.description];"
         " label = [label.description]>'",
        ^{
+         blackCardController;
          [[description should] equal:expectedString];
        });
   });
 
-  describe(@"- label", ^{
-    let(result, ^{
-      return blackCardController.label;
-    });
-
-    specify(^{
-      [[result should] beMemberOfClass:UILabel.class];
-    });
-
-    it(@"returns a UILabel with - text equal to BlackCard's string", ^{
-      [[result.text should] equal:blackCardController.blackCard.string];
-    });
-
-    it(@"returns a UILabel with - textColor equal to BlackCard.StringColor", ^{
-      [[result.textColor should] equal:BlackCard.StringColor];
-    });
-  });
-
   describe(@"- view", ^{
-    let(result, ^{
+    let(view, ^{
       return blackCardController.view;
     });
 
-    it(@"has - backgroundColor equal to BlackCard.CardColor", ^{
-      [[result.backgroundColor should] equal:BlackCard.CardColor];
+    it(@"is identical to .blackCardView", ^{
+      [[view should] beIdenticalTo:blackCardController.blackCardView];
     });
   });
 });

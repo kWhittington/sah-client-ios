@@ -19,9 +19,9 @@
 @property(nonatomic) BirdsEyeHandLayout *birdsEyeLayout;
 @property(copy, nonatomic) Hand *hand;
 
-- (void)initBackground;
+- (void)initCollectionView;
+- (void)initCollectionViewBackground;
 - (void)initCollectionViewDataSource;
-- (void)initLayouts;
 @end
 
 @implementation HandController
@@ -37,12 +37,36 @@
 }
 
 + (instancetype)withHand:(Hand *)hand {
-  HandController *controller =
-    [Constants.Storyboard instantiateViewControllerWithIdentifier:HandController.StoryboardID];
+  HandController *controller = [[self alloc] init];
+  //    [Constants.Storyboard instantiateViewControllerWithIdentifier:HandController.StoryboardID];
 
   controller.hand = hand;
+  controller.collectionView.dataSource = controller.hand;
 
   return controller;
+}
+
+- (instancetype)init {
+  return [self initWithCollectionViewLayout:[BirdsEyeHandLayout new] andHand:[Hand empty]];
+}
+
+- (instancetype)initWithHand:(Hand *)hand {
+  return [self initWithCollectionViewLayout:[BirdsEyeHandLayout new] andHand:hand];
+}
+
+- (instancetype)initWithCollectionViewLayout:(UICollectionViewLayout *)layout {
+  return [self initWithCollectionViewLayout:layout andHand:Hand.empty];
+}
+
+#pragma mark Designated Initializer
+- (instancetype)initWithCollectionViewLayout:(UICollectionViewLayout *)layout andHand:(Hand *)hand {
+  self = [super initWithCollectionViewLayout:layout];
+
+  if (self) {
+    [self initCollectionView];
+  }
+
+  return self;
 }
 
 - (void)addCard:(Card *)card {
@@ -69,7 +93,16 @@
   return self.selectedCard != nil;
 }
 
-- (void)initBackground {
+- (void)initCollectionView {
+  self.collectionView = [[UICollectionView alloc] initWithFrame:UIScreen.mainScreen.bounds
+                                           collectionViewLayout:self.collectionViewLayout];
+  [self.collectionView registerClass:CardViewCell.class
+          forCellWithReuseIdentifier:CardViewCell.reusableID];
+  [self initCollectionViewBackground];
+  [self initCollectionViewDataSource];
+}
+
+- (void)initCollectionViewBackground {
   self.collectionView.backgroundView = nil;
   self.collectionView.backgroundColor = [UIColor clearColor];
   self.collectionView.opaque = NO;
@@ -77,12 +110,6 @@
 
 - (void)initCollectionViewDataSource {
   self.collectionView.dataSource = self.hand;
-}
-
-- (void)initLayouts {
-  self.birdsEyeLayout = [[BirdsEyeHandLayout alloc] init];
-
-  self.collectionView.collectionViewLayout = self.birdsEyeLayout;
 }
 
 - (void)playSelectedCard {
@@ -120,9 +147,6 @@
   // Register cell classes
 
   // Do any additional setup after loading the view.
-  [self initBackground];
-  [self initCollectionViewDataSource];
-  [self initLayouts];
 }
 
 #pragma mark <UICollectionViewDelegate>

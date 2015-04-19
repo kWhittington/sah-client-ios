@@ -24,8 +24,8 @@
 }
 
 + (instancetype)withWhiteCard:(WhiteCard *)whiteCard {
-  WhiteCardController *controller =
-    [Constants.Storyboard instantiateViewControllerWithIdentifier:self.class.StoryboardID];
+  WhiteCardController *controller = [[self alloc] init];
+  //    [Constants.Storyboard instantiateViewControllerWithIdentifier:self.class.StoryboardID];
 
   [controller loadView];
   [controller configureColors];
@@ -47,6 +47,12 @@
 
 - (void)configureLabel {
   self.label.text = self.whiteCard.string;
+}
+
+- (void)loadView {
+  [super loadView];
+  
+  self.label = [[UILabel alloc]init];
 }
 
 - (void)viewDidLoad {
