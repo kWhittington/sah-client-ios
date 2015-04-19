@@ -9,7 +9,6 @@
 #import "AppDelegate.h"
 
 @interface AppDelegate ()
-
 @end
 
 @implementation AppDelegate
@@ -20,6 +19,7 @@
   [self initializeCocoaLumberjack];
 
   self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+
   return YES;
 }
 
