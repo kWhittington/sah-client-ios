@@ -6,7 +6,6 @@ pod 'CocoaLumberjack', '2.0.0-rc2'
 pod 'HexColors'
 pod 'PureLayout'
 
-pod 'pop'
 pod 'Canvas'
 
 target :StringsAgainstHumanityTests, exclusive: true do

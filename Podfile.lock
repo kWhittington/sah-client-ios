@@ -13,7 +13,6 @@ PODS:
   - HexColors (2.2.1)
   - Kiwi (2.3.1)
   - ObjectiveSugar (1.1.0)
-  - pop (1.0.7)
   - PureLayout (2.0.5)
 
 DEPENDENCIES:
@@ -24,7 +23,6 @@ DEPENDENCIES:
   - HexColors
   - Kiwi
   - ObjectiveSugar
-  - pop
   - PureLayout
 
 SPEC CHECKSUMS:
@@ -35,7 +33,6 @@ SPEC CHECKSUMS:
   HexColors: abfd172e329dab59888614ccba6f216cec59289d
   Kiwi: f038a6c61f7a9e4d7766bff5717aa3b3fdb75f55
   ObjectiveSugar: a6a25f23d657c19df0a0b972466d5b5ca9f5295c
-  pop: 628ffc631644601567ee8bfaaaea493ebd7d0923
   PureLayout: a0fe75f1cf485801e7e00b723b8a3c32dca558e2
 
 COCOAPODS: 0.35.0
