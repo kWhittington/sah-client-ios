@@ -4,7 +4,7 @@ xcodeproj 'StringsAgainstHumanity'
 pod 'ObjectiveSugar'
 pod 'CocoaLumberjack', '2.0.0-rc2'
 pod 'HexColors'
-pod 'PureLayout'
+pod 'Masonry'
 
 pod 'Canvas'
 
