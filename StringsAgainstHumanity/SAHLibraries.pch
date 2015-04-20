@@ -17,6 +17,9 @@
 #import <ObjectiveSugar.h>
 #import <HexColor.h>
 
+#define MAS_SHORTHAND
+#import <Masonry.h>
+
 #import "Constants.h"
 
 #import "NSObject+TypeChecking.h"
