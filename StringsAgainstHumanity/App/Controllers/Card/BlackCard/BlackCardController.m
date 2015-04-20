@@ -28,7 +28,7 @@
   self = [super init];
 
   if (self) {
-    self.view = [[BlackCardView alloc] initWithFrame:UIScreen.mainScreen.bounds];
+    [self loadView];
   }
 
   return self;
@@ -49,6 +49,10 @@
 - (void)didReceiveMemoryWarning {
   [super didReceiveMemoryWarning];
   // Dispose of any resources that can be recreated.
+}
+
+- (void)loadView {
+  self.view = [[BlackCardView alloc] initWithFrame:UIScreen.mainScreen.bounds];
 }
 
 - (void)viewDidLoad {

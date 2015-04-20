@@ -23,6 +23,7 @@
   self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
   self.window.rootViewController =
     [BlackCardController withBlackCard:[BlackCard withString:@"Hello"]];
+  [self.window makeKeyAndVisible];
 
   return YES;
 }

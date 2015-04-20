@@ -32,9 +32,10 @@
 }
 
 - (void)initLabel {
-  self.textLabel = [[UILabel alloc] init];
+  self.textLabel = [[UILabel alloc] initWithFrame:UIScreen.mainScreen.bounds];
   self.textLabel.text = self.blackCard.string;
   self.textLabel.textColor = Constants.WhiteColor;
+  [self addSubview:self.textLabel];
 }
 
 - (instancetype)initWithFrame:(CGRect)frame {
