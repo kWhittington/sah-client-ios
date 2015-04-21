@@ -11,7 +11,7 @@
 
 @interface BlackCardView ()
 @property(nonatomic) BlackCard *blackCard;
-@property(nonatomic) UILabel *textLabel;
+@property(nonatomic) UITextView *textView;
 @end
 
 @implementation BlackCardView
@@ -24,7 +24,7 @@
 
   if (self) {
     self.blackCard = blackCard;
-    [self initLabel];
+    [self initTextView];
     [self initBackgroundColor];
   }
 
@@ -35,30 +35,19 @@
   self.backgroundColor = Constants.BlackColor;
 }
 
-- (void)initLabel {
-  self.textLabel = [[UILabel alloc] initWithFrame:UIScreen.mainScreen.bounds];
-  self.textLabel.text = self.blackCard.string;
-  self.textLabel.textColor = Constants.WhiteColor;
-  self.textLabel.font = [UIFont fontWithName:@"Helvetica-Bold" size:20];
-  [self addSubview:self.textLabel];
+- (void)initTextView {
+  self.textView = [[UITextView alloc] init];
+  self.textView.text = @"Hi! How are you? This is a really long string! Yes it is!";
+  self.textView.textColor = Constants.WhiteColor;
+  self.textView.font = [UIFont fontWithName:@"Helvetica-Bold" size:28];
+  self.textView.backgroundColor = UIColor.clearColor;
+  self.textView.editable = NO;
+  self.textView.selectable = NO;
 
-  [self makeLabelConstraints];
-}
+  [self addSubview:self.textView];
 
-- (void)makeLabelConstraints {
-  [self makeLabelLeftConstraints];
-  [self makeLabelTopConstraints];
-}
-
-- (void)makeLabelLeftConstraints {
-  [self.textLabel makeConstraints:^(MASConstraintMaker *make) {
-    make.left.equalTo(self.left).with.offset(10);
-  }];
-}
-
-- (void)makeLabelTopConstraints {
-  [self.textLabel makeConstraints:^(MASConstraintMaker *make) {
-    make.top.equalTo(self.top).with.offset(7);
+  [self.textView makeConstraints:^(MASConstraintMaker *make) {
+    make.edges.equalTo(self).with.insets(UIEdgeInsetsMake(44, 44, 44, 44));
   }];
 }
 @end

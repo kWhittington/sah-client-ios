@@ -12,7 +12,7 @@
 
 @interface BlackCardView : UIView
 @property(readonly, nonatomic) BlackCard *blackCard;
-@property(readonly, nonatomic) UILabel *textLabel;
+@property(readonly, nonatomic) UITextView *textView;
 
 - (instancetype)initWithFrame:(CGRect)frame andBlackCard:(BlackCard *)blackCard;
 @end
