@@ -12,33 +12,9 @@
 @interface BlackCardView ()
 @property(nonatomic) BlackCard *blackCard;
 @property(nonatomic) UILabel *textLabel;
-
-- (void)initBackgroundColor;
-- (void)initLabel;
 @end
 
 @implementation BlackCardView
-
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect {
-    // Drawing code
-}
-*/
-
-- (void)initBackgroundColor {
-  self.backgroundColor = Constants.BlackColor;
-}
-
-- (void)initLabel {
-  self.textLabel = [[UILabel alloc] initWithFrame:UIScreen.mainScreen.bounds];
-  self.textLabel.text = self.blackCard.string;
-  self.textLabel.textColor = Constants.WhiteColor;
-  self.textLabel.font = [UIFont fontWithName:@"Helvetica-Bold" size:20];
-  [self addSubview:self.textLabel];
-}
-
 - (instancetype)initWithFrame:(CGRect)frame {
   return [self initWithFrame:frame andBlackCard:[BlackCard withString:@"Made by BlackCardView"]];
 }
@@ -55,7 +31,34 @@
   return self;
 }
 
-- (void)updateConstraints {
+- (void)initBackgroundColor {
+  self.backgroundColor = Constants.BlackColor;
 }
 
+- (void)initLabel {
+  self.textLabel = [[UILabel alloc] initWithFrame:UIScreen.mainScreen.bounds];
+  self.textLabel.text = self.blackCard.string;
+  self.textLabel.textColor = Constants.WhiteColor;
+  self.textLabel.font = [UIFont fontWithName:@"Helvetica-Bold" size:20];
+  [self addSubview:self.textLabel];
+
+  [self makeLabelConstraints];
+}
+
+- (void)makeLabelConstraints {
+  [self makeLabelLeftConstraints];
+  [self makeLabelTopConstraints];
+}
+
+- (void)makeLabelLeftConstraints {
+  [self.textLabel makeConstraints:^(MASConstraintMaker *make) {
+    make.left.equalTo(self.left).with.offset(10);
+  }];
+}
+
+- (void)makeLabelTopConstraints {
+  [self.textLabel makeConstraints:^(MASConstraintMaker *make) {
+    make.top.equalTo(self.top).with.offset(7);
+  }];
+}
 @end
