@@ -35,6 +35,7 @@
   self.textLabel = [[UILabel alloc] initWithFrame:UIScreen.mainScreen.bounds];
   self.textLabel.text = self.blackCard.string;
   self.textLabel.textColor = Constants.WhiteColor;
+  self.textLabel.font = [UIFont fontWithName:@"Helvetica-Bold" size:20];
   [self addSubview:self.textLabel];
 }
 
