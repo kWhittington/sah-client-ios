@@ -50,6 +50,60 @@ describe(@"CardView", ^{
     });
   });
 
+  describe(@"- isEqual:", ^{
+    let(other, ^{
+      return NSObject.nullMock;
+    });
+
+    let(isEqual, ^{
+      return theValue([cardView isEqual:other]);
+    });
+
+    context(@"when other is not a CardView", ^{
+      let(other, ^{
+        return GZWords.sentence;
+      });
+
+      it(@"is NO", ^{
+        [[isEqual should] beNo];
+      });
+    });
+
+    context(@"when other is a CardView", ^{
+      context(@"and both card properties are equal", ^{
+        let(other, ^{
+          return FGBuildWith(CardView.class, ^(FGDefinitionBuilder *builder) {
+            builder[@"card"] = cardView.card;
+          });
+        });
+
+        it(@"is YES", ^{
+          [[isEqual should] beYes];
+        });
+      });
+
+      context(@"and both card properties are not equal", ^{
+        let(other, ^{
+          return FGBuild(CardView.class);
+        });
+
+        it(@"is NO", ^{
+          [[isEqual should] beNo];
+        });
+      });
+    });
+
+    context(@"when they are identical", ^{
+      let(other, ^{
+        return cardView;
+      });
+
+      it(@"is YES", ^{
+        [[isEqual should] beYes];
+      });
+    });
+  });
+
   describe(@"- isEqualToCardView:", ^{
     let(other, ^{
       return CardView.nullMock;

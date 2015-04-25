@@ -36,6 +36,16 @@
   self.card = card;
 }
 
+- (BOOL)isEqual:(id)object {
+  if ([self isIdenticalTo:object]) {
+    return YES;
+  }
+
+  unless([object isKindOfClass:self.class]) { return NO; }
+
+  return [self isEqualToCardView:(CardView *)object];
+}
+
 - (BOOL)isEqualToCardView:(CardView *)other {
   BOOL haveEqualCards = [self.card isEqualToCard:other.card];
 
