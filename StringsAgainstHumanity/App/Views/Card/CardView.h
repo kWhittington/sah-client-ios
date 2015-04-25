@@ -10,7 +10,7 @@
 
 @class Card;
 
-@interface CardView : UIView
+@interface CardView : UIView <NSCopying>
 @property(readonly, nonatomic) Card *card;
 
 - (instancetype)initWithFrame:(CGRect)frame andCard:(Card *)card;

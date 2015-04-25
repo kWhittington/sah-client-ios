@@ -17,6 +17,10 @@ describe(@"CardView", ^{
     return FGBuild(CardView.class);
   });
 
+  it(@"conforms to the NSCopying protocol", ^{
+    [[cardView should] conformToProtocol:@protocol(NSCopying)];
+  });
+
   describe(@".card", ^{
     __block objc_property_t cardProperty;
 
@@ -47,6 +51,20 @@ describe(@"CardView", ^{
       [[theValue(nonatomicAttribute) shouldNot] beNil];
 
       free(nonatomicAttribute);
+    });
+  });
+
+  describe(@"- copy", ^{
+    let(copy, ^{
+      return cardView.copy;
+    });
+
+    it(@"is an equivalent card view", ^{
+      [[copy should] equal:cardView];
+    });
+
+    it(@"is a non-identical card view", ^{
+      [[copy shouldNot] beIdenticalTo:cardView];
     });
   });
 

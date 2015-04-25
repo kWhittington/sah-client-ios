@@ -14,6 +14,10 @@
 @end
 
 @implementation CardView
+- (instancetype)copyWithZone:(NSZone *)zone {
+  return [[self.class alloc] initWithFrame:self.frame andCard:self.card.copy];
+}
+
 - (instancetype)initWithFrame:(CGRect)frame {
   return [self initWithFrame:frame andCard:[Card withString:@"Made by CardView - initWithFrame"]];
 }
