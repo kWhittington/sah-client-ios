@@ -23,5 +23,6 @@
 #import "Constants.h"
 
 #import "NSObject+TypeChecking.h"
+#import "NSObject+DebugDescription.h"
 
 #endif
