@@ -113,7 +113,7 @@ describe(@"CardView", ^{
       return theValue([cardView isEqualToCardView:other]);
     });
 
-    context(@"when other's card equals this' card", ^{
+    context(@"when both card properties are equal", ^{
       let(other, ^{
         return FGBuildWith(CardView.class, ^(FGDefinitionBuilder *builder) {
           builder[@"card"] = cardView.card;
@@ -122,6 +122,16 @@ describe(@"CardView", ^{
 
       it(@"is YES", ^{
         [[isEqualToCardView should] beYes];
+      });
+    });
+
+    context(@"when both card properties are not equal", ^{
+      let(other, ^{
+        return FGBuild(CardView.class);
+      });
+
+      it(@"is NO", ^{
+        [[isEqualToCardView should] beNo];
       });
     });
   });
