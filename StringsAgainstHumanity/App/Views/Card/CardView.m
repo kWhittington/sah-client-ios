@@ -14,6 +14,18 @@
 @end
 
 @implementation CardView
++ (instancetype)withFrame:(CGRect)frame {
+  return [[self alloc] initWithFrame:frame];
+}
+
++ (instancetype)withFrame:(CGRect)frame andCard:(Card *)card {
+  return [[self alloc] initWithFrame:frame andCard:card];
+}
+
++ (instancetype)withMainScreenFrameAndCard:(Card *)card {
+  return [[self alloc] initWithMainScreenFrameAndCard:card];
+}
+
 - (instancetype)copyWithZone:(NSZone *)zone {
   return [[self.class alloc] initWithFrame:self.frame andCard:self.card.copy];
 }

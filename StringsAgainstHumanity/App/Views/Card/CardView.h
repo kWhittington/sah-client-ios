@@ -13,6 +13,10 @@
 @interface CardView : UIView <NSCopying>
 @property(readonly, nonatomic) Card *card;
 
++ (instancetype)withFrame:(CGRect)frame;
++ (instancetype)withFrame:(CGRect)frame andCard:(Card *)card;
++ (instancetype)withMainScreenFrameAndCard:(Card *)card;
+
 - (instancetype)initWithFrame:(CGRect)frame andCard:(Card *)card;
 - (instancetype)initWithMainScreenFrameAndCard:(Card *)card;
 
