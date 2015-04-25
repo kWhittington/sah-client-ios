@@ -35,4 +35,10 @@
 - (void)initCard:(Card *)card {
   self.card = card;
 }
+
+- (BOOL)isEqualToCardView:(CardView *)other {
+  BOOL haveEqualCards = [self.card isEqualToCard:other.card];
+
+  return haveEqualCards;
+}
 @end

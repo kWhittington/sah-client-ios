@@ -15,4 +15,6 @@
 
 - (instancetype)initWithFrame:(CGRect)frame andCard:(Card *)card;
 - (instancetype)initWithMainScreenFrameAndCard:(Card *)card;
+
+- (BOOL)isEqualToCardView:(CardView *)other;
 @end

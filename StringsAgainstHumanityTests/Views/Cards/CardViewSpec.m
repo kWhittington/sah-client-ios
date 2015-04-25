@@ -49,5 +49,27 @@ describe(@"CardView", ^{
       free(nonatomicAttribute);
     });
   });
+
+  describe(@"- isEqualToCardView:", ^{
+    let(other, ^{
+      return CardView.nullMock;
+    });
+
+    let(isEqualToCardView, ^{
+      return theValue([cardView isEqualToCardView:other]);
+    });
+
+    context(@"when other's card equals this' card", ^{
+      let(other, ^{
+        return FGBuildWith(CardView.class, ^(FGDefinitionBuilder *builder) {
+          builder[@"card"] = cardView.card;
+        });
+      });
+
+      it(@"is YES", ^{
+        [[isEqualToCardView should] beYes];
+      });
+    });
+  });
 });
 SPEC_END
