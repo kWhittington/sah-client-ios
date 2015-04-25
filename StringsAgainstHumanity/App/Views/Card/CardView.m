@@ -55,4 +55,8 @@
 
   return haveEqualCards;
 }
+
+- (NSString *)description {
+  return NSStringWithFormat(@"<CardView: %p; card = %@>", self, self.card);
+}
 @end
