@@ -36,6 +36,8 @@
 		AD8B92E81AA2BB6E0044ECC0 /* Hand+DataSourceSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = AD8B92E71AA2BB6E0044ECC0 /* Hand+DataSourceSpec.m */; };
 		AD99B3E41ADC584D00507C10 /* BlackCardViewSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = AD99B3E31ADC584D00507C10 /* BlackCardViewSpec.m */; };
 		AD99B3E81ADC593900507C10 /* BlackCardView.m in Sources */ = {isa = PBXBuildFile; fileRef = AD99B3E71ADC593900507C10 /* BlackCardView.m */; };
+		AD9CD1921AE5FD1A004DECA5 /* CardTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = AD9CD1911AE5FD1A004DECA5 /* CardTextView.m */; };
+		AD9CD1951AE5FDD4004DECA5 /* CardTextViewSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = AD9CD1941AE5FDD4004DECA5 /* CardTextViewSpec.m */; };
 		AD9CD1981AE5FFEB004DECA5 /* CardView.m in Sources */ = {isa = PBXBuildFile; fileRef = AD9CD1971AE5FFEB004DECA5 /* CardView.m */; };
 		ADA8C86C1AB33D70000987EC /* WhiteCardControllerSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = ADA8C86B1AB33D70000987EC /* WhiteCardControllerSpec.m */; };
 		ADA8C8701AB33DB7000987EC /* WhiteCardController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADA8C86F1AB33DB7000987EC /* WhiteCardController.m */; };
@@ -44,6 +46,7 @@
 		ADA8C8AD1AB505BC000987EC /* HandControllerFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = ADA8C8AC1AB505BC000987EC /* HandControllerFactory.m */; };
 		ADAAC07E1AEC2C3300AD962D /* NSObject+DebugDescription.m in Sources */ = {isa = PBXBuildFile; fileRef = ADAAC07D1AEC2C3300AD962D /* NSObject+DebugDescription.m */; };
 		ADAAC0811AEC2C7F00AD962D /* NSObject+DebugDescription.m in Sources */ = {isa = PBXBuildFile; fileRef = ADAAC0801AEC2C7F00AD962D /* NSObject+DebugDescription.m */; };
+		ADAAC0841AEC558900AD962D /* CardTextViewFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = ADAAC0831AEC558900AD962D /* CardTextViewFactory.m */; };
 		ADBF7F901A910CE300C5BB00 /* HandController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADBF7F8F1A910CE300C5BB00 /* HandController.m */; };
 		ADBF7F931A910E2800C5BB00 /* Hand.m in Sources */ = {isa = PBXBuildFile; fileRef = ADBF7F921A910E2800C5BB00 /* Hand.m */; };
 		ADBF7F981A91171A00C5BB00 /* Card.m in Sources */ = {isa = PBXBuildFile; fileRef = ADBF7F971A91171A00C5BB00 /* Card.m */; };
@@ -115,6 +118,9 @@
 		AD99B3E31ADC584D00507C10 /* BlackCardViewSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BlackCardViewSpec.m; path = Views/Cards/BlackCards/BlackCardViewSpec.m; sourceTree = "<group>"; };
 		AD99B3E61ADC593900507C10 /* BlackCardView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BlackCardView.h; path = App/Views/Card/BlackCards/BlackCardView.h; sourceTree = "<group>"; };
 		AD99B3E71ADC593900507C10 /* BlackCardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BlackCardView.m; path = App/Views/Card/BlackCards/BlackCardView.m; sourceTree = "<group>"; };
+		AD9CD1901AE5FD1A004DECA5 /* CardTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CardTextView.h; path = App/Views/Card/Text/CardTextView.h; sourceTree = "<group>"; };
+		AD9CD1911AE5FD1A004DECA5 /* CardTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CardTextView.m; path = App/Views/Card/Text/CardTextView.m; sourceTree = "<group>"; };
+		AD9CD1941AE5FDD4004DECA5 /* CardTextViewSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CardTextViewSpec.m; path = Views/Cards/Text/CardTextViewSpec.m; sourceTree = "<group>"; };
 		AD9CD1961AE5FFEB004DECA5 /* CardView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CardView.h; path = App/Views/Card/CardView.h; sourceTree = "<group>"; };
 		AD9CD1971AE5FFEB004DECA5 /* CardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CardView.m; path = App/Views/Card/CardView.m; sourceTree = "<group>"; };
 		ADA8C86B1AB33D70000987EC /* WhiteCardControllerSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WhiteCardControllerSpec.m; path = Controllers/Card/WhiteCard/WhiteCardControllerSpec.m; sourceTree = "<group>"; };
@@ -127,6 +133,7 @@
 		ADAAC07C1AEC2C3300AD962D /* NSObject+DebugDescription.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSObject+DebugDescription.h"; path = "App/Categories/NSObject/DebugDescription/NSObject+DebugDescription.h"; sourceTree = "<group>"; };
 		ADAAC07D1AEC2C3300AD962D /* NSObject+DebugDescription.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSObject+DebugDescription.m"; path = "App/Categories/NSObject/DebugDescription/NSObject+DebugDescription.m"; sourceTree = "<group>"; };
 		ADAAC0801AEC2C7F00AD962D /* NSObject+DebugDescription.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSObject+DebugDescription.m"; path = "Categories/NSObject/DebugDescription/NSObject+DebugDescription.m"; sourceTree = "<group>"; };
+		ADAAC0831AEC558900AD962D /* CardTextViewFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CardTextViewFactory.m; path = Factories/Views/Cards/Text/CardTextViewFactory.m; sourceTree = "<group>"; };
 		ADBF7F8E1A910CE300C5BB00 /* HandController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HandController.h; path = App/Controllers/Hand/HandController.h; sourceTree = "<group>"; };
 		ADBF7F8F1A910CE300C5BB00 /* HandController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HandController.m; path = App/Controllers/Hand/HandController.m; sourceTree = "<group>"; };
 		ADBF7F911A910E2800C5BB00 /* Hand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Hand.h; path = App/Models/Hand/Hand.h; sourceTree = "<group>"; };
@@ -498,6 +505,7 @@
 		AD69AA601AEB272600B18013 /* Cards */ = {
 			isa = PBXGroup;
 			children = (
+				ADAAC0821AEC556C00AD962D /* Text */,
 				AD69AA5E1AEB272200B18013 /* CardViewFactory.m */,
 			);
 			name = Cards;
@@ -578,6 +586,7 @@
 		AD99B3E11ADC57B200507C10 /* Cards */ = {
 			isa = PBXGroup;
 			children = (
+				AD9CD1931AE5FDBD004DECA5 /* Text */,
 				AD99B3E21ADC580900507C10 /* BlackCards */,
 				AD69AA611AEB2E6400B18013 /* CardViewSpec.m */,
 			);
@@ -599,6 +608,23 @@
 				AD99B3E71ADC593900507C10 /* BlackCardView.m */,
 			);
 			name = BlackCards;
+			sourceTree = "<group>";
+		};
+		AD9CD18F1AE5FCC1004DECA5 /* Text */ = {
+			isa = PBXGroup;
+			children = (
+				AD9CD1901AE5FD1A004DECA5 /* CardTextView.h */,
+				AD9CD1911AE5FD1A004DECA5 /* CardTextView.m */,
+			);
+			name = Text;
+			sourceTree = "<group>";
+		};
+		AD9CD1931AE5FDBD004DECA5 /* Text */ = {
+			isa = PBXGroup;
+			children = (
+				AD9CD1941AE5FDD4004DECA5 /* CardTextViewSpec.m */,
+			);
+			name = Text;
 			sourceTree = "<group>";
 		};
 		ADA8C86A1AB33D4B000987EC /* WhiteCard */ = {
@@ -703,6 +729,14 @@
 			name = DebugDescription;
 			sourceTree = "<group>";
 		};
+		ADAAC0821AEC556C00AD962D /* Text */ = {
+			isa = PBXGroup;
+			children = (
+				ADAAC0831AEC558900AD962D /* CardTextViewFactory.m */,
+			);
+			name = Text;
+			sourceTree = "<group>";
+		};
 		ADABB3F31A9A48D90092B717 /* Hand */ = {
 			isa = PBXGroup;
 			children = (
@@ -777,6 +811,7 @@
 		ADBF7F9C1A913F4700C5BB00 /* Card */ = {
 			isa = PBXGroup;
 			children = (
+				AD9CD18F1AE5FCC1004DECA5 /* Text */,
 				AD99B3E51ADC58F000507C10 /* BlackCards */,
 				ADBF7F9D1A913FE200C5BB00 /* CardViewCell.h */,
 				ADBF7F9E1A913FE200C5BB00 /* CardViewCell.m */,
@@ -1060,6 +1095,7 @@
 				AD6272EF1A8341D000565A28 /* main.m in Sources */,
 				ADBF7F931A910E2800C5BB00 /* Hand.m in Sources */,
 				AD62DCF11AB2481600F70C51 /* BlackCardController.m in Sources */,
+				AD9CD1921AE5FD1A004DECA5 /* CardTextView.m in Sources */,
 				AD62DCE91AB2398600F70C51 /* UnimplementedException.m in Sources */,
 				ADBF7F9F1A913FE200C5BB00 /* CardViewCell.m in Sources */,
 				AD5E85671AA7E3680067ABF2 /* BlackCard.m in Sources */,
@@ -1082,6 +1118,7 @@
 				AD5E856A1AA7E3880067ABF2 /* BlackCardSpec.m in Sources */,
 				AD99B3E41ADC584D00507C10 /* BlackCardViewSpec.m in Sources */,
 				ADC8B66C1ACCA78E000BC883 /* PlayActionSpec.m in Sources */,
+				AD9CD1951AE5FDD4004DECA5 /* CardTextViewSpec.m in Sources */,
 				ADDE7F891A9C33C700E232EC /* HandSpec.m in Sources */,
 				AD7C84DF1A95B34D00A2DE02 /* CardSpec.m in Sources */,
 				ADC687971AA6518C005F70C3 /* ConstantsSpec.m in Sources */,
@@ -1095,6 +1132,7 @@
 				AD5641991ABB3FF20078F5F0 /* PlaymatControllerSpec.m in Sources */,
 				AD71F5921A9C049F0077BE8B /* CardFactory.m in Sources */,
 				ADA8C8AD1AB505BC000987EC /* HandControllerFactory.m in Sources */,
+				ADAAC0841AEC558900AD962D /* CardTextViewFactory.m in Sources */,
 				AD71F5951A9C11A70077BE8B /* HandFactory.m in Sources */,
 				ADA8C86C1AB33D70000987EC /* WhiteCardControllerSpec.m in Sources */,
 				AD341F5A1AA8F55C0040DA92 /* WhiteCardSpec.m in Sources */,
