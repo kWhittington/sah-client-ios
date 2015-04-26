@@ -26,6 +26,7 @@
   self = [super initWithFrame:frame textContainer:nil];
 
   if (self) {
+    self.textAlignment = NSTextAlignmentLeft;
     [cardView addSubview:self];
   }
 

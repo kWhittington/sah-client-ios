@@ -22,6 +22,16 @@ describe(@"CardTextView", ^{
     [[cardTextView should] beKindOfClass:UITextView.class];
   });
 
+  describe(@".textAlignment", ^{
+    let(textAlignment, ^{
+      return theValue(cardTextView.textAlignment);
+    });
+
+    it(@"is left aligned", ^{
+      [[textAlignment should] equal:theValue(NSTextAlignmentLeft)];
+    });
+  });
+
   describe(@"- cardView", ^{
     let(cardView, ^{
       return [cardTextView cardView];
