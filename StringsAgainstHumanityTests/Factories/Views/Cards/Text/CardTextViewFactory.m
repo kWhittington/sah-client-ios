@@ -15,8 +15,4 @@ FGFactoryBegin(CardTextView)
   [builder initWith:@selector(initWithMainScreenFrameAndCardView:) fieldNames:@[@"cardView"]];
 
   [builder field:@"cardView" assoc:[CardView class]];
-
-  traitDefiners[@"withoutSuperview"] = ^(FGDefinitionBuilder *withoutSuperview) {
-    [withoutSuperview nilField:@"cardView"];
-  };
 FGFactoryEnd
