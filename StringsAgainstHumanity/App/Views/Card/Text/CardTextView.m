@@ -26,11 +26,7 @@
   self = [super initWithFrame:frame textContainer:nil];
 
   if (self) {
-    self.backgroundColor = [UIColor clearColor];
-    self.editable = NO;
-    self.font = [UIFont fontWithName:@"Helvetica-Bold" size:28];
-    self.selectable = NO;
-    self.textAlignment = NSTextAlignmentLeft;
+    [self initProperties];
     [cardView addSubview:self];
   }
 
@@ -39,6 +35,14 @@
 
 - (instancetype)initWithMainScreenFrameAndCardView:(CardView *)cardView {
   return [self initWithFrame:UIScreen.mainScreen.bounds andCardView:cardView];
+}
+
+- (void)initProperties {
+  self.backgroundColor = [UIColor clearColor];
+  self.editable = NO;
+  self.font = [UIFont fontWithName:@"Helvetica-Bold" size:28];
+  self.selectable = NO;
+  self.textAlignment = NSTextAlignmentLeft;
 }
 
 - (CardView *)cardView {
