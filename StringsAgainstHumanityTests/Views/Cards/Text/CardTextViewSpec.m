@@ -52,6 +52,16 @@ describe(@"CardTextView", ^{
     });
   });
 
+  describe(@".selectable", ^{
+    let(selectable, ^{
+      return theValue(cardTextView.selectable);
+    });
+
+    it(@"is NO", ^{
+      [[selectable should] beNo];
+    });
+  });
+
   describe(@".textAlignment", ^{
     let(textAlignment, ^{
       return theValue(cardTextView.textAlignment);
