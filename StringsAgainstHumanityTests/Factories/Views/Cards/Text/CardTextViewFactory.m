@@ -9,11 +9,14 @@
 
 #import "FactoryLibraries.pch"
 #import "CardTextView.h"
+#import "CardView.h"
 
 FGFactoryBegin(CardTextView)
-  [builder initWith:@selector(initWithFrame:textContainer:)
-         fieldNames:@[@"frame", @"textContainer"]];
+  [builder initWith:@selector(initWithMainScreenFrameAndCardView:) fieldNames:@[@"cardView"]];
 
-  [builder nilField:@"frame"];
-  [builder nilField:@"textContainer"];
+  [builder field:@"cardView" assoc:[CardView class]];
+
+  traitDefiners[@"withoutSuperview"] = ^(FGDefinitionBuilder *withoutSuperview) {
+    [withoutSuperview nilField:@"cardView"];
+  };
 FGFactoryEnd

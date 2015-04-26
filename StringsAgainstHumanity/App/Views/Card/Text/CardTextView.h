@@ -8,6 +8,14 @@
 
 @import UIKit;
 
-@interface CardTextView : UITextView
+@class CardView;
 
+@interface CardTextView : UITextView
++ (instancetype)withFrame:(CGRect)frame andCardView:(CardView *)cardView;
++ (instancetype)withMainScreenFrameAndCardView:(CardView *)cardView;
+
+- (instancetype)initWithFrame:(CGRect)frame andCardView:(CardView *)cardView;
+- (instancetype)initWithMainScreenFrameAndCardView:(CardView *)cardView;
+
+- (CardView *)cardView;
 @end

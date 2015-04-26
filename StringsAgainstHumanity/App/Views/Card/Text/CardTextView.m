@@ -10,11 +10,37 @@
 #import "CardView.h"
 
 @implementation CardTextView
++ (instancetype)withFrame:(CGRect)frame andCardView:(CardView *)cardView {
+  return [[self alloc] initWithFrame:frame andCardView:cardView];
+}
+
++ (instancetype)withMainScreenFrameAndCardView:(CardView *)cardView {
+  return [[self alloc] initWithMainScreenFrameAndCardView:cardView];
+}
 
 - (instancetype)initWithFrame:(CGRect)frame textContainer:(NSTextContainer *)textContainer {
-  self = [super initWithFrame:frame textContainer:textContainer];
+  return [self initWithFrame:frame andCardView:[CardView withFrame:frame]];
+}
+
+- (instancetype)initWithFrame:(CGRect)frame andCardView:(CardView *)cardView {
+  self = [super initWithFrame:frame textContainer:nil];
+
+  if (self) {
+    [cardView addSubview:self];
+  }
 
   return self;
 }
 
+- (instancetype)initWithMainScreenFrameAndCardView:(CardView *)cardView {
+  return [self initWithFrame:UIScreen.mainScreen.bounds andCardView:cardView];
+}
+
+- (CardView *)cardView {
+  if ([self.superview isKindOfClass:[CardView class]]) {
+    return (CardView *)self.superview;
+  }
+
+  return nil;
+}
 @end
