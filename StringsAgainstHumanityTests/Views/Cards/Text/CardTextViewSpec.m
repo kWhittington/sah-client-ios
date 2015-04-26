@@ -22,6 +22,16 @@ describe(@"CardTextView", ^{
     [[cardTextView should] beKindOfClass:UITextView.class];
   });
 
+  describe(@".font", ^{
+    let(font, ^{
+      return cardTextView.font;
+    });
+
+    specify(^{
+      [[font should] equal:[UIFont fontWithName:@"Helvetica-Bold" size:28]];
+    });
+  });
+
   describe(@".textAlignment", ^{
     let(textAlignment, ^{
       return theValue(cardTextView.textAlignment);
