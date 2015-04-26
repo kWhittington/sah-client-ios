@@ -22,6 +22,16 @@ describe(@"CardTextView", ^{
     [[cardTextView should] beKindOfClass:UITextView.class];
   });
 
+  describe(@".backgroundColor", ^{
+    let(backgroundColor, ^{
+      return cardTextView.backgroundColor;
+    });
+
+    specify(^{
+      [[backgroundColor should] equal:[UIColor clearColor]];
+    });
+  });
+
   describe(@".font", ^{
     let(font, ^{
       return cardTextView.font;

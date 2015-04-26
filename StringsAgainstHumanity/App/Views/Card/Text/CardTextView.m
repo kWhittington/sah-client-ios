@@ -26,6 +26,7 @@
   self = [super initWithFrame:frame textContainer:nil];
 
   if (self) {
+    self.backgroundColor = [UIColor clearColor];
     self.font = [UIFont fontWithName:@"Helvetica-Bold" size:28];
     self.textAlignment = NSTextAlignmentLeft;
     [cardView addSubview:self];
