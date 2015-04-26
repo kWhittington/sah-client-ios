@@ -77,29 +77,52 @@ describe(@"CardTextView", ^{
       return [cardTextView cardView];
     });
 
-    context(@"when superview is nil", ^{
-      let(cardTextView, ^CardTextView *{
-        return FGBuildTrait([CardTextView class], @"withoutSuperview");
+    it(@"is superview", ^{
+      [[cardView should] beIdenticalTo:cardTextView.superview];
+    });
+  });
+
+  describe(@"- willMoveToSuperview:", ^{
+    context(@"when the new superview is a kind of CardView", ^{
+      let(newSuperview, ^{
+        return FGBuild(CardView.class);
       });
 
-      it(@"is nil", ^{
-        [[cardView should] beNil];
+      it(@"does nothing", ^{
+        [[theBlock(^{
+          [cardTextView willMoveToSuperview:newSuperview];
+        }) shouldNot] raise];
       });
     });
 
-    context(@"when superview is not a CardView", ^{
-      let(cardTextView, ^{
-        return FGBuildWith([CardTextView class], @{ @"cardView" : [UIView new] });
-      });
-
-      it(@"is nil", ^{
-        [[cardView should] beNil];
+    context(@"when the new superview is nil", ^{
+      it(@"does nothing", ^{
+        [[theBlock(^{
+          [cardTextView willMoveToSuperview:nil];
+        }) shouldNot] raise];
       });
     });
 
-    context(@"when superview is a CardView", ^{
-      it(@"is superview", ^{
-        [[cardView should] beIdenticalTo:cardTextView.superview];
+    context(@"when the new superview is not a kind of CardView", ^{
+      let(newSuperview, ^{
+        return UIView.new;
+      });
+
+      let(errorName, ^{
+        return @"SuperviewTypeError";
+      });
+
+      let(errorReason, ^{
+        return
+          [NSString stringWithFormat:@"CardTextView.superview must be a kind of CardView, not %@",
+                                     newSuperview.class];
+      });
+
+      it(@"raises a `SuperviewTypeError`", ^{
+        [[theBlock(^{
+          [cardTextView willMoveToSuperview:newSuperview];
+        }) should] raiseWithName:errorName
+                          reason:errorReason];
       });
     });
   });

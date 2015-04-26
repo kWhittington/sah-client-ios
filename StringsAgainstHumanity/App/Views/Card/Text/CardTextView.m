@@ -52,4 +52,15 @@
 
   return nil;
 }
+
+- (void)willMoveToSuperview:(UIView *)newSuperview {
+  BOOL isNil = newSuperview == nil;
+  BOOL isKindOfCardView = [newSuperview isKindOfClass:CardView.class];
+
+  unless(isNil || isKindOfCardView) {
+    [NSException
+       raise:@"SuperviewTypeError"
+      format:@"CardTextView.superview must be a kind of CardView, not %@", newSuperview.class];
+  }
+}
 @end
