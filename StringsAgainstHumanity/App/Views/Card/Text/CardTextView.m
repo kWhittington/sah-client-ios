@@ -27,6 +27,7 @@
 
   if (self) {
     self.backgroundColor = [UIColor clearColor];
+    self.editable = NO;
     self.font = [UIFont fontWithName:@"Helvetica-Bold" size:28];
     self.textAlignment = NSTextAlignmentLeft;
     [cardView addSubview:self];

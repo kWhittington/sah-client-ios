@@ -32,6 +32,16 @@ describe(@"CardTextView", ^{
     });
   });
 
+  describe(@".editable", ^{
+    let(editable, ^{
+      return theValue(cardTextView.editable);
+    });
+
+    it(@"is NO", ^{
+      [[editable should] beNo];
+    });
+  });
+
   describe(@".font", ^{
     let(font, ^{
       return cardTextView.font;
