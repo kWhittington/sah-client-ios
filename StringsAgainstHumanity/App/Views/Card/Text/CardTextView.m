@@ -8,6 +8,7 @@
 
 #import "CardTextView.h"
 #import "CardView.h"
+#import "Card.h"
 
 @implementation CardTextView
 + (instancetype)withFrame:(CGRect)frame andCardView:(CardView *)cardView {
@@ -51,6 +52,14 @@
   }
 
   return nil;
+}
+
+- (NSString *)text {
+  if (self.cardView) {
+    return self.cardView.card.string;
+  }
+
+  return @"";
 }
 
 - (void)willMoveToSuperview:(UIView *)newSuperview {

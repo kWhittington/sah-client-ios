@@ -62,6 +62,28 @@ describe(@"CardTextView", ^{
     });
   });
 
+  describe(@".text", ^{
+    let(text, ^{
+      return cardTextView.text;
+    });
+
+    context(@"when superview is nil", ^{
+      let(cardTextView, ^{
+        return FGBuildTrait(CardTextView.class, @"withoutSuperview");
+      });
+
+      it(@"is blank", ^{
+        [[text should] equal:[NSString string]];
+      });
+    });
+
+    context(@"when superview is CardView", ^{
+      it(@"is CardView.card.string", ^{
+        [[text should] equal:cardTextView.cardView.card.string];
+      });
+    });
+  });
+
   describe(@".textAlignment", ^{
     let(textAlignment, ^{
       return theValue(cardTextView.textAlignment);
