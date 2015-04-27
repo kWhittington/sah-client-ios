@@ -55,6 +55,14 @@ describe(@"CardView", ^{
   describe(@".cardTextView", ^{
     __block objc_property_t cardTextViewProperty;
 
+    let(cardTextView, ^{
+      return cardView.cardTextView;
+    });
+
+    it(@"has text equal to the card's string", ^{
+      [[cardTextView.text should] equal:cardView.card.string];
+    });
+
     beforeEach(^{
       cardTextViewProperty = class_getProperty(CardView.class, "cardTextView");
     });
@@ -87,6 +95,16 @@ describe(@"CardView", ^{
       [[theValue(readonlyAttribute) shouldNot] beNil];
 
       free(readonlyAttribute);
+    });
+  });
+
+  describe(@".subviews", ^{
+    let(subviews, ^{
+      return cardView.subviews;
+    });
+
+    it(@"holds the card text view", ^{
+      [[subviews should] contain:cardView.cardTextView];
     });
   });
 

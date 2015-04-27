@@ -36,11 +36,12 @@
   return [self initWithFrame:frame andCard:[Card withString:@"Made by CardView - initWithFrame"]];
 }
 
+#pragma mark Designated Initializer
 - (instancetype)initWithFrame:(CGRect)frame andCard:(Card *)card {
   self = [super initWithFrame:frame];
 
   if (self) {
-    [self initCard:card];
+    [self initVariablesWithCard:card];
   }
 
   return self;
@@ -56,6 +57,15 @@
 
 - (void)initCard:(Card *)card {
   self.card = card;
+}
+
+- (void)initCardTextView {
+  self.cardTextView = [CardTextView withFrame:self.frame andCardView:self];
+}
+
+- (void)initVariablesWithCard:(Card *)card {
+  [self initCard:card];
+  [self initCardTextView];
 }
 
 - (BOOL)isEqual:(id)object {
