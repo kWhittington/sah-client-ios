@@ -61,6 +61,9 @@
 
 - (void)initCardTextView {
   self.cardTextView = [CardTextView withFrame:self.frame andCardView:self];
+  [self.cardTextView makeConstraints:^(MASConstraintMaker *make) {
+    make.edges.equalTo(self).with.insets(UIEdgeInsetsMake(44, 44, 44, 44));
+  }];
 }
 
 - (void)initVariablesWithCard:(Card *)card {

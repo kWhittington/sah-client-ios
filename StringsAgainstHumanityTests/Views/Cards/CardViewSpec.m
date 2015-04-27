@@ -98,6 +98,20 @@ describe(@"CardView", ^{
     });
   });
 
+  describe(@".constraints", ^{
+    let(constraints, ^{
+      return cardView.constraints;
+    });
+
+    // TODO
+    // Come up with a better way to test for constraints than this, it'll bite me in the butt
+    // otherwise.
+    it(@"has 4 constraints", ^{
+      NSLog(@"CONSTRAINTS: %@", constraints);
+      [[[constraints should] have:4] constraints];
+    });
+  });
+
   describe(@".subviews", ^{
     let(subviews, ^{
       return cardView.subviews;
