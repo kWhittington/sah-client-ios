@@ -8,9 +8,11 @@
 
 #import "CardView.h"
 #import "Card.h"
+#import "CardTextView.h"
 
 @interface CardView ()
 @property(nonatomic) Card *card;
+@property(nonatomic, weak) CardTextView *cardTextView;
 @end
 
 @implementation CardView

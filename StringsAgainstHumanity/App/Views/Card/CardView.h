@@ -9,9 +9,11 @@
 @import UIKit;
 
 @class Card;
+@class CardTextView;
 
 @interface CardView : UIView <NSCopying>
-@property(readonly, nonatomic) Card *card;
+@property(nonatomic, readonly) Card *card;
+@property(nonatomic, readonly, weak) CardTextView *cardTextView;
 
 + (instancetype)withFrame:(CGRect)frame;
 + (instancetype)withFrame:(CGRect)frame andCard:(Card *)card;

@@ -9,6 +9,7 @@
 @import ObjectiveC.runtime;
 #import "TestLibraries.pch"
 #import "CardView.h"
+#import "CardTextView.h"
 #import "Card.h"
 
 SPEC_BEGIN(CardViewSpec)
@@ -29,12 +30,9 @@ describe(@"CardView", ^{
     });
 
     it(@"is a Card", ^{
-      char *type = property_copyAttributeValue(cardProperty, "T");
-      NSString *typeString = [NSString stringWithUTF8String:type];
+      NSString *typeString = @(property_copyAttributeValue(cardProperty, "T"));
 
       [[typeString should] equal:@"@\"Card\""];
-
-      free(type);
     });
 
     it(@"is a strong reference", ^{
@@ -51,6 +49,44 @@ describe(@"CardView", ^{
       [[theValue(nonatomicAttribute) shouldNot] beNil];
 
       free(nonatomicAttribute);
+    });
+  });
+
+  describe(@".cardTextView", ^{
+    __block objc_property_t cardTextViewProperty;
+
+    beforeEach(^{
+      cardTextViewProperty = class_getProperty(CardView.class, "cardTextView");
+    });
+
+    it(@"is a CardTextView", ^{
+      NSString *typeString = @(property_copyAttributeValue(cardTextViewProperty, "T"));
+
+      [[typeString should] equal:@"@\"CardTextView\""];
+    });
+
+    it(@"is a weak reference", ^{
+      char *weakAttribute = property_copyAttributeValue(cardTextViewProperty, "W");
+
+      [[theValue(weakAttribute) shouldNot] beNil];
+
+      free(weakAttribute);
+    });
+
+    it(@"is nonatmoic", ^{
+      char *nonatomicAttribute = property_copyAttributeValue(cardTextViewProperty, "N");
+
+      [[theValue(nonatomicAttribute) shouldNot] beNil];
+
+      free(nonatomicAttribute);
+    });
+
+    it(@"is readonly", ^{
+      char *readonlyAttribute = property_copyAttributeValue(cardTextViewProperty, "R");
+
+      [[theValue(readonlyAttribute) shouldNot] beNil];
+
+      free(readonlyAttribute);
     });
   });
 
