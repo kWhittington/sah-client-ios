@@ -11,6 +11,10 @@
 #import "Card.h"
 
 @implementation CardTextView
++ (instancetype)withFrame:(CGRect)frame {
+  return [[self alloc] initWithFrame:frame];
+}
+
 + (instancetype)withFrame:(CGRect)frame andCardView:(CardView *)cardView {
   return [[self alloc] initWithFrame:frame andCardView:cardView];
 }
@@ -19,8 +23,12 @@
   return [[self alloc] initWithMainScreenFrameAndCardView:cardView];
 }
 
+- (instancetype)initWithFrame:(CGRect)frame {
+  return [self initWithFrame:frame andCardView:nil];
+}
+
 - (instancetype)initWithFrame:(CGRect)frame textContainer:(NSTextContainer *)textContainer {
-  return [self initWithFrame:frame andCardView:[CardView withFrame:frame]];
+  return [self initWithFrame:frame andCardView:nil];
 }
 
 - (instancetype)initWithFrame:(CGRect)frame andCardView:(CardView *)cardView {
@@ -28,7 +36,10 @@
 
   if (self) {
     [self initProperties];
-    [cardView addSubview:self];
+
+    if (cardView) {
+      [cardView addSubview:self];
+    }
   }
 
   return self;

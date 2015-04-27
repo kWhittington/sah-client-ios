@@ -11,6 +11,7 @@
 @class CardView;
 
 @interface CardTextView : UITextView
++ (instancetype)withFrame:(CGRect)frame;
 + (instancetype)withFrame:(CGRect)frame andCardView:(CardView *)cardView;
 + (instancetype)withMainScreenFrameAndCardView:(CardView *)cardView;
 
