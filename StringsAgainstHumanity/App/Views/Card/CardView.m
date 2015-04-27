@@ -50,6 +50,10 @@
   return [self initWithFrame:[[UIScreen mainScreen] bounds] andCard:card];
 }
 
+- (NSString *)description {
+  return NSStringWithFormat(@"<CardView: %p; card = %@>", self, self.card);
+}
+
 - (void)initCard:(Card *)card {
   self.card = card;
 }
@@ -68,9 +72,5 @@
   BOOL haveEqualCards = [self.card isEqualToCard:other.card];
 
   return haveEqualCards;
-}
-
-- (NSString *)description {
-  return NSStringWithFormat(@"<CardView: %p; card = %@>", self, self.card);
 }
 @end
