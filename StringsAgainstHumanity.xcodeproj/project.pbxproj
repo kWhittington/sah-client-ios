@@ -16,7 +16,7 @@
 		AD227A511AF403C700930AE0 /* PlaymatControllerSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = AD227A501AF403C700930AE0 /* PlaymatControllerSpec.m */; };
 		AD227A541AF403E800930AE0 /* WhiteCardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD227A531AF403E800930AE0 /* WhiteCardViewController.m */; };
 		AD227A571AF403FB00930AE0 /* HandViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD227A561AF403FB00930AE0 /* HandViewController.m */; };
-		AD227A5A1AF4041000930AE0 /* MainMenuController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD227A591AF4041000930AE0 /* MainMenuController.m */; };
+		AD227A5A1AF4041000930AE0 /* MainMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD227A591AF4041000930AE0 /* MainMenuViewController.m */; };
 		AD227A5D1AF4041C00930AE0 /* PlaymatController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD227A5C1AF4041C00930AE0 /* PlaymatController.m */; };
 		AD227A601AF4048300930AE0 /* BlackCardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD227A5F1AF4048300930AE0 /* BlackCardViewController.m */; };
 		AD227A621AF4060300930AE0 /* HandViewControllerFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = AD227A611AF4060300930AE0 /* HandViewControllerFactory.m */; };
@@ -87,8 +87,8 @@
 		AD227A531AF403E800930AE0 /* WhiteCardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WhiteCardViewController.m; path = App/ViewControllers/Card/WhiteCard/WhiteCardViewController.m; sourceTree = "<group>"; };
 		AD227A551AF403FB00930AE0 /* HandViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HandViewController.h; path = App/ViewControllers/Hand/HandViewController.h; sourceTree = "<group>"; };
 		AD227A561AF403FB00930AE0 /* HandViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HandViewController.m; path = App/ViewControllers/Hand/HandViewController.m; sourceTree = "<group>"; };
-		AD227A581AF4041000930AE0 /* MainMenuController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MainMenuController.h; path = App/ViewControllers/MainMenu/MainMenuController.h; sourceTree = "<group>"; };
-		AD227A591AF4041000930AE0 /* MainMenuController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MainMenuController.m; path = App/ViewControllers/MainMenu/MainMenuController.m; sourceTree = "<group>"; };
+		AD227A581AF4041000930AE0 /* MainMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MainMenuViewController.h; path = App/ViewControllers/MainMenu/MainMenuViewController.h; sourceTree = "<group>"; };
+		AD227A591AF4041000930AE0 /* MainMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MainMenuViewController.m; path = App/ViewControllers/MainMenu/MainMenuViewController.m; sourceTree = "<group>"; };
 		AD227A5B1AF4041C00930AE0 /* PlaymatController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PlaymatController.h; path = App/ViewControllers/Playmat/PlaymatController.h; sourceTree = "<group>"; };
 		AD227A5C1AF4041C00930AE0 /* PlaymatController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PlaymatController.m; path = App/ViewControllers/Playmat/PlaymatController.m; sourceTree = "<group>"; };
 		AD227A5E1AF4048300930AE0 /* BlackCardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BlackCardViewController.h; path = App/ViewControllers/Card/BlackCard/BlackCardViewController.h; sourceTree = "<group>"; };
@@ -562,8 +562,8 @@
 		AD89D2EF1AA4C9B10044F2C0 /* MainMenu */ = {
 			isa = PBXGroup;
 			children = (
-				AD227A581AF4041000930AE0 /* MainMenuController.h */,
-				AD227A591AF4041000930AE0 /* MainMenuController.m */,
+				AD227A581AF4041000930AE0 /* MainMenuViewController.h */,
+				AD227A591AF4041000930AE0 /* MainMenuViewController.m */,
 			);
 			name = MainMenu;
 			sourceTree = "<group>";
@@ -1093,7 +1093,7 @@
 				AD227A601AF4048300930AE0 /* BlackCardViewController.m in Sources */,
 				AD6272EF1A8341D000565A28 /* main.m in Sources */,
 				ADBF7F931A910E2800C5BB00 /* Hand.m in Sources */,
-				AD227A5A1AF4041000930AE0 /* MainMenuController.m in Sources */,
+				AD227A5A1AF4041000930AE0 /* MainMenuViewController.m in Sources */,
 				AD227A541AF403E800930AE0 /* WhiteCardViewController.m in Sources */,
 				AD9CD1921AE5FD1A004DECA5 /* CardTextView.m in Sources */,
 				AD62DCE91AB2398600F70C51 /* UnimplementedException.m in Sources */,

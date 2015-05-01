@@ -1,16 +1,15 @@
 //
-//  MainMenuController.m
+//  MainMenuViewController.h
 //  StringsAgainstHumanity
 //
 //  Created by Kyle Whittington on 3/2/15.
 //  Copyright (c) 2015 Kyle Whittington. All rights reserved.
 //
 
-#import "MainMenuController.h"
+#import "PlaymatController.h"
 
-@interface MainMenuController ()
+@class Card;
 
-@end
+@interface MainMenuViewController : PlaymatController
 
-@implementation MainMenuController
 @end
