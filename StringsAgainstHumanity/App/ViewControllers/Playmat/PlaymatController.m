@@ -7,18 +7,18 @@
 //
 
 #import "PlaymatController.h"
-#import "BlackCardController.h"
+#import "BlackCardViewController.h"
 #import "HandController.h"
 #import "BlackCard.h"
 #import "Hand.h"
 #import "WhiteCard.h"
 
 @interface PlaymatController ()
-@property(strong, nonatomic) BlackCardController *blackCardController;
+@property(strong, nonatomic) BlackCardViewController *blackCardViewController;
 @property(strong, nonatomic) HandController *handController;
 
-- (void)initBlackCardController;
-- (void)initBlackCardControllerView;
+- (void)initBlackCardViewController;
+- (void)initBlackCardViewControllerView;
 - (void)initHandController;
 - (void)initHandControllerView;
 - (void)initSubControllers;
@@ -57,8 +57,8 @@
 
 - (NSString *)description {
   return NSStringWithFormat(
-    @"<PlaymatController: %p; blackCardController = %@; handController = %@>", self,
-    self.blackCardController, self.handController);
+    @"<PlaymatController: %p; blackCardViewController = %@; handController = %@>", self,
+    self.blackCardViewController, self.handController);
 }
 
 - (void)didReceiveMemoryWarning {
@@ -66,15 +66,15 @@
   // Dispose of any resources that can be recreated.
 }
 
-- (void)initBlackCardController {
-  self.blackCardController = [BlackCardController withBlackCard:self.class.StartingBlackCard];
-  [self addChildViewController:self.blackCardController];
-  [self.blackCardController didMoveToParentViewController:self];
+- (void)initBlackCardViewController {
+  self.blackCardViewController = [BlackCardViewController withBlackCard:self.class.StartingBlackCard];
+  [self addChildViewController:self.blackCardViewController];
+  [self.blackCardViewController didMoveToParentViewController:self];
 }
 
-- (void)initBlackCardControllerView {
-  self.blackCardController.view.frame = self.view.frame;
-  [self.view addSubview:self.blackCardController.view];
+- (void)initBlackCardViewControllerView {
+  self.blackCardViewController.view.frame = self.view.frame;
+  [self.view addSubview:self.blackCardViewController.view];
 }
 
 - (void)initHandController {
@@ -89,12 +89,12 @@
 }
 
 - (void)initSubControllers {
-  [self initBlackCardController];
+  [self initBlackCardViewController];
   [self initHandController];
 }
 
 - (void)initSubControllerViews {
-  [self initBlackCardControllerView];
+  [self initBlackCardViewControllerView];
   [self initHandControllerView];
 }
 

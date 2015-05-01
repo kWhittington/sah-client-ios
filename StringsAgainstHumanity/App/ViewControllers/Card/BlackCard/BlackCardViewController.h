@@ -1,5 +1,5 @@
 //
-//  BlackCardController.h
+//  BlackCardViewController.h
 //  StringsAgainstHumanity
 //
 //  Created by Kyle Whittington on 3/12/15.
@@ -11,7 +11,7 @@
 @class BlackCard;
 @class BlackCardView;
 
-@interface BlackCardController : UIViewController
+@interface BlackCardViewController : UIViewController
 + (instancetype)withBlackCard:(BlackCard *)blackCard;
 
 - (instancetype)initWithBlackCard:(BlackCard *)blackCard;

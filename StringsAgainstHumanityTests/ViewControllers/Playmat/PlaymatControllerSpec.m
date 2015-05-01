@@ -8,7 +8,7 @@
 
 #import "TestLibraries.pch"
 #import "PlaymatController.h"
-#import "BlackCardController.h"
+#import "BlackCardViewController.h"
 #import "HandController.h"
 #import "BlackCard.h"
 #import "Hand.h"
@@ -19,8 +19,8 @@ describe(@"PlaymatController", ^{
     return FGBuildTrait(PlaymatController.class, @"empty");
   });
 
-  let(blackCardController, ^BlackCardController *{
-    return playmatController.blackCardController;
+  let(blackCardViewController, ^BlackCardViewController *{
+    return playmatController.blackCardViewController;
   });
 
   let(handController, ^HandController *{
@@ -31,9 +31,9 @@ describe(@"PlaymatController", ^{
     [[playmatController should] beKindOfClass:UIViewController.class];
   });
 
-  describe(@".blackCardController", ^{
-    it(@"returns the BlackCardController responsible for the background BlackCard", ^{
-      [[blackCardController should] beKindOfClass:BlackCardController.class];
+  describe(@".blackCardViewController", ^{
+    it(@"returns the BlackCardViewController responsible for the background " @"BlackCard", ^{
+      [[blackCardViewController should] beKindOfClass:BlackCardViewController.class];
     });
   });
 
@@ -54,7 +54,7 @@ describe(@"PlaymatController", ^{
       });
 
       it(@"displays BlackCard behind Hand", ^{
-        NSUInteger blackCardViewIndex = [subviews indexOfObject:blackCardController.view];
+        NSUInteger blackCardViewIndex = [subviews indexOfObject:blackCardViewController.view];
         NSUInteger handViewIndex = [subviews indexOfObject:handController.view];
 
         [[theValue(blackCardViewIndex) should] beLessThan:theValue(handViewIndex)];
@@ -92,9 +92,9 @@ describe(@"PlaymatController", ^{
     });
 
     let(expectedFormat, ^{
-      return NSStringWithFormat(
-        @"<PlaymatController: %p; blackCardController = %@; handController = %@>",
-        playmatController, blackCardController, handController);
+      return NSStringWithFormat(@"<PlaymatController: %p; blackCardViewController "
+                                @"= %@; handController = %@>",
+                                playmatController, blackCardViewController, handController);
     });
 
     specify(^{

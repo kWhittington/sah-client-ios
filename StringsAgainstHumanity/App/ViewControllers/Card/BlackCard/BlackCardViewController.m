@@ -1,5 +1,5 @@
 //
-//  BlackCardController.m
+//  BlackCardViewController.m
 //  StringsAgainstHumanity
 //
 //  Created by Kyle Whittington on 3/12/15.
@@ -7,15 +7,15 @@
 //
 
 #import "SAHLibraries.pch"
-#import "BlackCardController.h"
+#import "BlackCardViewController.h"
 #import "BlackCardView.h"
 #import "BlackCard.h"
 
-@interface BlackCardController ()
+@interface BlackCardViewController ()
 - (instancetype)initWithBlackCard:(BlackCard *)blackCard;
 @end
 
-@implementation BlackCardController
+@implementation BlackCardViewController
 + (instancetype)withBlackCard:(BlackCard *)blackCard {
   return [[self alloc] initWithBlackCard:blackCard];
 }
@@ -43,7 +43,7 @@
 }
 
 - (NSString *)description {
-  return NSStringWithFormat(@"<BlackCardController: %p; view = %@;>", self, self.view);
+  return NSStringWithFormat(@"<BlackCardViewController: %p; view = %@;>", self, self.view);
 }
 
 - (void)didReceiveMemoryWarning {
@@ -63,7 +63,8 @@
 /*
 #pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before
+// In a storyboard-based application, you will often want to do a little
+preparation before
 navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].

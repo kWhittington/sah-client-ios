@@ -8,13 +8,13 @@
 
 @import UIKit;
 
-@class BlackCardController;
+@class BlackCardViewController;
 @class HandController;
 @class BlackCard;
 @class Hand;
 
 @interface PlaymatController : UIViewController
-@property(readonly, strong, nonatomic) BlackCardController *blackCardController;
+@property(readonly, strong, nonatomic) BlackCardViewController *blackCardViewController;
 @property(readonly, strong, nonatomic) HandController *handController;
 
 + (BlackCard *)StartingBlackCard;
