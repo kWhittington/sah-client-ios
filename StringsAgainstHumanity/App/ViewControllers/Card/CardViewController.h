@@ -1,0 +1,18 @@
+//
+//  CardViewController.h
+//  StringsAgainstHumanity
+//
+//  Created by Kyle Whittington on 5/1/15.
+//  Copyright (c) 2015 Kyle Whittington. All rights reserved.
+//
+
+@import UIKit;
+
+@class Card;
+
+@interface CardViewController : UIViewController
++ (instancetype)withCard:(Card *)card;
+
+#pragma mark Designated Initializer
+- (instancetype)initWithCard:(Card *)card;
+@end
