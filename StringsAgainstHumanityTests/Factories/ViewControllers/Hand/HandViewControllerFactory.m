@@ -1,5 +1,5 @@
 //
-//  HandControllerFactory.m
+//  HandViewControllerFactory.m
 //  StringsAgainstHumanity
 //
 //  Created by Kyle Whittington on 3/14/15.
@@ -8,12 +8,12 @@
 // clang-format off
 //
 #import "FactoryLibraries.pch"
-#import "HandController.h"
+#import "HandViewController.h"
 #import "Hand.h"
 
-FGFactoryBegin(HandController)
+FGFactoryBegin(HandViewController)
   // The default factory will be equivalent to @"empty" trait.
-  [builder initFrom:HandController.class];
+  [builder initFrom:HandViewController.class];
   [builder initWith:@selector(empty) fieldNames:@[]];
 
   traitDefiners[@"empty"] = ^(FGDefinitionBuilder *emptyBuilder) {

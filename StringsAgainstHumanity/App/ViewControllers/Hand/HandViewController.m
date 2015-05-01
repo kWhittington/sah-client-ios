@@ -1,5 +1,5 @@
 //
-//  HandController.m
+//  HandViewController.m
 //  StringsAgainstHumanity
 //
 //  Created by Kyle Whittington on 2/15/15.
@@ -7,7 +7,7 @@
 //
 
 #import "SAHLibraries.pch"
-#import "HandController.h"
+#import "HandViewController.h"
 #import "ZoomInHandLayout.h"
 #import "BirdsEyeHandLayout.h"
 #import "CardViewCell.h"
@@ -15,7 +15,7 @@
 #import "BlackCard.h"
 #import "Card.h"
 
-@interface HandController ()
+@interface HandViewController ()
 @property(nonatomic) BirdsEyeHandLayout *birdsEyeLayout;
 @property(copy, nonatomic) Hand *hand;
 
@@ -24,16 +24,16 @@
 - (void)initCollectionViewDataSource;
 @end
 
-@implementation HandController
+@implementation HandViewController
 + (instancetype)empty {
   Hand *hand = [Hand empty];
-  HandController *controller = [HandController withHand:hand];
+  HandViewController *controller = [HandViewController withHand:hand];
 
   return controller;
 }
 
 + (instancetype)withHand:(Hand *)hand {
-  HandController *controller = [[self alloc] init];
+  HandViewController *controller = [[self alloc] init];
 
   controller.hand = hand;
   controller.collectionView.dataSource = controller.hand;
@@ -75,7 +75,7 @@
 }
 
 - (NSString *)description {
-  return NSStringWithFormat(@"<HandController: %p; hand = %@; selectedCard = %@>", self, self.hand,
+  return NSStringWithFormat(@"<HandViewController: %p; hand = %@; selectedCard = %@>", self, self.hand,
                             self.selectedCard);
 }
 

@@ -1,5 +1,5 @@
 //
-//  HandControllerSpec.m
+//  HandViewControllerSpec.m
 //  StringsAgainstHumanity
 //
 //  Created by Kyle Whittington on 2/26/15.
@@ -7,20 +7,20 @@
 //
 
 #import "TestLibraries.pch"
-#import "HandController.h"
+#import "HandViewController.h"
 #import "Hand+DataSource.h"
 #import "BlackCard.h"
 #import "Card.h"
 #import "BirdsEyeHandLayout.h"
 
-SPEC_BEGIN(HandControllerSpec)
-describe(@"HandController", ^{
-  let(handController, ^HandController *{
-    return FGBuildTrait(HandController.class, @"withHand");
+SPEC_BEGIN(HandViewControllerSpec)
+describe(@"HandViewController", ^{
+  let(handViewController, ^HandViewController *{
+    return FGBuildTrait(HandViewController.class, @"withHand");
   });
 
   let(hand, ^Hand *{
-    return handController.hand;
+    return handViewController.hand;
   });
 
   let(newCard, ^Card *{
@@ -29,7 +29,7 @@ describe(@"HandController", ^{
 
   describe(@".collectionView", ^{
     let(collectionView, ^{
-      return handController.collectionView;
+      return handViewController.collectionView;
     });
 
     describe(@".allowsSelection", ^{
@@ -84,7 +84,7 @@ describe(@"HandController", ^{
         return (NSObject *)collectionView.dataSource;
       });
 
-      it(@"is a reference to HandController.hand", ^{
+      it(@"is a reference to HandViewController.hand", ^{
         [[dataSource should] beIdenticalTo:hand];
       });
     });
@@ -101,14 +101,14 @@ describe(@"HandController", ^{
   });
 
   describe(@".hand", ^{
-    it(@"is a copy of the Hand managed by HandController", ^{
+    it(@"is a copy of the Hand managed by HandViewController", ^{
       [[hand should] beMemberOfClass:Hand.class];
     });
   });
 
   describe(@".selectedCard", ^{
     let(selectedCard, ^{
-      return handController.selectedCard;
+      return handViewController.selectedCard;
     });
 
     context(@"when no Card has been selected", ^{
@@ -119,20 +119,20 @@ describe(@"HandController", ^{
 
     context(@"when a Card has been selected", ^{
       let(targetCard, ^{
-        NSLog(@"HandController: %@", handController);
+        NSLog(@"HandViewController: %@", handViewController);
         return hand.cards.sample;
       });
 
       beforeEach(^{
-        [handController selectCard:targetCard];
+        [handViewController selectCard:targetCard];
       });
 
       specify(^{
-        [[handController.selectedCard should] beKindOfClass:Card.class];
+        [[handViewController.selectedCard should] beKindOfClass:Card.class];
       });
 
       it(@"is that Card", ^{
-        [[handController.selectedCard should] equal:targetCard];
+        [[handViewController.selectedCard should] equal:targetCard];
       });
     });
   });
@@ -147,31 +147,31 @@ describe(@"HandController", ^{
       // Due to how Kiwi's matchers work, this function will fail if both the dataSource/hand
       // and collectionView are mocked or expecting a message.
       // The collectionView will cause a EXC_BAD_ACCESS error.
-      [[handController.hand should] receive:@selector(addCard:) withArguments:card];
-      [[handController.collectionView should] receive:@selector(insertItemsAtIndexPaths:)];
+      [[handViewController.hand should] receive:@selector(addCard:) withArguments:card];
+      [[handViewController.collectionView should] receive:@selector(insertItemsAtIndexPaths:)];
 
-      [handController addCard:card];
+      [handViewController addCard:card];
     });
   });
 
   describe(@"- debugDescription", ^{
     let(debugDescription, ^{
-      return handController.debugDescription;
+      return handViewController.debugDescription;
     });
 
-    it(@"equals HandController - description", ^{
-      [[debugDescription should] equal:handController.description];
+    it(@"equals HandViewController - description", ^{
+      [[debugDescription should] equal:handViewController.description];
     });
   });
 
   describe(@"- description", ^{
     let(description, ^{
-      return handController.description;
+      return handViewController.description;
     });
 
     let(expectedString, ^{
-      return NSStringWithFormat(@"<HandController: %p; hand = %@; selectedCard = %@>",
-                                handController, hand, handController.selectedCard);
+      return NSStringWithFormat(@"<HandViewController: %p; hand = %@; selectedCard = %@>",
+                                handViewController, hand, handViewController.selectedCard);
     });
 
     specify(^{
@@ -181,7 +181,7 @@ describe(@"HandController", ^{
 
   describe(@"- hasSelectedCard", ^{
     let(hasSelectedCard, ^{
-      return theValue(handController.hasSelectedCard);
+      return theValue(handViewController.hasSelectedCard);
     });
 
     it(@"equals Hand - selectedCard != nil", ^{
@@ -193,34 +193,34 @@ describe(@"HandController", ^{
     context(@"when a Card is not selected", ^{
       specify(^{
         [[theBlock(^{
-          [handController playSelectedCard];
+          [handViewController playSelectedCard];
         }) should] raiseWithName:@"NSInternalInconsistencyException"];
       });
     });
 
     context(@"when a Card is selected", ^{
       beforeEach(^{
-        [handController selectCard:handController.hand.cards.first];
+        [handViewController selectCard:handViewController.hand.cards.first];
       });
 
-      it(@"calls HandController - removeCard: with HandController.selectedCard", ^{
-        [[handController should] receive:@selector(removeCard:)
-                           withArguments:handController.selectedCard];
+      it(@"calls HandViewController - removeCard: with HandViewController.selectedCard", ^{
+        [[handViewController should] receive:@selector(removeCard:)
+                           withArguments:handViewController.selectedCard];
 
-        [handController playSelectedCard];
+        [handViewController playSelectedCard];
       });
 
       it(@"performs the selected card's play action", ^{
-        [[handController.selectedCard should] receive:@selector(play)];
+        [[handViewController.selectedCard should] receive:@selector(play)];
 
-        [handController playSelectedCard];
+        [handViewController playSelectedCard];
       });
     });
   });
 
   describe(@"- removeCard:", ^{
     let(card, ^{
-      return handController.hand.cards.first;
+      return handViewController.hand.cards.first;
     });
 
     it(@"sends removeCard: to its Hand and deleteItemsAtIndexPaths: to its CollectionView", ^{
@@ -228,11 +228,11 @@ describe(@"HandController", ^{
       // Due to how Kiwi's matchers work, this function will fail if both the dataSource/hand
       // and collectionView are mocked or expecting a message.
       // The collectionView will cause a EXC_BAD_ACCESS error.
-      [[(NSObject *)handController.collectionView.dataSource should] receive:@selector(removeCard:)
+      [[(NSObject *)handViewController.collectionView.dataSource should] receive:@selector(removeCard:)
                                                                withArguments:card];
-      [[handController.collectionView should] receive:@selector(deleteItemsAtIndexPaths:)];
+      [[handViewController.collectionView should] receive:@selector(deleteItemsAtIndexPaths:)];
 
-      [handController removeCard:card];
+      [handViewController removeCard:card];
     });
   });
 
@@ -246,12 +246,12 @@ describe(@"HandController", ^{
     });
 
     it(@"calls CollectionView's selectItemAtIndexPath:animated:scrollPosition:", ^{
-      [[handController.collectionView should]
+      [[handViewController.collectionView should]
               receive:@selector(selectItemAtIndexPath:animated:scrollPosition:)
         withArguments:selectionIndexPath, theValue(NO),
                       theValue(UICollectionViewScrollPositionNone)];
 
-      [handController selectCard:cardToSelect];
+      [handViewController selectCard:cardToSelect];
     });
   });
 
@@ -267,7 +267,7 @@ describe(@"HandController", ^{
 
     let(shouldHighlight, ^{
       return theValue(
-        [handController collectionView:collectionView shouldHighlightItemAtIndexPath:indexPath]);
+        [handViewController collectionView:collectionView shouldHighlightItemAtIndexPath:indexPath]);
     });
 
     specify(^{
@@ -280,10 +280,10 @@ describe(@"HandController", ^{
       return UISwipeGestureRecognizer.nullMock;
     });
 
-    it(@"calls HandController - playSelectedCard", ^{
-      [[handController should] receive:@selector(playSelectedCard)];
+    it(@"calls HandViewController - playSelectedCard", ^{
+      [[handViewController should] receive:@selector(playSelectedCard)];
 
-      [handController swipeUp:sender];
+      [handViewController swipeUp:sender];
     });
   });
   // TODO

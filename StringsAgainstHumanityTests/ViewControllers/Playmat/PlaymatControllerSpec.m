@@ -9,7 +9,7 @@
 #import "TestLibraries.pch"
 #import "PlaymatController.h"
 #import "BlackCardViewController.h"
-#import "HandController.h"
+#import "HandViewController.h"
 #import "BlackCard.h"
 #import "Hand.h"
 
@@ -23,8 +23,8 @@ describe(@"PlaymatController", ^{
     return playmatController.blackCardViewController;
   });
 
-  let(handController, ^HandController *{
-    return playmatController.handController;
+  let(handViewController, ^HandViewController *{
+    return playmatController.handViewController;
   });
 
   it(@"subclasses UIViewController", ^{
@@ -37,9 +37,9 @@ describe(@"PlaymatController", ^{
     });
   });
 
-  describe(@".handController", ^{
-    it(@"returns the HandController reponsible for the foreground Hand", ^{
-      [[handController should] beKindOfClass:HandController.class];
+  describe(@".handViewController", ^{
+    it(@"returns the HandViewController reponsible for the foreground Hand", ^{
+      [[handViewController should] beKindOfClass:HandViewController.class];
     });
   });
 
@@ -55,7 +55,7 @@ describe(@"PlaymatController", ^{
 
       it(@"displays BlackCard behind Hand", ^{
         NSUInteger blackCardViewIndex = [subviews indexOfObject:blackCardViewController.view];
-        NSUInteger handViewIndex = [subviews indexOfObject:handController.view];
+        NSUInteger handViewIndex = [subviews indexOfObject:handViewController.view];
 
         [[theValue(blackCardViewIndex) should] beLessThan:theValue(handViewIndex)];
       });
@@ -93,8 +93,8 @@ describe(@"PlaymatController", ^{
 
     let(expectedFormat, ^{
       return NSStringWithFormat(@"<PlaymatController: %p; blackCardViewController "
-                                @"= %@; handController = %@>",
-                                playmatController, blackCardViewController, handController);
+                                @"= %@; handViewController = %@>",
+                                playmatController, blackCardViewController, handViewController);
     });
 
     specify(^{

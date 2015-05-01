@@ -1,5 +1,5 @@
 //
-//  HandController.h
+//  HandViewController.h
 //  StringsAgainstHumanity
 //
 //  Created by Kyle Whittington on 2/15/15.
@@ -11,7 +11,7 @@
 @class Hand;
 @class Card;
 
-@interface HandController : UICollectionViewController
+@interface HandViewController : UICollectionViewController
 @property(readonly, copy, nonatomic) Hand *hand;
 @property(readonly, nonatomic) Card *selectedCard;
 

@@ -8,19 +8,19 @@
 
 #import "PlaymatController.h"
 #import "BlackCardViewController.h"
-#import "HandController.h"
+#import "HandViewController.h"
 #import "BlackCard.h"
 #import "Hand.h"
 #import "WhiteCard.h"
 
 @interface PlaymatController ()
 @property(strong, nonatomic) BlackCardViewController *blackCardViewController;
-@property(strong, nonatomic) HandController *handController;
+@property(strong, nonatomic) HandViewController *handViewController;
 
 - (void)initBlackCardViewController;
 - (void)initBlackCardViewControllerView;
-- (void)initHandController;
-- (void)initHandControllerView;
+- (void)initHandViewController;
+- (void)initHandViewControllerView;
 - (void)initSubControllers;
 @end
 
@@ -56,9 +56,9 @@
 }
 
 - (NSString *)description {
-  return NSStringWithFormat(
-    @"<PlaymatController: %p; blackCardViewController = %@; handController = %@>", self,
-    self.blackCardViewController, self.handController);
+  return NSStringWithFormat(@"<PlaymatController: %p; blackCardViewController "
+                            @"= %@; handViewController = %@>",
+                            self, self.blackCardViewController, self.handViewController);
 }
 
 - (void)didReceiveMemoryWarning {
@@ -67,7 +67,8 @@
 }
 
 - (void)initBlackCardViewController {
-  self.blackCardViewController = [BlackCardViewController withBlackCard:self.class.StartingBlackCard];
+  self.blackCardViewController =
+    [BlackCardViewController withBlackCard:self.class.StartingBlackCard];
   [self addChildViewController:self.blackCardViewController];
   [self.blackCardViewController didMoveToParentViewController:self];
 }
@@ -77,25 +78,25 @@
   [self.view addSubview:self.blackCardViewController.view];
 }
 
-- (void)initHandController {
-  self.handController = [HandController withHand:[self startingHand]];
-  [self addChildViewController:self.handController];
-  [self.handController didMoveToParentViewController:self];
+- (void)initHandViewController {
+  self.handViewController = [HandViewController withHand:[self startingHand]];
+  [self addChildViewController:self.handViewController];
+  [self.handViewController didMoveToParentViewController:self];
 }
 
-- (void)initHandControllerView {
-  self.handController.view.frame = self.view.frame;
-  [self.view addSubview:self.handController.view];
+- (void)initHandViewControllerView {
+  self.handViewController.view.frame = self.view.frame;
+  [self.view addSubview:self.handViewController.view];
 }
 
 - (void)initSubControllers {
   [self initBlackCardViewController];
-  [self initHandController];
+  [self initHandViewController];
 }
 
 - (void)initSubControllerViews {
   [self initBlackCardViewControllerView];
-  [self initHandControllerView];
+  [self initHandViewControllerView];
 }
 
 - (Hand *)startingHand {
