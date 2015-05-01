@@ -1,5 +1,5 @@
 //
-//  WhiteCardController.h
+//  WhiteCardViewController.h
 //  StringsAgainstHumanity
 //
 //  Created by Kyle Whittington on 3/13/15.
@@ -10,7 +10,7 @@
 
 @class WhiteCard;
 
-@interface WhiteCardController : UIViewController
+@interface WhiteCardViewController : UIViewController
 @property(readonly, copy, nonatomic) WhiteCard *whiteCard;
 @property(strong, nonatomic) IBOutlet UILabel *label;
 

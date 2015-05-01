@@ -1,5 +1,5 @@
 //
-//  WhiteCardControllerSpec.m
+//  WhiteCardViewControllerSpec.m
 //  StringsAgainstHumanity
 //
 //  Created by Kyle Whittington on 3/13/15.
@@ -8,36 +8,36 @@
 
 #import "TestLibraries.pch"
 @import UIKit;
-#import "WhiteCardController.h"
+#import "WhiteCardViewController.h"
 #import "WhiteCard.h"
 
-SPEC_BEGIN(WhiteCardControllerSpec)
-describe(@"WhiteCardController", ^{
+SPEC_BEGIN(WhiteCardViewControllerSpec)
+describe(@"WhiteCardViewController", ^{
   let(whiteCard, ^WhiteCard *{
     return FGBuildTrait(WhiteCard.class, @"withString");
   });
 
-  let(whiteCardController, ^WhiteCardController *{
-    return [WhiteCardController withWhiteCard:whiteCard];
+  let(whiteCardViewController, ^WhiteCardViewController *{
+    return [WhiteCardViewController withWhiteCard:whiteCard];
   });
 
   describe(@"+ withWhiteCard:", ^{
     let(result, ^{
-      return [WhiteCardController withWhiteCard:whiteCard];
+      return [WhiteCardViewController withWhiteCard:whiteCard];
     });
 
     specify(^{
-      [[result should] beMemberOfClass:WhiteCardController.class];
+      [[result should] beMemberOfClass:WhiteCardViewController.class];
     });
 
-    it(@"returns a WhiteCardController with a copy of the given WhiteCard", ^{
+    it(@"returns a WhiteCardViewController with a copy of the given WhiteCard", ^{
       [[result.whiteCard should] equal:whiteCard];
     });
   });
 
   describe(@"- whiteCard", ^{
     let(result, ^{
-      return whiteCardController.whiteCard;
+      return whiteCardViewController.whiteCard;
     });
 
     specify(^{
@@ -47,7 +47,7 @@ describe(@"WhiteCardController", ^{
 
   describe(@"- label", ^{
     let(result, ^{
-      return whiteCardController.label;
+      return whiteCardViewController.label;
     });
 
     specify(^{
@@ -55,7 +55,7 @@ describe(@"WhiteCardController", ^{
     });
 
     it(@"has - text equal to WhiteCard's string", ^{
-      [[result.text should] equal:whiteCardController.whiteCard.string];
+      [[result.text should] equal:whiteCardViewController.whiteCard.string];
     });
 
     it(@"has - textColor equal to WhiteCard.StringColor", ^{
@@ -65,7 +65,7 @@ describe(@"WhiteCardController", ^{
 
   describe(@"- view", ^{
     let(result, ^{
-      return whiteCardController.view;
+      return whiteCardViewController.view;
     });
 
     it(@"has - backgroundColor equal to WhiteCard.CardColor", ^{

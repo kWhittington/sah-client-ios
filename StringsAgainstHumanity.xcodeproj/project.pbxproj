@@ -11,10 +11,10 @@
 		9E90AAB947D23AB961ED1298 /* libPods-StringsAgainstHumanityTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A27D956F47919DE0B0728BFE /* libPods-StringsAgainstHumanityTests.a */; };
 		AD1C3E061A8450F10001C833 /* _clang-format in Resources */ = {isa = PBXBuildFile; fileRef = AD1C3E051A8450F10001C833 /* _clang-format */; };
 		AD227A4A1AF4038D00930AE0 /* BlackCardViewControllerSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = AD227A491AF4038D00930AE0 /* BlackCardViewControllerSpec.m */; };
-		AD227A4D1AF403A700930AE0 /* WhiteCardControllerSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = AD227A4C1AF403A700930AE0 /* WhiteCardControllerSpec.m */; };
+		AD227A4D1AF403A700930AE0 /* WhiteCardViewControllerSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = AD227A4C1AF403A700930AE0 /* WhiteCardViewControllerSpec.m */; };
 		AD227A4F1AF403B900930AE0 /* HandControllerSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = AD227A4E1AF403B900930AE0 /* HandControllerSpec.m */; };
 		AD227A511AF403C700930AE0 /* PlaymatControllerSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = AD227A501AF403C700930AE0 /* PlaymatControllerSpec.m */; };
-		AD227A541AF403E800930AE0 /* WhiteCardController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD227A531AF403E800930AE0 /* WhiteCardController.m */; };
+		AD227A541AF403E800930AE0 /* WhiteCardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD227A531AF403E800930AE0 /* WhiteCardViewController.m */; };
 		AD227A571AF403FB00930AE0 /* HandController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD227A561AF403FB00930AE0 /* HandController.m */; };
 		AD227A5A1AF4041000930AE0 /* MainMenuController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD227A591AF4041000930AE0 /* MainMenuController.m */; };
 		AD227A5D1AF4041C00930AE0 /* PlaymatController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD227A5C1AF4041C00930AE0 /* PlaymatController.m */; };
@@ -80,11 +80,11 @@
 		A27D956F47919DE0B0728BFE /* libPods-StringsAgainstHumanityTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-StringsAgainstHumanityTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD1C3E051A8450F10001C833 /* _clang-format */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "_clang-format"; sourceTree = SOURCE_ROOT; };
 		AD227A491AF4038D00930AE0 /* BlackCardViewControllerSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BlackCardViewControllerSpec.m; path = ViewControllers/Card/BlackCard/BlackCardViewControllerSpec.m; sourceTree = "<group>"; };
-		AD227A4C1AF403A700930AE0 /* WhiteCardControllerSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WhiteCardControllerSpec.m; path = ViewControllers/Card/WhiteCard/WhiteCardControllerSpec.m; sourceTree = "<group>"; };
+		AD227A4C1AF403A700930AE0 /* WhiteCardViewControllerSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WhiteCardViewControllerSpec.m; path = ViewControllers/Card/WhiteCard/WhiteCardViewControllerSpec.m; sourceTree = "<group>"; };
 		AD227A4E1AF403B900930AE0 /* HandControllerSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HandControllerSpec.m; path = ViewControllers/Hand/HandControllerSpec.m; sourceTree = "<group>"; };
 		AD227A501AF403C700930AE0 /* PlaymatControllerSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PlaymatControllerSpec.m; path = ViewControllers/Playmat/PlaymatControllerSpec.m; sourceTree = "<group>"; };
-		AD227A521AF403E800930AE0 /* WhiteCardController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WhiteCardController.h; path = App/ViewControllers/Card/WhiteCard/WhiteCardController.h; sourceTree = "<group>"; };
-		AD227A531AF403E800930AE0 /* WhiteCardController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WhiteCardController.m; path = App/ViewControllers/Card/WhiteCard/WhiteCardController.m; sourceTree = "<group>"; };
+		AD227A521AF403E800930AE0 /* WhiteCardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WhiteCardViewController.h; path = App/ViewControllers/Card/WhiteCard/WhiteCardViewController.h; sourceTree = "<group>"; };
+		AD227A531AF403E800930AE0 /* WhiteCardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WhiteCardViewController.m; path = App/ViewControllers/Card/WhiteCard/WhiteCardViewController.m; sourceTree = "<group>"; };
 		AD227A551AF403FB00930AE0 /* HandController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HandController.h; path = App/ViewControllers/Hand/HandController.h; sourceTree = "<group>"; };
 		AD227A561AF403FB00930AE0 /* HandController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HandController.m; path = App/ViewControllers/Hand/HandController.m; sourceTree = "<group>"; };
 		AD227A581AF4041000930AE0 /* MainMenuController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MainMenuController.h; path = App/ViewControllers/MainMenu/MainMenuController.h; sourceTree = "<group>"; };
@@ -630,7 +630,7 @@
 		ADA8C86A1AB33D4B000987EC /* WhiteCard */ = {
 			isa = PBXGroup;
 			children = (
-				AD227A4C1AF403A700930AE0 /* WhiteCardControllerSpec.m */,
+				AD227A4C1AF403A700930AE0 /* WhiteCardViewControllerSpec.m */,
 			);
 			name = WhiteCard;
 			sourceTree = "<group>";
@@ -638,8 +638,8 @@
 		ADA8C86D1AB33D8E000987EC /* WhiteCard */ = {
 			isa = PBXGroup;
 			children = (
-				AD227A521AF403E800930AE0 /* WhiteCardController.h */,
-				AD227A531AF403E800930AE0 /* WhiteCardController.m */,
+				AD227A521AF403E800930AE0 /* WhiteCardViewController.h */,
+				AD227A531AF403E800930AE0 /* WhiteCardViewController.m */,
 			);
 			name = WhiteCard;
 			sourceTree = "<group>";
@@ -1094,7 +1094,7 @@
 				AD6272EF1A8341D000565A28 /* main.m in Sources */,
 				ADBF7F931A910E2800C5BB00 /* Hand.m in Sources */,
 				AD227A5A1AF4041000930AE0 /* MainMenuController.m in Sources */,
-				AD227A541AF403E800930AE0 /* WhiteCardController.m in Sources */,
+				AD227A541AF403E800930AE0 /* WhiteCardViewController.m in Sources */,
 				AD9CD1921AE5FD1A004DECA5 /* CardTextView.m in Sources */,
 				AD62DCE91AB2398600F70C51 /* UnimplementedException.m in Sources */,
 				ADBF7F9F1A913FE200C5BB00 /* CardViewCell.m in Sources */,
@@ -1112,7 +1112,7 @@
 			files = (
 				ADAAC0811AEC2C7F00AD962D /* NSObject+DebugDescription.m in Sources */,
 				AD227A4A1AF4038D00930AE0 /* BlackCardViewControllerSpec.m in Sources */,
-				AD227A4D1AF403A700930AE0 /* WhiteCardControllerSpec.m in Sources */,
+				AD227A4D1AF403A700930AE0 /* WhiteCardViewControllerSpec.m in Sources */,
 				AD69AA621AEB2E6400B18013 /* CardViewSpec.m in Sources */,
 				AD5E856D1AA7E57C0067ABF2 /* BlackCardFactory.m in Sources */,
 				ADA8C8A91AB4C8DD000987EC /* NSObject+TypeCheckingSpec.m in Sources */,

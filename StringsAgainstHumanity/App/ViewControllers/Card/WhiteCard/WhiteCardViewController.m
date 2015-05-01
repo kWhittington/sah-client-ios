@@ -1,5 +1,5 @@
 //
-//  WhiteCardController.m
+//  WhiteCardViewController.m
 //  StringsAgainstHumanity
 //
 //  Created by Kyle Whittington on 3/13/15.
@@ -7,10 +7,10 @@
 //
 
 #import "SAHLibraries.pch"
-#import "WhiteCardController.h"
+#import "WhiteCardViewController.h"
 #import "WhiteCard.h"
 
-@interface WhiteCardController ()
+@interface WhiteCardViewController ()
 @property(copy, nonatomic) WhiteCard *whiteCard;
 
 - (void)configureColors;
@@ -18,9 +18,9 @@
 - (void)configureLabel;
 @end
 
-@implementation WhiteCardController
+@implementation WhiteCardViewController
 + (instancetype)withWhiteCard:(WhiteCard *)whiteCard {
-  WhiteCardController *controller = [[self alloc] init];
+  WhiteCardViewController *controller = [[self alloc] init];
 
   [controller loadView];
   [controller configureColors];
@@ -63,7 +63,8 @@
 /*
 #pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before
+// In a storyboard-based application, you will often want to do a little
+preparation before
 navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
