@@ -1,5 +1,5 @@
 //
-//  PlaymatController.h
+//  PlaymatViewController.h
 //  StringsAgainstHumanity
 //
 //  Created by Kyle Whittington on 3/19/15.
@@ -13,7 +13,7 @@
 @class BlackCard;
 @class Hand;
 
-@interface PlaymatController : UIViewController
+@interface PlaymatViewController : UIViewController
 @property(readonly, strong, nonatomic) BlackCardViewController *blackCardViewController;
 @property(readonly, strong, nonatomic) HandViewController *handViewController;
 

@@ -17,7 +17,7 @@
 		AD227A541AF403E800930AE0 /* WhiteCardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD227A531AF403E800930AE0 /* WhiteCardViewController.m */; };
 		AD227A571AF403FB00930AE0 /* HandViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD227A561AF403FB00930AE0 /* HandViewController.m */; };
 		AD227A5A1AF4041000930AE0 /* MainMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD227A591AF4041000930AE0 /* MainMenuViewController.m */; };
-		AD227A5D1AF4041C00930AE0 /* PlaymatController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD227A5C1AF4041C00930AE0 /* PlaymatController.m */; };
+		AD227A5D1AF4041C00930AE0 /* PlaymatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD227A5C1AF4041C00930AE0 /* PlaymatViewController.m */; };
 		AD227A601AF4048300930AE0 /* BlackCardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD227A5F1AF4048300930AE0 /* BlackCardViewController.m */; };
 		AD227A621AF4060300930AE0 /* HandViewControllerFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = AD227A611AF4060300930AE0 /* HandViewControllerFactory.m */; };
 		AD227A641AF4060F00930AE0 /* PlaymatControllerFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = AD227A631AF4060F00930AE0 /* PlaymatControllerFactory.m */; };
@@ -89,8 +89,8 @@
 		AD227A561AF403FB00930AE0 /* HandViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HandViewController.m; path = App/ViewControllers/Hand/HandViewController.m; sourceTree = "<group>"; };
 		AD227A581AF4041000930AE0 /* MainMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MainMenuViewController.h; path = App/ViewControllers/MainMenu/MainMenuViewController.h; sourceTree = "<group>"; };
 		AD227A591AF4041000930AE0 /* MainMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MainMenuViewController.m; path = App/ViewControllers/MainMenu/MainMenuViewController.m; sourceTree = "<group>"; };
-		AD227A5B1AF4041C00930AE0 /* PlaymatController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PlaymatController.h; path = App/ViewControllers/Playmat/PlaymatController.h; sourceTree = "<group>"; };
-		AD227A5C1AF4041C00930AE0 /* PlaymatController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PlaymatController.m; path = App/ViewControllers/Playmat/PlaymatController.m; sourceTree = "<group>"; };
+		AD227A5B1AF4041C00930AE0 /* PlaymatViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PlaymatViewController.h; path = App/ViewControllers/Playmat/PlaymatViewController.h; sourceTree = "<group>"; };
+		AD227A5C1AF4041C00930AE0 /* PlaymatViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PlaymatViewController.m; path = App/ViewControllers/Playmat/PlaymatViewController.m; sourceTree = "<group>"; };
 		AD227A5E1AF4048300930AE0 /* BlackCardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BlackCardViewController.h; path = App/ViewControllers/Card/BlackCard/BlackCardViewController.h; sourceTree = "<group>"; };
 		AD227A5F1AF4048300930AE0 /* BlackCardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BlackCardViewController.m; path = App/ViewControllers/Card/BlackCard/BlackCardViewController.m; sourceTree = "<group>"; };
 		AD227A611AF4060300930AE0 /* HandViewControllerFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HandViewControllerFactory.m; path = Factories/ViewControllers/Hand/HandViewControllerFactory.m; sourceTree = "<group>"; };
@@ -328,8 +328,8 @@
 		AD5641931ABB3F8F0078F5F0 /* Playmat */ = {
 			isa = PBXGroup;
 			children = (
-				AD227A5B1AF4041C00930AE0 /* PlaymatController.h */,
-				AD227A5C1AF4041C00930AE0 /* PlaymatController.m */,
+				AD227A5B1AF4041C00930AE0 /* PlaymatViewController.h */,
+				AD227A5C1AF4041C00930AE0 /* PlaymatViewController.m */,
 			);
 			name = Playmat;
 			sourceTree = "<group>";
@@ -1089,7 +1089,7 @@
 				ADC195D21AA1545D00177660 /* Hand+DataSource.m in Sources */,
 				AD227A571AF403FB00930AE0 /* HandViewController.m in Sources */,
 				ADBF7F981A91171A00C5BB00 /* Card.m in Sources */,
-				AD227A5D1AF4041C00930AE0 /* PlaymatController.m in Sources */,
+				AD227A5D1AF4041C00930AE0 /* PlaymatViewController.m in Sources */,
 				AD227A601AF4048300930AE0 /* BlackCardViewController.m in Sources */,
 				AD6272EF1A8341D000565A28 /* main.m in Sources */,
 				ADBF7F931A910E2800C5BB00 /* Hand.m in Sources */,

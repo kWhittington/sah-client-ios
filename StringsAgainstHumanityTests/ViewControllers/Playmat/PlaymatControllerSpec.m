@@ -1,5 +1,5 @@
 //
-//  PlaymatControllerSpec.m
+//  PlaymatViewControllerSpec.m
 //  StringsAgainstHumanity
 //
 //  Created by Kyle Whittington on 3/19/15.
@@ -7,28 +7,28 @@
 //
 
 #import "TestLibraries.pch"
-#import "PlaymatController.h"
+#import "PlaymatViewController.h"
 #import "BlackCardViewController.h"
 #import "HandViewController.h"
 #import "BlackCard.h"
 #import "Hand.h"
 
-SPEC_BEGIN(PlaymatControllerSpec)
-describe(@"PlaymatController", ^{
-  let(playmatController, ^PlaymatController *{
-    return FGBuildTrait(PlaymatController.class, @"empty");
+SPEC_BEGIN(PlaymatViewControllerSpec)
+describe(@"PlaymatViewController", ^{
+  let(playmatViewController, ^PlaymatViewController *{
+    return FGBuildTrait(PlaymatViewController.class, @"empty");
   });
 
   let(blackCardViewController, ^BlackCardViewController *{
-    return playmatController.blackCardViewController;
+    return playmatViewController.blackCardViewController;
   });
 
   let(handViewController, ^HandViewController *{
-    return playmatController.handViewController;
+    return playmatViewController.handViewController;
   });
 
   it(@"subclasses UIViewController", ^{
-    [[playmatController should] beKindOfClass:UIViewController.class];
+    [[playmatViewController should] beKindOfClass:UIViewController.class];
   });
 
   describe(@".blackCardViewController", ^{
@@ -45,7 +45,7 @@ describe(@"PlaymatController", ^{
 
   describe(@".view", ^{
     let(view, ^{
-      return playmatController.view;
+      return playmatViewController.view;
     });
 
     describe(@".subviews", ^{
@@ -64,7 +64,7 @@ describe(@"PlaymatController", ^{
 
   describe(@"+ StartingBlackCard", ^{
     let(startingBlackCard, ^{
-      return PlaymatController.StartingBlackCard;
+      return PlaymatViewController.StartingBlackCard;
     });
 
     let(expectedString, ^{
@@ -78,23 +78,23 @@ describe(@"PlaymatController", ^{
 
   describe(@"- debugDescription", ^{
     let(debugDescription, ^{
-      return playmatController.debugDescription;
+      return playmatViewController.debugDescription;
     });
 
-    it(@"equals PlaymatController - description", ^{
-      [[debugDescription should] equal:playmatController.description];
+    it(@"equals PlaymatViewController - description", ^{
+      [[debugDescription should] equal:playmatViewController.description];
     });
   });
 
   describe(@"- description", ^{
     let(description, ^{
-      return playmatController.description;
+      return playmatViewController.description;
     });
 
     let(expectedFormat, ^{
-      return NSStringWithFormat(@"<PlaymatController: %p; blackCardViewController "
+      return NSStringWithFormat(@"<PlaymatViewController: %p; blackCardViewController "
                                 @"= %@; handViewController = %@>",
-                                playmatController, blackCardViewController, handViewController);
+                                playmatViewController, blackCardViewController, handViewController);
     });
 
     specify(^{
@@ -104,7 +104,7 @@ describe(@"PlaymatController", ^{
 
   describe(@"- startingHand", ^{
     let(startingHand, ^{
-      return [playmatController startingHand];
+      return [playmatViewController startingHand];
     });
 
     it(@"is empty", ^{

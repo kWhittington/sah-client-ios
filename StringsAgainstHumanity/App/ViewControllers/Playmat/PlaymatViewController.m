@@ -1,19 +1,19 @@
 //
-//  PlaymatController.m
+//  PlaymatViewController.m
 //  StringsAgainstHumanity
 //
 //  Created by Kyle Whittington on 3/19/15.
 //  Copyright (c) 2015 Kyle Whittington. All rights reserved.
 //
 
-#import "PlaymatController.h"
+#import "PlaymatViewController.h"
 #import "BlackCardViewController.h"
 #import "HandViewController.h"
 #import "BlackCard.h"
 #import "Hand.h"
 #import "WhiteCard.h"
 
-@interface PlaymatController ()
+@interface PlaymatViewController ()
 @property(strong, nonatomic) BlackCardViewController *blackCardViewController;
 @property(strong, nonatomic) HandViewController *handViewController;
 
@@ -24,7 +24,7 @@
 - (void)initSubControllers;
 @end
 
-@implementation PlaymatController
+@implementation PlaymatViewController
 + (BlackCard *)StartingBlackCard {
   return [BlackCard withString:@"[Please assign a BlackCard]"];
 }
@@ -56,7 +56,7 @@
 }
 
 - (NSString *)description {
-  return NSStringWithFormat(@"<PlaymatController: %p; blackCardViewController "
+  return NSStringWithFormat(@"<PlaymatViewController: %p; blackCardViewController "
                             @"= %@; handViewController = %@>",
                             self, self.blackCardViewController, self.handViewController);
 }

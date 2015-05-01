@@ -6,10 +6,10 @@
 //  Copyright (c) 2015 Kyle Whittington. All rights reserved.
 //
 
-#import "PlaymatController.h"
+#import "PlaymatViewController.h"
 
 @class Card;
 
-@interface MainMenuViewController : PlaymatController
+@interface MainMenuViewController : PlaymatViewController
 
 @end
