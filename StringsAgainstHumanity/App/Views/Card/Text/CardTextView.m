@@ -31,6 +31,7 @@
   return [self initWithFrame:frame andCardView:nil];
 }
 
+#pragma mark Designated Initializer
 - (instancetype)initWithFrame:(CGRect)frame andCardView:(CardView *)cardView {
   self = [super initWithFrame:frame textContainer:nil];
 

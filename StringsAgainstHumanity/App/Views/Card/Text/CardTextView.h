@@ -15,6 +15,7 @@
 + (instancetype)withFrame:(CGRect)frame andCardView:(CardView *)cardView;
 + (instancetype)withMainScreenFrameAndCardView:(CardView *)cardView;
 
+#pragma mark Designated Initializer
 - (instancetype)initWithFrame:(CGRect)frame andCardView:(CardView *)cardView;
 - (instancetype)initWithMainScreenFrameAndCardView:(CardView *)cardView;
 
