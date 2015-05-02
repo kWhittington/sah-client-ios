@@ -18,6 +18,10 @@
   return [[self alloc] initWithMainScreenFrameAndCardView:whiteCardView];
 }
 
+- (instancetype)initWithFrame:(CGRect)frame andCardView:(CardView *)cardView {
+  return [self initWithFrame:frame andWhiteCardView:(WhiteCardView *)cardView];
+}
+
 #pragma mark Designated Initializer
 - (instancetype)initWithFrame:(CGRect)frame andWhiteCardView:(WhiteCardView *)whiteCardView {
   self = [super initWithFrame:frame andCardView:whiteCardView];
