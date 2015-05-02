@@ -47,9 +47,11 @@
 
   unless([other isKindOfClass:self.class]) { return NO; }
 
-  CardViewController *otherCardViewController = (CardViewController *)other;
+  return [self isEqualToCardViewController:(CardViewController *)other];
+}
 
-  BOOL cardsAreEqual = [self.card isEqualToCard:otherCardViewController.card];
+- (BOOL)isEqualToCardViewController:(CardViewController *)other {
+  BOOL cardsAreEqual = [self.card isEqualToCard:other.card];
 
   return cardsAreEqual;
 }

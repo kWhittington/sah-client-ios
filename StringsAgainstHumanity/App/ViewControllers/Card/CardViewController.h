@@ -20,4 +20,5 @@
 - (instancetype)initWithCard:(Card *)card;
 
 - (CardView *)cardView;
+- (BOOL)isEqualToCardViewController:(CardViewController *)other;
 @end

@@ -112,5 +112,37 @@ describe(@"CardViewController", ^{
       });
     });
   });
+
+  describe(@"- isEqualToCardViewController:", ^{
+    let(other, ^{
+      return CardViewController.nullMock;
+    });
+
+    let(isEqualToCardViewController, ^{
+      return theValue([cardViewController isEqualToCardViewController:other]);
+    });
+
+    context(@"when both card properties are equal", ^{
+      let(other, ^{
+        return FGBuildWith(CardViewController.class, ^(FGDefinitionBuilder *builder) {
+          builder[@"card"] = cardViewController.card;
+        });
+      });
+
+      it(@"is YES", ^{
+        [[isEqualToCardViewController should] beYes];
+      });
+    });
+
+    context(@"when both card properties are not equal", ^{
+      let(other, ^{
+        return FGBuild(CardViewController.class);
+      });
+
+      it(@"is NO", ^{
+        [[isEqualToCardViewController should] beNo];
+      });
+    });
+  });
 });
 SPEC_END
