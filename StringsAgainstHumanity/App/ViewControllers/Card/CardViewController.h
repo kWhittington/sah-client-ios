@@ -11,6 +11,8 @@
 @class Card;
 
 @interface CardViewController : UIViewController
+@property(nonatomic, readonly) Card *card;
+
 + (instancetype)withCard:(Card *)card;
 
 #pragma mark Designated Initializer
