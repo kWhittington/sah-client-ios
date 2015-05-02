@@ -9,6 +9,7 @@
 #import "CardView.h"
 
 @class WhiteCard;
+@class WhiteCardTextView;
 
 @interface WhiteCardView : CardView
 + (instancetype)withFrame:(CGRect)frame andWhiteCard:(WhiteCard *)whiteCard;
@@ -17,4 +18,6 @@
 #pragma mark Designated Initializer
 - (instancetype)initWithFrame:(CGRect)frame andWhiteCard:(WhiteCard *)whiteCard;
 - (instancetype)initWithMainScreenFrameAndWhiteCard:(WhiteCard *)whiteCard;
+
+- (WhiteCardTextView *)whiteCardTextView;
 @end

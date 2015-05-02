@@ -8,6 +8,7 @@
 
 #import "WhiteCard.h"
 #import "WhiteCardView.h"
+#import "WhiteCardTextView.h"
 
 @implementation WhiteCardView
 + (instancetype)withFrame:(CGRect)frame andWhiteCard:(WhiteCard *)whiteCard {
@@ -42,5 +43,18 @@
 
 - (void)initProperties {
   self.backgroundColor = Constants.WhiteColor;
+  [self initWhiteCardTextView];
+}
+
+- (void)initWhiteCardTextView {
+  self.cardTextView = [WhiteCardTextView withFrame:self.frame andWhiteCardView:self];
+}
+
+- (WhiteCardTextView *)whiteCardTextView {
+  if ([self.cardTextView isKindOfClass:WhiteCardTextView.class]) {
+    return (WhiteCardTextView *)self.cardTextView;
+  }
+
+  return nil;
 }
 @end

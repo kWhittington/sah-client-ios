@@ -13,7 +13,7 @@
 
 @interface CardView : UIView <NSCopying>
 @property(nonatomic, readonly) Card *card;
-@property(nonatomic, readonly, weak) CardTextView *cardTextView;
+@property(nonatomic, weak) CardTextView *cardTextView;
 
 + (instancetype)withFrame:(CGRect)frame;
 + (instancetype)withFrame:(CGRect)frame andCard:(Card *)card;

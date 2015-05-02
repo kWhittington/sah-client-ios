@@ -12,7 +12,6 @@
 
 @interface CardView ()
 @property(nonatomic) Card *card;
-@property(nonatomic, weak) CardTextView *cardTextView;
 @end
 
 @implementation CardView
@@ -61,9 +60,6 @@
 
 - (void)initCardTextView {
   self.cardTextView = [CardTextView withFrame:self.frame andCardView:self];
-  [self.cardTextView makeConstraints:^(MASConstraintMaker *make) {
-    make.edges.equalTo(self).with.insets(UIEdgeInsetsMake(44, 44, 44, 44));
-  }];
 }
 
 - (void)initVariablesWithCard:(Card *)card {
@@ -85,5 +81,13 @@
   BOOL haveEqualCards = [self.card isEqualToCard:other.card];
 
   return haveEqualCards;
+}
+
+- (void)setCardTextView:(CardTextView *)cardTextView {
+  _cardTextView = cardTextView;
+
+  [_cardTextView makeConstraints:^(MASConstraintMaker *make) {
+    make.edges.equalTo(self).with.insets(UIEdgeInsetsMake(44, 44, 44, 44));
+  }];
 }
 @end

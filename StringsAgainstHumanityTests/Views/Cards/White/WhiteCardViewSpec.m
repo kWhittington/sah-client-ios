@@ -8,6 +8,7 @@
 
 #import "TestLibraries.pch"
 #import "CardView.h"
+#import "WhiteCardTextView.h"
 #import "WhiteCardView.h"
 
 SPEC_BEGIN(WhiteCardViewSpec)
@@ -27,6 +28,26 @@ describe(@"WhiteCardView", ^{
 
     it(@"is Constants.WhiteColor", ^{
       [[backgroundColor should] equal:Constants.WhiteColor];
+    });
+  });
+
+  describe(@".cardTextView", ^{
+    let(cardTextView, ^{
+      return whiteCardView.cardTextView;
+    });
+
+    it(@"is a WhiteCardTextView", ^{
+      [[cardTextView should] beKindOfClass:WhiteCardTextView.class];
+    });
+  });
+
+  describe(@"- whiteCardTextView", ^{
+    let(whiteCardTextView, ^{
+      return whiteCardView.whiteCardTextView;
+    });
+
+    it(@"is the card text view", ^{
+      [[whiteCardTextView should] beIdenticalTo:whiteCardView.cardTextView];
     });
   });
 });
