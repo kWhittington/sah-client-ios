@@ -12,7 +12,7 @@
 #import "WhiteCard.h"
 
 FGFactoryBegin(WhiteCardView)
-  [builder initWith:@selector(initWithMainScreenFrameAndCard:) fieldNames:@[@"whiteCard"]];
+  [builder initWith:@selector(initWithMainScreenFrameAndWhiteCard:) fieldNames:@[@"whiteCard"]];
 
   [builder field:@"whiteCard" assoc:WhiteCard.class];
 FGFactoryEnd

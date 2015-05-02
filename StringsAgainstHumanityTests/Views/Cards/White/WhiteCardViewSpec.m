@@ -19,5 +19,15 @@ describe(@"WhiteCardView", ^{
   specify(^{
     [[whiteCardView should] beKindOfClass:CardView.class];
   });
+
+  describe(@".backgroundColor", ^{
+    let(backgroundColor, ^{
+      return whiteCardView.backgroundColor;
+    });
+
+    it(@"is Constants.WhiteColor", ^{
+      [[backgroundColor should] equal:Constants.WhiteColor];
+    });
+  });
 });
 SPEC_END
