@@ -19,6 +19,10 @@
   return [[self alloc] initWithCard:card];
 }
 
+- (instancetype)copyWithZone:(NSZone *)zone {
+  return [[self.class alloc] initWithCard:self.card.copy];
+}
+
 #pragma mark Designated Initializer
 - (instancetype)initWithCard:(Card *)card {
   self = [super init];

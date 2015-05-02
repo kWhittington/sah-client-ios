@@ -19,6 +19,10 @@ describe(@"CardViewController", ^{
     return FGBuild(CardViewController.class);
   });
 
+  it(@"conforms to the NSCopying protocol", ^{
+    [[cardViewController should] conformToProtocol:@protocol(NSCopying)];
+  });
+
   describe(@".card", ^{
     __block objc_property_t cardProperty;
 
@@ -56,6 +60,20 @@ describe(@"CardViewController", ^{
 
     it(@"is the view", ^{
       [[cardView should] beIdenticalTo:cardViewController.view];
+    });
+  });
+
+  describe(@"- copy", ^{
+    let(copy, ^{
+      return cardViewController.copy;
+    });
+
+    it(@"is an equivalent card view controller", ^{
+      [[copy should] equal:cardViewController];
+    });
+
+    it(@"is a non-identical card view controller", ^{
+      [[copy shouldNot] beIdenticalTo:cardViewController];
     });
   });
 

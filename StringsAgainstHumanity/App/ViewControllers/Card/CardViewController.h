@@ -11,7 +11,7 @@
 @class Card;
 @class CardView;
 
-@interface CardViewController : UIViewController
+@interface CardViewController : UIViewController <NSCopying>
 @property(nonatomic, readonly) Card *card;
 
 + (instancetype)withCard:(Card *)card;
