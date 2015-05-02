@@ -40,6 +40,20 @@
   self.card = card;
 }
 
+- (BOOL)isEqual:(id)other {
+  if ([self isIdenticalTo:other]) {
+    return YES;
+  }
+
+  unless([other isKindOfClass:self.class]) { return NO; }
+
+  CardViewController *otherCardViewController = (CardViewController *)other;
+
+  BOOL cardsAreEqual = [self.card isEqualToCard:otherCardViewController.card];
+
+  return cardsAreEqual;
+}
+
 - (void)loadView {
   self.view = [CardView withMainScreenFrameAndCard:self.card];
 }

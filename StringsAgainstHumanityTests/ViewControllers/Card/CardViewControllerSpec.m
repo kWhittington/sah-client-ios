@@ -58,5 +58,59 @@ describe(@"CardViewController", ^{
       [[cardView should] beIdenticalTo:cardViewController.view];
     });
   });
+
+  describe(@"- isEqual:", ^{
+    let(other, ^{
+      return NSObject.nullMock;
+    });
+
+    let(isEqual, ^{
+      return theValue([cardViewController isEqual:other]);
+    });
+
+    context(@"when both objects are identical", ^{
+      let(other, ^{
+        return cardViewController;
+      });
+
+      it(@"is YES", ^{
+        [[isEqual should] beYes];
+      });
+    });
+
+    context(@"when other is a CardViewController", ^{
+      context(@"when both card properties are equal", ^{
+        let(other, ^{
+          return FGBuildWith(CardViewController.class, ^(FGDefinitionBuilder *builder) {
+            builder[@"card"] = cardViewController.card;
+          });
+        });
+
+        it(@"is YES", ^{
+          [[isEqual should] beYes];
+        });
+      });
+
+      context(@"when both card properties are not equal", ^{
+        let(other, ^{
+          return FGBuild(CardViewController.class);
+        });
+
+        it(@"is NO", ^{
+          [[isEqual should] beNo];
+        });
+      });
+    });
+
+    context(@"when other is not a CardViewController", ^{
+      let(other, ^{
+        return GZWords.sentence;
+      });
+
+      it(@"is NO", ^{
+        [[isEqual should] beNo];
+      });
+    });
+  });
 });
 SPEC_END
