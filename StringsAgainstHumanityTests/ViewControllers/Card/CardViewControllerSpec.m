@@ -48,5 +48,15 @@ describe(@"CardViewController", ^{
       free(nonatomicAttribute);
     });
   });
+
+  describe(@"- cardView", ^{
+    let(cardView, ^{
+      return cardViewController.cardView;
+    });
+
+    it(@"is the view", ^{
+      [[cardView should] beIdenticalTo:cardViewController.view];
+    });
+  });
 });
 SPEC_END

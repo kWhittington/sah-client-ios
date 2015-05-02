@@ -7,6 +7,7 @@
 //
 
 #import "Card.h"
+#import "CardView.h"
 #import "CardViewController.h"
 
 @interface CardViewController ()
@@ -27,25 +28,19 @@
   return self;
 }
 
-- (void)initProperties {
-}
+- (CardView *)cardView {
+  if ([self.view isKindOfClass:CardView.class]) {
+    return (CardView *)self.view;
+  }
 
-- (void)viewDidLoad {
-  [super viewDidLoad];
-  // Do any additional setup after loading the view.
-}
-
-- (void)didReceiveMemoryWarning {
-  [super didReceiveMemoryWarning];
-  // Dispose of any resources that can be recreated.
+  return nil;
 }
 
 - (void)initPropertiesWithCard:(Card *)card {
   self.card = card;
 }
 
-- (void)viewDidLoad {
-  [super viewDidLoad];
-  // Do any additional setup after loading the view.
+- (void)loadView {
+  self.view = [CardView withMainScreenFrameAndCard:self.card];
 }
 @end

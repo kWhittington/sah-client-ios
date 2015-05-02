@@ -9,6 +9,7 @@
 @import UIKit;
 
 @class Card;
+@class CardView;
 
 @interface CardViewController : UIViewController
 @property(nonatomic, readonly) Card *card;
@@ -17,4 +18,6 @@
 
 #pragma mark Designated Initializer
 - (instancetype)initWithCard:(Card *)card;
+
+- (CardView *)cardView;
 @end
