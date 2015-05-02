@@ -8,12 +8,16 @@
 // clang-format off
 
 #import "FactoryLibraries.pch"
+#import "WhiteCardView.h"
 #import "WhiteCardTextView.h"
 
 FGFactoryBegin(WhiteCardTextView)
-//  [builder initWith:@selector(initWithMainScreenFrameAndWhiteCardView:)
-//         fieldNames:@[@"whiteCardView"]];
-  [builder initWith:@selector(initWithMainScreenFrameAndCardView:) fieldNames:@[@"whiteCardView"]];
+  [builder initWith:@selector(initWithMainScreenFrameAndWhiteCardView:)
+         fieldNames:@[@"whiteCardView"]];
 
-  [builder nilField:@"whiteCardView"];
+  [builder field:@"whiteCardView" assoc:WhiteCardView.class];
+
+  traitDefiners[@"withoutSuperview"] = ^(FGDefinitionBuilder *withoutSuperview) {
+    [withoutSuperview nilField:@"whiteCardView"];
+  };
 FGFactoryEnd
