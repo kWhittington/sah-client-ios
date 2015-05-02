@@ -40,6 +40,10 @@
   return nil;
 }
 
+- (NSString *)description {
+  return NSStringWithFormat(@"<CardViewController: %p; card = %@>", self, self.card);
+}
+
 - (void)initPropertiesWithCard:(Card *)card {
   self.card = card;
 }

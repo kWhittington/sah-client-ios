@@ -77,6 +77,21 @@ describe(@"CardViewController", ^{
     });
   });
 
+  describe(@"- description", ^{
+    let(description, ^{
+      return cardViewController.description;
+    });
+
+    let(expectedString, ^{
+      return NSStringWithFormat(@"<CardViewController: %p; card = %@>", cardViewController,
+                                cardViewController.card);
+    });
+
+    specify(^{
+      [[description should] equal:expectedString];
+    });
+  });
+
   describe(@"- isEqual:", ^{
     let(other, ^{
       return NSObject.nullMock;
