@@ -6,13 +6,13 @@
 //  Copyright (c) 2015 Kyle Whittington. All rights reserved.
 //
 
-@import UIKit;
+#import "CardViewController.h"
 
 @class WhiteCard;
 
-@interface WhiteCardViewController : UIViewController
-@property(readonly, copy, nonatomic) WhiteCard *whiteCard;
-@property(strong, nonatomic) IBOutlet UILabel *label;
-
+@interface WhiteCardViewController : CardViewController
 + (instancetype)withWhiteCard:(WhiteCard *)whiteCard;
+
+#pragma mark Designated Initializer
+- (instancetype)initWithWhiteCard:(WhiteCard *)whiteCard;
 @end
