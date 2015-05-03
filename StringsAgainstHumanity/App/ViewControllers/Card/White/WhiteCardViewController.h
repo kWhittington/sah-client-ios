@@ -9,6 +9,7 @@
 #import "CardViewController.h"
 
 @class WhiteCard;
+@class WhiteCardView;
 
 @interface WhiteCardViewController : CardViewController
 + (instancetype)withWhiteCard:(WhiteCard *)whiteCard;
@@ -17,4 +18,5 @@
 - (instancetype)initWithWhiteCard:(WhiteCard *)whiteCard;
 
 - (WhiteCard *)whiteCard;
+- (WhiteCardView *)whiteCardView;
 @end

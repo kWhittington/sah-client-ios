@@ -7,8 +7,9 @@
 //
 
 #import "SAHLibraries.pch"
-#import "WhiteCardViewController.h"
 #import "WhiteCard.h"
+#import "WhiteCardView.h"
+#import "WhiteCardViewController.h"
 
 @interface WhiteCardViewController ()
 @end
@@ -37,15 +38,11 @@
   return self;
 }
 
-- (void)didReceiveMemoryWarning {
-  [super didReceiveMemoryWarning];
-  // Dispose of any resources that can be recreated.
-}
-
 - (void)initProperties {
 }
 
 - (void)loadView {
+  self.view = [WhiteCardView withMainScreenFrameAndWhiteCard:self.whiteCard];
 }
 
 - (void)viewDidLoad {
@@ -55,5 +52,9 @@
 
 - (WhiteCard *)whiteCard {
   return (WhiteCard *)self.card;
+}
+
+- (WhiteCardView *)whiteCardView {
+  return (WhiteCardView *)self.cardView;
 }
 @end

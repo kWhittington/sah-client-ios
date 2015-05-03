@@ -8,6 +8,7 @@
 
 #import "TestLibraries.pch"
 #import "WhiteCard.h"
+#import "WhiteCardView.h"
 #import "WhiteCardViewController.h"
 
 SPEC_BEGIN(WhiteCardViewControllerSpec)
@@ -20,16 +21,6 @@ describe(@"WhiteCardViewController", ^{
     [[whiteCardViewController should] beKindOfClass:CardViewController.class];
   });
 
-  describe(@".card", ^{
-    let(card, ^{
-      return whiteCardViewController.card;
-    });
-
-    it(@"is a kind of white card", ^{
-      [[card should] beKindOfClass:WhiteCard.class];
-    });
-  });
-
   describe(@"- whiteCard", ^{
     let(whiteCard, ^{
       return whiteCardViewController.whiteCard;
@@ -37,6 +28,16 @@ describe(@"WhiteCardViewController", ^{
 
     it(@"is the card cast as a white card", ^{
       [[whiteCard should] beIdenticalTo:whiteCardViewController.card];
+    });
+  });
+
+  describe(@"- whiteCardView", ^{
+    let(whiteCardView, ^{
+      return whiteCardViewController.whiteCardView;
+    });
+
+    it(@"is the card view cast as a white card view", ^{
+      [[whiteCardView should] beIdenticalTo:whiteCardViewController.cardView];
     });
   });
 });
