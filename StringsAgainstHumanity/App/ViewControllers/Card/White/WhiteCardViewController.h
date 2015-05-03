@@ -15,4 +15,6 @@
 
 #pragma mark Designated Initializer
 - (instancetype)initWithWhiteCard:(WhiteCard *)whiteCard;
+
+- (WhiteCard *)whiteCard;
 @end

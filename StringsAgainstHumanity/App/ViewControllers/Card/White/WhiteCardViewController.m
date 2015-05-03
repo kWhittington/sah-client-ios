@@ -52,4 +52,8 @@
   [super viewDidLoad];
   // Do any additional setup after loading the view.
 }
+
+- (WhiteCard *)whiteCard {
+  return (WhiteCard *)self.card;
+}
 @end
