@@ -17,4 +17,6 @@
 #pragma mark Designated Initializer
 - (instancetype)initWithFrame:(CGRect)frame andBlackCardView:(BlackCardView *)blackCardView;
 - (instancetype)initWithMainScreenFrameAndBlackCardView:(BlackCardView *)blackCardView;
+
+- (BlackCardView *)blackCardView;
 @end

@@ -38,4 +38,12 @@
 - (void)initProperties {
   self.textColor = Constants.WhiteColor;
 }
+
+- (BlackCardView *)blackCardView {
+  if ([self.cardView isKindOfClass:BlackCardView.class]) {
+    return (BlackCardView *)self.cardView;
+  }
+
+  return nil;
+}
 @end

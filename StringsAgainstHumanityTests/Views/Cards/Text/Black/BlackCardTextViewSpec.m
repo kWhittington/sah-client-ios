@@ -40,5 +40,15 @@ describe(@"BlackCardTextView", ^{
       [[cardView should] beKindOfClass:BlackCardView.class];
     });
   });
+
+  describe(@"- blackCardView", ^{
+    let(blackCardView, ^{
+      return blackCardTextView.blackCardView;
+    });
+
+    it(@"is the card view casted as a black card view", ^{
+      [[blackCardView should] beIdenticalTo:blackCardTextView.cardView];
+    });
+  });
 });
 SPEC_END
