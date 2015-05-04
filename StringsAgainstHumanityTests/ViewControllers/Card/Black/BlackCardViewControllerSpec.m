@@ -41,5 +41,15 @@ describe(@"BlackCardViewController", ^{
       [[blackCard should] beIdenticalTo:blackCardViewController.card];
     });
   });
+
+  describe(@"- cardView", ^{
+    let(cardView, ^{
+      return blackCardViewController.cardView;
+    });
+
+    it(@"is a kind of black card view", ^{
+      [[cardView should] beKindOfClass:BlackCardView.class];
+    });
+  });
 });
 SPEC_END
