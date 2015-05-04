@@ -12,9 +12,6 @@
 #import "BlackCardView.h"
 #import "BlackCardViewController.h"
 
-@interface BlackCardViewController ()
-@end
-
 @implementation BlackCardViewController
 + (instancetype)withBlackCard:(BlackCard *)blackCard {
   return [[self alloc] init];
