@@ -41,6 +41,14 @@
 - (void)initProperties {
 }
 
+- (BOOL)isEqualToCardViewController:(CardViewController *)other {
+  if ([other isKindOfClass:WhiteCardViewController.class]) {
+    return [self isEqualToWhiteCardViewController:(WhiteCardViewController *)other];
+  }
+
+  return NO;
+}
+
 - (BOOL)isEqualToWhiteCardViewController:(WhiteCardViewController *)other {
   BOOL whiteCardsAreEqual = [self.whiteCard isEqualToWhiteCard:other.whiteCard];
 

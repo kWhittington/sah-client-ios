@@ -31,6 +31,104 @@ describe(@"WhiteCardViewController", ^{
     });
   });
 
+  describe(@"- isEqual:", ^{
+    let(other, ^{
+      return NSObject.nullMock;
+    });
+
+    let(isEqual, ^{
+      return theValue([whiteCardViewController isEqual:other]);
+    });
+
+    context(@"when both objects are identical", ^{
+      let(other, ^{
+        return whiteCardViewController;
+      });
+
+      it(@"is YES", ^{
+        [[isEqual should] beYes];
+      });
+    });
+
+    context(@"when other is a WhiteCardViewController", ^{
+      context(@"when both white cards are equal", ^{
+        let(other, ^{
+          return FGBuildWith(WhiteCardViewController.class, ^(FGDefinitionBuilder *builder) {
+            builder[@"whiteCard"] = whiteCardViewController.whiteCard;
+          });
+        });
+
+        it(@"is YES", ^{
+          [[isEqual should] beYes];
+        });
+      });
+
+      context(@"when both white cards are not equal", ^{
+        let(other, ^{
+          return FGBuild(WhiteCardViewController.class);
+        });
+
+        it(@"is NO", ^{
+          [[isEqual should] beNo];
+        });
+      });
+    });
+
+    context(@"when other is not a WhiteCardViewController", ^{
+      let(other, ^{
+        return GZWords.sentence;
+      });
+
+      it(@"is NO", ^{
+        [[isEqual should] beNo];
+      });
+    });
+  });
+
+  describe(@"- isEqualToCardViewController:", ^{
+    let(other, ^{
+      return CardViewController.nullMock;
+    });
+
+    let(isEqualToCardViewController, ^{
+      return theValue([whiteCardViewController isEqualToCardViewController:other]);
+    });
+
+    context(@"when other is a WhiteCardViewController", ^{
+      context(@"when both white cards are equal", ^{
+        let(other, ^{
+          return FGBuildWith(WhiteCardViewController.class, ^(FGDefinitionBuilder *builder) {
+            builder[@"whiteCard"] = whiteCardViewController.whiteCard;
+          });
+        });
+
+        it(@"is YES", ^{
+          [[isEqualToCardViewController should] beYes];
+        });
+      });
+
+      context(@"when both white cards are not equal", ^{
+        let(other, ^{
+          return FGBuild(WhiteCardViewController.class);
+        });
+
+        it(@"is NO", ^{
+          [[isEqualToCardViewController should] beNo];
+        });
+      });
+    });
+
+    context(@"when other is not a WhiteCardViewController", ^{
+      let(other, ^{
+        return FGBuild(CardViewController.class);
+      });
+
+      it(@"is NO", ^{
+        [[isEqualToCardViewController should] beNo];
+      });
+    });
+  });
+
   describe(@"- isEqualToWhiteCardViewController:", ^{
     let(other, ^{
       return WhiteCardViewController.nullMock;
