@@ -21,5 +21,15 @@ describe(@"BlackCardViewController", ^{
   it(@"is a kind of card view controller", ^{
     [[blackCardViewController should] beKindOfClass:CardViewController.class];
   });
+
+  describe(@".card", ^{
+    let(card, ^{
+      return blackCardViewController.card;
+    });
+
+    it(@"is a kind of black card", ^{
+      [[card should] beKindOfClass:BlackCard.class];
+    });
+  });
 });
 SPEC_END
