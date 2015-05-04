@@ -18,6 +18,10 @@
   return [[self alloc] initWithMainScreenFrameAndBlackCardView:blackCardView];
 }
 
+- (instancetype)initWithFrame:(CGRect)frame andCardView:(CardView *)cardView {
+  return [self initWithFrame:frame andBlackCardView:(BlackCardView *)cardView];
+}
+
 #pragma mark Designated Initializer
 - (instancetype)initWithFrame:(CGRect)frame andBlackCardView:(BlackCardView *)blackCardView {
   self = [super initWithFrame:frame andCardView:blackCardView];
@@ -32,5 +36,6 @@
 }
 
 - (void)initProperties {
+  self.textColor = Constants.WhiteColor;
 }
 @end

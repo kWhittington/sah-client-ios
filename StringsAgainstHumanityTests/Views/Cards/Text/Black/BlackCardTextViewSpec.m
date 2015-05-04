@@ -13,12 +13,22 @@
 
 SPEC_BEGIN(BlackCardTextViewSpec)
 describe(@"BlackCardTextView", ^{
-  let(blackCardTextView, ^{
+  let(blackCardTextView, ^BlackCardTextView *{
     return FGBuild(BlackCardTextView.class);
   });
 
   it(@"is a kind of card text view", ^{
     [[blackCardTextView should] beKindOfClass:CardTextView.class];
+  });
+
+  describe(@".textColor", ^{
+    let(textColor, ^{
+      return blackCardTextView.textColor;
+    });
+
+    it(@"is Constants.WhiteColor", ^{
+      [[textColor should] equal:Constants.WhiteColor];
+    });
   });
 });
 SPEC_END

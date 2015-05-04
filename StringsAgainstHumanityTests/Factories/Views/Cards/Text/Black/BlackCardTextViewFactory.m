@@ -16,10 +16,9 @@ FGFactoryBegin(BlackCardTextView)
   [builder initWith:@selector(initWithMainScreenFrameAndBlackCardView:)
          fieldNames:@[@"blackCardView"]];
 
-  [builder nilField:@"blackCardView"];
-//  [builder field:@"blackCardView" assoc:BlackCardView.class];
+  [builder field:@"blackCardView" assoc:BlackCardView.class];
 
-//  traitDefiners[@"withoutSuperview"] = ^(FGDefinitionBuilder *withoutSuperview) {
-//    [withoutSuperview nilField:@"blackCardView"];
-//  };
+  traitDefiners[@"withoutSuperview"] = ^(FGDefinitionBuilder *withoutSuperview) {
+    [withoutSuperview nilField:@"blackCardView"];
+  };
 FGFactoryEnd
