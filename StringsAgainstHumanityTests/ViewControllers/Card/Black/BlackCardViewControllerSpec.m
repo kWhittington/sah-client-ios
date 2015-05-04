@@ -62,6 +62,60 @@ describe(@"BlackCardViewController", ^{
     });
   });
 
+  describe(@"- isEqual:", ^{
+    let(other, ^{
+      return NSObject.nullMock;
+    });
+
+    let(isEqual, ^{
+      return theValue([blackCardViewController isEqual:other]);
+    });
+
+    context(@"when both objects are identical", ^{
+      let(other, ^{
+        return blackCardViewController;
+      });
+
+      it(@"is YES", ^{
+        [[isEqual should] beYes];
+      });
+    });
+
+    context(@"when other is a black card view controller", ^{
+      context(@"when both black cards are equal", ^{
+        let(other, ^{
+          return FGBuildWith(BlackCardViewController.class, ^(FGDefinitionBuilder *builder) {
+            builder[@"blackCard"] = blackCardViewController.blackCard;
+          });
+        });
+
+        it(@"is YES", ^{
+          [[isEqual should] beYes];
+        });
+      });
+
+      context(@"when both black cards are not equal", ^{
+        let(other, ^{
+          return FGBuild(BlackCardViewController.class);
+        });
+
+        it(@"is NO", ^{
+          [[isEqual should] beNo];
+        });
+      });
+    });
+
+    context(@"when other is not a black card view controller", ^{
+      let(other, ^{
+        return GZWords.sentence;
+      });
+
+      it(@"is NO", ^{
+        [[isEqual should] beNo];
+      });
+    });
+  });
+
   describe(@"- isEqualToCardViewController:", ^{
     let(other, ^{
       return CardViewController.nullMock;
