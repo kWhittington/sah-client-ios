@@ -46,4 +46,15 @@
 
   return nil;
 }
+
+- (void)willMoveToSuperview:(UIView *)newSuperview {
+  BOOL isNil = newSuperview == nil;
+  BOOL isKindOfBlackCardView = [newSuperview isKindOfClass:BlackCardView.class];
+
+  unless(isNil || isKindOfBlackCardView) {
+    [NSException raise:@"SuperviewTypeError"
+                format:@"BlackCardTextView.superview must be a kind of BlackCardView, not %@",
+                       newSuperview.class];
+  }
+}
 @end

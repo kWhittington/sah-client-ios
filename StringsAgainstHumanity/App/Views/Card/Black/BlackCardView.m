@@ -8,6 +8,7 @@
 
 #import "BlackCard.h"
 #import "BlackCardView.h"
+#import "BlackCardTextView.h"
 
 @interface BlackCardView ()
 @end
@@ -43,7 +44,12 @@
   return [self initWithFrame:UIScreen.mainScreen.bounds andBlackCard:blackCard];
 }
 
+- (void)initBlackCardTextView {
+  self.cardTextView = [BlackCardTextView withFrame:self.frame andBlackCardView:self];
+}
+
 - (void)initProperties {
   self.backgroundColor = Constants.BlackColor;
+  [self initBlackCardTextView];
 }
 @end

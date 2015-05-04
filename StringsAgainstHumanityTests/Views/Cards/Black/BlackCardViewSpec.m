@@ -9,6 +9,7 @@
 #import "TestLibraries.pch"
 
 #import "BlackCard.h"
+#import "BlackCardTextView.h"
 #import "BlackCardView.h"
 
 SPEC_BEGIN(BlackCardViewSpec)
@@ -28,6 +29,16 @@ describe(@"BlackCardView", ^{
 
     it(@"is Constants.BlackColor", ^{
       [[backgroundColor should] equal:Constants.BlackColor];
+    });
+  });
+
+  describe(@".cardTextView", ^{
+    let(cardTextView, ^{
+      return blackCardView.cardTextView;
+    });
+
+    it(@"is a black card text view", ^{
+      [[cardTextView should] beKindOfClass:BlackCardTextView.class];
     });
   });
 });
