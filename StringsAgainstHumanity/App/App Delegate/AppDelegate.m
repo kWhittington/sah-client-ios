@@ -20,11 +20,6 @@
   // Override point for customization after application launch.
   [self initializeCocoaLumberjack];
 
-  self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-  self.window.rootViewController =
-    [BlackCardViewController withBlackCard:[BlackCard withString:@"Hello"]];
-  [self.window makeKeyAndVisible];
-
   return YES;
 }
 

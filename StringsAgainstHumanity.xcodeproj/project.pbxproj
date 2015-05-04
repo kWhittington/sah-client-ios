@@ -39,8 +39,6 @@
 		AD71F5951A9C11A70077BE8B /* HandFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = AD71F5941A9C11A70077BE8B /* HandFactory.m */; };
 		AD7C84DF1A95B34D00A2DE02 /* CardSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = AD7C84DE1A95B34D00A2DE02 /* CardSpec.m */; };
 		AD8B92E81AA2BB6E0044ECC0 /* Hand+DataSourceSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = AD8B92E71AA2BB6E0044ECC0 /* Hand+DataSourceSpec.m */; };
-		AD99B3E41ADC584D00507C10 /* BlackCardViewSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = AD99B3E31ADC584D00507C10 /* BlackCardViewSpec.m */; };
-		AD99B3E81ADC593900507C10 /* BlackCardView.m in Sources */ = {isa = PBXBuildFile; fileRef = AD99B3E71ADC593900507C10 /* BlackCardView.m */; };
 		AD9CD1921AE5FD1A004DECA5 /* CardTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = AD9CD1911AE5FD1A004DECA5 /* CardTextView.m */; };
 		AD9CD1951AE5FDD4004DECA5 /* CardTextViewSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = AD9CD1941AE5FDD4004DECA5 /* CardTextViewSpec.m */; };
 		AD9CD1981AE5FFEB004DECA5 /* CardView.m in Sources */ = {isa = PBXBuildFile; fileRef = AD9CD1971AE5FFEB004DECA5 /* CardView.m */; };
@@ -75,6 +73,9 @@
 		ADF903121AF71015002F6274 /* BlackCardTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = ADF903111AF71015002F6274 /* BlackCardTextView.m */; };
 		ADF903151AF7103B002F6274 /* BlackCardTextViewFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = ADF903141AF7103B002F6274 /* BlackCardTextViewFactory.m */; };
 		ADF903181AF71057002F6274 /* BlackCardTextViewSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = ADF903171AF71057002F6274 /* BlackCardTextViewSpec.m */; };
+		ADF9031B1AF71791002F6274 /* BlackCardViewFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = ADF9031A1AF71791002F6274 /* BlackCardViewFactory.m */; };
+		ADF9031E1AF71820002F6274 /* BlackCardView.m in Sources */ = {isa = PBXBuildFile; fileRef = ADF9031D1AF71820002F6274 /* BlackCardView.m */; };
+		ADF903201AF7182D002F6274 /* BlackCardViewSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = ADF9031F1AF7182D002F6274 /* BlackCardViewSpec.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -135,9 +136,6 @@
 		AD71F5941A9C11A70077BE8B /* HandFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HandFactory.m; path = Factories/Models/Hand/HandFactory.m; sourceTree = "<group>"; };
 		AD7C84DE1A95B34D00A2DE02 /* CardSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CardSpec.m; path = Models/Card/CardSpec.m; sourceTree = "<group>"; };
 		AD8B92E71AA2BB6E0044ECC0 /* Hand+DataSourceSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "Hand+DataSourceSpec.m"; path = "DataSources/Hand/Hand+DataSourceSpec.m"; sourceTree = "<group>"; };
-		AD99B3E31ADC584D00507C10 /* BlackCardViewSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BlackCardViewSpec.m; path = Views/Cards/BlackCards/BlackCardViewSpec.m; sourceTree = "<group>"; };
-		AD99B3E61ADC593900507C10 /* BlackCardView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BlackCardView.h; path = App/Views/Card/BlackCards/BlackCardView.h; sourceTree = "<group>"; };
-		AD99B3E71ADC593900507C10 /* BlackCardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BlackCardView.m; path = App/Views/Card/BlackCards/BlackCardView.m; sourceTree = "<group>"; };
 		AD9CD1901AE5FD1A004DECA5 /* CardTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CardTextView.h; path = App/Views/Card/Text/CardTextView.h; sourceTree = "<group>"; };
 		AD9CD1911AE5FD1A004DECA5 /* CardTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CardTextView.m; path = App/Views/Card/Text/CardTextView.m; sourceTree = "<group>"; };
 		AD9CD1941AE5FDD4004DECA5 /* CardTextViewSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CardTextViewSpec.m; path = Views/Cards/Text/CardTextViewSpec.m; sourceTree = "<group>"; };
@@ -190,6 +188,10 @@
 		ADF903111AF71015002F6274 /* BlackCardTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BlackCardTextView.m; path = App/Views/Card/Text/Black/BlackCardTextView.m; sourceTree = "<group>"; };
 		ADF903141AF7103B002F6274 /* BlackCardTextViewFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BlackCardTextViewFactory.m; path = Factories/Views/Cards/Text/Black/BlackCardTextViewFactory.m; sourceTree = "<group>"; };
 		ADF903171AF71057002F6274 /* BlackCardTextViewSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BlackCardTextViewSpec.m; path = Views/Cards/Text/Black/BlackCardTextViewSpec.m; sourceTree = "<group>"; };
+		ADF9031A1AF71791002F6274 /* BlackCardViewFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BlackCardViewFactory.m; path = Factories/Views/Cards/Black/BlackCardViewFactory.m; sourceTree = "<group>"; };
+		ADF9031C1AF71820002F6274 /* BlackCardView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BlackCardView.h; path = App/Views/Card/Black/BlackCardView.h; sourceTree = "<group>"; };
+		ADF9031D1AF71820002F6274 /* BlackCardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BlackCardView.m; path = App/Views/Card/Black/BlackCardView.m; sourceTree = "<group>"; };
+		ADF9031F1AF7182D002F6274 /* BlackCardViewSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BlackCardViewSpec.m; path = Views/Cards/Black/BlackCardViewSpec.m; sourceTree = "<group>"; };
 		B02303BEBE5C23E0A1410243 /* Pods-StringsAgainstHumanityTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StringsAgainstHumanityTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-StringsAgainstHumanityTests/Pods-StringsAgainstHumanityTests.debug.xcconfig"; sourceTree = "<group>"; };
 		B7ADE5E423D28076F6E18920 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		F6AB522281E428AFA232B517 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -544,8 +546,9 @@
 		AD69AA601AEB272600B18013 /* Cards */ = {
 			isa = PBXGroup;
 			children = (
-				ADAAC0821AEC556C00AD962D /* Text */,
+				ADF903191AF7175B002F6274 /* Black */,
 				ADBDC50A1AF579DC0052C215 /* White */,
+				ADAAC0821AEC556C00AD962D /* Text */,
 				AD69AA5E1AEB272200B18013 /* CardViewFactory.m */,
 			);
 			name = Cards;
@@ -626,29 +629,29 @@
 		AD99B3E11ADC57B200507C10 /* Cards */ = {
 			isa = PBXGroup;
 			children = (
-				AD9CD1931AE5FDBD004DECA5 /* Text */,
-				AD99B3E21ADC580900507C10 /* BlackCards */,
+				AD99B3E21ADC580900507C10 /* Black */,
 				ADBDC50D1AF579FE0052C215 /* White */,
+				AD9CD1931AE5FDBD004DECA5 /* Text */,
 				AD69AA611AEB2E6400B18013 /* CardViewSpec.m */,
 			);
 			name = Cards;
 			sourceTree = "<group>";
 		};
-		AD99B3E21ADC580900507C10 /* BlackCards */ = {
+		AD99B3E21ADC580900507C10 /* Black */ = {
 			isa = PBXGroup;
 			children = (
-				AD99B3E31ADC584D00507C10 /* BlackCardViewSpec.m */,
+				ADF9031F1AF7182D002F6274 /* BlackCardViewSpec.m */,
 			);
-			name = BlackCards;
+			name = Black;
 			sourceTree = "<group>";
 		};
-		AD99B3E51ADC58F000507C10 /* BlackCards */ = {
+		AD99B3E51ADC58F000507C10 /* Black */ = {
 			isa = PBXGroup;
 			children = (
-				AD99B3E61ADC593900507C10 /* BlackCardView.h */,
-				AD99B3E71ADC593900507C10 /* BlackCardView.m */,
+				ADF9031C1AF71820002F6274 /* BlackCardView.h */,
+				ADF9031D1AF71820002F6274 /* BlackCardView.m */,
 			);
-			name = BlackCards;
+			name = Black;
 			sourceTree = "<group>";
 		};
 		AD9CD18F1AE5FCC1004DECA5 /* Text */ = {
@@ -911,9 +914,9 @@
 		ADBF7F9C1A913F4700C5BB00 /* Card */ = {
 			isa = PBXGroup;
 			children = (
-				AD9CD18F1AE5FCC1004DECA5 /* Text */,
-				AD99B3E51ADC58F000507C10 /* BlackCards */,
+				AD99B3E51ADC58F000507C10 /* Black */,
 				ADBDC5061AF5799D0052C215 /* White */,
+				AD9CD18F1AE5FCC1004DECA5 /* Text */,
 				ADBF7F9D1A913FE200C5BB00 /* CardViewCell.h */,
 				ADBF7F9E1A913FE200C5BB00 /* CardViewCell.m */,
 				AD9CD1961AE5FFEB004DECA5 /* CardView.h */,
@@ -1031,6 +1034,14 @@
 			isa = PBXGroup;
 			children = (
 				ADF903171AF71057002F6274 /* BlackCardTextViewSpec.m */,
+			);
+			name = Black;
+			sourceTree = "<group>";
+		};
+		ADF903191AF7175B002F6274 /* Black */ = {
+			isa = PBXGroup;
+			children = (
+				ADF9031A1AF71791002F6274 /* BlackCardViewFactory.m */,
 			);
 			name = Black;
 			sourceTree = "<group>";
@@ -1224,6 +1235,7 @@
 				ADA8C8A41AB4C782000987EC /* NSObject+TypeChecking.m in Sources */,
 				ADC195D21AA1545D00177660 /* Hand+DataSource.m in Sources */,
 				AD227A571AF403FB00930AE0 /* HandViewController.m in Sources */,
+				ADF9031E1AF71820002F6274 /* BlackCardView.m in Sources */,
 				AD227A671AF4088500930AE0 /* CardViewController.m in Sources */,
 				ADBF7F981A91171A00C5BB00 /* Card.m in Sources */,
 				AD227A5D1AF4041C00930AE0 /* PlaymatViewController.m in Sources */,
@@ -1236,7 +1248,6 @@
 				AD62DCE91AB2398600F70C51 /* UnimplementedException.m in Sources */,
 				ADBF7F9F1A913FE200C5BB00 /* CardViewCell.m in Sources */,
 				AD5E85671AA7E3680067ABF2 /* BlackCard.m in Sources */,
-				AD99B3E81ADC593900507C10 /* BlackCardView.m in Sources */,
 				ADF903091AF6CB8D002F6274 /* WhiteCardViewController.m in Sources */,
 				ADE4A6B61A844121008CB5D2 /* AppDelegate.m in Sources */,
 				ADBF7FA71A914D4D00C5BB00 /* BirdsEyeHandLayout.m in Sources */,
@@ -1256,10 +1267,11 @@
 				AD69AA621AEB2E6400B18013 /* CardViewSpec.m in Sources */,
 				AD5E856D1AA7E57C0067ABF2 /* BlackCardFactory.m in Sources */,
 				ADA8C8A91AB4C8DD000987EC /* NSObject+TypeCheckingSpec.m in Sources */,
+				ADF9031B1AF71791002F6274 /* BlackCardViewFactory.m in Sources */,
 				AD5E856A1AA7E3880067ABF2 /* BlackCardSpec.m in Sources */,
 				ADF903151AF7103B002F6274 /* BlackCardTextViewFactory.m in Sources */,
-				AD99B3E41ADC584D00507C10 /* BlackCardViewSpec.m in Sources */,
 				AD227A711AF408F600930AE0 /* CardViewControllerFactory.m in Sources */,
+				ADF903201AF7182D002F6274 /* BlackCardViewSpec.m in Sources */,
 				ADC8B66C1ACCA78E000BC883 /* PlayActionSpec.m in Sources */,
 				AD9CD1951AE5FDD4004DECA5 /* CardTextViewSpec.m in Sources */,
 				ADDE7F891A9C33C700E232EC /* HandSpec.m in Sources */,
