@@ -17,6 +17,7 @@
 #pragma mark Designated Initializer
 - (instancetype)initWithWhiteCard:(WhiteCard *)whiteCard;
 
+- (BOOL)isEqualToWhiteCardViewController:(WhiteCardViewController *)other;
 - (WhiteCard *)whiteCard;
 - (WhiteCardView *)whiteCardView;
 @end

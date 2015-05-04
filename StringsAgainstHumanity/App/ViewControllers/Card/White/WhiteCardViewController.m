@@ -41,6 +41,12 @@
 - (void)initProperties {
 }
 
+- (BOOL)isEqualToWhiteCardViewController:(WhiteCardViewController *)other {
+  BOOL whiteCardsAreEqual = [self.whiteCard isEqualToWhiteCard:other.whiteCard];
+
+  return whiteCardsAreEqual;
+}
+
 - (void)loadView {
   self.view = [WhiteCardView withMainScreenFrameAndWhiteCard:self.whiteCard];
 }

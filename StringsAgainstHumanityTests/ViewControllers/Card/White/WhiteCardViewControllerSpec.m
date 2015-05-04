@@ -31,6 +31,38 @@ describe(@"WhiteCardViewController", ^{
     });
   });
 
+  describe(@"- isEqualToWhiteCardViewController:", ^{
+    let(other, ^{
+      return WhiteCardViewController.nullMock;
+    });
+
+    let(isEqualToWhiteCardViewController, ^{
+      return theValue([whiteCardViewController isEqualToWhiteCardViewController:other]);
+    });
+
+    context(@"when both white cards are equal", ^{
+      let(other, ^{
+        return FGBuildWith(WhiteCardViewController.class, ^(FGDefinitionBuilder *builder) {
+          builder[@"whiteCard"] = whiteCardViewController.whiteCard;
+        });
+      });
+
+      it(@"is YES", ^{
+        [[isEqualToWhiteCardViewController should] beYes];
+      });
+    });
+
+    context(@"when both white cards are not equal", ^{
+      let(other, ^{
+        return FGBuild(WhiteCardViewController.class);
+      });
+
+      it(@"is NO", ^{
+        [[isEqualToWhiteCardViewController should] beNo];
+      });
+    });
+  });
+
   describe(@"- whiteCardView", ^{
     let(whiteCardView, ^{
       return whiteCardViewController.whiteCardView;
