@@ -62,6 +62,50 @@ describe(@"BlackCardViewController", ^{
     });
   });
 
+  describe(@"- isEqualToCardViewController:", ^{
+    let(other, ^{
+      return CardViewController.nullMock;
+    });
+
+    let(isEqualToCardViewController, ^{
+      return theValue([blackCardViewController isEqualToCardViewController:other]);
+    });
+
+    context(@"when other is a black card view controller", ^{
+      context(@"when both black cards are equal", ^{
+        let(other, ^{
+          return FGBuildWith(BlackCardViewController.class, ^(FGDefinitionBuilder *builder) {
+            builder[@"blackCard"] = blackCardViewController.blackCard.copy;
+          });
+        });
+
+        it(@"is YES", ^{
+          [[isEqualToCardViewController should] beYes];
+        });
+      });
+
+      context(@"when both black cards are not equal", ^{
+        let(other, ^{
+          return FGBuild(BlackCardViewController.class);
+        });
+
+        it(@"is NO", ^{
+          [[isEqualToCardViewController should] beNo];
+        });
+      });
+    });
+
+    context(@"when other is not a black card view controller", ^{
+      let(other, ^{
+        return FGBuild(CardViewController.class);
+      });
+
+      it(@"is NO", ^{
+        [[isEqualToCardViewController should] beNo];
+      });
+    });
+  });
+
   describe(@"- isEqualToBlackCardViewController:", ^{
     let(other, ^{
       return BlackCardViewController.nullMock;

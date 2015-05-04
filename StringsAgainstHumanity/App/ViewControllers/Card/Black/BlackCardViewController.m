@@ -42,6 +42,14 @@
   return (BlackCardView *)self.cardView;
 }
 
+- (BOOL)isEqualToCardViewController:(CardViewController *)other {
+  if ([other isKindOfClass:BlackCardViewController.class]) {
+    return [self isEqualToBlackCardViewController:(BlackCardViewController *)other];
+  }
+
+  return NO;
+}
+
 - (BOOL)isEqualToBlackCardViewController:(BlackCardViewController *)other {
   BOOL blackCardsAreEqual = [self.blackCard isEqualToBlackCard:other.blackCard];
 
