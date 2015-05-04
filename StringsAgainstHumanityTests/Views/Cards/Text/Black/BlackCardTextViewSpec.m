@@ -50,5 +50,50 @@ describe(@"BlackCardTextView", ^{
       [[blackCardView should] beIdenticalTo:blackCardTextView.cardView];
     });
   });
+
+  describe(@"- willMoveToSuperview:", ^{
+    context(@"when the new superview is a kind of black card view", ^{
+      let(newSuperview, ^{
+        return FGBuild(BlackCardView.class);
+      });
+
+      it(@"does nothing", ^{
+        [[theBlock(^{
+          [blackCardTextView willMoveToSuperview:newSuperview];
+        }) shouldNot] raise];
+      });
+    });
+
+    context(@"when the new superview is nil", ^{
+      it(@"does nothing", ^{
+        [[theBlock(^{
+          [blackCardTextView willMoveToSuperview:nil];
+        }) shouldNot] raise];
+      });
+    });
+
+    context(@"when the new superview is not a kind of black card view", ^{
+      let(newSuperview, ^{
+        return UIView.new;
+      });
+
+      let(errorName, ^{
+        return @"SuperviewTypeError";
+      });
+
+      let(errorReason, ^{
+        return [NSString
+          stringWithFormat:@"BlackCardTextView.superview must be a kind of BlackCardView, not %@",
+                           newSuperview.class];
+      });
+
+      it(@"raises a `SuperviewTypeError`", ^{
+        [[theBlock(^{
+          [blackCardTextView willMoveToSuperview:newSuperview];
+        }) should] raiseWithName:errorName
+                          reason:errorReason];
+      });
+    });
+  });
 });
 SPEC_END
