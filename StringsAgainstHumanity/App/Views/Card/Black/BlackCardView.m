@@ -44,6 +44,14 @@
   return [self initWithFrame:UIScreen.mainScreen.bounds andBlackCard:blackCard];
 }
 
+- (BlackCardTextView *)blackCardTextView {
+  if ([self.cardTextView isKindOfClass:BlackCardTextView.class]) {
+    return (BlackCardTextView *)self.cardTextView;
+  }
+
+  return nil;
+}
+
 - (void)initBlackCardTextView {
   self.cardTextView = [BlackCardTextView withFrame:self.frame andBlackCardView:self];
 }
