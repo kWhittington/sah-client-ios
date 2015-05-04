@@ -72,6 +72,9 @@
 		ADF903091AF6CB8D002F6274 /* WhiteCardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADF903081AF6CB8D002F6274 /* WhiteCardViewController.m */; };
 		ADF9030B1AF6CBC5002F6274 /* WhiteCardViewControllerFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = ADF9030A1AF6CBC5002F6274 /* WhiteCardViewControllerFactory.m */; };
 		ADF9030D1AF6CBFB002F6274 /* WhiteCardViewControllerSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = ADF9030C1AF6CBFB002F6274 /* WhiteCardViewControllerSpec.m */; };
+		ADF903121AF71015002F6274 /* BlackCardTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = ADF903111AF71015002F6274 /* BlackCardTextView.m */; };
+		ADF903151AF7103B002F6274 /* BlackCardTextViewFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = ADF903141AF7103B002F6274 /* BlackCardTextViewFactory.m */; };
+		ADF903181AF71057002F6274 /* BlackCardTextViewSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = ADF903171AF71057002F6274 /* BlackCardTextViewSpec.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -183,6 +186,10 @@
 		ADF903081AF6CB8D002F6274 /* WhiteCardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WhiteCardViewController.m; path = App/ViewControllers/Card/White/WhiteCardViewController.m; sourceTree = "<group>"; };
 		ADF9030A1AF6CBC5002F6274 /* WhiteCardViewControllerFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WhiteCardViewControllerFactory.m; path = Factories/ViewControllers/Card/White/WhiteCardViewControllerFactory.m; sourceTree = "<group>"; };
 		ADF9030C1AF6CBFB002F6274 /* WhiteCardViewControllerSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WhiteCardViewControllerSpec.m; path = ViewControllers/Card/White/WhiteCardViewControllerSpec.m; sourceTree = "<group>"; };
+		ADF903101AF71015002F6274 /* BlackCardTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BlackCardTextView.h; path = App/Views/Card/Text/Black/BlackCardTextView.h; sourceTree = "<group>"; };
+		ADF903111AF71015002F6274 /* BlackCardTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BlackCardTextView.m; path = App/Views/Card/Text/Black/BlackCardTextView.m; sourceTree = "<group>"; };
+		ADF903141AF7103B002F6274 /* BlackCardTextViewFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BlackCardTextViewFactory.m; path = Factories/Views/Cards/Text/Black/BlackCardTextViewFactory.m; sourceTree = "<group>"; };
+		ADF903171AF71057002F6274 /* BlackCardTextViewSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BlackCardTextViewSpec.m; path = Views/Cards/Text/Black/BlackCardTextViewSpec.m; sourceTree = "<group>"; };
 		B02303BEBE5C23E0A1410243 /* Pods-StringsAgainstHumanityTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StringsAgainstHumanityTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-StringsAgainstHumanityTests/Pods-StringsAgainstHumanityTests.debug.xcconfig"; sourceTree = "<group>"; };
 		B7ADE5E423D28076F6E18920 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		F6AB522281E428AFA232B517 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -647,6 +654,7 @@
 		AD9CD18F1AE5FCC1004DECA5 /* Text */ = {
 			isa = PBXGroup;
 			children = (
+				ADF9030E1AF70FD1002F6274 /* Black */,
 				ADBDC4FA1AF573370052C215 /* White */,
 				AD9CD1901AE5FD1A004DECA5 /* CardTextView.h */,
 				AD9CD1911AE5FD1A004DECA5 /* CardTextView.m */,
@@ -657,6 +665,7 @@
 		AD9CD1931AE5FDBD004DECA5 /* Text */ = {
 			isa = PBXGroup;
 			children = (
+				ADF903161AF71040002F6274 /* Black */,
 				ADBDC5011AF575180052C215 /* White */,
 				AD9CD1941AE5FDD4004DECA5 /* CardTextViewSpec.m */,
 			);
@@ -769,6 +778,7 @@
 		ADAAC0821AEC556C00AD962D /* Text */ = {
 			isa = PBXGroup;
 			children = (
+				ADF903131AF71021002F6274 /* Black */,
 				ADBDC4FE1AF573DB0052C215 /* White */,
 				ADAAC0831AEC558900AD962D /* CardTextViewFactory.m */,
 			);
@@ -1000,6 +1010,31 @@
 			name = White;
 			sourceTree = "<group>";
 		};
+		ADF9030E1AF70FD1002F6274 /* Black */ = {
+			isa = PBXGroup;
+			children = (
+				ADF903101AF71015002F6274 /* BlackCardTextView.h */,
+				ADF903111AF71015002F6274 /* BlackCardTextView.m */,
+			);
+			name = Black;
+			sourceTree = "<group>";
+		};
+		ADF903131AF71021002F6274 /* Black */ = {
+			isa = PBXGroup;
+			children = (
+				ADF903141AF7103B002F6274 /* BlackCardTextViewFactory.m */,
+			);
+			name = Black;
+			sourceTree = "<group>";
+		};
+		ADF903161AF71040002F6274 /* Black */ = {
+			isa = PBXGroup;
+			children = (
+				ADF903171AF71057002F6274 /* BlackCardTextViewSpec.m */,
+			);
+			name = Black;
+			sourceTree = "<group>";
+		};
 		C4EB91360EE2B4394439E2DB /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -1205,6 +1240,7 @@
 				ADF903091AF6CB8D002F6274 /* WhiteCardViewController.m in Sources */,
 				ADE4A6B61A844121008CB5D2 /* AppDelegate.m in Sources */,
 				ADBF7FA71A914D4D00C5BB00 /* BirdsEyeHandLayout.m in Sources */,
+				ADF903121AF71015002F6274 /* BlackCardTextView.m in Sources */,
 				ADC8B6681ACCA703000BC883 /* PlayAction.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1221,6 +1257,7 @@
 				AD5E856D1AA7E57C0067ABF2 /* BlackCardFactory.m in Sources */,
 				ADA8C8A91AB4C8DD000987EC /* NSObject+TypeCheckingSpec.m in Sources */,
 				AD5E856A1AA7E3880067ABF2 /* BlackCardSpec.m in Sources */,
+				ADF903151AF7103B002F6274 /* BlackCardTextViewFactory.m in Sources */,
 				AD99B3E41ADC584D00507C10 /* BlackCardViewSpec.m in Sources */,
 				AD227A711AF408F600930AE0 /* CardViewControllerFactory.m in Sources */,
 				ADC8B66C1ACCA78E000BC883 /* PlayActionSpec.m in Sources */,
@@ -1246,6 +1283,7 @@
 				AD341F5A1AA8F55C0040DA92 /* WhiteCardSpec.m in Sources */,
 				ADBDC50C1AF579F70052C215 /* WhiteCardViewFactory.m in Sources */,
 				ADBDC5031AF5758E0052C215 /* WhiteCardTextViewFactory.m in Sources */,
+				ADF903181AF71057002F6274 /* BlackCardTextViewSpec.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
