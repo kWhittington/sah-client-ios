@@ -42,6 +42,16 @@ describe(@"BlackCardViewController", ^{
     });
   });
 
+  describe(@"- blackCardView", ^{
+    let(blackCardView, ^{
+      return blackCardViewController.blackCardView;
+    });
+
+    it(@"is the card view cast as a black card view", ^{
+      [[blackCardView should] beIdenticalTo:blackCardViewController.cardView];
+    });
+  });
+
   describe(@"- cardView", ^{
     let(cardView, ^{
       return blackCardViewController.cardView;

@@ -18,4 +18,5 @@
 - (instancetype)initWithBlackCard:(BlackCard *)blackCard;
 
 - (BlackCard *)blackCard;
+- (BlackCardView *)blackCardView;
 @end

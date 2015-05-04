@@ -38,6 +38,10 @@
   return (BlackCard *)self.card;
 }
 
+- (BlackCardView *)blackCardView {
+  return (BlackCardView *)self.cardView;
+}
+
 - (NSString *)description {
   return NSStringWithFormat(@"<BlackCardViewController: %p; view = %@;>", self, self.view);
 }
