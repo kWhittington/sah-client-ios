@@ -30,6 +30,16 @@ describe(@"WhiteCardTextView", ^{
     });
   });
 
+  describe(@"- cardView", ^{
+    let(cardView, ^{
+      return whiteCardTextView.cardView;
+    });
+
+    it(@"is a white card view", ^{
+      [[cardView should] beKindOfClass:WhiteCardView.class];
+    });
+  });
+
   describe(@"- whiteCardView", ^{
     let(whiteCardView, ^{
       return whiteCardTextView.whiteCardView;
