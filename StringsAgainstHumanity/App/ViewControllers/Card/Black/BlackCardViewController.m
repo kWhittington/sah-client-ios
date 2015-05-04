@@ -42,10 +42,6 @@
   return (BlackCardView *)self.cardView;
 }
 
-- (NSString *)description {
-  return NSStringWithFormat(@"<BlackCardViewController: %p; view = %@;>", self, self.view);
-}
-
 - (void)loadView {
   self.view = [BlackCardView withMainScreenFrameAndBlackCard:self.blackCard];
 }
