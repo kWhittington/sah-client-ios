@@ -42,6 +42,12 @@
   return (BlackCardView *)self.cardView;
 }
 
+- (BOOL)isEqualToBlackCardViewController:(BlackCardViewController *)other {
+  BOOL blackCardsAreEqual = [self.blackCard isEqualToBlackCard:other.blackCard];
+
+  return blackCardsAreEqual;
+}
+
 - (void)loadView {
   self.view = [BlackCardView withMainScreenFrameAndBlackCard:self.blackCard];
 }

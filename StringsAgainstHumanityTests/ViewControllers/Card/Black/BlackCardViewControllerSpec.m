@@ -61,5 +61,38 @@ describe(@"BlackCardViewController", ^{
       [[cardView should] beKindOfClass:BlackCardView.class];
     });
   });
+
+  describe(@"- isEqualToBlackCardViewController:", ^{
+    let(other, ^{
+      return BlackCardViewController.nullMock;
+    });
+
+    let(isEqualToBlackCardViewController, ^{
+      return theValue([blackCardViewController isEqualToBlackCardViewController:other]);
+    });
+
+    context(@"when both black cards are equal", ^{
+      let(other, ^{
+        return FGBuildWith(BlackCardViewController.class, ^(FGDefinitionBuilder *builder) {
+          builder[@"blackCard"] = blackCardViewController.blackCard.copy;
+        });
+      });
+
+      it(@"is YES", ^{
+        NSLog(@"%@", other);
+        [[isEqualToBlackCardViewController should] beYes];
+      });
+    });
+
+    context(@"when both black cards are not equal", ^{
+      let(other, ^{
+        return FGBuild(BlackCardViewController.class);
+      });
+
+      it(@"is NO", ^{
+        [[isEqualToBlackCardViewController should] beNo];
+      });
+    });
+  });
 });
 SPEC_END

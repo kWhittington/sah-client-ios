@@ -67,8 +67,8 @@
 
 - (BOOL)isEqualToBlackCard:(BlackCard *)other {
   BOOL cardAttributesAreEqual = [self isEqualToCard:other];
-  BOOL drawsAreEqual = [self.draw isEqualToNumber:other.draw];
-  BOOL picksAreEqual = [self.pick isEqualToNumber:other.pick];
+  BOOL drawsAreEqual = [other.draw isEqualToNumber:self.draw];
+  BOOL picksAreEqual = [other.pick isEqualToNumber:self.pick];
 
   return cardAttributesAreEqual && drawsAreEqual && picksAreEqual;
 }

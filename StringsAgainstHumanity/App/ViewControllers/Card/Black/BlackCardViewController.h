@@ -19,4 +19,5 @@
 
 - (BlackCard *)blackCard;
 - (BlackCardView *)blackCardView;
+- (BOOL)isEqualToBlackCardViewController:(BlackCardViewController *)other;
 @end
