@@ -16,4 +16,6 @@
 
 #pragma mark Designated Initializer
 - (instancetype)initWithBlackCard:(BlackCard *)blackCard;
+
+- (BlackCard *)blackCard;
 @end

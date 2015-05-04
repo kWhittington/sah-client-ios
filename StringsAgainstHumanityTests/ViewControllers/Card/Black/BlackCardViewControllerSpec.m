@@ -31,5 +31,15 @@ describe(@"BlackCardViewController", ^{
       [[card should] beKindOfClass:BlackCard.class];
     });
   });
+
+  describe(@"- blackCard", ^{
+    let(blackCard, ^{
+      return blackCardViewController.blackCard;
+    });
+
+    it(@"is the card cast as a black card", ^{
+      [[blackCard should] beIdenticalTo:blackCardViewController.card];
+    });
+  });
 });
 SPEC_END
