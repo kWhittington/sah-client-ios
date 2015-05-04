@@ -22,9 +22,6 @@
 }
 
 - (instancetype)initWithFrame:(CGRect)frame andCard:(Card *)card {
-  Card *newCard = [BlackCard withString:@"Test string"
-                              andAction:^(Card *card){
-                              }];
   unless([card isKindOfClass:BlackCard.class]) {
     [NSException raise:@"CardTypeException"
                 format:@"BlackCardView.card must be assigned a BlackCard, not %@", card.class];
