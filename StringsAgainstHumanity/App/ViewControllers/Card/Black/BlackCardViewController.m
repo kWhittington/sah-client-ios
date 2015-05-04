@@ -14,7 +14,7 @@
 
 @implementation BlackCardViewController
 + (instancetype)withBlackCard:(BlackCard *)blackCard {
-  return [[self alloc] init];
+  return [[self alloc] initWithBlackCard:blackCard];
 }
 
 - (instancetype)initWithCard:(Card *)card {
