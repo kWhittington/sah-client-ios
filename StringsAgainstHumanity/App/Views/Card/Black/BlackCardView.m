@@ -44,5 +44,6 @@
 }
 
 - (void)initProperties {
+  self.backgroundColor = Constants.BlackColor;
 }
 @end
