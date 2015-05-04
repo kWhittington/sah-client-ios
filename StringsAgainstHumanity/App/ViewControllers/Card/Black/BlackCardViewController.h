@@ -6,15 +6,14 @@
 //  Copyright (c) 2015 Kyle Whittington. All rights reserved.
 //
 
-@import UIKit;
+#import "CardViewController.h"
 
 @class BlackCard;
 @class BlackCardView;
 
-@interface BlackCardViewController : UIViewController
+@interface BlackCardViewController : CardViewController
 + (instancetype)withBlackCard:(BlackCard *)blackCard;
 
+#pragma mark Designated Initializer
 - (instancetype)initWithBlackCard:(BlackCard *)blackCard;
-
-- (BlackCardView *)blackCardView;
 @end

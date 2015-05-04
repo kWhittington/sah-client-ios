@@ -7,58 +7,19 @@
 //
 
 #import "TestLibraries.pch"
-@import UIKit;
-#import "BlackCardViewController.h"
-#import "BlackCardView.h"
+
 #import "BlackCard.h"
+#import "BlackCardView.h"
+#import "BlackCardViewController.h"
 
 SPEC_BEGIN(BlackCardViewControllerSpec)
 describe(@"BlackCardViewController", ^{
-  let(blackCard, ^BlackCard *{
-    return FGBuildTrait(BlackCard.class, @"withString");
-  });
-
   let(blackCardViewController, ^BlackCardViewController *{
-    return [BlackCardViewController withBlackCard:blackCard];
+    return FGBuild(BlackCardViewController.class);
   });
 
-  describe(@"- debugDescription", ^{
-    let(debugDescription, ^{
-      return blackCardViewController.debugDescription;
-    });
-
-    it(@"equals BlackCardViewController - description", ^{
-      [[debugDescription should] equal:blackCardViewController.description];
-    });
-  });
-
-  describe(@"- description", ^{
-    let(description, ^{
-      return blackCardViewController.description;
-    });
-
-    let(expectedString, ^{
-      return NSStringWithFormat(@"<BlackCardViewController: %p; view = %@;>", blackCardViewController,
-                                blackCardViewController.blackCardView);
-    });
-
-    it(@"returns '<BlackCardViewController: [memory_address]; blackCard = "
-       @"[blackCard.description];"
-        " label = [label.description]>'",
-       ^{
-         blackCardViewController;
-         [[description should] equal:expectedString];
-       });
-  });
-
-  describe(@"- view", ^{
-    let(view, ^{
-      return blackCardViewController.view;
-    });
-
-    it(@"is identical to .blackCardView", ^{
-      [[view should] beIdenticalTo:blackCardViewController.blackCardView];
-    });
+  it(@"is a kind of card view controller", ^{
+    [[blackCardViewController should] beKindOfClass:CardViewController.class];
   });
 });
 SPEC_END
