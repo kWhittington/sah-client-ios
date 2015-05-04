@@ -30,5 +30,15 @@ describe(@"BlackCardTextView", ^{
       [[textColor should] equal:Constants.WhiteColor];
     });
   });
+
+  describe(@"- cardView", ^{
+    let(cardView, ^{
+      return blackCardTextView.cardView;
+    });
+
+    it(@"is a black card view", ^{
+      [[cardView should] beKindOfClass:BlackCardView.class];
+    });
+  });
 });
 SPEC_END
