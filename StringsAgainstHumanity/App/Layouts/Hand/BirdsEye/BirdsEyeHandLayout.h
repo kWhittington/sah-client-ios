@@ -6,8 +6,7 @@
 //  Copyright (c) 2015 Kyle Whittington. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+@import UIKit;
 
 @interface BirdsEyeHandLayout : UICollectionViewFlowLayout
-
 @end

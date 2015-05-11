@@ -12,6 +12,9 @@
 		AD0DF62D1AF7C83A00859097 /* BlackCardViewControllerFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = AD0DF62C1AF7C83A00859097 /* BlackCardViewControllerFactory.m */; };
 		AD0DF6301AF7C8B700859097 /* BlackCardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD0DF62F1AF7C8B700859097 /* BlackCardViewController.m */; };
 		AD0DF6321AF7C8C000859097 /* BlackCardViewControllerSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = AD0DF6311AF7C8C000859097 /* BlackCardViewControllerSpec.m */; };
+		AD0EC4BF1B00F56D00EE22F0 /* BirdsEyeHandLayoutFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = AD0EC4BE1B00F56D00EE22F0 /* BirdsEyeHandLayoutFactory.m */; };
+		AD0EC4C31B00F66E00EE22F0 /* BirdsEyeHandLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = AD0EC4C21B00F66E00EE22F0 /* BirdsEyeHandLayout.m */; };
+		AD0EC4C81B00F6B100EE22F0 /* BirdsEyeHandLayoutSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = AD0EC4C71B00F6B100EE22F0 /* BirdsEyeHandLayoutSpec.m */; };
 		AD1C3E061A8450F10001C833 /* _clang-format in Resources */ = {isa = PBXBuildFile; fileRef = AD1C3E051A8450F10001C833 /* _clang-format */; };
 		AD227A4F1AF403B900930AE0 /* HandViewControllerSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = AD227A4E1AF403B900930AE0 /* HandViewControllerSpec.m */; };
 		AD227A511AF403C700930AE0 /* PlaymatViewControllerSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = AD227A501AF403C700930AE0 /* PlaymatViewControllerSpec.m */; };
@@ -57,7 +60,6 @@
 		ADBF7F931A910E2800C5BB00 /* Hand.m in Sources */ = {isa = PBXBuildFile; fileRef = ADBF7F921A910E2800C5BB00 /* Hand.m */; };
 		ADBF7F981A91171A00C5BB00 /* Card.m in Sources */ = {isa = PBXBuildFile; fileRef = ADBF7F971A91171A00C5BB00 /* Card.m */; };
 		ADBF7F9F1A913FE200C5BB00 /* CardViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = ADBF7F9E1A913FE200C5BB00 /* CardViewCell.m */; };
-		ADBF7FA71A914D4D00C5BB00 /* BirdsEyeHandLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = ADBF7FA61A914D4D00C5BB00 /* BirdsEyeHandLayout.m */; };
 		ADBF7FAA1A91661500C5BB00 /* ZoomInHandLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = ADBF7FA91A91661500C5BB00 /* ZoomInHandLayout.m */; };
 		ADC195D21AA1545D00177660 /* Hand+DataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = ADC195D11AA1545D00177660 /* Hand+DataSource.m */; };
 		ADC687971AA6518C005F70C3 /* ConstantsSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = ADC687961AA6518C005F70C3 /* ConstantsSpec.m */; };
@@ -97,6 +99,10 @@
 		AD0DF62E1AF7C8B700859097 /* BlackCardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BlackCardViewController.h; path = App/ViewControllers/Card/Black/BlackCardViewController.h; sourceTree = "<group>"; };
 		AD0DF62F1AF7C8B700859097 /* BlackCardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BlackCardViewController.m; path = App/ViewControllers/Card/Black/BlackCardViewController.m; sourceTree = "<group>"; };
 		AD0DF6311AF7C8C000859097 /* BlackCardViewControllerSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BlackCardViewControllerSpec.m; path = ViewControllers/Card/Black/BlackCardViewControllerSpec.m; sourceTree = "<group>"; };
+		AD0EC4BE1B00F56D00EE22F0 /* BirdsEyeHandLayoutFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BirdsEyeHandLayoutFactory.m; path = Factories/Layouts/Hand/BirdsEye/BirdsEyeHandLayoutFactory.m; sourceTree = "<group>"; };
+		AD0EC4C11B00F66E00EE22F0 /* BirdsEyeHandLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BirdsEyeHandLayout.h; path = App/Layouts/Hand/BirdsEye/BirdsEyeHandLayout.h; sourceTree = "<group>"; };
+		AD0EC4C21B00F66E00EE22F0 /* BirdsEyeHandLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BirdsEyeHandLayout.m; path = App/Layouts/Hand/BirdsEye/BirdsEyeHandLayout.m; sourceTree = "<group>"; };
+		AD0EC4C71B00F6B100EE22F0 /* BirdsEyeHandLayoutSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BirdsEyeHandLayoutSpec.m; path = Layouts/Hand/BirdsEye/BirdsEyeHandLayoutSpec.m; sourceTree = "<group>"; };
 		AD1C3E051A8450F10001C833 /* _clang-format */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "_clang-format"; sourceTree = SOURCE_ROOT; };
 		AD227A4E1AF403B900930AE0 /* HandViewControllerSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HandViewControllerSpec.m; path = ViewControllers/Hand/HandViewControllerSpec.m; sourceTree = "<group>"; };
 		AD227A501AF403C700930AE0 /* PlaymatViewControllerSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PlaymatViewControllerSpec.m; path = ViewControllers/Playmat/PlaymatViewControllerSpec.m; sourceTree = "<group>"; };
@@ -165,8 +171,6 @@
 		ADBF7F971A91171A00C5BB00 /* Card.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Card.m; path = App/Models/Card/Card.m; sourceTree = "<group>"; };
 		ADBF7F9D1A913FE200C5BB00 /* CardViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CardViewCell.h; path = App/Views/Card/CardViewCell.h; sourceTree = "<group>"; };
 		ADBF7F9E1A913FE200C5BB00 /* CardViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CardViewCell.m; path = App/Views/Card/CardViewCell.m; sourceTree = "<group>"; };
-		ADBF7FA51A914D4D00C5BB00 /* BirdsEyeHandLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BirdsEyeHandLayout.h; path = App/Layouts/Hand/BirdsEyeHandLayout.h; sourceTree = "<group>"; };
-		ADBF7FA61A914D4D00C5BB00 /* BirdsEyeHandLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BirdsEyeHandLayout.m; path = App/Layouts/Hand/BirdsEyeHandLayout.m; sourceTree = "<group>"; };
 		ADBF7FA81A91661500C5BB00 /* ZoomInHandLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZoomInHandLayout.h; path = App/Layouts/Hand/ZoomInHandLayout.h; sourceTree = "<group>"; };
 		ADBF7FA91A91661500C5BB00 /* ZoomInHandLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ZoomInHandLayout.m; path = App/Layouts/Hand/ZoomInHandLayout.m; sourceTree = "<group>"; };
 		ADC195D01AA1545D00177660 /* Hand+DataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Hand+DataSource.h"; path = "App/DataSources/Hand/Hand+DataSource.h"; sourceTree = "<group>"; };
@@ -251,6 +255,63 @@
 				AD0DF62C1AF7C83A00859097 /* BlackCardViewControllerFactory.m */,
 			);
 			name = Black;
+			sourceTree = "<group>";
+		};
+		AD0EC4B51B00F36000EE22F0 /* Layouts */ = {
+			isa = PBXGroup;
+			children = (
+				AD0EC4BC1B00F54500EE22F0 /* Hand */,
+			);
+			name = Layouts;
+			sourceTree = "<group>";
+		};
+		AD0EC4BC1B00F54500EE22F0 /* Hand */ = {
+			isa = PBXGroup;
+			children = (
+				AD0EC4BD1B00F54C00EE22F0 /* BirdsEye */,
+			);
+			name = Hand;
+			sourceTree = "<group>";
+		};
+		AD0EC4BD1B00F54C00EE22F0 /* BirdsEye */ = {
+			isa = PBXGroup;
+			children = (
+				AD0EC4BE1B00F56D00EE22F0 /* BirdsEyeHandLayoutFactory.m */,
+			);
+			name = BirdsEye;
+			sourceTree = "<group>";
+		};
+		AD0EC4C01B00F57700EE22F0 /* BirdsEye */ = {
+			isa = PBXGroup;
+			children = (
+				AD0EC4C11B00F66E00EE22F0 /* BirdsEyeHandLayout.h */,
+				AD0EC4C21B00F66E00EE22F0 /* BirdsEyeHandLayout.m */,
+			);
+			name = BirdsEye;
+			sourceTree = "<group>";
+		};
+		AD0EC4C41B00F67B00EE22F0 /* Layouts */ = {
+			isa = PBXGroup;
+			children = (
+				AD0EC4C51B00F68500EE22F0 /* Hand */,
+			);
+			name = Layouts;
+			sourceTree = "<group>";
+		};
+		AD0EC4C51B00F68500EE22F0 /* Hand */ = {
+			isa = PBXGroup;
+			children = (
+				AD0EC4C61B00F68C00EE22F0 /* BirdsEye */,
+			);
+			name = Hand;
+			sourceTree = "<group>";
+		};
+		AD0EC4C61B00F68C00EE22F0 /* BirdsEye */ = {
+			isa = PBXGroup;
+			children = (
+				AD0EC4C71B00F6B100EE22F0 /* BirdsEyeHandLayoutSpec.m */,
+			);
+			name = BirdsEye;
 			sourceTree = "<group>";
 		};
 		AD1337841AA01CE4002F1721 /* ViewControllers */ = {
@@ -478,6 +539,7 @@
 				ADC195D31AA1547C00177660 /* DataSources */,
 				AD62DCEA1AB23A3800F70C51 /* Exceptions */,
 				ADC2AC621A9BCD29008EF494 /* Factories */,
+				AD0EC4C41B00F67B00EE22F0 /* Layouts */,
 				AD7C84DC1A95B32100A2DE02 /* Models */,
 				AD62730C1A8341D100565A28 /* Supporting Files */,
 				AD1337841AA01CE4002F1721 /* ViewControllers */,
@@ -947,8 +1009,7 @@
 		ADBF7FA41A914D1600C5BB00 /* Hand */ = {
 			isa = PBXGroup;
 			children = (
-				ADBF7FA51A914D4D00C5BB00 /* BirdsEyeHandLayout.h */,
-				ADBF7FA61A914D4D00C5BB00 /* BirdsEyeHandLayout.m */,
+				AD0EC4C01B00F57700EE22F0 /* BirdsEye */,
 				ADBF7FA81A91661500C5BB00 /* ZoomInHandLayout.h */,
 				ADBF7FA91A91661500C5BB00 /* ZoomInHandLayout.m */,
 			);
@@ -974,6 +1035,7 @@
 		ADC2AC621A9BCD29008EF494 /* Factories */ = {
 			isa = PBXGroup;
 			children = (
+				AD0EC4B51B00F36000EE22F0 /* Layouts */,
 				AD71F58E1A9C01060077BE8B /* Models */,
 				ADA8C8AA1AB50573000987EC /* ViewControllers */,
 				AD69AA5D1AEB26A900B18013 /* Views */,
@@ -1255,13 +1317,13 @@
 				ADBF7F931A910E2800C5BB00 /* Hand.m in Sources */,
 				AD227A5A1AF4041000930AE0 /* MainMenuViewController.m in Sources */,
 				AD9CD1921AE5FD1A004DECA5 /* CardTextView.m in Sources */,
+				AD0EC4C31B00F66E00EE22F0 /* BirdsEyeHandLayout.m in Sources */,
 				AD62DCE91AB2398600F70C51 /* UnimplementedException.m in Sources */,
 				AD0DF6301AF7C8B700859097 /* BlackCardViewController.m in Sources */,
 				ADBF7F9F1A913FE200C5BB00 /* CardViewCell.m in Sources */,
 				AD5E85671AA7E3680067ABF2 /* BlackCard.m in Sources */,
 				ADF903091AF6CB8D002F6274 /* WhiteCardViewController.m in Sources */,
 				ADE4A6B61A844121008CB5D2 /* AppDelegate.m in Sources */,
-				ADBF7FA71A914D4D00C5BB00 /* BirdsEyeHandLayout.m in Sources */,
 				ADF903121AF71015002F6274 /* BlackCardTextView.m in Sources */,
 				ADC8B6681ACCA703000BC883 /* PlayAction.m in Sources */,
 			);
@@ -1298,7 +1360,9 @@
 				ADC8B66A1ACCA782000BC883 /* PlayActionFactory.m in Sources */,
 				AD69AA5F1AEB272200B18013 /* CardViewFactory.m in Sources */,
 				ADF9030D1AF6CBFB002F6274 /* WhiteCardViewControllerSpec.m in Sources */,
+				AD0EC4C81B00F6B100EE22F0 /* BirdsEyeHandLayoutSpec.m in Sources */,
 				AD62DCED1AB23A6700F70C51 /* UnimplementedExceptionSpec.m in Sources */,
+				AD0EC4BF1B00F56D00EE22F0 /* BirdsEyeHandLayoutFactory.m in Sources */,
 				AD341F571AA8F4F60040DA92 /* WhiteCardFactory.m in Sources */,
 				AD227A511AF403C700930AE0 /* PlaymatViewControllerSpec.m in Sources */,
 				AD71F5921A9C049F0077BE8B /* CardFactory.m in Sources */,
