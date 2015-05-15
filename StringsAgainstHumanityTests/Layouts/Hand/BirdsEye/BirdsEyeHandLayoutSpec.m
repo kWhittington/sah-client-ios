@@ -16,6 +16,17 @@ describe(@"BirdsEyeHandLayout", ^{
     return FGBuild(BirdsEyeHandLayout.class);
   });
 
+  describe(@".itemSize", ^{
+    let(itemSize, ^{
+      return theValue(birdsEyeHandLayout.itemSize);
+    });
+
+    it(@"is half the height of the mainScreen", ^{
+      [[theValue(birdsEyeHandLayout.itemSize.height) should]
+        equal:theValue(UIScreen.mainScreen.bounds.size.height / 2)];
+    });
+  });
+
   describe(@"- finalLayoutAttributesForDisappearingItemAtIndexPath:", ^{
     let(finalLayoutAttributesForDisappearingItemAtIndexPath, ^{
       return [birdsEyeHandLayout
