@@ -23,46 +23,14 @@
   return self;
 }
 
-- (void)cacheUpdateActionDeleteItems:(NSArray *)updateItems {
-  self.updateActionDeleteItems = [updateItems select:^BOOL(UICollectionViewUpdateItem *updateItem) {
-    return updateItem.updateAction == UICollectionUpdateActionDelete;
-  }];
-}
-
-- (void)cacheUpdateActionItems:(NSArray *)updateItems {
-  [self cacheUpdateActionDeleteItems:updateItems];
-}
-
-- (UICollectionViewLayoutAttributes *)configureForDeletion:
-    (UICollectionViewLayoutAttributes *)attributes {
-  UICollectionViewLayoutAttributes *deletionAttributes = [attributes copy];
-
-  deletionAttributes.transform =
-    CGAffineTransformMakeTranslation(0, -self.collectionView.bounds.size.height);
-
-  return deletionAttributes;
-}
-
 - (UICollectionViewLayoutAttributes *)finalLayoutAttributesForDisappearingItemAtIndexPath:
     (NSIndexPath *)itemIndexPath {
   UICollectionViewLayoutAttributes *attributes =
-    [super finalLayoutAttributesForDisappearingItemAtIndexPath:itemIndexPath];
+    [UICollectionViewLayoutAttributes layoutAttributesForCellWithIndexPath:itemIndexPath];
 
-  if ([self indexPathBeingDeleted:itemIndexPath]) {
-    attributes = [self configureForDeletion:attributes];
-  }
+  attributes.transform = (CGAffineTransform){.ty = -1};
 
   return attributes;
-}
-
-- (BOOL)indexPathBeingDeleted:(NSIndexPath *)indexPath {
-  return [self.updateActionDeleteItemIndexPaths includes:indexPath];
-}
-
-- (void)prepareForCollectionViewUpdates:(NSArray *)updateItems {
-  [super prepareForCollectionViewUpdates:updateItems];
-
-  [self cacheUpdateActionItems:updateItems];
 }
 
 - (void)refresh {
@@ -99,11 +67,4 @@
 
   return shrunkSize;
 }
-
-- (NSArray *)updateActionDeleteItemIndexPaths {
-  return [self.updateActionDeleteItems map:^(UICollectionViewUpdateItem *updateItem) {
-    return updateItem.indexPathBeforeUpdate;
-  }];
-}
-
 @end
