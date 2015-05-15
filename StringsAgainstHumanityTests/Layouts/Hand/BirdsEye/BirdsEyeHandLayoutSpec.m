@@ -9,6 +9,7 @@
 #import "TestLibraries.pch"
 
 #import "BirdsEyeHandLayout.h"
+#import "CardViewCell.h"
 
 SPEC_BEGIN(BirdsEyeHandLayoutSpec)
 describe(@"BirdsEyeHandLayout", ^{
@@ -24,6 +25,14 @@ describe(@"BirdsEyeHandLayout", ^{
     it(@"is half the height of the mainScreen", ^{
       [[theValue(birdsEyeHandLayout.itemSize.height) should]
         equal:theValue(UIScreen.mainScreen.bounds.size.height / 2)];
+    });
+
+    it(@"maintains CardViewCell.size height/width ratio", ^{
+      KWValue *ratio =
+        theValue(birdsEyeHandLayout.itemSize.height / birdsEyeHandLayout.itemSize.width);
+      KWValue *expectedRatio = theValue(CardViewCell.size.height / CardViewCell.size.width);
+
+      [[ratio should] beWithin:theValue(0.001f) of:expectedRatio];
     });
   });
 
