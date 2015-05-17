@@ -7,13 +7,15 @@
 //
 
 #import "SAHLibraries.pch"
-#import "HandViewController.h"
-#import "ZoomInHandLayout.h"
+
 #import "BirdsEyeHandLayout.h"
-#import "CardViewCell.h"
-#import "Hand+DataSource.h"
 #import "BlackCard.h"
 #import "Card.h"
+#import "CardViewCell.h"
+#import "Hand+DataSource.h"
+#import "HandView.h"
+#import "HandViewController.h"
+#import "ZoomInHandLayout.h"
 
 @interface HandViewController ()
 @property(nonatomic) BirdsEyeHandLayout *birdsEyeLayout;
