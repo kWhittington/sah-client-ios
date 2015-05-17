@@ -39,5 +39,15 @@ describe(@"HandView", ^{
       [[allowsMultipleSelection should] beNo];
     });
   });
+
+  describe(@".backgroundView", ^{
+    let(backgroundView, ^{
+      return handView.backgroundView;
+    });
+
+    it(@"is nil", ^{
+      [[backgroundView should] beNil];
+    });
+  });
 });
 SPEC_END

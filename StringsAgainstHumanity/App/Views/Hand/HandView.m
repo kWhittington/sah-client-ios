@@ -20,4 +20,8 @@
 - (BOOL)allowsMultipleSelection {
   return NO;
 }
+
+- (UIView *)backgroundView {
+  return nil;
+}
 @end
