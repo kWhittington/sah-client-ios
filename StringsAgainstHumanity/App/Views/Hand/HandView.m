@@ -12,4 +12,8 @@
 - (instancetype)initWithMainScreenFrameAndCollectionViewLayout:(UICollectionViewLayout *)layout {
   return [self initWithFrame:UIScreen.mainScreen.bounds collectionViewLayout:layout];
 }
+
+- (BOOL)allowsSelection {
+  return YES;
+}
 @end

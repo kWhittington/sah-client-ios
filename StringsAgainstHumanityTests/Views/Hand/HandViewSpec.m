@@ -19,5 +19,15 @@ describe(@"HandView", ^{
   it(@"is a UICollectionView", ^{
     [[handView should] beKindOfClass:UICollectionView.class];
   });
+
+  describe(@".allowsSelection", ^{
+    let(allowsSelection, ^{
+      return theValue(handView.allowsSelection);
+    });
+
+    it(@"is YES", ^{
+      [[allowsSelection should] beYes];
+    });
+  });
 });
 SPEC_END
