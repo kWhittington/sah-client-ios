@@ -29,5 +29,15 @@ describe(@"HandView", ^{
       [[allowsSelection should] beYes];
     });
   });
+
+  describe(@".allowsMultipleSelection", ^{
+    let(allowsMultipleSelection, ^{
+      return theValue(handView.allowsMultipleSelection);
+    });
+
+    it(@"is NO", ^{
+      [[allowsMultipleSelection should] beNo];
+    });
+  });
 });
 SPEC_END

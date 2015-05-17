@@ -16,4 +16,8 @@
 - (BOOL)allowsSelection {
   return YES;
 }
+
+- (BOOL)allowsMultipleSelection {
+  return NO;
+}
 @end
