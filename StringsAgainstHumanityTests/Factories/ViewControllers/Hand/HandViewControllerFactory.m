@@ -7,9 +7,11 @@
 //
 // clang-format off
 //
+
 #import "FactoryLibraries.pch"
-#import "HandViewController.h"
+
 #import "Hand.h"
+#import "HandViewController.h"
 
 FGFactoryBegin(HandViewController)
   // The default factory will be equivalent to @"empty" trait.
