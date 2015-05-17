@@ -59,5 +59,15 @@ describe(@"HandView", ^{
       [[backgroundView should] beNil];
     });
   });
+
+  describe(@".opaque", ^{
+    let(opaque, ^{
+      return theValue(handView.opaque);
+    });
+
+    it(@"is YES", ^{
+      [[opaque should] beYes];
+    });
+  });
 });
 SPEC_END

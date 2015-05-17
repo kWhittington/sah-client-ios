@@ -28,4 +28,8 @@
 - (UIView *)backgroundView {
   return nil;
 }
+
+- (BOOL)isOpaque {
+  return YES;
+}
 @end
