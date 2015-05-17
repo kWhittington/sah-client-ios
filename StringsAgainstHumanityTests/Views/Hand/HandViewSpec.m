@@ -40,6 +40,16 @@ describe(@"HandView", ^{
     });
   });
 
+  describe(@".backgroundColor", ^{
+    let(backgroundColor, ^{
+      return handView.backgroundColor;
+    });
+
+    it(@"is clear", ^{
+      [[backgroundColor should] equal:UIColor.clearColor];
+    });
+  });
+
   describe(@".backgroundView", ^{
     let(backgroundView, ^{
       return handView.backgroundView;

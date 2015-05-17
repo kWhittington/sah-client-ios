@@ -21,6 +21,10 @@
   return NO;
 }
 
+- (UIColor *)backgroundColor {
+  return UIColor.clearColor;
+}
+
 - (UIView *)backgroundView {
   return nil;
 }
