@@ -7,11 +7,13 @@
 //
 
 #import "TestLibraries.pch"
-#import "HandViewController.h"
-#import "Hand+DataSource.h"
+
+#import "BirdsEyeHandLayout.h"
 #import "BlackCard.h"
 #import "Card.h"
-#import "BirdsEyeHandLayout.h"
+#import "Hand+DataSource.h"
+#import "HandView.h"
+#import "HandViewController.h"
 
 SPEC_BEGIN(HandViewControllerSpec)
 describe(@"HandViewController", ^{
@@ -32,51 +34,8 @@ describe(@"HandViewController", ^{
       return handViewController.collectionView;
     });
 
-    describe(@".allowsSelection", ^{
-      let(allowsSelection, ^{
-        return theValue(collectionView.allowsSelection);
-      });
-
-      it(@"is YES", ^{
-        [[allowsSelection should] beYes];
-      });
-    });
-
-    describe(@".allowsMultipleSelection", ^{
-      let(allowsMultipleSelection, ^{
-        return theValue(collectionView.allowsMultipleSelection);
-      });
-
-      it(@"is NO", ^{
-        [[allowsMultipleSelection should] beNo];
-      });
-    });
-
-    describe(@".backgroundColor", ^{
-      let(backgroundColor, ^{
-        return collectionView.backgroundColor;
-      });
-
-      it(@"equals UIColor + clearColor", ^{
-        NSLog(@"%@", backgroundColor);
-        [[backgroundColor should] equal:[UIColor clearColor]];
-      });
-    });
-
-    describe(@".backgroundView", ^{
-      let(backgroundView, ^{
-        return collectionView.backgroundView;
-      });
-
-      it(@"is nil", ^{
-        [[backgroundView should] beNil];
-      });
-    });
-
-    describe(@".collectionViewLayout", ^{
-      let(collectionViewLayout, ^{
-        return (NSObject *)collectionView.collectionViewLayout;
-      });
+    describe(@"is a HandView", ^{
+      [[collectionView should] beKindOfClass:HandView.class];
     });
 
     describe(@".dataSource", ^{
@@ -86,16 +45,6 @@ describe(@"HandViewController", ^{
 
       it(@"is a reference to HandViewController.hand", ^{
         [[dataSource should] beIdenticalTo:hand];
-      });
-    });
-
-    describe(@".opaque", ^{
-      let(opaque, ^{
-        return theValue(collectionView.opaque);
-      });
-
-      it(@"is NO", ^{
-        [[opaque should] beNo];
       });
     });
   });
@@ -205,7 +154,7 @@ describe(@"HandViewController", ^{
 
       it(@"calls HandViewController - removeCard: with HandViewController.selectedCard", ^{
         [[handViewController should] receive:@selector(removeCard:)
-                           withArguments:handViewController.selectedCard];
+                               withArguments:handViewController.selectedCard];
 
         [handViewController playSelectedCard];
       });
@@ -228,8 +177,9 @@ describe(@"HandViewController", ^{
       // Due to how Kiwi's matchers work, this function will fail if both the dataSource/hand
       // and collectionView are mocked or expecting a message.
       // The collectionView will cause a EXC_BAD_ACCESS error.
-      [[(NSObject *)handViewController.collectionView.dataSource should] receive:@selector(removeCard:)
-                                                               withArguments:card];
+      [[(NSObject *)handViewController.collectionView.dataSource should]
+              receive:@selector(removeCard:)
+        withArguments:card];
       [[handViewController.collectionView should] receive:@selector(deleteItemsAtIndexPaths:)];
 
       [handViewController removeCard:card];
@@ -266,8 +216,8 @@ describe(@"HandViewController", ^{
     });
 
     let(shouldHighlight, ^{
-      return theValue(
-        [handViewController collectionView:collectionView shouldHighlightItemAtIndexPath:indexPath]);
+      return theValue([handViewController collectionView:collectionView
+                          shouldHighlightItemAtIndexPath:indexPath]);
     });
 
     specify(^{
