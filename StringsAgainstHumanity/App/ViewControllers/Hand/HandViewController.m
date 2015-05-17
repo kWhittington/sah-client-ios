@@ -95,18 +95,10 @@
 }
 
 - (void)initCollectionView {
-  self.collectionView = [[UICollectionView alloc] initWithFrame:UIScreen.mainScreen.bounds
-                                           collectionViewLayout:self.collectionViewLayout];
+  self.collectionView = [HandView withFrame:UIScreen.mainScreen.bounds];
   [self.collectionView registerClass:CardViewCell.class
           forCellWithReuseIdentifier:CardViewCell.reusableID];
-  [self initCollectionViewBackground];
   [self initCollectionViewDataSource];
-}
-
-- (void)initCollectionViewBackground {
-  self.collectionView.backgroundView = nil;
-  self.collectionView.backgroundColor = [UIColor clearColor];
-  self.collectionView.opaque = NO;
 }
 
 - (void)initCollectionViewDataSource {

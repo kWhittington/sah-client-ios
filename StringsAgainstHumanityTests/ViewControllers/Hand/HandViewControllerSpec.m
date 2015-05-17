@@ -34,7 +34,7 @@ describe(@"HandViewController", ^{
       return handViewController.collectionView;
     });
 
-    describe(@"is a HandView", ^{
+    it(@"is a HandView", ^{
       [[collectionView should] beKindOfClass:HandView.class];
     });
 
