@@ -6,7 +6,7 @@
 //  Copyright (c) 2015 Kyle Whittington. All rights reserved.
 //
 
-#import "SAHLibraries.pch"
+@import UIKit;
 
 @class Hand;
 @class Card;

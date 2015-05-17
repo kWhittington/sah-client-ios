@@ -75,8 +75,8 @@
 }
 
 - (NSString *)description {
-  return NSStringWithFormat(@"<HandViewController: %p; hand = %@; selectedCard = %@>", self, self.hand,
-                            self.selectedCard);
+  return NSStringWithFormat(@"<HandViewController: %p; hand = %@; selectedCard = %@>", self,
+                            self.hand, self.selectedCard);
 }
 
 - (void)didReceiveMemoryWarning {

@@ -9,6 +9,8 @@
 #import "AppDelegate.h"
 #import "BlackCardViewController.h"
 #import "BlackCard.h"
+#import "HandViewController.h"
+#import "Hand+DataSource.h"
 
 @interface AppDelegate ()
 @end
@@ -20,6 +22,11 @@
   // Override point for customization after application launch.
   [self initializeCocoaLumberjack];
 
+  self.window = [[UIWindow alloc] initWithFrame:UIScreen.mainScreen.bounds];
+  id hand = [Hand withArray:@[ [BlackCard withString:@"Hi"] ]];
+  id handViewController = [HandViewController withHand:hand];
+  self.window.rootViewController = handViewController;
+  [self.window makeKeyAndVisible];
   return YES;
 }
 
