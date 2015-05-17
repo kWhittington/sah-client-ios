@@ -128,6 +128,16 @@ describe(@"HandViewController", ^{
     });
   });
 
+  describe(@"- handView", ^{
+    let(handView, ^{
+      return handViewController.handView;
+    });
+
+    it(@"is the collection view", ^{
+      [[handView should] beIdenticalTo:handViewController.collectionView];
+    });
+  });
+
   describe(@"- hasSelectedCard", ^{
     let(hasSelectedCard, ^{
       return theValue(handViewController.hasSelectedCard);

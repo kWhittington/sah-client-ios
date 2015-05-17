@@ -86,6 +86,10 @@
   // Dispose of any resources that can be recreated.
 }
 
+- (UICollectionView *)handView {
+  return (HandView *)self.collectionView;
+}
+
 - (BOOL)hasSelectedCard {
   return self.selectedCard != nil;
 }

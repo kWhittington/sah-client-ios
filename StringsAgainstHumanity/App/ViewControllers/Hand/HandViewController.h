@@ -19,6 +19,7 @@
 + (instancetype)withHand:(Hand *)hand;
 
 - (void)addCard:(Card *)card;
+- (UICollectionView *)handView;
 - (BOOL)hasSelectedCard;
 - (void)playSelectedCard;
 - (void)removeCard:(Card *)card;
