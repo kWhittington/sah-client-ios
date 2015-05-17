@@ -6,11 +6,38 @@
 //  Copyright (c) 2015 Kyle Whittington. All rights reserved.
 //
 
+#import "BirdsEyeHandLayout.h"
 #import "HandView.h"
 
 @implementation HandView
-- (instancetype)initWithMainScreenFrameAndCollectionViewLayout:(UICollectionViewLayout *)layout {
-  return [self initWithFrame:UIScreen.mainScreen.bounds collectionViewLayout:layout];
++ (instancetype)withFrame:(CGRect)frame {
+  return [[self alloc] initWithFrame:frame];
+}
+
++ (instancetype)withMainScreenFrame {
+  return [[self alloc] initWithMainScreenFrame];
+}
+
+#pragma mark Designated Initializer
+- (instancetype)initWithFrame:(CGRect)frame {
+  self = [super initWithFrame:frame collectionViewLayout:BirdsEyeHandLayout.new];
+
+  if (self) {
+  }
+
+  return self;
+}
+
+- (instancetype)initWithFrame:(CGRect)frame collectionViewLayout:(UICollectionViewLayout *)layout {
+  [NSException raise:@"InitializerDeprecated"
+              format:@"HandView should be initialized via - initWithFrame:, its layout should not "
+              @"be set by the user."];
+
+  return [self initWithFrame:frame];
+}
+
+- (instancetype)initWithMainScreenFrame {
+  return [self initWithFrame:UIScreen.mainScreen.bounds];
 }
 
 - (BOOL)allowsSelection {

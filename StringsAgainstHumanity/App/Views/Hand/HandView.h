@@ -9,5 +9,8 @@
 @import UIKit;
 
 @interface HandView : UICollectionView
-- (instancetype)initWithMainScreenFrameAndCollectionViewLayout:(UICollectionViewLayout *)layout;
++ (instancetype)withFrame:(CGRect)frame;
++ (instancetype)withMainScreenFrame;
+
+- (instancetype)initWithMainScreenFrame;
 @end

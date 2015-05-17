@@ -8,6 +8,7 @@
 
 #import "TestLibraries.pch"
 
+#import "BirdsEyeHandLayout.h"
 #import "HandView.h"
 
 SPEC_BEGIN(HandViewSpec)
@@ -57,6 +58,16 @@ describe(@"HandView", ^{
 
     it(@"is nil", ^{
       [[backgroundView should] beNil];
+    });
+  });
+
+  describe(@".collectionViewLayout", ^{
+    let(collectionViewLayout, ^{
+      return handView.collectionViewLayout;
+    });
+
+    it(@"is a BirdsEyeHandLayout", ^{
+      [[collectionViewLayout should] beKindOfClass:BirdsEyeHandLayout.class];
     });
   });
 

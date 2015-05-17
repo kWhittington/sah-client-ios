@@ -13,8 +13,5 @@
 #import "HandView.h"
 
 FGFactoryBegin(HandView)
-  [builder initWith:@selector(initWithMainScreenFrameAndCollectionViewLayout:)
-         fieldNames:@[@"layout"]];
-
-  [builder field:@"layout" assoc:BirdsEyeHandLayout.class];
+  [builder initWith:@selector(initWithMainScreenFrame) fieldNames:@[]];
 FGFactoryEnd
