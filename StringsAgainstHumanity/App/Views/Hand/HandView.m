@@ -59,4 +59,10 @@
 - (BOOL)isOpaque {
   return YES;
 }
+
+- (void)setCollectionViewLayout:(UICollectionViewLayout *)collectionViewLayout {
+  [NSException raise:@"ReassignmentNotPermittedException"
+              format:@"An attempt to reassign HandView.collectionViewLayout made, its layout "
+              @"should not be set by the user."];
+}
 @end

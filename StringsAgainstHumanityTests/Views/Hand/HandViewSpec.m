@@ -69,6 +69,14 @@ describe(@"HandView", ^{
     it(@"is a BirdsEyeHandLayout", ^{
       [[collectionViewLayout should] beKindOfClass:BirdsEyeHandLayout.class];
     });
+
+    it(@"raises an exception when attempting to reassign", ^{
+      [[theBlock(^{
+        handView.collectionViewLayout = BirdsEyeHandLayout.new;
+      }) should] raiseWithName:@"ReassignmentNotPermittedException"
+                        reason:@"An attempt to reassign HandView.collectionViewLayout made, its "
+                               @"layout should not be set by the user."];
+    });
   });
 
   describe(@".opaque", ^{
