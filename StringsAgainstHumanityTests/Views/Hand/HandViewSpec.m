@@ -16,8 +16,8 @@ describe(@"HandView", ^{
     return FGBuild(HandView.class);
   });
 
-  it(@"exits", ^{
-    [[handView shouldNot] beNil];
+  it(@"is a UICollectionView", ^{
+    [[handView should] beKindOfClass:UICollectionView.class];
   });
 });
 SPEC_END
